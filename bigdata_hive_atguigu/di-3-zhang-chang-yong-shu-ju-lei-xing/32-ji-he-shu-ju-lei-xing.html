@@ -1,0 +1,1606 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.2 复杂数据类型 · 大数据 bigdata_hive_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="33-lei-xing-de-zhuan-huan.html" />
+    
+    
+    <link rel="prev" href="31-ji-ben-shu-ju-lei-xing.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第 1 章 Hive 概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../11-shi-yao-shi-hive.html">
+            
+                <a href="../11-shi-yao-shi-hive.html">
+            
+                    
+                    1.1 什么是 Hive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../12-hive-you-que-dian.html">
+            
+                <a href="../12-hive-you-que-dian.html">
+            
+                    
+                    1.2 Hive 优缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../13-hive-jia-gou-yuan-li.html">
+            
+                <a href="../13-hive-jia-gou-yuan-li.html">
+            
+                    
+                    1.3 Hive 架构原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../14-hive-he-shu-ju-ku-bi-jiao.html">
+            
+                <a href="../14-hive-he-shu-ju-ku-bi-jiao.html">
+            
+                    
+                    1.4 Hive 和数据库比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    第 2 章 hive 安装和基本操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter1/21-xia-zai-hive.html">
+            
+                <a href="../chapter1/21-xia-zai-hive.html">
+            
+                    
+                    2.1 下载 Hive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter1/22-an-zhuang-hive.html">
+            
+                <a href="../chapter1/22-an-zhuang-hive.html">
+            
+                    
+                    2.2 安装 Hive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter1/23-hive-ji-ben-pei-zhi.html">
+            
+                <a href="../chapter1/23-hive-ji-ben-pei-zhi.html">
+            
+                    
+                    2.3 Hive 基本配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../chapter1/24-qi-dong-hive.html">
+            
+                <a href="../chapter1/24-qi-dong-hive.html">
+            
+                    
+                    2.4 运行 Hive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../chapter1/25-hive-ji-ben-cao-zuo.html">
+            
+                <a href="../chapter1/25-hive-ji-ben-cao-zuo.html">
+            
+                    
+                    2.5 Hive 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../chapter1/26-dao-ru-wen-jian-dao-biao-zhong.html">
+            
+                <a href="../chapter1/26-dao-ru-wen-jian-dao-biao-zhong.html">
+            
+                    
+                    2.6 导入文件到表中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../chapter1/27-pei-zhi-mysql-fu-wu-qi.html">
+            
+                <a href="../chapter1/27-pei-zhi-mysql-fu-wu-qi.html">
+            
+                    
+                    2.7 配置 Mysql 服务器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="../chapter1/27-pei-zhi-mysql-fu-wu-qi/271-hive-wei-sha-xu-yao-pu-tong-de-shu-ju-ku.html">
+            
+                <a href="../chapter1/27-pei-zhi-mysql-fu-wu-qi/271-hive-wei-sha-xu-yao-pu-tong-de-shu-ju-ku.html">
+            
+                    
+                    2.7.1 Hive 为啥需要普通的数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.2" data-path="../di-8-zhang-hive-zheng-he-mysql/102-wei-sha-yao-yong-mysql.html">
+            
+                <a href="../di-8-zhang-hive-zheng-he-mysql/102-wei-sha-yao-yong-mysql.html">
+            
+                    
+                    2.7.2 为啥要用 Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.3" data-path="../di-8-zhang-hive-zheng-he-mysql/103-an-zhuang-mysql.html">
+            
+                <a href="../di-8-zhang-hive-zheng-he-mysql/103-an-zhuang-mysql.html">
+            
+                    
+                    2.7.3 安装 Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7.4" data-path="../di-8-zhang-hive-zheng-he-mysql/104-hive-zhong-de-yuan-shu-ju-pei-zhi-dao-mysql.html">
+            
+                <a href="../di-8-zhang-hive-zheng-he-mysql/104-hive-zhong-de-yuan-shu-ju-pei-zhi-dao-mysql.html">
+            
+                    
+                    2.7.4 Hive 中的元数据配置到 Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../chapter1/27-hive-qi-ta-chang-yong-ming-ling.html">
+            
+                <a href="../chapter1/27-hive-qi-ta-chang-yong-ming-ling.html">
+            
+                    
+                    2.8 HIve 其他常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../chapter1/28-hive-chang-jian-shu-xing-pei-zhi.html">
+            
+                <a href="../chapter1/28-hive-chang-jian-shu-xing-pei-zhi.html">
+            
+                    
+                    2.9 Hive 常见属性配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../di-3-zhang-chang-yong-shu-ju-lei-xing.html">
+            
+                <a href="../di-3-zhang-chang-yong-shu-ju-lei-xing.html">
+            
+                    
+                    第 3 章 常用数据类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="31-ji-ben-shu-ju-lei-xing.html">
+            
+                <a href="31-ji-ben-shu-ju-lei-xing.html">
+            
+                    
+                    3.1 基本数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="32-ji-he-shu-ju-lei-xing.html">
+            
+                <a href="32-ji-he-shu-ju-lei-xing.html">
+            
+                    
+                    3.2 复杂数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="33-lei-xing-de-zhuan-huan.html">
+            
+                <a href="33-lei-xing-de-zhuan-huan.html">
+            
+                    
+                    3.3 类型的转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../di-4-zhang-ddl-shu-ju-ding-yi.html">
+            
+                <a href="../di-4-zhang-ddl-shu-ju-ding-yi.html">
+            
+                    
+                    第 4 章 DDL 数据定义
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../di-4-zhang-ddl-shu-ju-ding-yi/41-chuang-jian-shu-ju-ku.html">
+            
+                <a href="../di-4-zhang-ddl-shu-ju-ding-yi/41-chuang-jian-shu-ju-ku.html">
+            
+                    
+                    4.1 数据库相关 DDL 操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../di-4-zhang-ddl-shu-ju-ding-yi/42-biao-ji-ben-ddl-cao-zuo.html">
+            
+                <a href="../di-4-zhang-ddl-shu-ju-ding-yi/42-biao-ji-ben-ddl-cao-zuo.html">
+            
+                    
+                    4.2 表 DDL 操作:创建表和删除表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../di-4-zhang-ddl-shu-ju-ding-yi/43-biao-ddl-cao-4f5c3a-xiu-gai-biao.html">
+            
+                <a href="../di-4-zhang-ddl-shu-ju-ding-yi/43-biao-ddl-cao-4f5c3a-xiu-gai-biao.html">
+            
+                    
+                    4.3 表 DDL 操作: 修改表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../di-4-zhang-ddl-shu-ju-ding-yi/44-nei-bu-biao-he-wai-bu-biao.html">
+            
+                <a href="../di-4-zhang-ddl-shu-ju-ding-yi/44-nei-bu-biao-he-wai-bu-biao.html">
+            
+                    
+                    4.4 内部表和外部表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../di-4-zhang-ddl-shu-ju-ding-yi/45-fen-qu-biao.html">
+            
+                <a href="../di-4-zhang-ddl-shu-ju-ding-yi/45-fen-qu-biao.html">
+            
+                    
+                    4.5 分区表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../di-5-zhang-dml-shu-ju-cao-zuo.html">
+            
+                <a href="../di-5-zhang-dml-shu-ju-cao-zuo.html">
+            
+                    
+                    第 5 章 DML 数据操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../di-5-zhang-dml-shu-ju-cao-zuo/51-shu-ju-dao-ru.html">
+            
+                <a href="../di-5-zhang-dml-shu-ju-cao-zuo/51-shu-ju-dao-ru.html">
+            
+                    
+                    5.1 数据导入表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../di-5-zhang-dml-shu-ju-cao-zuo/52-shu-ju-dao-chu.html">
+            
+                <a href="../di-5-zhang-dml-shu-ju-cao-zuo/52-shu-ju-dao-chu.html">
+            
+                    
+                    5.2 数据从表中导出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../di-5-zhang-dml-shu-ju-cao-zuo/53-qing-kong-biao-zhong-de-shu-ju.html">
+            
+                <a href="../di-5-zhang-dml-shu-ju-cao-zuo/53-qing-kong-biao-zhong-de-shu-ju.html">
+            
+                    
+                    5.3 清空表中的数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../di-7-zhang-han-shu.html">
+            
+                <a href="../di-7-zhang-han-shu.html">
+            
+                    
+                    第 7 章 函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../di-7-zhang-han-shu/71-xi-tong-nei-zhi-han-shu.html">
+            
+                <a href="../di-7-zhang-han-shu/71-xi-tong-nei-zhi-han-shu.html">
+            
+                    
+                    7.1 系统内置函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../di-7-zhang-han-shu/72-zi-ding-yi-han-shu.html">
+            
+                <a href="../di-7-zhang-han-shu/72-zi-ding-yi-han-shu.html">
+            
+                    
+                    7.2 自定义函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../di-7-zhang-han-shu/73-zi-ding-yi-udf-han-shu.html">
+            
+                <a href="../di-7-zhang-han-shu/73-zi-ding-yi-udf-han-shu.html">
+            
+                    
+                    7.3 自定义 UDF 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../di-6-zhang-cha-xun.html">
+            
+                <a href="../di-6-zhang-cha-xun.html">
+            
+                    
+                    第 6 章 查询
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../di-6-zhang-cha-xun/61-ji-ben-cha-xun.html">
+            
+                <a href="../di-6-zhang-cha-xun/61-ji-ben-cha-xun.html">
+            
+                    
+                    6.1 基本查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../di-6-zhang-cha-xun/62-where-yu-ju.html">
+            
+                <a href="../di-6-zhang-cha-xun/62-where-yu-ju.html">
+            
+                    
+                    6.2 where 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../di-6-zhang-cha-xun/63-fen-zu.html">
+            
+                <a href="../di-6-zhang-cha-xun/63-fen-zu.html">
+            
+                    
+                    6.3 分组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../di-6-zhang-cha-xun/64-join-yu-ju.html">
+            
+                <a href="../di-6-zhang-cha-xun/64-join-yu-ju.html">
+            
+                    
+                    6.4 join 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../di-6-zhang-cha-xun/65-pai-xu.html">
+            
+                <a href="../di-6-zhang-cha-xun/65-pai-xu.html">
+            
+                    
+                    6.5 排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../di-6-zhang-cha-xun/66-fen-tong-he-chou-yang-cha-xun.html">
+            
+                <a href="../di-6-zhang-cha-xun/66-fen-tong-he-chou-yang-cha-xun.html">
+            
+                    
+                    6.6 分桶和抽样查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../di-6-zhang-cha-xun/67-duo-xing-zhuan-lie-cha-xun.html">
+            
+                <a href="../di-6-zhang-cha-xun/67-duo-xing-zhuan-lie-cha-xun.html">
+            
+                    
+                    6.7 多行转列查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../di-6-zhang-cha-xun/57-lie-zhuan-xing-cha-xun.html">
+            
+                <a href="../di-6-zhang-cha-xun/57-lie-zhuan-xing-cha-xun.html">
+            
+                    
+                    5.7 列转行查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="../di-6-zhang-cha-xun/58-chuang-kou-han-shu.html">
+            
+                <a href="../di-6-zhang-cha-xun/58-chuang-kou-han-shu.html">
+            
+                    
+                    5.8 窗口查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../di-6-zhang-cha-xun/581-rank-han-shu.html">
+            
+                <a href="../di-6-zhang-cha-xun/581-rank-han-shu.html">
+            
+                    
+                    5.8_1 rank 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="../di-6-zhang-cha-xun/59-gei-null-zi-duan-fu-zhi.html">
+            
+                <a href="../di-6-zhang-cha-xun/59-gei-null-zi-duan-fu-zhi.html">
+            
+                    
+                    5.9 给 NULL 字段赋值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="../di-6-zhang-cha-xun/510-case-when.html">
+            
+                <a href="../di-6-zhang-cha-xun/510-case-when.html">
+            
+                    
+                    5.10 case when
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../di-8-zhang-ya-suo-he-cun-chu.html">
+            
+                <a href="../di-8-zhang-ya-suo-he-cun-chu.html">
+            
+                    
+                    第 8 章 压缩和存储
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../di-8-zhang-ya-suo-he-cun-chu/81-bian-yi-hadoop-yuan-ma.html">
+            
+                <a href="../di-8-zhang-ya-suo-he-cun-chu/81-bian-yi-hadoop-yuan-ma.html">
+            
+                    
+                    8.1 编译 Hadoop 源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../di-8-zhang-ya-suo-he-cun-chu/82-ya-suo-pei-zhi.html">
+            
+                <a href="../di-8-zhang-ya-suo-he-cun-chu/82-ya-suo-pei-zhi.html">
+            
+                    
+                    8.2 压缩配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../di-8-zhang-ya-suo-he-cun-chu/83-kai-qi-map-jie-duan-shu-chu-ya-suo.html">
+            
+                <a href="../di-8-zhang-ya-suo-he-cun-chu/83-kai-qi-map-jie-duan-shu-chu-ya-suo.html">
+            
+                    
+                    8.3 开启 Map 阶段输出压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../di-8-zhang-ya-suo-he-cun-chu/84-kai-qi-reduce-shu-chu-jie-duan-ya-suo.html">
+            
+                <a href="../di-8-zhang-ya-suo-he-cun-chu/84-kai-qi-reduce-shu-chu-jie-duan-ya-suo.html">
+            
+                    
+                    8.4 开启 Reduce 输出阶段压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../di-8-zhang-ya-suo-he-cun-chu/85-wen-jian-cun-chu-ge-shi.html">
+            
+                <a href="../di-8-zhang-ya-suo-he-cun-chu/85-wen-jian-cun-chu-ge-shi.html">
+            
+                    
+                    8.5 文件存储格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../di-8-zhang-ya-suo-he-cun-chu/85-zhu-liu-wen-jian-ge-shi-dui-bi-shi-yan.html">
+            
+                <a href="../di-8-zhang-ya-suo-he-cun-chu/85-zhu-liu-wen-jian-ge-shi-dui-bi-shi-yan.html">
+            
+                    
+                    8.5 主流文件格式对比实验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../di-8-zhang-ya-suo-he-cun-chu/86-cun-chu-he-ya-suo-de-jie-he.html">
+            
+                <a href="../di-8-zhang-ya-suo-he-cun-chu/86-cun-chu-he-ya-suo-de-jie-he.html">
+            
+                    
+                    8.6 存储和压缩的结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../di-9-zhang-qi-ye-ji-diao-you.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you.html">
+            
+                    
+                    第 9 章 企业级调优
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../di-9-zhang-qi-ye-ji-diao-you/91-fetch.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/91-fetch.html">
+            
+                    
+                    9.1 Fetch 抓取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../di-9-zhang-qi-ye-ji-diao-you/92-ben-di-mo-shi.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/92-ben-di-mo-shi.html">
+            
+                    
+                    9.2 本地模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua.html">
+            
+                    
+                    9.3 表的优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.3.1" data-path="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/931-xiao-biao-he-da-biao-join.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/931-xiao-biao-he-da-biao-join.html">
+            
+                    
+                    9.3.1 小表和大表 join
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.2" data-path="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/932-kong-key-you-hua.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/932-kong-key-you-hua.html">
+            
+                    
+                    9.3.2 空 key 过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.3" data-path="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/933-kong-key-zhuan-huan.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/933-kong-key-zhuan-huan.html">
+            
+                    
+                    9.3.3 空 key 转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.4" data-path="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/934-map-join.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/934-map-join.html">
+            
+                    
+                    9.3.4 map join
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.5" data-path="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/935-group-by-you-hua.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/935-group-by-you-hua.html">
+            
+                    
+                    9.3.5 group by 优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.6" data-path="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/936-countdistinct-qu-zhong-kong-jian.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/936-countdistinct-qu-zhong-kong-jian.html">
+            
+                    
+                    9.3.6 count(distinct) 去重统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.7" data-path="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/937-bi-mian-di-qia-er-ji.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/937-bi-mian-di-qia-er-ji.html">
+            
+                    
+                    9.3.7 避免笛卡尔积
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.8" data-path="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/938-xing-lie-guo-lv.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/938-xing-lie-guo-lv.html">
+            
+                    
+                    9.3.8 行列过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.9" data-path="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/939-dong-tai-fen-qu-diao-zheng.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/939-dong-tai-fen-qu-diao-zheng.html">
+            
+                    
+                    9.3.9 动态分区调整
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3.10" data-path="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/9310-fen-qu-he-fen-tong.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/93-biao-de-you-hua/9310-fen-qu-he-fen-tong.html">
+            
+                    
+                    9.3.10 分区和分桶
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../di-9-zhang-qi-ye-ji-diao-you/94-shu-ju-qing-xie.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/94-shu-ju-qing-xie.html">
+            
+                    
+                    9.4 数据倾斜
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../di-9-zhang-qi-ye-ji-diao-you/95-bing-xing-zhi-xing.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/95-bing-xing-zhi-xing.html">
+            
+                    
+                    9.5 并行执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../di-9-zhang-qi-ye-ji-diao-you/96-yan-ge-mo-shi.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/96-yan-ge-mo-shi.html">
+            
+                    
+                    9.6 严格模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../di-9-zhang-qi-ye-ji-diao-you/97-jvm-zhong-yong.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/97-jvm-zhong-yong.html">
+            
+                    
+                    9.7 JVM 重用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../di-9-zhang-qi-ye-ji-diao-you/98-tui-ce-zhi-xing.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/98-tui-ce-zhi-xing.html">
+            
+                    
+                    9.8 推测执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../di-9-zhang-qi-ye-ji-diao-you/99-shu-ju-ya-suo.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/99-shu-ju-ya-suo.html">
+            
+                    
+                    9.9 数据压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="../di-9-zhang-qi-ye-ji-diao-you/91-fetch-zhua-qu.html">
+            
+                <a href="../di-9-zhang-qi-ye-ji-diao-you/91-fetch-zhua-qu.html">
+            
+                    
+                    9.10 执行计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../di-11-zhang-hive-shi-zhan.html">
+            
+                <a href="../di-11-zhang-hive-shi-zhan.html">
+            
+                    
+                    第 11 章 Hive 实战之谷粒影音
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../di-11-zhang-hive-shi-zhan/111-xu-qiu-miao-shu.html">
+            
+                <a href="../di-11-zhang-hive-shi-zhan/111-xu-qiu-miao-shu.html">
+            
+                    
+                    11.1 需求描述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../di-11-zhang-hive-shi-zhan/112-shu-ju-jie-gou.html">
+            
+                <a href="../di-11-zhang-hive-shi-zhan/112-shu-ju-jie-gou.html">
+            
+                    
+                    11.2 数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../di-11-zhang-hive-shi-zhan/113-zhun-bei-gong-zuo.html">
+            
+                <a href="../di-11-zhang-hive-shi-zhan/113-zhun-bei-gong-zuo.html">
+            
+                    
+                    11.3 准备工作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi.html">
+            
+                <a href="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi.html">
+            
+                    
+                    11.4 业务分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.4.1" data-path="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi/1141-tong-ji-shi-pin-guan-kan-shu-top10.html">
+            
+                <a href="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi/1141-tong-ji-shi-pin-guan-kan-shu-top10.html">
+            
+                    
+                    11.4.1 统计视频观看数 Top10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4.2" data-path="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi/1142-tong-ji-shi-pin-lei-bie-re-du-top10.html">
+            
+                <a href="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi/1142-tong-ji-shi-pin-lei-bie-re-du-top10.html">
+            
+                    
+                    11.4.2 统计视频类别热度 Top10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4.3" data-path="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi/1143-tong-ji-chu-shi-pin-guan-kan-shu-zui-gao-de-20-ge-shi-pin-de-suo-shu-lei-bie-yi-ji-lei-bie-bao-han-top20-shi-pin-de-ge-shu.html">
+            
+                <a href="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi/1143-tong-ji-chu-shi-pin-guan-kan-shu-zui-gao-de-20-ge-shi-pin-de-suo-shu-lei-bie-yi-ji-lei-bie-bao-han-top20-shi-pin-de-ge-shu.html">
+            
+                    
+                    11.4.3 统计出视频观看数最高的20个视频的所属类别以及类别包含Top20视频的个数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4.4" data-path="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi/1144-tong-ji-shi-pin-guan-kan-shu-top50-suo-guan-lian-shi-pin-de-suo-shu-lei-bie-rank.html">
+            
+                <a href="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi/1144-tong-ji-shi-pin-guan-kan-shu-top50-suo-guan-lian-shi-pin-de-suo-shu-lei-bie-rank.html">
+            
+                    
+                    11.4.4 统计视频观看数Top50所关联视频的所属类别 Rank
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4.5" data-path="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi/1145-tong-ji-mei-ge-lei-bie-zhong-de-shi-pin-re-du-top10.html">
+            
+                <a href="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi/1145-tong-ji-mei-ge-lei-bie-zhong-de-shi-pin-re-du-top10.html">
+            
+                    
+                    11.4.5 统计每个类别中的视频热度 Top10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4.6" data-path="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi/1146-tong-ji-mei-ge-lei-bie-zhong-shi-pin-liu-liang-top10.html">
+            
+                <a href="../di-11-zhang-hive-shi-zhan/114-ye-wu-fen-xi/1146-tong-ji-mei-ge-lei-bie-zhong-shi-pin-liu-liang-top10.html">
+            
+                    
+                    11.4.6 统计每个类别中视频流量Top10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4.7" data-path="../di-11-zhang-hive-shi-zhan/1147-tong-ji-shang-chuan-shi-pin-zui-duo-de-yong-hu-top10-yi-ji-ta-men-shang-chuan-de-guan-kan-ci-shu-zai-qian-20-de-shi-pin.html">
+            
+                <a href="../di-11-zhang-hive-shi-zhan/1147-tong-ji-shang-chuan-shi-pin-zui-duo-de-yong-hu-top10-yi-ji-ta-men-shang-chuan-de-guan-kan-ci-shu-zai-qian-20-de-shi-pin.html">
+            
+                    
+                    11.4.7 统计上传视频最多的用户 Top10 以及他们上传的观看次数在前 20 的视频
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.2 复杂数据类型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="32-&#x590D;&#x6742;&#x6570;&#x636E;&#x7C7B;&#x578B;">3.2 &#x590D;&#x6742;&#x6570;&#x636E;&#x7C7B;&#x578B;</h1>
+<p>&#x53C2;&#x8003;&#x5730;&#x5740;:<a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Types#LanguageManualTypes-Overview" target="_blank">https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Types#LanguageManualTypes-Overview</a></p>
+<p>Hive &#x6709; 4 &#x4E2D;&#x590D;&#x6742;&#x7C7B;&#x578B;.</p>
+<ol>
+<li><p><code>arrays:  ARRAY<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>data_type</span><span class="token punctuation">&gt;</span></span></code>
+ &#x6570;&#x7EC4;&#x662F;&#x4E00;&#x7EC4;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7C7B;&#x578B;&#x548C;&#x540D;&#x79F0;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x96C6;&#x5408;&#x3002;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x79F0;&#x4E3A;&#x6570;&#x7EC4;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x6BCF;&#x4E2A;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x7F16;&#x53F7;&#xFF0C;&#x7F16;&#x53F7;&#x4ECE;&#x96F6;&#x5F00;&#x59CB;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6570;&#x7EC4;&#x503C;&#x4E3A;[&#x2018;John&#x2019;, &#x2018;Doe&#x2019;]&#xFF0C;&#x90A3;&#x4E48;&#x7B2C;2&#x4E2A;&#x5143;&#x7D20;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>&#x6570;&#x7EC4;&#x540D;[1]</code>&#x8FDB;&#x884C;&#x5F15;&#x7528;&#x3002;</p>
+</li>
+<li><p><code>maps: MAP<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>primitive_type,</span> <span class="token attr-name">data_type</span><span class="token punctuation">&gt;</span></span></code>
+ MAP &#x662F;&#x4E00;&#x7EC4;&#x952E;-&#x503C;&#x5BF9;&#x5143;&#x7EC4;&#x96C6;&#x5408;&#xFF0C;&#x4F7F;&#x7528;&#x6570;&#x7EC4;&#x8868;&#x793A;&#x6CD5;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E2A;&#x5217;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;MAP&#xFF0C;&#x5176;&#x4E2D;&#x952E;-&gt;&#x503C;&#x5BF9;&#x662F;<code>&#x2019;first&#x2019;-&gt;&#x2019;John&#x2019;&#x548C;&#x2019;last&#x2019;-&gt;&#x2019;Doe&#x2019;</code>&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>&#x5B57;&#x6BB5;&#x540D;[&#x2018;last&#x2019;]</code>&#x83B7;&#x53D6;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</p>
+</li>
+<li><p><code>structs: STRUCT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>col_name</span> <span class="token attr-name">:</span> <span class="token attr-name">data_type</span> <span class="token attr-name">[COMMENT</span> <span class="token attr-name">col_comment],</span> <span class="token attr-name">...</span><span class="token punctuation">&gt;</span></span></code>
+ &#x548C;c&#x8BED;&#x8A00;&#x4E2D;&#x7684;struct&#x7C7B;&#x4F3C;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x201C;&#x70B9;&#x201D;&#x7B26;&#x53F7;&#x8BBF;&#x95EE;&#x5143;&#x7D20;&#x5185;&#x5BB9;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E2A;&#x5217;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F; <code>STRUCT{first STRING, last STRING}</code>,&#x90A3;&#x4E48;&#x7B2C;1&#x4E2A;&#x5143;&#x7D20;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;: <code>&#x5B57;&#x6BB5;.first</code>&#x6765;&#x5F15;&#x7528;&#x3002;</p>
+</li>
+<li><p><code>union: UNIONTYPE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>data_type,</span> <span class="token attr-name">data_type,</span> <span class="token attr-name">...</span><span class="token punctuation">&gt;</span></span></code>
+ &#x8054;&#x5408;&#x578B;. &#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x5230;&#x76EE;&#x524D;&#x652F;&#x6301;&#x8FD8;&#x4E0D;&#x5B8C;&#x5168;. &#x5EFA;&#x8BAE;&#x4E0D;&#x8981;&#x4F7F;&#x7528;.</p>
+</li>
+</ol>
+<p>&#x590D;&#x6742;&#x7C7B;&#x578B;&#x5141;&#x8BB8;&#x4EFB;&#x610F;&#x6DF1;&#x5C42;&#x6B21;&#x7684;&#x5D4C;&#x5957;.</p>
+<h2 id="&#x5B9E;&#x4F8B;&#x64CD;&#x4F5C;">&#x5B9E;&#x4F8B;&#x64CD;&#x4F5C;:</h2>
+<h3 id="&#x6B65;&#x9AA4;1-&#x6570;&#x636E;&#x5206;&#x6790;">&#x6B65;&#x9AA4;1: &#x6570;&#x636E;&#x5206;&#x6790;</h3>
+<p>&#x5047;&#x8BBE;&#x6709;&#x4E00;&#x884C;&#x8FD9;&#x6837;&#x7684;&#x6570;&#x636E;:</p>
+<pre class="language-"><code>songsong,bingbing_lili,xiao song:18_xiaoxiao song:19,hui long guan_beijing
+</code></pre><p>&#x4ED6;&#x8868;&#x793A;&#x7684;&#x542B;&#x4E49;&#x53EF;&#x4EE5;&#x7528;&#x4E0B;&#x9762;&#x7684;<code>json</code>&#x6765;&#x8868;&#x793A;</p>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;songsong&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;friends&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>   // &#x8FD9;&#x4E2A;&#x7528;&#x6570;&#x7EC4;&#x6765;&#x8868;&#x793A;
+    <span class="token string">&quot;bingbing&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;lili&quot;</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;children&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>  // &#x7528;&#x952E;&#x503C;&#x5BF9;map&#x6765;&#x8868;&#x793A;
+    <span class="token property">&quot;xiao song&quot;</span><span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;xiaoxiao song&quot;</span><span class="token operator">:</span> <span class="token number">19</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;address&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>  // &#x7528; struct &#x6765;&#x8868;&#x793A;
+    <span class="token property">&quot;street&quot;</span><span class="token operator">:</span> <span class="token string">&quot;hui long guan&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;city&quot;</span><span class="token operator">:</span> <span class="token string">&quot;beijing&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x4ECE;&#x8FD9;&#x4E2A; json, &#x6211;&#x4EEC;&#x5F88;&#x5BB9;&#x5206;&#x6790;&#x51FA;&#x6765; &#x5C06;&#x6765;&#x8981;&#x5EFA;&#x8BBE;&#x7684;&#x8868;&#x53EA;&#x9700;&#x8981; 4 &#x4E2A;&#x5B57;&#x6BB5;&#x5C31;&#x53EF;&#x4EE5;: <code>name</code>, <code>friends</code>, <code>children</code> , <code>address</code></p>
+<h3 id="&#x6B65;&#x9AA4;2-&#x51C6;&#x5907;-2-&#x6761;&#x6570;&#x636E;">&#x6B65;&#x9AA4;2: &#x51C6;&#x5907; 2 &#x6761;&#x6570;&#x636E;</h3>
+<pre class="language-"><code>songsong,bingbing_lili,xiao song:18_xiaoxiao song:19,hui long guan_beijing
+yangyang,caicai_susu,xiao yang:18_xiaoxiao yang:19,chao yang_beijing
+</code></pre><p>&#x628A;&#x6570;&#x636E;&#x5B58;&#x5165;&#x5230;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;.</p>
+<h3 id="&#x6B65;&#x9AA4;3-&#x5EFA;&#x8868;">&#x6B65;&#x9AA4;3: &#x5EFA;&#x8868;</h3>
+<p>&#x6839;&#x636E;&#x524D;&#x9762;&#x7684;&#x5206;&#x6790;&#x5EFA;&#x8868;.</p>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> person<span class="token punctuation">(</span>
+    name string<span class="token punctuation">,</span>
+    friends array<span class="token operator">&lt;</span>string<span class="token operator">&gt;</span><span class="token punctuation">,</span>
+    children map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token operator">&gt;</span><span class="token punctuation">,</span>
+    address struct<span class="token operator">&lt;</span>street : string<span class="token punctuation">,</span> city : string<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">row</span> format delimited 
+<span class="token keyword">fields</span> <span class="token keyword">terminated</span> <span class="token keyword">by</span> <span class="token string">&apos;,&apos;</span>
+collection items <span class="token keyword">terminated</span> <span class="token keyword">by</span> <span class="token string">&apos;_&apos;</span>
+map <span class="token keyword">keys</span> <span class="token keyword">terminated</span> <span class="token keyword">by</span> <span class="token string">&apos;:&apos;</span>
+<span class="token keyword">lines</span> <span class="token keyword">terminated</span> <span class="token keyword">by</span> <span class="token string">&apos;\n&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<ol>
+<li><p><code>row format delimited fields terminated by &apos;,&apos;</code> : &#x6BCF;&#x884C;&#x4E2D;&#x5217;&#x4E0E;&#x5217;&#x7684;&#x5206;&#x9694;&#x7B26;&#x662F;<code>,</code></p>
+</li>
+<li><p><code>collection items terminated by &apos;_&apos;</code>:  <code>array</code> &#x548C; <code>sturct</code>&#x7684;&#x5206;&#x9694;&#x7B26;&#x662F;<code>_</code></p>
+</li>
+<li><p><code>map keys terminated by &apos;:&apos;</code> , map &#x952E;&#x503C;&#x5BF9;&#x7684;&#x5206;&#x9694;&#x7B26;&#x662F; <code>:</code></p>
+</li>
+<li><p><code>lines terminated by &apos;\n&apos;</code>, &#x884C;&#x5206;&#x9694;&#x7B26;&#x662F; <code>\n</code></p>
+</li>
+</ol>
+<h4 id="&#x8868;&#x521B;&#x5EFA;&#x6210;&#x529F;">&#x8868;&#x521B;&#x5EFA;&#x6210;&#x529F;:</h4>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1540193093.png-atguiguText" alt=""></p>
+<h4 id="&#x67E5;&#x770B;&#x8868;&#x7ED3;&#x6784;">&#x67E5;&#x770B;&#x8868;&#x7ED3;&#x6784;:</h4>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1540193223.png-atguiguText" alt=""></p>
+<h3 id="&#x6B65;&#x9AA4;4-&#x628A;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x63D2;&#x5165;&#x5230;&#x8868;&#x4E2D;">&#x6B65;&#x9AA4;4: &#x628A;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x63D2;&#x5165;&#x5230;&#x8868;&#x4E2D;</h3>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">load</span> <span class="token keyword">data</span> <span class="token keyword">local</span> inpath <span class="token string">&apos;/opt/module/datas/persons.txt&apos;</span> <span class="token keyword">into</span> <span class="token keyword">table</span> person<span class="token punctuation">;</span>
+</code></pre>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1540193581.png-atguiguText" alt=""></p>
+<h3 id="&#x6B65;&#x9AA4;5-&#x6839;&#x636E;&#x9700;&#x8981;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x67E5;&#x8BE2;">&#x6B65;&#x9AA4;5: &#x6839;&#x636E;&#x9700;&#x8981;&#x6267;&#x884C;&#x4E00;&#x4E9B;&#x67E5;&#x8BE2;</h3>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1540193905.png-atguiguText" alt=""></p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-12-07 20:11:57
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="31-ji-ben-shu-ju-lei-xing.html" class="navigation navigation-prev " aria-label="Previous page: 3.1 基本数据类型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="33-lei-xing-de-zhuan-huan.html" class="navigation navigation-next " aria-label="Next page: 3.3 类型的转换">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.2 复杂数据类型","level":"1.3.2","depth":2,"next":{"title":"3.3 类型的转换","level":"1.3.3","depth":2,"path":"di-3-zhang-chang-yong-shu-ju-lei-xing/33-lei-xing-de-zhuan-huan.md","ref":"di-3-zhang-chang-yong-shu-ju-lei-xing/33-lei-xing-de-zhuan-huan.md","articles":[]},"previous":{"title":"3.1 基本数据类型","level":"1.3.1","depth":2,"path":"di-3-zhang-chang-yong-shu-ju-lei-xing/31-ji-ben-shu-ju-lei-xing.md","ref":"di-3-zhang-chang-yong-shu-ju-lei-xing/31-ji-ben-shu-ju-lei-xing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_hive_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-3-zhang-chang-yong-shu-ju-lei-xing/32-ji-he-shu-ju-lei-xing.md","mtime":"2018-12-07T12:11:57.153Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-16T07:09:39.038Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,894 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.3.1 调度策略 · 大数据 bigdata_spark_kernel-optimize_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="432-ben-di-hua-diao-du.html" />
+    
+    
+    <link rel="prev" href="../43-spark-task-ji-bie-diao-du.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">第 1 部分: Spark 内核</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    第 1 章 Spark 内核概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../11-spark-he-xin-zu-jian-hui-gu.html">
+            
+                <a href="../../11-spark-he-xin-zu-jian-hui-gu.html">
+            
+                    
+                    1.1 Spark 核心组件回顾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../12-spark-tong-yong-yun-xing-liu-cheng-gai-shu.html">
+            
+                <a href="../../12-spark-tong-yong-yun-xing-liu-cheng-gai-shu.html">
+            
+                    
+                    1.2 Spark 通用运行流程概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../chapter1.html">
+            
+                <a href="../../chapter1.html">
+            
+                    
+                    第 2 章 Spark 通讯架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../chapter1/21-spark-tong-xun-jia-gou-gai-shu.html">
+            
+                <a href="../../chapter1/21-spark-tong-xun-jia-gou-gai-shu.html">
+            
+                    
+                    2.1 Spark 通讯架构概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../chapter1/23-spark-tong-xin-jia-gou-jie-xi.html">
+            
+                <a href="../../chapter1/23-spark-tong-xin-jia-gou-jie-xi.html">
+            
+                    
+                    2.2 Spark 通信架构解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../chapter1/22-spark-qi-dong-liu-cheng-fen-xi.html">
+            
+                <a href="../../chapter1/22-spark-qi-dong-liu-cheng-fen-xi.html">
+            
+                    
+                    2.3 Spark 启动流程分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../chapter1/22-spark-qi-dong-liu-cheng-fen-xi/231-master-liu-cheng-fen-xi.html">
+            
+                <a href="../../chapter1/22-spark-qi-dong-liu-cheng-fen-xi/231-master-liu-cheng-fen-xi.html">
+            
+                    
+                    2.3.1 Master 启动源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../../chapter1/22-spark-qi-dong-liu-cheng-fen-xi/232-worker-liu-cheng-fen-xi.html">
+            
+                <a href="../../chapter1/22-spark-qi-dong-liu-cheng-fen-xi/232-worker-liu-cheng-fen-xi.html">
+            
+                    
+                    2.3.2 Worker 启动源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../di-3-zhang-spark-bu-shu-mo-shi.html">
+            
+                <a href="../../di-3-zhang-spark-bu-shu-mo-shi.html">
+            
+                    
+                    第 3 章 Spark 部署模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi.html">
+            
+                <a href="../../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi.html">
+            
+                    
+                    3.1 Yarn 模式运行机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.html">
+            
+                <a href="../../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.html">
+            
+                    
+                    1. Yarn cluster 模式运行机制源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-client-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.html">
+            
+                <a href="../../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-client-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.html">
+            
+                    
+                    2. Yarn client 模式运行机制源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../di-3-zhang-spark-bu-shu-mo-shi/32-standalone-mo-shi-yun-xing-ji-zhi.html">
+            
+                <a href="../../di-3-zhang-spark-bu-shu-mo-shi/32-standalone-mo-shi-yun-xing-ji-zhi.html">
+            
+                    
+                    3.2 Standalone 模式运行机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi.html">
+            
+                <a href="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi.html">
+            
+                    
+                    第 4 章 Spark 任务调度机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../41-spark-ren-wu-diao-du-gai-shu.html">
+            
+                <a href="../41-spark-ren-wu-diao-du-gai-shu.html">
+            
+                    
+                    4.1 Spark 任务调度概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../42-spark-stage-ji-bie-diao-du.html">
+            
+                <a href="../42-spark-stage-ji-bie-diao-du.html">
+            
+                    
+                    4.2 Spark Stage 级别调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../43-spark-task-ji-bie-diao-du.html">
+            
+                <a href="../43-spark-task-ji-bie-diao-du.html">
+            
+                    
+                    4.3 Spark Task 级别调度
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.3.1" data-path="431-diao-du-ce-lve.html">
+            
+                <a href="431-diao-du-ce-lve.html">
+            
+                    
+                    4.3.1 调度策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="432-ben-di-hua-diao-du.html">
+            
+                <a href="432-ben-di-hua-diao-du.html">
+            
+                    
+                    4.3.2 本地化调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="433-shi-bai-zhong-shi-he-hei-ming-dan.html">
+            
+                <a href="433-shi-bai-zhong-shi-he-hei-ming-dan.html">
+            
+                    
+                    4.3.3 失败重试和黑名单
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../44-ren-wu-diao-du-yuan-ma-fen-xi.html">
+            
+                <a href="../44-ren-wu-diao-du-yuan-ma-fen-xi.html">
+            
+                    
+                    4.4 Stage 级别任务调度源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../45-task-ji-bie-ren-wu-diao-du-yuan-ma-fen-xi.html">
+            
+                <a href="../45-task-ji-bie-ren-wu-diao-du-yuan-ma-fen-xi.html">
+            
+                    
+                    4.5 Task 级别任务调度源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../di-5-zhang-spark-shuffle-jie-xi.html">
+            
+                <a href="../../di-5-zhang-spark-shuffle-jie-xi.html">
+            
+                    
+                    第 5 章 Spark Shuffle 解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../di-5-zhang-spark-shuffle-jie-xi/51-shuffle-de-he-xin-yao-dian.html">
+            
+                <a href="../../di-5-zhang-spark-shuffle-jie-xi/51-shuffle-de-he-xin-yao-dian.html">
+            
+                    
+                    5.1 Shuffle 的核心要点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../di-5-zhang-spark-shuffle-jie-xi/52-hashshuffle-jie-xi.html">
+            
+                <a href="../../di-5-zhang-spark-shuffle-jie-xi/52-hashshuffle-jie-xi.html">
+            
+                    
+                    5.2 HashShuffle 解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../di-5-zhang-spark-shuffle-jie-xi/53-sortshuffle-jie-xi.html">
+            
+                <a href="../../di-5-zhang-spark-shuffle-jie-xi/53-sortshuffle-jie-xi.html">
+            
+                    
+                    5.3 SortShuffle 解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../di-5-zhang-spark-shuffle-jie-xi/53-sortshuffle-jie-xi/sortshuffle-yuan-ma-jie-xi.html">
+            
+                <a href="../../di-5-zhang-spark-shuffle-jie-xi/53-sortshuffle-jie-xi/sortshuffle-yuan-ma-jie-xi.html">
+            
+                    
+                    SortShuffle 源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../di-6-zhang-spark-nei-cun-jie-xi.html">
+            
+                <a href="../../di-6-zhang-spark-nei-cun-jie-xi.html">
+            
+                    
+                    第 6 章 Spark 内存管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../61-dui-nei-he-dui-wai-nei-cun-gui-hua.html">
+            
+                <a href="../../61-dui-nei-he-dui-wai-nei-cun-gui-hua.html">
+            
+                    
+                    6.1 堆内核堆外内存规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../62-nei-cun-kong-jian-fen-pei.html">
+            
+                <a href="../../62-nei-cun-kong-jian-fen-pei.html">
+            
+                    
+                    6.2 内存空间分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../63-cun-chu-nei-cun-guan-li.html">
+            
+                <a href="../../63-cun-chu-nei-cun-guan-li.html">
+            
+                    
+                    6.3 存储内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../64-zhi-xing-nei-cun-guan-li.html">
+            
+                <a href="../../64-zhi-xing-nei-cun-guan-li.html">
+            
+                    
+                    6.4 执行内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 2 部分: Spark 性能优化和故障处理</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua.html">
+            
+                    
+                    第 7 章 Spark 性能优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/71-chang-gui-xing-neng-diao-you.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/71-chang-gui-xing-neng-diao-you.html">
+            
+                    
+                    7.1 常规性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/72-suan-zi-diao-you.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/72-suan-zi-diao-you.html">
+            
+                    
+                    7.2 算子调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/73-shuffle-diao-you.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/73-shuffle-diao-you.html">
+            
+                    
+                    7.3 Shuffle 调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/74-jvm-diao-you.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/74-jvm-diao-you.html">
+            
+                    
+                    7.4 JVM 调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-8-zhang-spark-shu-ju-qing-xie.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-8-zhang-spark-shu-ju-qing-xie.html">
+            
+                    
+                    第 8 章 Spark 数据倾斜解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-9-zhang-spark-troubleshooting.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-9-zhang-spark-troubleshooting.html">
+            
+                    
+                    第 9 章 Spark Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >4.3.1 调度策略</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="431-&#x8C03;&#x5EA6;&#x7B56;&#x7565;">4.3.1 &#x8C03;&#x5EA6;&#x7B56;&#x7565;</h1>
+<p><code>TaskScheduler</code>&#x652F;&#x6301;&#x4E24;&#x79CD;&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#xFF0C;&#x4E00;&#x79CD;&#x662F;<code>FIFO</code>&#xFF0C;&#x4E5F;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x662F;<code>FAIR</code>&#x3002;</p>
+<p>&#x5728;<code>TaskScheduler</code>&#x521D;&#x59CB;&#x5316;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x5B9E;&#x4F8B;&#x5316;<code>rootPool</code>&#xFF0C;&#x8868;&#x793A;&#x6811;&#x7684;&#x6839;&#x8282;&#x70B9;&#xFF0C;&#x662F;<code>Pool</code>&#x7C7B;&#x578B;&#x3002;</p>
+<h2 id="fifo&#x8C03;&#x5EA6;&#x7B56;&#x7565;"><code>FIFO</code>&#x8C03;&#x5EA6;&#x7B56;&#x7565;</h2>
+<p>&#x5982;&#x679C;&#x662F;&#x91C7;&#x7528;<code>FIFO</code>&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x7B80;&#x5355;&#x5730;&#x5C06;<code>TaskSetManager</code>&#x6309;&#x7167;&#x5148;&#x6765;&#x5148;&#x5230;&#x7684;&#x65B9;&#x5F0F;&#x5165;&#x961F;&#xFF0C;&#x51FA;&#x961F;&#x65F6;&#x76F4;&#x63A5;&#x62FF;&#x51FA;&#x6700;&#x5148;&#x8FDB;&#x961F;&#x7684;<code>TaskSetManager</code>&#xFF0C;&#x5176;&#x6811;&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;<code>TaskSetManager</code>&#x4FDD;&#x5B58;&#x5728;&#x4E00;&#x4E2A;<code>FIFO</code>&#x961F;&#x5217;&#x4E2D;&#x3002;</p>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1554537620.png-atguiguText" alt=""></p>
+<h2 id="fair&#x8C03;&#x5EA6;&#x7B56;&#x7565;08-&#x5F00;&#x59CB;&#x652F;&#x6301;"><code>FAIR</code>&#x8C03;&#x5EA6;&#x7B56;&#x7565;(0.8 &#x5F00;&#x59CB;&#x652F;&#x6301;)</h2>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1554537637.png-atguiguText" alt=""></p>
+<p><code>FAIR</code>&#x6A21;&#x5F0F;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;<code>rootPool</code>&#x548C;&#x591A;&#x4E2A;&#x5B50;<code>Pool</code>&#xFF0C;&#x5404;&#x4E2A;&#x5B50;<code>Pool</code>&#x4E2D;&#x5B58;&#x50A8;&#x7740;&#x6240;&#x6709;&#x5F85;&#x5206;&#x914D;&#x7684;<code>TaskSetMagager</code>&#x3002;</p>
+<p>&#x5728;<code>FAIR</code>&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x5BF9;&#x5B50;<code>Pool</code>&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x518D;&#x5BF9;&#x5B50;<code>Pool</code>&#x91CC;&#x9762;&#x7684;<code>TaskSetMagager</code>&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x56E0;&#x4E3A;<code>Pool</code>&#x548C;<code>TaskSetMagager</code>&#x90FD;&#x7EE7;&#x627F;&#x4E86;<code>Schedulable</code>&#x7279;&#x8D28;&#xFF0C;&#x56E0;&#x6B64;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#x3002;</p>
+<p>&#x6392;&#x5E8F;&#x8FC7;&#x7A0B;&#x7684;&#x6BD4;&#x8F83;&#x662F;&#x57FA;&#x4E8E;<code>Fair-share</code>&#x6765;&#x6BD4;&#x8F83;&#x7684;&#xFF0C;&#x6BCF;&#x4E2A;&#x8981;&#x6392;&#x5E8F;&#x7684;&#x5BF9;&#x8C61;&#x5305;&#x542B;&#x4E09;&#x4E2A;&#x5C5E;&#x6027;: <code>runningTasks</code>&#x503C;&#xFF08;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;Task&#x6570;&#xFF09;&#x3001;<code>minShare</code>&#x503C;&#x3001;<code>weight</code>&#x503C;&#xFF0C;&#x6BD4;&#x8F83;&#x65F6;&#x4F1A;&#x7EFC;&#x5408;&#x8003;&#x91CF;<code>runningTasks</code>&#x503C;&#xFF0C;<code>minShare</code>&#x503C;&#x4EE5;&#x53CA;<code>weight</code>&#x503C;&#x3002;</p>
+<my>&#x6CE8;&#x610F;&#xFF0C;minShare&#x3001;weight&#x7684;&#x503C;&#x5747;&#x5728;&#x516C;&#x5E73;&#x8C03;&#x5EA6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;fairscheduler.xml&#x4E2D;&#x88AB;&#x6307;&#x5B9A;&#xFF0C;&#x8C03;&#x5EA6;&#x6C60;&#x5728;&#x6784;&#x5EFA;&#x9636;&#x6BB5;&#x4F1A;&#x8BFB;&#x53D6;&#x6B64;&#x6587;&#x4EF6;&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x3002;</my>
+
+<ol>
+<li><p>&#x5982;&#x679C; A &#x5BF9;&#x8C61;&#x7684;<code>runningTasks</code>&#x5927;&#x4E8E;&#x5B83;&#x7684;<code>minShare</code>&#xFF0C;B &#x5BF9;&#x8C61;&#x7684;<code>runningTasks</code>&#x5C0F;&#x4E8E;&#x5B83;&#x7684;<code>minShare</code>&#xFF0C;&#x90A3;&#x4E48;B&#x6392;&#x5728;A&#x524D;&#x9762;&#xFF1B;<my>&#xFF08;runningTasks &#x6BD4; minShare &#x5C0F;&#x7684;&#x5148;&#x6267;&#x884C;&#xFF09;</my></p>
+</li>
+<li><p>&#x5982;&#x679C;A&#x3001;B&#x5BF9;&#x8C61;&#x7684; <code>runningTasks</code> &#x90FD;&#x5C0F;&#x4E8E;&#x5B83;&#x4EEC;&#x7684; <code>minShare</code>&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x6BD4;&#x8F83; <code>runningTasks</code> &#x4E0E; <code>math.max(minShare1, 1.0)</code> &#x7684;&#x6BD4;&#x503C;&#xFF08;minShare&#x4F7F;&#x7528;&#x7387;&#xFF09;&#xFF0C;&#x8C01;&#x5C0F;&#x8C01;&#x6392;&#x524D;&#x9762;&#xFF1B;<my>&#xFF08;minShare&#x4F7F;&#x7528;&#x7387;&#x4F4E;&#x7684;&#x5148;&#x6267;&#x884C;&#xFF09;</my></p>
+</li>
+<li><p>&#x5982;&#x679C;A&#x3001;B&#x5BF9;&#x8C61;&#x7684;<code>runningTasks</code>&#x90FD;&#x5927;&#x4E8E;&#x5B83;&#x4EEC;&#x7684;<code>minShare</code>&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x6BD4;&#x8F83;<code>runningTasks</code>&#x4E0E;<code>weight</code>&#x7684;&#x6BD4;&#x503C;&#xFF08;&#x6743;&#x91CD;&#x4F7F;&#x7528;&#x7387;&#xFF09;&#xFF0C;&#x8C01;&#x5C0F;&#x8C01;&#x6392;&#x524D;&#x9762;&#x3002;<my>&#xFF08;&#x6743;&#x91CD;&#x4F7F;&#x7528;&#x7387;&#x4F4E;&#x7684;&#x5148;&#x6267;&#x884C;&#xFF09;</my></p>
+</li>
+<li><p>&#x5982;&#x679C;&#x4E0A;&#x8FF0;&#x6BD4;&#x8F83;&#x5747;&#x76F8;&#x7B49;&#xFF0C;&#x5219;&#x6BD4;&#x8F83;&#x540D;&#x5B57;&#x3002;</p>
+</li>
+</ol>
+<my>&#x6574;&#x4F53;&#x4E0A;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x901A;&#x8FC7;`minShare`&#x548C;`weight`&#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x63A7;&#x5236;&#x6BD4;&#x8F83;&#x8FC7;&#x7A0B;&#xFF0C;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x8BA9;`minShare`&#x4F7F;&#x7528;&#x7387;&#x548C;&#x6743;&#x91CD;&#x4F7F;&#x7528;&#x7387;&#x5C11;&#xFF08;&#x5B9E;&#x9645;&#x8FD0;&#x884C;`task`&#x6BD4;&#x4F8B;&#x8F83;&#x5C11;&#xFF09;&#x7684;&#x5148;&#x8FD0;&#x884C;&#x3002;</my>
+
+<p><code>FAIR</code>&#x6A21;&#x5F0F;&#x6392;&#x5E8F;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x6240;&#x6709;&#x7684;<code>TaskSetManager</code>&#x88AB;&#x653E;&#x5165;&#x4E00;&#x4E2A;<code>ArrayBuffer</code>&#x91CC;&#xFF0C;&#x4E4B;&#x540E;&#x4F9D;&#x6B21;&#x88AB;&#x53D6;&#x51FA;&#x5E76;&#x53D1;&#x9001;&#x7ED9;<code>Executor</code>&#x6267;&#x884C;&#x3002;</p>
+<p>&#x4ECE;&#x8C03;&#x5EA6;&#x961F;&#x5217;&#x4E2D;&#x62FF;&#x5230;<code>TaskSetManager</code>&#x540E;&#xFF0C;&#x7531;&#x4E8E;<code>TaskSetManager</code>&#x5C01;&#x88C5;&#x4E86;&#x4E00;&#x4E2A;<code>Stage</code>&#x7684;&#x6240;&#x6709;<code>Task</code>&#xFF0C;&#x5E76;&#x8D1F;&#x8D23;&#x7BA1;&#x7406;&#x8C03;&#x5EA6;&#x8FD9;&#x4E9B;<code>Task</code>&#xFF0C;&#x90A3;&#x4E48;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x5DE5;&#x4F5C;&#x5C31;&#x662F;<code>TaskSetManager</code>&#x6309;&#x7167;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x4E00;&#x4E2A;&#x4E2A;&#x53D6;&#x51FA;<code>Task</code>&#x7ED9;<code>TaskScheduler</code>&#xFF0C;<code>TaskScheduler</code>&#x518D;&#x4EA4;&#x7ED9;<code>SchedulerBackend</code>&#x53BB;&#x53D1;&#x5230;<code>Executor</code>&#x4E0A;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x5982;&#x4F55;&#x542F;&#x7528;&#x516C;&#x5E73;&#x8C03;&#x5EA6;&#x5668;:</p>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">val</span> conf <span class="token operator">=</span> <span class="token keyword">new</span> SparkConf<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>setMaster<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">.</span>setAppName<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+conf<span class="token punctuation">.</span>set<span class="token punctuation">(</span><span class="token string">&quot;spark.scheduler.mode&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;FAIR&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">val</span> sc <span class="token operator">=</span> <span class="token keyword">new</span> SparkContext<span class="token punctuation">(</span>conf<span class="token punctuation">)</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-06-10 18:25:39
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../43-spark-task-ji-bie-diao-du.html" class="navigation navigation-prev " aria-label="Previous page: 4.3 Spark Task 级别调度">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="432-ben-di-hua-diao-du.html" class="navigation navigation-next " aria-label="Next page: 4.3.2 本地化调度">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.3.1 调度策略","level":"1.4.3.1","depth":3,"next":{"title":"4.3.2 本地化调度","level":"1.4.3.2","depth":3,"path":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/432-ben-di-hua-diao-du.md","ref":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/432-ben-di-hua-diao-du.md","articles":[]},"previous":{"title":"4.3 Spark Task 级别调度","level":"1.4.3","depth":2,"path":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du.md","ref":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du.md","articles":[{"title":"4.3.1 调度策略","level":"1.4.3.1","depth":3,"path":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/431-diao-du-ce-lve.md","ref":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/431-diao-du-ce-lve.md","articles":[]},{"title":"4.3.2 本地化调度","level":"1.4.3.2","depth":3,"path":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/432-ben-di-hua-diao-du.md","ref":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/432-ben-di-hua-diao-du.md","articles":[]},{"title":"4.3.3 失败重试和黑名单","level":"1.4.3.3","depth":3,"path":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/433-shi-bai-zhong-shi-he-hei-ming-dan.md","ref":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/433-shi-bai-zhong-shi-he-hei-ming-dan.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_spark_kernel-optimize_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/431-diao-du-ce-lve.md","mtime":"2019-06-10T10:25:39.385Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-06T13:28:03.104Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

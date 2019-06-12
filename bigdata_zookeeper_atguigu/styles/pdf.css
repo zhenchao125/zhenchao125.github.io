@@ -1,0 +1,46 @@
+h1, h2{
+    /*border-bottom:1px dashed red;*/
+}
+h1:hover, h2:hover, h3:hover{
+    color:blue;
+    text-shadow:4px 4px 2px gray;
+}
+p:hover{
+    background-color : rgba(100, 100, 255, .2);
+}
+li:hover{
+    background-color : rgba(255, 100, 100, .2);
+}
+li[class*=chapter]:hover{
+    background-color : white;
+}
+
+pre[class^=language-]{
+    color : rgb(204, 120, 50) !important;
+    font-size: 2rem !important;
+    line-height : 1.2em !important;
+}
+
+.book-body::before{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content : "";
+    opacity : 0.1;
+    background-image : url(http://o7cqr8cfk.bkt.clouddn.com/18-3-4/62171757.jpg-atguiguImg)
+    background-position: center center;
+    background-repeat : no-repeat;
+}
+
+.c_red{
+    color : red;
+
+}
+.f_bold{
+    font-weight : bold;
+}
+
+.markdown-section hr{
+    background-color : #a7a7a7 !important;
+}
+

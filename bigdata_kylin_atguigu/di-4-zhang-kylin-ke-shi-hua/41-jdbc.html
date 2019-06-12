@@ -1,0 +1,585 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.1 JDBC · 大数据 bigdata_kylin_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="42-zepplin-cha-jian.html" />
+    
+    
+    <link rel="prev" href="../di-4-zhang-kylin-ke-shi-hua.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第 1 章 Kylin 概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../11-kylin-te-dian.html">
+            
+                <a href="../11-kylin-te-dian.html">
+            
+                    
+                    1.1  Kylin 特点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../12-kylin-gong-zuo-yuan-li.html">
+            
+                <a href="../12-kylin-gong-zuo-yuan-li.html">
+            
+                    
+                    1.2 Kylin 工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../12-kylin-jia-gou.html">
+            
+                <a href="../12-kylin-jia-gou.html">
+            
+                    
+                    1.3 Kylin 技术架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../14-he-xin-suan-fa.html">
+            
+                <a href="../14-he-xin-suan-fa.html">
+            
+                    
+                    1.4 核心算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../15-kylin-zhong-de-ji-he-xin-gai-nian.html">
+            
+                <a href="../15-kylin-zhong-de-ji-he-xin-gai-nian.html">
+            
+                    
+                    1.5 Kylin 中的几核心概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    第 2 章 Kylin 环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../di-3-zhang-kylin-kuai-su-ru-men.html">
+            
+                <a href="../di-3-zhang-kylin-kuai-su-ru-men.html">
+            
+                    
+                    第 3 章 kylin 快速入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../di-3-zhang-kylin-kuai-su-ru-men/31-shu-ju-zhun-bei.html">
+            
+                <a href="../di-3-zhang-kylin-kuai-su-ru-men/31-shu-ju-zhun-bei.html">
+            
+                    
+                    3.1 数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../di-3-zhang-kylin-kuai-su-ru-men/32-chuang-jian-project.html">
+            
+                <a href="../di-3-zhang-kylin-kuai-su-ru-men/32-chuang-jian-project.html">
+            
+                    
+                    3.2 创建 Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../di-3-zhang-kylin-kuai-su-ru-men/33-chuang-jian-shu-ju-mo-578b28-model.html">
+            
+                <a href="../di-3-zhang-kylin-kuai-su-ru-men/33-chuang-jian-shu-ju-mo-578b28-model.html">
+            
+                    
+                    3.3 创建数据模型(Model)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../di-3-zhang-kylin-kuai-su-ru-men/34-chuang-jian-cube.html">
+            
+                <a href="../di-3-zhang-kylin-kuai-su-ru-men/34-chuang-jian-cube.html">
+            
+                    
+                    3.4 创建 Cube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../di-3-zhang-kylin-kuai-su-ru-men/35-cha-xun.html">
+            
+                <a href="../di-3-zhang-kylin-kuai-su-ru-men/35-cha-xun.html">
+            
+                    
+                    3.5 查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../di-4-zhang-kylin-ke-shi-hua.html">
+            
+                <a href="../di-4-zhang-kylin-ke-shi-hua.html">
+            
+                    
+                    第 4 章 Kylin 可视化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="41-jdbc.html">
+            
+                <a href="41-jdbc.html">
+            
+                    
+                    4.1 JDBC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="42-zepplin-cha-jian.html">
+            
+                <a href="42-zepplin-cha-jian.html">
+            
+                    
+                    4.2 Zepplin 插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../di-5-zhang-cube-gou-jian-you-hua.html">
+            
+                <a href="../di-5-zhang-cube-gou-jian-you-hua.html">
+            
+                    
+                    第 5 章 Cube 构建优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../di-5-zhang-cube-gou-jian-you-hua/51-zhao-dao-wen-ti-cube.html">
+            
+                <a href="../di-5-zhang-cube-gou-jian-you-hua/51-zhao-dao-wen-ti-cube.html">
+            
+                    
+                    5.1 找到问题 Cube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../di-5-zhang-cube-gou-jian-you-hua/52-you-hua-gou-jian.html">
+            
+                <a href="../di-5-zhang-cube-gou-jian-you-hua/52-you-hua-gou-jian.html">
+            
+                    
+                    5.2 优化构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.1 JDBC</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="41-jdbc">4.1 JDBC</h1>
+<h2 id="&#x6B65;&#x9AA4;1-&#x5BFC;&#x5165;&#x4F9D;&#x8D56;">&#x6B65;&#x9AA4;1: &#x5BFC;&#x5165;&#x4F9D;&#x8D56;</h2>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.apache.kylin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>kylin-jdbc<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>2.5.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;2-java-&#x4EE3;&#x7801;">&#x6B65;&#x9AA4;2: java &#x4EE3;&#x7801;</h2>
+<pre class="language-"><code class="lang-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>kylin<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">KylinTest</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> ClassNotFoundException<span class="token punctuation">,</span> SQLException <span class="token punctuation">{</span>
+        <span class="token comment">//Kylin_JDBC &#x9A71;&#x52A8;</span>
+        String KYLIN_DRIVER <span class="token operator">=</span> <span class="token string">&quot;org.apache.kylin.jdbc.Driver&quot;</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//Kylin_URL</span>
+        String KYLIN_URL <span class="token operator">=</span> <span class="token string">&quot;jdbc:kylin://hadoop201:7070/First_project&quot;</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//Kylin&#x7684;&#x7528;&#x6237;&#x540D;</span>
+        String KYLIN_USER <span class="token operator">=</span> <span class="token string">&quot;ADMIN&quot;</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//Kylin&#x7684;&#x5BC6;&#x7801;</span>
+        String KYLIN_PASSWD <span class="token operator">=</span> <span class="token string">&quot;KYLIN&quot;</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//&#x6DFB;&#x52A0;&#x9A71;&#x52A8;&#x4FE1;&#x606F;</span>
+        Class<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span>KYLIN_DRIVER<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//&#x83B7;&#x53D6;&#x8FDE;&#x63A5;</span>
+        Connection connection <span class="token operator">=</span> DriverManager<span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span>KYLIN_URL<span class="token punctuation">,</span> KYLIN_USER<span class="token punctuation">,</span> KYLIN_PASSWD<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//&#x9884;&#x7F16;&#x8BD1;SQL</span>
+        PreparedStatement ps <span class="token operator">=</span> connection<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span><span class="token string">&quot;SELECT sum(sal) FROM emp group by deptno&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//&#x6267;&#x884C;&#x67E5;&#x8BE2;</span>
+        ResultSet resultSet <span class="token operator">=</span> ps<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">//&#x904D;&#x5386;&#x6253;&#x5370;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>resultSet<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>resultSet<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8BFB;&#x53D6;&#x5230;&#x6570;&#x636E;&#x4E4B;&#x540E;, &#x4EA4;&#x7ED9;&#x524D;&#x7AEF;, &#x968F;&#x4FBF;&#x600E;&#x4E48;&#x5C55;&#x793A;. </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-04-02 13:42:50
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../di-4-zhang-kylin-ke-shi-hua.html" class="navigation navigation-prev " aria-label="Previous page: 第 4 章 Kylin 可视化">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="42-zepplin-cha-jian.html" class="navigation navigation-next " aria-label="Next page: 4.2 Zepplin 插件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.1 JDBC","level":"1.4.1","depth":2,"next":{"title":"4.2 Zepplin 插件","level":"1.4.2","depth":2,"path":"di-4-zhang-kylin-ke-shi-hua/42-zepplin-cha-jian.md","ref":"di-4-zhang-kylin-ke-shi-hua/42-zepplin-cha-jian.md","articles":[]},"previous":{"title":"第 4 章 Kylin 可视化","level":"1.4","depth":1,"path":"di-4-zhang-kylin-ke-shi-hua.md","ref":"di-4-zhang-kylin-ke-shi-hua.md","articles":[{"title":"4.1 JDBC","level":"1.4.1","depth":2,"path":"di-4-zhang-kylin-ke-shi-hua/41-jdbc.md","ref":"di-4-zhang-kylin-ke-shi-hua/41-jdbc.md","articles":[]},{"title":"4.2 Zepplin 插件","level":"1.4.2","depth":2,"path":"di-4-zhang-kylin-ke-shi-hua/42-zepplin-cha-jian.md","ref":"di-4-zhang-kylin-ke-shi-hua/42-zepplin-cha-jian.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_kylin_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-4-zhang-kylin-ke-shi-hua/41-jdbc.md","mtime":"2019-04-02T05:42:50.462Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-02T05:15:02.510Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

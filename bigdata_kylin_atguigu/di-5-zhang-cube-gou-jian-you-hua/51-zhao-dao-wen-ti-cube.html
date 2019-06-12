@@ -1,0 +1,596 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5.1 找到问题 Cube · 大数据 bigdata_kylin_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="52-you-hua-gou-jian.html" />
+    
+    
+    <link rel="prev" href="../di-5-zhang-cube-gou-jian-you-hua.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第 1 章 Kylin 概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../11-kylin-te-dian.html">
+            
+                <a href="../11-kylin-te-dian.html">
+            
+                    
+                    1.1  Kylin 特点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../12-kylin-gong-zuo-yuan-li.html">
+            
+                <a href="../12-kylin-gong-zuo-yuan-li.html">
+            
+                    
+                    1.2 Kylin 工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../12-kylin-jia-gou.html">
+            
+                <a href="../12-kylin-jia-gou.html">
+            
+                    
+                    1.3 Kylin 技术架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../14-he-xin-suan-fa.html">
+            
+                <a href="../14-he-xin-suan-fa.html">
+            
+                    
+                    1.4 核心算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../15-kylin-zhong-de-ji-he-xin-gai-nian.html">
+            
+                <a href="../15-kylin-zhong-de-ji-he-xin-gai-nian.html">
+            
+                    
+                    1.5 Kylin 中的几核心概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    第 2 章 Kylin 环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../di-3-zhang-kylin-kuai-su-ru-men.html">
+            
+                <a href="../di-3-zhang-kylin-kuai-su-ru-men.html">
+            
+                    
+                    第 3 章 kylin 快速入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../di-3-zhang-kylin-kuai-su-ru-men/31-shu-ju-zhun-bei.html">
+            
+                <a href="../di-3-zhang-kylin-kuai-su-ru-men/31-shu-ju-zhun-bei.html">
+            
+                    
+                    3.1 数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../di-3-zhang-kylin-kuai-su-ru-men/32-chuang-jian-project.html">
+            
+                <a href="../di-3-zhang-kylin-kuai-su-ru-men/32-chuang-jian-project.html">
+            
+                    
+                    3.2 创建 Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../di-3-zhang-kylin-kuai-su-ru-men/33-chuang-jian-shu-ju-mo-578b28-model.html">
+            
+                <a href="../di-3-zhang-kylin-kuai-su-ru-men/33-chuang-jian-shu-ju-mo-578b28-model.html">
+            
+                    
+                    3.3 创建数据模型(Model)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../di-3-zhang-kylin-kuai-su-ru-men/34-chuang-jian-cube.html">
+            
+                <a href="../di-3-zhang-kylin-kuai-su-ru-men/34-chuang-jian-cube.html">
+            
+                    
+                    3.4 创建 Cube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../di-3-zhang-kylin-kuai-su-ru-men/35-cha-xun.html">
+            
+                <a href="../di-3-zhang-kylin-kuai-su-ru-men/35-cha-xun.html">
+            
+                    
+                    3.5 查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../di-4-zhang-kylin-ke-shi-hua.html">
+            
+                <a href="../di-4-zhang-kylin-ke-shi-hua.html">
+            
+                    
+                    第 4 章 Kylin 可视化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../di-4-zhang-kylin-ke-shi-hua/41-jdbc.html">
+            
+                <a href="../di-4-zhang-kylin-ke-shi-hua/41-jdbc.html">
+            
+                    
+                    4.1 JDBC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../di-4-zhang-kylin-ke-shi-hua/42-zepplin-cha-jian.html">
+            
+                <a href="../di-4-zhang-kylin-ke-shi-hua/42-zepplin-cha-jian.html">
+            
+                    
+                    4.2 Zepplin 插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../di-5-zhang-cube-gou-jian-you-hua.html">
+            
+                <a href="../di-5-zhang-cube-gou-jian-you-hua.html">
+            
+                    
+                    第 5 章 Cube 构建优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="51-zhao-dao-wen-ti-cube.html">
+            
+                <a href="51-zhao-dao-wen-ti-cube.html">
+            
+                    
+                    5.1 找到问题 Cube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="52-you-hua-gou-jian.html">
+            
+                <a href="52-you-hua-gou-jian.html">
+            
+                    
+                    5.2 优化构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >5.1 找到问题 Cube</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="51-&#x627E;&#x5230;&#x95EE;&#x9898;-cube">5.1 &#x627E;&#x5230;&#x95EE;&#x9898; Cube</h1>
+<h2 id="511-&#x68C0;&#x67E5;-cuboid-&#x6570;&#x91CF;">5.1.1 &#x68C0;&#x67E5; Cuboid &#x6570;&#x91CF;</h2>
+<p>Apache Kylin &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x4F9B;&#x7528;&#x6237;&#x68C0;&#x67E5; Cube &#x4E2D;&#x54EA;&#x4E9B; Cuboid &#x6700;&#x7EC8;&#x88AB;&#x9884;&#x8BA1;&#x7B97;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x5176;&#x4E3A;&#x88AB;&#x7269;&#x5316;&#xFF08;Materialized&#xFF09;&#x7684;Cuboid&#x3002;</p>
+<p>&#x540C;&#x65F6;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x8FD8;&#x80FD;&#x7ED9;&#x51FA;&#x6BCF;&#x4E2A; Cuboid &#x6240;&#x5360;&#x7A7A;&#x95F4;&#x7684;&#x4F30;&#x8BA1;&#x503C;&#x3002;</p>
+<p>&#x7531;&#x4E8E;&#x8BE5;&#x5DE5;&#x5177;&#x9700;&#x8981;&#x5728;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4E00;&#x5B9A;&#x9636;&#x6BB5;&#x7684;&#x5904;&#x7406;&#x4E4B;&#x540E;&#x624D;&#x80FD;&#x4F30;&#x7B97; Cuboid &#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x56E0;&#x6B64;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#x53EA;&#x80FD;&#x5728;Cube&#x6784;&#x5EFA;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#x518D;&#x4F7F;&#x7528;&#x8BE5;&#x5DE5;&#x5177;&#x3002;</p>
+<p>&#x76EE;&#x524D;&#x5173;&#x4E8E;&#x8FD9;&#x4E00;&#x70B9;&#x4E5F;&#x662F;&#x8BE5;&#x5DE5;&#x5177;&#x7684;&#x4E00;&#x5927;&#x4E0D;&#x8DB3;&#xFF0C;&#x7531;&#x4E8E;&#x540C;&#x4E00;&#x4E2A;Cube &#x7684;&#x4E0D;&#x540C; Segment &#x4E4B;&#x95F4;&#x4EC5;&#x662F;&#x8F93;&#x5165;&#x6570;&#x636E;&#x4E0D;&#x540C;&#xFF0C;&#x6A21;&#x578B;&#x4FE1;&#x606F;&#x548C;&#x4F18;&#x5316;&#x7B56;&#x7565;&#x90FD;&#x662F;&#x5171;&#x4EAB;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x540C; Segment&#x4E2D; &#x54EA;&#x4E9B; Cuboid &#x88AB;&#x7269;&#x5316;&#x54EA;&#x4E9B;&#x6CA1;&#x6709;&#x88AB;&#x7269;&#x5316;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#x53EA;&#x8981;Cube&#x4E2D;&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A; Segment&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x80FD;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x53BB;&#x68C0;&#x67E5;&#x8FD9;&#x4E2A; Cube &#x4E2D;&#x7684; Cuboid &#x72B6;&#x6001;&#xFF1A;</p>
+<pre class="language-"><code class="lang-java">bin<span class="token operator">/</span>kylin<span class="token punctuation">.</span>sh org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>kylin<span class="token punctuation">.</span>engine<span class="token punctuation">.</span>mr<span class="token punctuation">.</span>common<span class="token punctuation">.</span>CubeStatsReader CUBE_NAME
+
+<span class="token comment">// &#x5176;&#x4E2D;CUBE_NAME&#x662F;&#x4F60;&#x8981;&#x68C0;&#x67E5;&#x7684; Cube &#x7684; Name.</span>
+</code></pre>
+<p>&#x4F8B;&#x5982;:</p>
+<pre class="language-"><code class="lang-bash">bin/kylin.sh org.apache.kylin.engine.mr.common.CubeStatsReader sav_cube
+
+<span class="token punctuation">..</span>.
+
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+Statistics of sav_cube<span class="token punctuation">[</span>FULL_BUILD<span class="token punctuation">]</span>
+
+Cube statistics hll precision: 14
+Total cuboids: 7
+Total estimated rows: 51
+Total estimated size<span class="token punctuation">(</span>MB<span class="token punctuation">)</span>: 3.027915954589844E-4
+Sampling percentage:  100
+Mapper overlap ratio: 1.0
+Mapper number: 1
+Length of dimension DEFAULT.EMP.JOB is 1
+Length of dimension DEFAULT.EMP.MGR is 1
+Length of dimension DEFAULT.EMP.DEPTNO is 1
+<span class="token operator">|</span>---- Cuboid 111, est row: 10, est MB: 0
+    <span class="token operator">|</span>---- Cuboid 011, est row: 9, est MB: 0, shrink: 90%
+        <span class="token operator">|</span>---- Cuboid 001, est row: 3, est MB: 0, shrink: 33.33%
+        <span class="token operator">|</span>---- Cuboid 010, est row: 7, est MB: 0, shrink: 77.78%
+    <span class="token operator">|</span>---- Cuboid 101, est row: 9, est MB: 0, shrink: 90%
+        <span class="token operator">|</span>---- Cuboid 100, est row: 5, est MB: 0, shrink: 55.56%
+    <span class="token operator">|</span>---- Cuboid 110, est row: 8, est MB: 0, shrink: 80%
+----------------------------------------------------------------------------
+</code></pre>
+<p>&#x4ECE;&#x5206;&#x6790;&#x7ED3;&#x679C;&#x7684;&#x4E0B;&#x534A;&#x90E8;&#x5206;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x6240;&#x6709;&#x7684; Cuboid &#x53CA;&#x5B83;&#x7684;&#x5206;&#x6790;&#x7ED3;&#x679C;&#x90FD;&#x4EE5;&#x6811;&#x72B6;&#x7684;&#x5F62;&#x5F0F;&#x6253;&#x5370;&#x4E86;&#x51FA;&#x6765;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x68F5;&#x6811;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x4EE3;&#x8868;&#x4E00;&#x4E2A; Cuboid&#xFF0C;&#x6BCF;&#x4E2A; Cuboid &#x90FD;&#x7531;&#x4E00;&#x8FDE;&#x4E32; 1 &#x6216; 0 &#x7684;&#x6570;&#x5B57;&#x7EC4;&#x6210;&#xFF0C;&#x5982;&#x679C;&#x6570;&#x5B57;&#x4E3A; 0&#xFF0C;&#x5219;&#x4EE3;&#x8868;&#x8FD9;&#x4E2A; Cuboid &#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x76F8;&#x5E94;&#x7684;&#x7EF4;&#x5EA6;&#xFF1B;&#x5982;&#x679C;&#x6570;&#x5B57;&#x4E3A; 1&#xFF0C;&#x5219;&#x4EE3;&#x8868;&#x8FD9;&#x4E2A;Cuboid&#x4E2D;&#x5B58;&#x5728;&#x76F8;&#x5E94;&#x7684;&#x7EF4;&#x5EA6;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x6700;&#x9876;&#x7AEF;&#x7684; Cuboid &#x4E4B;&#x5916;&#xFF0C;&#x6BCF;&#x4E2A; Cuboid &#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x7236;&#x4EB2; Cuboid&#xFF0C;&#x4E14;&#x90FD;&#x6BD4;&#x7236;&#x4EB2;Cuboid &#x5C11;&#x4E86;&#x4E00;&#x4E2A;&#x201C;1&#x201D;&#x3002;&#x5176;&#x610F;&#x4E49;&#x662F;&#x8FD9;&#x4E2A;Cuboid&#x5C31;&#x662F;&#x7531;&#x5B83;&#x7684;&#x7236;&#x4EB2;&#x8282;&#x70B9;&#x51CF;&#x5C11;&#x4E00;&#x4E2A;&#x7EF4;&#x5EA6;&#x805A;&#x5408;&#x800C;&#x6765;&#x7684;&#xFF08;&#x4E0A;&#x5377;&#xFF09;&#x3002;</p>
+<p>&#x6700;&#x9876;&#x7AEF;&#x7684; Cuboid &#x79F0;&#x4E3A; Base Cuboid&#xFF0C;&#x5B83;&#x76F4;&#x63A5;&#x7531;&#x6E90;&#x6570;&#x636E;&#x8BA1;&#x7B97;&#x800C;&#x6765;&#x3002;</p>
+<p>&#x6BCF;&#x884C; Cuboid &#x7684;&#x8F93;&#x51FA;&#x4E2D;&#x9664;&#x4E86; 0 &#x548C; 1 &#x7684;&#x6570;&#x5B57;&#x4E32;&#x4EE5;&#x5916;&#xFF0C;&#x540E;&#x9762;&#x8FD8;&#x6709;&#x6BCF;&#x4E2A; Cuboid &#x7684;&#x7684;&#x884C;&#x6570;&#x4E0E;&#x7236;&#x4EB2;&#x8282;&#x70B9;&#x7684;&#x5BF9;&#x6BD4;&#xFF08;Shrink&#x503C;&#xFF09;&#x3002;</p>
+<p>&#x6240;&#x6709; Cuboid &#x884C;&#x6570;&#x7684;&#x4F30;&#x8BA1;&#x503C;&#x4E4B;&#x548C;&#x5E94;&#x8BE5;&#x7B49;&#x4E8E; Segment &#x7684;&#x884C;&#x6570;&#x4F30;&#x8BA1;&#x503C;&#xFF0C;&#x6BCF;&#x4E2A; Cuboid &#x90FD;&#x662F;&#x5728;&#x5B83;&#x7684;&#x7236;&#x4EB2;&#x8282;&#x70B9;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x8FDB;&#x4E00;&#x6B65;&#x805A;&#x5408;&#x800C;&#x6210;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x4ECE;&#x7406;&#x8BBA;&#x4E0A;&#x8BF4;&#x6BCF;&#x4E2A; Cuboid &#x65E0;&#x8BBA;&#x662F;&#x884C;&#x6570;&#x8FD8;&#x662F;&#x5927;&#x5C0F;&#x90FD;&#x5E94;&#x8BE5;&#x5C0F;&#x4E8E;&#x5B83;&#x7684;&#x7236;&#x4EB2;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x68F5;&#x6811;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x89C2;&#x5BDF;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684; Shrink&#x503C;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x503C;&#x63A5;&#x8FD1;100%&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;Cuboid &#x867D;&#x7136;&#x6BD4;&#x5B83;&#x7684;&#x7236;&#x4EB2; Cuboid &#x5C11;&#x4E86;&#x4E00;&#x4E2A;&#x7EF4;&#x5EA6;&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x6CA1;&#x6709;&#x6BD4;&#x5B83;&#x7684;&#x7236;&#x4EB2; Cuboid &#x5C11;&#x5F88;&#x591A;&#x884C;&#x6570;&#x636E;&#x3002;&#x6362;&#x800C;&#x8A00;&#x4E4B;&#xFF0C;&#x5373;&#x4F7F;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A; Cuboid&#xFF0C; &#x6211;&#x4EEC;&#x5728;&#x67E5;&#x8BE2;&#x65F6;&#x4F7F;&#x7528;&#x5B83;&#x7684;&#x7236;&#x4EB2; Cuboid&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x6709;&#x592A;&#x5927;&#x7684;&#x4EE3;&#x4EF7;&#x3002;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5BF9;&#x8FD9;&#x4E2A; Cuboid &#x8FDB;&#x884C;&#x526A;&#x679D;&#x64CD;&#x4F5C;&#x3002;</p>
+<hr>
+<h2 id="512-&#x68C0;&#x67E5;-cube-&#x5927;&#x5C0F;">5.1.2 &#x68C0;&#x67E5; Cube &#x5927;&#x5C0F;</h2>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x79CD;&#x66F4;&#x4E3A;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5224;&#x65AD; Cube &#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x8DB3;&#x591F;&#x4F18;&#x5316;&#x3002;</p>
+<p>&#x5728; Web GUI &#x7684; Model &#x9875;&#x9762;&#x9009;&#x62E9;&#x4E00;&#x4E2A; READY &#x72B6;&#x6001;&#x7684; Cube&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x628A;&#x5149;&#x6807;&#x79FB;&#x5230;&#x8BE5;Cube &#x7684; Cube Size &#x5217;&#x65F6;&#xFF0C;Web GUI &#x4F1A;&#x63D0;&#x793A;Cube&#x7684;&#x6E90;&#x6570;&#x636E;&#x5927;&#x5C0F;&#xFF0C;&#x4EE5;&#x53CA;&#x5F53;&#x524D; Cube &#x7684;&#x5927;&#x5C0F;&#x9664;&#x4EE5;&#x6E90;&#x6570;&#x636E;&#x5927;&#x5C0F;&#x7684;&#x6BD4;&#x4F8B;&#xFF0C;&#x79F0;&#x4E3A;&#x81A8;&#x80C0;&#x7387;&#xFF08;Expansion Rate&#xFF09;&#xFF0C;&#x5982;&#x56FE;&#x6240;&#x793A;&#x3002;</p>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1552702289.png-atguiguText" alt=""></p>
+<p>&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;Cube &#x7684;&#x81A8;&#x80C0;&#x7387;&#x5E94;&#x8BE5;&#x5728;<code>0%~1000%</code>&#x4E4B;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;<code>Cube</code>&#x7684;&#x81A8;&#x80C0;&#x7387;&#x8D85;&#x8FC7;<code>1000%</code>&#xFF0C;&#x90A3;&#x4E48; Cube &#x7BA1;&#x7406;&#x5458;&#x5E94;&#x5F53;&#x5F00;&#x59CB;&#x6316;&#x6398;&#x5176;&#x4E2D;&#x7684;&#x539F;&#x56E0;&#x3002;&#x901A;&#x5E38;&#xFF0C;&#x81A8;&#x80C0;&#x7387;&#x9AD8;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x65B9;&#x9762;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
+<ol>
+<li><p>Cube &#x4E2D;&#x7684;&#x7EF4;&#x5EA6;&#x6570;&#x91CF;&#x8F83;&#x591A;&#xFF0C;&#x4E14;&#x6CA1;&#x6709;&#x8FDB;&#x884C;&#x5F88;&#x597D;&#x7684; Cuboid &#x526A;&#x679D;&#x4F18;&#x5316;&#xFF0C;&#x5BFC;&#x81F4; Cuboid &#x6570;&#x91CF;&#x6781;&#x591A;;</p>
+</li>
+<li><p>Cube &#x4E2D;&#x5B58;&#x5728;&#x8F83;&#x9AD8;&#x57FA;&#x6570;&#x7684;&#x7EF4;&#x5EA6;&#xFF0C;&#x5BFC;&#x81F4;&#x5305;&#x542B;&#x8FD9;&#x7C7B;&#x7EF4;&#x5EA6;&#x7684;&#x6BCF;&#x4E00;&#x4E2A; Cuboid &#x5360;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#x90FD;&#x5F88;&#x5927;&#xFF0C;&#x8FD9;&#x4E9B; Cuboid &#x7D2F;&#x79EF;&#x9020;&#x6210;&#x6574;&#x4F53; Cube &#x4F53;&#x79EF;&#x53D8;&#x5927;;</p>
+</li>
+</ol>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5BF9;&#x4E8E; Cube &#x81A8;&#x80C0;&#x7387;&#x5C45;&#x9AD8;&#x4E0D;&#x4E0B;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x7BA1;&#x7406;&#x5458;&#x9700;&#x8981;&#x7ED3;&#x5408;&#x5B9E;&#x9645;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5206;&#x6790;&#xFF0C;&#x53EF;&#x7075;&#x6D3B;&#x5730;&#x8FD0;&#x7528;&#x63A5;&#x4E0B;&#x6765;&#x4ECB;&#x7ECD;&#x7684;&#x4F18;&#x5316;&#x65B9;&#x6CD5;&#x5BF9; Cube &#x8FDB;&#x884C;&#x4F18;&#x5316;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-03-16 10:16:49
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../di-5-zhang-cube-gou-jian-you-hua.html" class="navigation navigation-prev " aria-label="Previous page: 第 5 章 Cube 构建优化">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="52-you-hua-gou-jian.html" class="navigation navigation-next " aria-label="Next page: 5.2 优化构建">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5.1 找到问题 Cube","level":"1.5.1","depth":2,"next":{"title":"5.2 优化构建","level":"1.5.2","depth":2,"path":"di-5-zhang-cube-gou-jian-you-hua/52-you-hua-gou-jian.md","ref":"di-5-zhang-cube-gou-jian-you-hua/52-you-hua-gou-jian.md","articles":[]},"previous":{"title":"第 5 章 Cube 构建优化","level":"1.5","depth":1,"path":"di-5-zhang-cube-gou-jian-you-hua.md","ref":"di-5-zhang-cube-gou-jian-you-hua.md","articles":[{"title":"5.1 找到问题 Cube","level":"1.5.1","depth":2,"path":"di-5-zhang-cube-gou-jian-you-hua/51-zhao-dao-wen-ti-cube.md","ref":"di-5-zhang-cube-gou-jian-you-hua/51-zhao-dao-wen-ti-cube.md","articles":[]},{"title":"5.2 优化构建","level":"1.5.2","depth":2,"path":"di-5-zhang-cube-gou-jian-you-hua/52-you-hua-gou-jian.md","ref":"di-5-zhang-cube-gou-jian-you-hua/52-you-hua-gou-jian.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_kylin_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-5-zhang-cube-gou-jian-you-hua/51-zhao-dao-wen-ti-cube.md","mtime":"2019-03-16T02:16:49.427Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-02T05:15:02.510Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

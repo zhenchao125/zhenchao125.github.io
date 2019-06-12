@@ -1,0 +1,1266 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.2 创建 common 子模块 · 大数据 数仓实时 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="23-chuang-jian-mock-zi-mo-kuai.html" />
+    
+    
+    <link rel="prev" href="21-chuang-jian-fu-gong-cheng.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">第 1 部分: 日活</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第  1 章 需求概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../11-li-xian-chu-li-jia-gou.html">
+            
+                <a href="../11-li-xian-chu-li-jia-gou.html">
+            
+                    
+                    1.1 离线处理架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../12-shi-shi-chu-li-jia-gou.html">
+            
+                <a href="../12-shi-shi-chu-li-jia-gou.html">
+            
+                    
+                    1.2 实时处理架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../13-xu-qiu.html">
+            
+                <a href="../13-xu-qiu.html">
+            
+                    
+                    1.3 需求
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    第 2 章 模拟数据
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="21-chuang-jian-fu-gong-cheng.html">
+            
+                <a href="21-chuang-jian-fu-gong-cheng.html">
+            
+                    
+                    2.1 创建父工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="22-chuang-jian-common-zi-mo-kuai.html">
+            
+                <a href="22-chuang-jian-common-zi-mo-kuai.html">
+            
+                    
+                    2.2 创建 common 子模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="23-chuang-jian-mock-zi-mo-kuai.html">
+            
+                <a href="23-chuang-jian-mock-zi-mo-kuai.html">
+            
+                    
+                    2.3 创建 mock 子模块
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="23-chuang-jian-mock-zi-mo-kuai/231-chuang-jian-gong-ju-7c7b3a-randomnumutil.html">
+            
+                <a href="23-chuang-jian-mock-zi-mo-kuai/231-chuang-jian-gong-ju-7c7b3a-randomnumutil.html">
+            
+                    
+                    2.3.1 工具类: RandomNumUtil
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="23-chuang-jian-mock-zi-mo-kuai/231-chuang-jian-gong-ju-7c7b3a-randomdate.html">
+            
+                <a href="23-chuang-jian-mock-zi-mo-kuai/231-chuang-jian-gong-ju-7c7b3a-randomdate.html">
+            
+                    
+                    2.3.2 工具类: RandomDate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="23-chuang-jian-mock-zi-mo-kuai/233-chuang-jian-gong-ju-7c7b3a-radomoptions.html">
+            
+                <a href="23-chuang-jian-mock-zi-mo-kuai/233-chuang-jian-gong-ju-7c7b3a-radomoptions.html">
+            
+                    
+                    2.3.3 工具类: RadomOptions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="23-chuang-jian-mock-zi-mo-kuai/234-ri-zhi-fa-song-gong-ju-7c7b3a-loguploader.html">
+            
+                <a href="23-chuang-jian-mock-zi-mo-kuai/234-ri-zhi-fa-song-gong-ju-7c7b3a-loguploader.html">
+            
+                    
+                    2.3.4 日志发送工具类: LogUploader
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="23-chuang-jian-mock-zi-mo-kuai/234-sheng-cheng-ri-5fd73a-jsonmock.html">
+            
+                <a href="23-chuang-jian-mock-zi-mo-kuai/234-sheng-cheng-ri-5fd73a-jsonmock.html">
+            
+                    
+                    2.3.4 生成日志: JsonMock
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../di-3-zhang-qi-dong-shu-ju-cai-ji-fu-wu-qi.html">
+            
+                <a href="../di-3-zhang-qi-dong-shu-ju-cai-ji-fu-wu-qi.html">
+            
+                    
+                    第 3 章 启动数据采集服务器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../di-3-zhang-qi-dong-shu-ju-cai-ji-fu-wu-qi/31-spring-boot-jian-jie.html">
+            
+                <a href="../di-3-zhang-qi-dong-shu-ju-cai-ji-fu-wu-qi/31-spring-boot-jian-jie.html">
+            
+                    
+                    3.1 Spring boot 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../di-3-zhang-qi-dong-shu-ju-cai-ji-fu-wu-qi/32-kuai-su-da-jian-spring-boot.html">
+            
+                <a href="../di-3-zhang-qi-dong-shu-ju-cai-ji-fu-wu-qi/32-kuai-su-da-jian-spring-boot.html">
+            
+                    
+                    3.2 快速搭建 Spring boot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../di-3-zhang-qi-dong-shu-ju-cai-ji-fu-wu-qi/33-chuang-jian-controller.html">
+            
+                <a href="../di-3-zhang-qi-dong-shu-ju-cai-ji-fu-wu-qi/33-chuang-jian-controller.html">
+            
+                    
+                    3.3 创建 Controller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../di-3-zhang-qi-dong-shu-ju-cai-ji-fu-wu-qi/34-bu-shu-dao-linux-fu-wu-qi.html">
+            
+                <a href="../di-3-zhang-qi-dong-shu-ju-cai-ji-fu-wu-qi/34-bu-shu-dao-linux-fu-wu-qi.html">
+            
+                    
+                    3.4 部署到 Linux 服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../di-4-zhang-shi-yong-nginx-fu-zai-jun-heng.html">
+            
+                <a href="../di-4-zhang-shi-yong-nginx-fu-zai-jun-heng.html">
+            
+                    
+                    第 4 章 使用 Nginx 负载均衡
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../di-4-zhang-shi-yong-nginx-fu-zai-jun-heng/41-nginx-jian-jie.html">
+            
+                <a href="../di-4-zhang-shi-yong-nginx-fu-zai-jun-heng/41-nginx-jian-jie.html">
+            
+                    
+                    4.1 Nginx 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../di-4-zhang-shi-yong-nginx-fu-zai-jun-heng/42-nginx-an-zhuang.html">
+            
+                <a href="../di-4-zhang-shi-yong-nginx-fu-zai-jun-heng/42-nginx-an-zhuang.html">
+            
+                    
+                    4.2 Nginx 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../di-4-zhang-shi-yong-nginx-fu-zai-jun-heng/43-pei-zhi-fu-zai-jun-heng.html">
+            
+                <a href="../di-4-zhang-shi-yong-nginx-fu-zai-jun-heng/43-pei-zhi-fu-zai-jun-heng.html">
+            
+                    
+                    4.3  配置负载均衡
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../di-5-zhang-shi-yong-sparkstreaming-da-jian-shi-shi-chu-li-mo-kuai.html">
+            
+                <a href="../di-5-zhang-shi-yong-sparkstreaming-da-jian-shi-shi-chu-li-mo-kuai.html">
+            
+                    
+                    第 5 章 使用 Spark Streaming 搭建实时处理模块
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../di-5-zhang-shi-yong-sparkstreaming-da-jian-shi-shi-chu-li-mo-kuai/51-chuang-jian-shi-xian-chu-li-mo-kuai.html">
+            
+                <a href="../di-5-zhang-shi-yong-sparkstreaming-da-jian-shi-shi-chu-li-mo-kuai/51-chuang-jian-shi-xian-chu-li-mo-kuai.html">
+            
+                    
+                    5.1 创建实现处理模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../di-5-zhang-shi-yong-sparkstreaming-da-jian-shi-shi-chu-li-mo-kuai/52-cong-kafka-du-qu-shu-ju.html">
+            
+                <a href="../di-5-zhang-shi-yong-sparkstreaming-da-jian-shi-shi-chu-li-mo-kuai/52-cong-kafka-du-qu-shu-ju.html">
+            
+                    
+                    5.2 从 Kafka 读取数据并保持到 Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../di-5-zhang-shi-yong-sparkstreaming-da-jian-shi-shi-chu-li-mo-kuai/53-dui-shu-ju-jin-xing-qing-xi-he-guo-lv.html">
+            
+                <a href="../di-5-zhang-shi-yong-sparkstreaming-da-jian-shi-shi-chu-li-mo-kuai/53-dui-shu-ju-jin-xing-qing-xi-he-guo-lv.html">
+            
+                    
+                    5.3 对数据进行清洗和过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../di-6-zhang-shu-ju-xieru-dao-elasticsearch.html">
+            
+                <a href="../di-6-zhang-shu-ju-xieru-dao-elasticsearch.html">
+            
+                    
+                    第 6 章 数据写入到 ElasticSearch
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../di-6-zhang-shu-ju-xieru-dao-elasticsearch/61-elasticsearch-de-ji-ben-gai-nian-hui-gu.html">
+            
+                <a href="../di-6-zhang-shu-ju-xieru-dao-elasticsearch/61-elasticsearch-de-ji-ben-gai-nian-hui-gu.html">
+            
+                    
+                    6.1 ElasticSearch 的基本概念回顾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../di-6-zhang-shu-ju-xieru-dao-elasticsearch/62-she-ji-es-suo-yin-jie-gou.html">
+            
+                <a href="../di-6-zhang-shu-ju-xieru-dao-elasticsearch/62-she-ji-es-suo-yin-jie-gou.html">
+            
+                    
+                    6.2 设计 ES 索引结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../di-6-zhang-shu-ju-xieru-dao-elasticsearch/63-chuang-jian-cao-zuo-es-de-gong-ju-lei.html">
+            
+                <a href="../di-6-zhang-shu-ju-xieru-dao-elasticsearch/63-chuang-jian-cao-zuo-es-de-gong-ju-lei.html">
+            
+                    
+                    6.3 创建操作 ES 的工具类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../di-6-zhang-shu-ju-xieru-dao-elasticsearch/64-ba-yong-hu-startup-xin-xi-xie-ru-dao-es.html">
+            
+                <a href="../di-6-zhang-shu-ju-xieru-dao-elasticsearch/64-ba-yong-hu-startup-xin-xi-xie-ru-dao-es.html">
+            
+                    
+                    6.4 把用户 Startup  信息写入到 ES
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../di-7-zhang-ti-gong-cha-xun-ri-huo-he-xiao-shi-ming-xi-de-jie-kou.html">
+            
+                <a href="../di-7-zhang-ti-gong-cha-xun-ri-huo-he-xiao-shi-ming-xi-de-jie-kou.html">
+            
+                    
+                    第 7 章 提供查询日活和小时明细的接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../di-7-zhang-ti-gong-cha-xun-ri-huo-he-xiao-shi-ming-xi-de-jie-kou/71-shi-yong-kibana-cha-xun-ri-huo-he-xiao-shi-ming-xi.html">
+            
+                <a href="../di-7-zhang-ti-gong-cha-xun-ri-huo-he-xiao-shi-ming-xi-de-jie-kou/71-shi-yong-kibana-cha-xun-ri-huo-he-xiao-shi-ming-xi.html">
+            
+                    
+                    7.1 使用 Kibana 查询日活和小时明细
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../di-7-zhang-ti-gong-cha-xun-ri-huo-he-xiao-shi-ming-xi-de-jie-kou/72-chuang-jian-spring-boot-zi-mo-kuai-lai-ti-gong-dui-wai-cha-xun-jie-kou.html">
+            
+                <a href="../di-7-zhang-ti-gong-cha-xun-ri-huo-he-xiao-shi-ming-xi-de-jie-kou/72-chuang-jian-spring-boot-zi-mo-kuai-lai-ti-gong-dui-wai-cha-xun-jie-kou.html">
+            
+                    
+                    7.2 创建 Spring boot 子模块来提供对外查询接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../di-7-zhang-ti-gong-cha-xun-ri-huo-he-xiao-shi-ming-xi-de-jie-kou/73-shi-yong-serviceceng-lai-cong-es-du-qu-shu-ju.html">
+            
+                <a href="../di-7-zhang-ti-gong-cha-xun-ri-huo-he-xiao-shi-ming-xi-de-jie-kou/73-shi-yong-serviceceng-lai-cong-es-du-qu-shu-ju.html">
+            
+                    
+                    7.3 使用 service 层来从 es 读取数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../di-7-zhang-ti-gong-cha-xun-ri-huo-he-xiao-shi-ming-xi-de-jie-kou/74-ding-yi-controller-lai-jie-shou-yong-hu-qing-qiu.html">
+            
+                <a href="../di-7-zhang-ti-gong-cha-xun-ri-huo-he-xiao-shi-ming-xi-de-jie-kou/74-ding-yi-controller-lai-jie-shou-yong-hu-qing-qiu.html">
+            
+                    
+                    7.4 定义 Controller 来接收用户请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../di-8-zhang-ke-shi-hua-zhan-shi.html">
+            
+                <a href="../di-8-zhang-ke-shi-hua-zhan-shi.html">
+            
+                    
+                    第 8 章 可视化展示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 2 部分 业务数据处理</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../di-9-zhang-canal-de-shi-yong.html">
+            
+                <a href="../di-9-zhang-canal-de-shi-yong.html">
+            
+                    
+                    第 9 章 使用 Canal
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../di-9-zhang-canal-de-shi-yong/91-wei-shi-yao-xu-yao-canal.html">
+            
+                <a href="../di-9-zhang-canal-de-shi-yong/91-wei-shi-yao-xu-yao-canal.html">
+            
+                    
+                    9.1 为什么需要 Canal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../di-9-zhang-canal-de-shi-yong/92-canal-gong-zuo-yuan-li.html">
+            
+                <a href="../di-9-zhang-canal-de-shi-yong/92-canal-gong-zuo-yuan-li.html">
+            
+                    
+                    9.2 Canal 工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../di-9-zhang-canal-de-shi-yong/93-pei-zhi-mysql.html">
+            
+                <a href="../di-9-zhang-canal-de-shi-yong/93-pei-zhi-mysql.html">
+            
+                    
+                    9.3 配置 Mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../di-9-zhang-canal-de-shi-yong/94-zhun-bei-shu-ju-ku-shu-ju.html">
+            
+                <a href="../di-9-zhang-canal-de-shi-yong/94-zhun-bei-shu-ju-ku-shu-ju.html">
+            
+                    
+                    9.4 准备数据库数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../di-9-zhang-canal-de-shi-yong/95-an-zhuang-canal.html">
+            
+                <a href="../di-9-zhang-canal-de-shi-yong/95-an-zhuang-canal.html">
+            
+                    
+                    9.5 安装 canal 和启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../di-10-zhang-mei-ri-ding-dan-liang.html">
+            
+                <a href="../di-10-zhang-mei-ri-ding-dan-liang.html">
+            
+                    
+                    第 10 章 从 Canal 读取数据到 Kafka
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../di-10-zhang-mei-ri-ding-dan-liang/101-cong-canal-du-qu-shu-ju.html">
+            
+                <a href="../di-10-zhang-mei-ri-ding-dan-liang/101-cong-canal-du-qu-shu-ju.html">
+            
+                    
+                    10.1 从 Canal 读取数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../di-10-zhang-mei-ri-ding-dan-liang/102-du-qu-de-shu-ju-fa-song-dao-kafka.html">
+            
+                <a href="../di-10-zhang-mei-ri-ding-dan-liang/102-du-qu-de-shu-ju-fa-song-dao-kafka.html">
+            
+                    
+                    10.2 读取的数据发送到 Kafka
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../di-11-zhang-cong-kafka-du-qu-ding-dan-shu-ju-bing-xie-ru-dao-es.html">
+            
+                <a href="../di-11-zhang-cong-kafka-du-qu-ding-dan-shu-ju-bing-xie-ru-dao-es.html">
+            
+                    
+                    第 11 章 从 Kafka 读取订单数据并写入到 ES
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../di-11-zhang-cong-kafka-du-qu-ding-dan-shu-ju-bing-xie-ru-dao-es/111-cong-kafka-du-qu-shu-ju.html">
+            
+                <a href="../di-11-zhang-cong-kafka-du-qu-ding-dan-shu-ju-bing-xie-ru-dao-es/111-cong-kafka-du-qu-shu-ju.html">
+            
+                    
+                    11.1 从 Kafka 读取数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../di-11-zhang-cong-kafka-du-qu-ding-dan-shu-ju-bing-xie-ru-dao-es/112-xie-ru-shu-ju-dao-es.html">
+            
+                <a href="../di-11-zhang-cong-kafka-du-qu-ding-dan-shu-ju-bing-xie-ru-dao-es/112-xie-ru-shu-ju-dao-es.html">
+            
+                    
+                    11.2 写入数据到 ES
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../di-12-zhang-fa-bu-shu-ju.html">
+            
+                <a href="../di-12-zhang-fa-bu-shu-ju.html">
+            
+                    
+                    第 12 章 发布数据
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../di-12-zhang-fa-bu-shu-ju/121-dsl-yu-ju.html">
+            
+                <a href="../di-12-zhang-fa-bu-shu-ju/121-dsl-yu-ju.html">
+            
+                    
+                    12.1 查询 DSL 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../di-12-zhang-fa-bu-shu-ju/122-kai-fa-dui-wai-jie-kou.html">
+            
+                <a href="../di-12-zhang-fa-bu-shu-ju/122-kai-fa-dui-wai-jie-kou.html">
+            
+                    
+                    12.2 开发对外接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../di-12-zhang-fa-bu-shu-ju/123-tu-xing-hua-zhan-shi.html">
+            
+                <a href="../di-12-zhang-fa-bu-shu-ju/123-tu-xing-hua-zhan-shi.html">
+            
+                    
+                    12.3 图形化展示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 3 部分 灵活查询</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../di-3-bu-fen-ling-huo-cha-xun/di-13-zhang-ling-huo-cha-xun-yong-hu-de-gou-mai-xing-wei.html">
+            
+                <a href="../di-3-bu-fen-ling-huo-cha-xun/di-13-zhang-ling-huo-cha-xun-yong-hu-de-gou-mai-xing-wei.html">
+            
+                    
+                    第 13 章 灵活查询用户的购买行为
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../di-3-bu-fen-ling-huo-cha-xun/di-13-zhang-ling-huo-cha-xun-yong-hu-de-gou-mai-xing-wei/131-si-lu-fen-xi.html">
+            
+                <a href="../di-3-bu-fen-ling-huo-cha-xun/di-13-zhang-ling-huo-cha-xun-yong-hu-de-gou-mai-xing-wei/131-si-lu-fen-xi.html">
+            
+                    
+                    13.1 思路分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../di-3-bu-fen-ling-huo-cha-xun/di-13-zhang-ling-huo-cha-xun-yong-hu-de-gou-mai-xing-wei/132-t+1-ye-wu-shu-ju-de-shu-ju-liu-cheng.html">
+            
+                <a href="../di-3-bu-fen-ling-huo-cha-xun/di-13-zhang-ling-huo-cha-xun-yong-hu-de-gou-mai-xing-wei/132-t+1-ye-wu-shu-ju-de-shu-ju-liu-cheng.html">
+            
+                    
+                    13.2 T+1 业务数据的数据流程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1" data-path="../di-3-bu-fen-ling-huo-cha-xun/di-13-zhang-ling-huo-cha-xun-yong-hu-de-gou-mai-xing-wei/132-t+1-ye-wu-shu-ju-de-shu-ju-liu-cheng/1321-zhun-bei-ods-ceng.html">
+            
+                <a href="../di-3-bu-fen-ling-huo-cha-xun/di-13-zhang-ling-huo-cha-xun-yong-hu-de-gou-mai-xing-wei/132-t+1-ye-wu-shu-ju-de-shu-ju-liu-cheng/1321-zhun-bei-ods-ceng.html">
+            
+                    
+                    13.2.1 准备 ODS 层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2" data-path="../di-3-bu-fen-ling-huo-cha-xun/di-13-zhang-ling-huo-cha-xun-yong-hu-de-gou-mai-xing-wei/132-t+1-ye-wu-shu-ju-de-shu-ju-liu-cheng/1322-zhun-bei-dwd-ceng.html">
+            
+                <a href="../di-3-bu-fen-ling-huo-cha-xun/di-13-zhang-ling-huo-cha-xun-yong-hu-de-gou-mai-xing-wei/132-t+1-ye-wu-shu-ju-de-shu-ju-liu-cheng/1322-zhun-bei-dwd-ceng.html">
+            
+                    
+                    13.2.2 准备 DWD 层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.3" data-path="../di-3-bu-fen-ling-huo-cha-xun/di-13-zhang-ling-huo-cha-xun-yong-hu-de-gou-mai-xing-wei/132-t+1-ye-wu-shu-ju-de-shu-ju-liu-cheng/1323-zhun-bei-dws-ceng.html">
+            
+                <a href="../di-3-bu-fen-ling-huo-cha-xun/di-13-zhang-ling-huo-cha-xun-yong-hu-de-gou-mai-xing-wei/132-t+1-ye-wu-shu-ju-de-shu-ju-liu-cheng/1323-zhun-bei-dws-ceng.html">
+            
+                    
+                    13.2.3 准备 DWS 层
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../di-3-bu-fen-ling-huo-cha-xun/di-14-zhang-shu-cang-zhong-shu-ju-dao-ru-dao-es.html">
+            
+                <a href="../di-3-bu-fen-ling-huo-cha-xun/di-14-zhang-shu-cang-zhong-shu-ju-dao-ru-dao-es.html">
+            
+                    
+                    第 14 章 数仓中数据导入到 ES
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../di-3-bu-fen-ling-huo-cha-xun/di-14-zhang-shu-cang-zhong-shu-ju-dao-ru-dao-es/141-chuang-jian-idea-mo-kuai.html">
+            
+                <a href="../di-3-bu-fen-ling-huo-cha-xun/di-14-zhang-shu-cang-zhong-shu-ju-dao-ru-dao-es/141-chuang-jian-idea-mo-kuai.html">
+            
+                    
+                    14.1 创建 idea 模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../di-3-bu-fen-ling-huo-cha-xun/di-14-zhang-shu-cang-zhong-shu-ju-dao-ru-dao-es/142-wan-cheng-cong-dw-dao-es-de-ye-wu-dai-ma.html">
+            
+                <a href="../di-3-bu-fen-ling-huo-cha-xun/di-14-zhang-shu-cang-zhong-shu-ju-dao-ru-dao-es/142-wan-cheng-cong-dw-dao-es-de-ye-wu-dai-ma.html">
+            
+                    
+                    14.2 完成从 dw 到 es 的业务代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../di-3-bu-fen-ling-huo-cha-xun/di-15-zhang-fa-bu-ling-huo-cha-xun-yong-dao-de-shu-ju.html">
+            
+                <a href="../di-3-bu-fen-ling-huo-cha-xun/di-15-zhang-fa-bu-ling-huo-cha-xun-yong-dao-de-shu-ju.html">
+            
+                    
+                    第 15 章 发布灵活查询用到的数据
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../di-3-bu-fen-ling-huo-cha-xun/di-15-zhang-fa-bu-ling-huo-cha-xun-yong-dao-de-shu-ju/151-zai-gmall-publish-zi-mo-kuai-zhong-tian-jia-jie-kou.html">
+            
+                <a href="../di-3-bu-fen-ling-huo-cha-xun/di-15-zhang-fa-bu-ling-huo-cha-xun-yong-dao-de-shu-ju/151-zai-gmall-publish-zi-mo-kuai-zhong-tian-jia-jie-kou.html">
+            
+                    
+                    15.1 在 gmall-publish 子模块中读取 ES 中数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../di-3-bu-fen-ling-huo-cha-xun/di-15-zhang-fa-bu-ling-huo-cha-xun-yong-dao-de-shu-ju/152-zai-controller-zhong-nian-tian-jia-dui-wai-fang-wen-jie-kou.html">
+            
+                <a href="../di-3-bu-fen-ling-huo-cha-xun/di-15-zhang-fa-bu-ling-huo-cha-xun-yong-dao-de-shu-ju/152-zai-controller-zhong-nian-tian-jia-dui-wai-fang-wen-jie-kou.html">
+            
+                    
+                    15.2 在 Controller 中年添加对外访问接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../di-3-bu-fen-ling-huo-cha-xun/di-16-zhang-ke-shi-hua-zhan-shi.html">
+            
+                <a href="../di-3-bu-fen-ling-huo-cha-xun/di-16-zhang-ke-shi-hua-zhan-shi.html">
+            
+                    
+                    第 16 章 可视化展示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.2 创建 common 子模块</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="22-&#x521B;&#x5EFA;-common-&#x5B50;&#x6A21;&#x5757;">2.2 &#x521B;&#x5EFA; common &#x5B50;&#x6A21;&#x5757;</h1>
+<blockquote>
+<p>&#x6A21;&#x5757;&#x540D;</p>
+</blockquote>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>gmall-common<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h2 id="&#x7ED9;-common-&#x5B50;&#x6A21;&#x5757;&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;">&#x7ED9; common &#x5B50;&#x6A21;&#x5757;&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;</h2>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>fastjson<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.apache.httpcomponents<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>httpclient<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.apache.httpcomponents<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>httpmime<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<blockquote>
+<h4 id="&#x8BF4;&#x660E;"><em>&#x8BF4;&#x660E;:</em></h4>
+</blockquote>
+<ul>
+<li>&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x5185;&#x653E;&#x4E00;&#x4E9B;&#x901A;&#x7528;&#x4EE3;&#x7801;. &#x4EE5;&#x540E;&#x7528;&#x5230;&#x5176;&#x4ED6;&#x4F9D;&#x8D56;&#x518D;&#x6DFB;&#x52A0; </li>
+</ul>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-05-14 10:43:59
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="21-chuang-jian-fu-gong-cheng.html" class="navigation navigation-prev " aria-label="Previous page: 2.1 创建父工程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="23-chuang-jian-mock-zi-mo-kuai.html" class="navigation navigation-next " aria-label="Next page: 2.3 创建 mock 子模块">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.2 创建 common 子模块","level":"1.2.2","depth":2,"next":{"title":"2.3 创建 mock 子模块","level":"1.2.3","depth":2,"path":"chapter1/23-chuang-jian-mock-zi-mo-kuai.md","ref":"chapter1/23-chuang-jian-mock-zi-mo-kuai.md","articles":[{"title":"2.3.1 工具类: RandomNumUtil","level":"1.2.3.1","depth":3,"path":"chapter1/23-chuang-jian-mock-zi-mo-kuai/231-chuang-jian-gong-ju-7c7b3a-randomnumutil.md","ref":"chapter1/23-chuang-jian-mock-zi-mo-kuai/231-chuang-jian-gong-ju-7c7b3a-randomnumutil.md","articles":[]},{"title":"2.3.2 工具类: RandomDate","level":"1.2.3.2","depth":3,"path":"chapter1/23-chuang-jian-mock-zi-mo-kuai/231-chuang-jian-gong-ju-7c7b3a-randomdate.md","ref":"chapter1/23-chuang-jian-mock-zi-mo-kuai/231-chuang-jian-gong-ju-7c7b3a-randomdate.md","articles":[]},{"title":"2.3.3 工具类: RadomOptions","level":"1.2.3.3","depth":3,"path":"chapter1/23-chuang-jian-mock-zi-mo-kuai/233-chuang-jian-gong-ju-7c7b3a-radomoptions.md","ref":"chapter1/23-chuang-jian-mock-zi-mo-kuai/233-chuang-jian-gong-ju-7c7b3a-radomoptions.md","articles":[]},{"title":"2.3.4 日志发送工具类: LogUploader","level":"1.2.3.4","depth":3,"path":"chapter1/23-chuang-jian-mock-zi-mo-kuai/234-ri-zhi-fa-song-gong-ju-7c7b3a-loguploader.md","ref":"chapter1/23-chuang-jian-mock-zi-mo-kuai/234-ri-zhi-fa-song-gong-ju-7c7b3a-loguploader.md","articles":[]},{"title":"2.3.4 生成日志: JsonMock","level":"1.2.3.5","depth":3,"path":"chapter1/23-chuang-jian-mock-zi-mo-kuai/234-sheng-cheng-ri-5fd73a-jsonmock.md","ref":"chapter1/23-chuang-jian-mock-zi-mo-kuai/234-sheng-cheng-ri-5fd73a-jsonmock.md","articles":[]}]},"previous":{"title":"2.1 创建父工程","level":"1.2.1","depth":2,"path":"chapter1/21-chuang-jian-fu-gong-cheng.md","ref":"chapter1/21-chuang-jian-fu-gong-cheng.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 数仓实时 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"chapter1/22-chuang-jian-common-zi-mo-kuai.md","mtime":"2019-05-14T02:43:59.043Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-23T05:10:51.081Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

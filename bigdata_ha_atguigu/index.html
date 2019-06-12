@@ -1,0 +1,406 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第 1 章 HA概述 · 大数据 HA 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter1.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第 1 章 HA概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    第 2 章 HDFS HA
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="chapter1/21-bei-jing.html">
+            
+                <a href="chapter1/21-bei-jing.html">
+            
+                    
+                    2.1 背景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="chapter1/22-jia-gou.html">
+            
+                <a href="chapter1/22-jia-gou.html">
+            
+                    
+                    2.2 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="chapter1/23-bu-shu.html">
+            
+                <a href="chapter1/23-bu-shu.html">
+            
+                    
+                    2.3 HDFS HA 部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="chapter1/24-ha-hdfs-ji-qun-guan-li-ming-ling.html">
+            
+                <a href="chapter1/24-ha-hdfs-ji-qun-guan-li-ming-ling.html">
+            
+                    
+                    2.4 HA HDFS 集群管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="chapter1/24-zi-dong-bei-707e28-automatic-failover.html">
+            
+                <a href="chapter1/24-zi-dong-bei-707e28-automatic-failover.html">
+            
+                    
+                    2.5 自动备灾(Automatic Failover)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="chapter1/26-wen-da.html">
+            
+                <a href="chapter1/26-wen-da.html">
+            
+                    
+                    2.6 自动备灾常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="di-3-zhang-yarn-resourcemange-ha.html">
+            
+                <a href="di-3-zhang-yarn-resourcemange-ha.html">
+            
+                    
+                    第 3 章 Yarn ResourceMange HA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第 1 章 HA概述</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;-1-&#x7AE0;-ha-&#x6982;&#x8FF0;">&#x7B2C; 1 &#x7AE0; <code>HA</code> &#x6982;&#x8FF0;</h1>
+<p>&#x672C;&#x7AE0;&#x4ECB;&#x7ECD;&#x4EC0;&#x4E48;&#x662F;<code>HA</code>, &#x4EE5;&#x53CA;&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;<code>HA</code>.</p>
+<p>&#x6240;&#x8C13;<code>HA</code>&#x5C31;&#x662F;<code>High Available</code>, &#x5373; <my>&#x9AD8;&#x53EF;&#x7528;</my>, &#x53EF;&#x7528;&#x505A;&#x5230;&#x4E0D;&#x95F4;&#x65AD; <code>7 * 24</code>&#x5C0F;&#x65F6;&#x63D0;&#x4F9B;&#x670D;&#x52A1;.</p>
+<hr>
+<h2 id="11-&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;ha">1.1 &#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;HA</h2>
+<p>&#x5728; <code>Hadoop 1.0</code> &#x65F6;&#x4EE3;&#xFF0C;Hadoop &#x7684;&#x4E24;&#x5927;&#x6838;&#x5FC3;&#x7EC4;&#x4EF6; <code>HDFS NameNode</code> &#x548C; <code>JobTracker</code> &#x90FD;&#x5B58;&#x5728;&#x7740;&#x5355;&#x70B9;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x5176;&#x4E2D;&#x4EE5; <code>NameNode</code> &#x7684;&#x5355;&#x70B9;&#x95EE;&#x9898;&#x5C24;&#x4E3A;&#x4E25;&#x91CD;&#x3002;</p>
+<p>&#x56E0;&#x4E3A; <code>NameNode</code> &#x4FDD;&#x5B58;&#x4E86;&#x6574;&#x4E2A; <code>HDFS</code> &#x7684;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;&#xFF0C;&#x4E00;&#x65E6; <code>NameNode</code> &#x6302;&#x6389;&#xFF0C;&#x6574;&#x4E2A; <code>HDFS</code> &#x5C31;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;.</p>
+<p>&#x6240;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x5728; <code>Hadoop2.0</code> &#x4E2D;&#xFF0C;<code>HDFS NameNode</code> &#x548C; <code>YARN ResourceManger</code>&#x7684;&#x5355;&#x70B9;&#x95EE;&#x9898;&#x90FD;&#x5F97;&#x5230;&#x4E86;&#x89E3;&#x51B3;.</p>
+<p>&#x50CF; <code>NameNode</code> &#x548C; <code>ResouceManager</code> &#x5728;&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x8FD0;&#x884C;&#x5B9E;&#x4F8B;, &#x6700;&#x5927;&#x7684;&#x9690;&#x60A3;&#x5C31;&#x662F;&#x5355;&#x70B9;&#x6545;&#x969C;&#x95EE;&#x9898;.</p>
+<p><code>Hadoop2.0+</code> &#x5B9E;&#x73B0;&#x9AD8;&#x53EF;&#x7528;&#x6700;&#x5173;&#x952E;&#x7684;&#x7B56;&#x7565;&#x662F;<my>&#x6D88;&#x9664;&#x5355;&#x70B9;&#x6545;&#x969C;</my>.</p>
+<hr>
+<h2 id="12-hadoop-&#x9AD8;&#x53EF;&#x7528;&#x5206;&#x7C7B;">1.2 Hadoop &#x9AD8;&#x53EF;&#x7528;&#x5206;&#x7C7B;</h2>
+<p>&#x7531;&#x4E8E;<code>HDFS NameNode</code> &#x548C; <code>Yarn ResourceManage</code> &#x90FD;&#x5B58;&#x5728;&#x5355;&#x70B9;&#x5931;&#x6548;&#x6545;&#x969C;&#x7684;&#x98CE;&#x9669;, </p>
+<p>&#x6240;&#x4EE5;<code>Hadoop</code>&#x6709;&#x4E24;&#x79CD;<code>HA</code>:</p>
+<ol>
+<li><p><code>HDFS HA</code></p>
+<p>&#x89E3;&#x51B3;<code>NameNode</code>&#x7684;&#x5355;&#x70B9;&#x6545;&#x969C;&#x95EE;&#x9898;</p>
+</li>
+<li><p><code>ResourceManage HA</code></p>
+<p>&#x89E3;&#x51B3;<code>ResourceMange</code>&#x7684;&#x5355;&#x70B9;&#x6545;&#x969C;&#x95EE;&#x9898; </p>
+</li>
+</ol>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; &amp; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-10-18 11:15:54
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="chapter1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 第 2 章 HDFS HA">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第 1 章 HA概述","level":"1.1","depth":1,"next":{"title":"第 2 章 HDFS HA","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[{"title":"2.1 背景","level":"1.2.1","depth":2,"path":"chapter1/21-bei-jing.md","ref":"chapter1/21-bei-jing.md","articles":[]},{"title":"2.2 架构","level":"1.2.2","depth":2,"path":"chapter1/22-jia-gou.md","ref":"chapter1/22-jia-gou.md","articles":[]},{"title":"2.3 HDFS HA 部署","level":"1.2.3","depth":2,"path":"chapter1/23-bu-shu.md","ref":"chapter1/23-bu-shu.md","articles":[]},{"title":"2.4 HA HDFS 集群管理命令","level":"1.2.4","depth":2,"path":"chapter1/24-ha-hdfs-ji-qun-guan-li-ming-ling.md","ref":"chapter1/24-ha-hdfs-ji-qun-guan-li-ming-ling.md","articles":[]},{"title":"2.5 自动备灾(Automatic Failover)","level":"1.2.5","depth":2,"path":"chapter1/24-zi-dong-bei-707e28-automatic-failover.md","ref":"chapter1/24-zi-dong-bei-707e28-automatic-failover.md","articles":[]},{"title":"2.6 自动备灾常见问题","level":"1.2.6","depth":2,"path":"chapter1/26-wen-da.md","ref":"chapter1/26-wen-da.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 & 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://o7cqr8cfk.bkt.clouddn.com/18-3-4/62171757.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/83394736.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/15906185.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/15906185.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/3394270.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/65028582.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/20359261.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/37472401.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/3355397.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://www.gitbook.com/@zhenchao125"},"page-toc-button":{"maxTocDepth":6,"minTocSize":5},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 HA 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"README.md","mtime":"2018-10-18T03:15:54.938Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-11T09:39:05.323Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

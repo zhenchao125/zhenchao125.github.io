@@ -1,0 +1,972 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.3 创建模拟数据子模块 · 大数据 bigdata_mallanalyze_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-4-zhang-xu-qiu-1.html" />
+    
+    
+    <link rel="prev" href="32-chuang-jian-gong-zuo-zi-mo-kuai.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">第 1 部分 电商分析系统介绍</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第 1 章 项目简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../11-xiang-mu-zheng-ti-jie-shao.html">
+            
+                <a href="../11-xiang-mu-zheng-ti-jie-shao.html">
+            
+                    
+                    1.1 项目整体介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../12-xiang-mu-zheng-ti-jia-gou.html">
+            
+                <a href="../12-xiang-mu-zheng-ti-jia-gou.html">
+            
+                    
+                    1.2 项目整体架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../13-ye-wu-xu-qiu.html">
+            
+                <a href="../13-ye-wu-xu-qiu.html">
+            
+                    
+                    1.3 数据源分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../14-xiang-mu-xu-qiu.html">
+            
+                <a href="../14-xiang-mu-xu-qiu.html">
+            
+                    
+                    1.4 项目需求
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    第 2 章 预备知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../di-3-zhang-xiang-mu-da-jian.html">
+            
+                <a href="../di-3-zhang-xiang-mu-da-jian.html">
+            
+                    
+                    第 3 章 项目搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="31-chuang-jian-fu-gong-cheng.html">
+            
+                <a href="31-chuang-jian-fu-gong-cheng.html">
+            
+                    
+                    3.1 创建父工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="32-chuang-jian-gong-zuo-zi-mo-kuai.html">
+            
+                <a href="32-chuang-jian-gong-zuo-zi-mo-kuai.html">
+            
+                    
+                    3.2 创建通用子模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="33-chuang-jian-mo-ni-shu-ju-zi-mo-kuai.html">
+            
+                <a href="33-chuang-jian-mo-ni-shu-ju-zi-mo-kuai.html">
+            
+                    
+                    3.3 创建模拟数据子模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 2 部分 电商分析系统需求实现</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-4-zhang-xu-qiu-1.html">
+            
+                <a href="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-4-zhang-xu-qiu-1.html">
+            
+                    
+                    第 4 章 需求1: Top10 热门品类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-5-zhang-xu-qiu-2-top10-remen-pin-lei-zhong-de-top10-session-tong-ji.html">
+            
+                <a href="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-5-zhang-xu-qiu-2-top10-remen-pin-lei-zhong-de-top10-session-tong-ji.html">
+            
+                    
+                    第 5 章 需求2: Top10热门品类中的 Top10 活跃 Session 统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-6-zhang-xu-qiu-3-dan-ye-mian-tiao-zhuan-lv.html">
+            
+                <a href="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-6-zhang-xu-qiu-3-dan-ye-mian-tiao-zhuan-lv.html">
+            
+                    
+                    第 6 章 需求3: 页面单条转化率统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-7-zhang-xu-qiu-4-ge-qu-yu-re-men-shang-pin-top3.html">
+            
+                <a href="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-7-zhang-xu-qiu-4-ge-qu-yu-re-men-shang-pin-top3.html">
+            
+                    
+                    第 7 章 需求4: 各区域热门商品 Top3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji.html">
+            
+                <a href="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji.html">
+            
+                    
+                    第 8 章 需求5:  广告黑名单实时统计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/81-li-xian-xiang-mu-yu-bei-zhi-shi.html">
+            
+                <a href="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/81-li-xian-xiang-mu-yu-bei-zhi-shi.html">
+            
+                    
+                    8.1 离线项目预备知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/81-shi-shi-huan-jing-da-jian.html">
+            
+                <a href="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/81-shi-shi-huan-jing-da-jian.html">
+            
+                    
+                    8.2 实时环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/82-xu-qiu-5-guang-gao-hei-ming-dan-shi-shi-tong-ji.html">
+            
+                <a href="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/82-xu-qiu-5-guang-gao-hei-ming-dan-shi-shi-tong-ji.html">
+            
+                    
+                    8.3 需求5: 广告黑名单实时统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-9-zhang-xu-qiu-6-guang-gao-dian-ji-liang-shi-shi-tong-ji.html">
+            
+                <a href="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-9-zhang-xu-qiu-6-guang-gao-dian-ji-liang-shi-shi-tong-ji.html">
+            
+                    
+                    第 9 章 需求6: 广告点击量实时统计 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-10-zhang-xu-qiu-7-mei-tian-mei-di-qu-re-men-guang-gao-top3.html">
+            
+                <a href="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-10-zhang-xu-qiu-7-mei-tian-mei-di-qu-re-men-guang-gao-top3.html">
+            
+                    
+                    第 10 章 需求7: 每天每地区 热门广告 Top3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-11-zhang-xin-zeng-xu-6c423a-zui-jin-1-xiao-shi-guang-gao-dian-ji-liang-shi-shi-tong-ji.html">
+            
+                <a href="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-11-zhang-xin-zeng-xu-6c423a-zui-jin-1-xiao-shi-guang-gao-dian-ji-liang-shi-shi-tong-ji.html">
+            
+                    
+                    第 11 章 新增需求: 最近 1 小时广告点击量实时统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.3 创建模拟数据子模块</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="33-&#x521B;&#x5EFA;&#x6A21;&#x62DF;&#x6570;&#x636E;&#x5B50;&#x6A21;&#x5757;">3.3 &#x521B;&#x5EFA;&#x6A21;&#x62DF;&#x6570;&#x636E;&#x5B50;&#x6A21;&#x5757;</h1>
+<p>&#x672C;&#x6A21;&#x5757;&#x7528;&#x6765;&#x751F;&#x6210;&#x6A21;&#x62DF;&#x6570;&#x636E;</p>
+<p>&#x6A21;&#x5757;&#x540D;: <code>sparkmall-mock</code></p>
+<h2 id="331-&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;">3.3.1 &#x6DFB;&#x52A0;&#x4F9D;&#x8D56;</h2>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!--&#x4F9D;&#x8D56;&#x901A;&#x7528;&#x6A21;&#x5757;--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.atguigu<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>sparkmall-common<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>1.0-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.apache.spark<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spark-core_2.11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.apache.spark<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spark-sql_2.11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.apache.spark<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spark-hive_2.11<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>net.alchim31.maven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>scala-maven-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<hr>
+<h2 id="332-&#x521B;&#x5EFA;&#x9700;&#x8981;&#x7684;&#x7C7B;">3.3.2 &#x521B;&#x5EFA;&#x9700;&#x8981;&#x7684;&#x7C7B;</h2>
+<h3 id="1-&#x521B;&#x5EFA;&#x751F;&#x6210;&#x968F;&#x673A;&#x6570;&#x636E;&#x7684;&#x5DE5;&#x5177;&#x7C7B;">1. &#x521B;&#x5EFA;&#x751F;&#x6210;&#x968F;&#x673A;&#x6570;&#x636E;&#x7684;&#x5DE5;&#x5177;&#x7C7B;</h3>
+<h4 id="&#x6587;&#x4EF6;-randomnumutilscala">&#x6587;&#x4EF6;: <code>RandomNumUtil.scala</code></h4>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>sparkmall<span class="token punctuation">.</span>mock<span class="token punctuation">.</span>util
+
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Date
+
+<span class="token keyword">import</span> scala<span class="token punctuation">.</span>collection<span class="token punctuation">.</span>mutable
+<span class="token keyword">import</span> scala<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Random
+
+<span class="token comment">/**
+  * &#x751F;&#x6210;&#x968F;&#x673A;&#x6570;&#x636E;&#x7684;&#x5DE5;&#x5177;
+  */</span>
+<span class="token keyword">object</span> RandomNumUtil <span class="token punctuation">{</span>
+    <span class="token comment">/*&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x5668;&#x5BF9;&#x8C61;*/</span>
+    <span class="token keyword">private</span> <span class="token keyword">val</span> random <span class="token operator">=</span> <span class="token keyword">new</span> Random<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">/**
+      * &#x751F;&#x6210;&#x968F;&#x673A;&#x7684;&#x6574;&#x6570;, &#x533A;&#x95F4;: [from, to]
+      *
+      * @param from
+      * @param to
+      * @return
+      */</span>
+    <span class="token keyword">def</span> randomInt<span class="token punctuation">(</span>from<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> to<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>from <span class="token operator">&gt;</span> to<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> IllegalArgumentException<span class="token punctuation">(</span>s<span class="token string">&quot;from: $from &#x4E0D;&#x80FD;&#x5927;&#x4E8E; to: $to&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span> random<span class="token punctuation">.</span>nextInt<span class="token punctuation">(</span>to <span class="token operator">-</span> from <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> from
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+      * &#x521B;&#x5EFA;&#x591A;&#x4E2A; Int &#x503C;
+      *
+      * @param from
+      * @param to
+      * @param count     &#x521B;&#x5EFA;&#x7684; Int &#x503C;&#x7684;&#x987A;&#x5E8F;
+      * @param canRepeat &#x662F;&#x5426;&#x5141;&#x8BB8;&#x91CD;&#x590D;
+      * @return List[Int] &#x96C6;&#x5408;
+      */</span>
+    <span class="token keyword">def</span> randomMultiInt<span class="token punctuation">(</span>from<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> to<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> count<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span> canRepeat<span class="token operator">:</span> <span class="token builtin">Boolean</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token operator">:</span> List<span class="token punctuation">[</span><span class="token builtin">Int</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>canRepeat<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token punctuation">(</span><span class="token number">1</span> to count<span class="token punctuation">)</span><span class="token punctuation">.</span>toList<span class="token punctuation">.</span>map<span class="token punctuation">(</span>_ <span class="token keyword">=&gt;</span> randomInt<span class="token punctuation">(</span>from<span class="token punctuation">,</span> to<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">val</span> set <span class="token operator">=</span> mutable<span class="token punctuation">.</span>Set<span class="token punctuation">[</span><span class="token builtin">Int</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>set<span class="token punctuation">.</span>size <span class="token operator">&lt;</span> count<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                set <span class="token operator">+=</span> randomInt<span class="token punctuation">(</span>from<span class="token punctuation">,</span> to<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            set<span class="token punctuation">.</span>toList
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+      * &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x7684; Long &#x503C; &#x8303;&#x56F4;: [from, to]
+      *
+      * @param from
+      * @param to
+      * @return
+      */</span>
+    <span class="token keyword">def</span> randomLong<span class="token punctuation">(</span>from<span class="token operator">:</span> <span class="token builtin">Long</span><span class="token punctuation">,</span> to<span class="token operator">:</span> <span class="token builtin">Long</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Long</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>from <span class="token operator">&gt;</span> to<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> IllegalArgumentException<span class="token punctuation">(</span>s<span class="token string">&quot;from: $from &#x4E0D;&#x80FD;&#x5927;&#x4E8E; to: $to&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span> math<span class="token punctuation">.</span>abs<span class="token punctuation">(</span>random<span class="token punctuation">.</span>nextLong<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token punctuation">(</span>to <span class="token operator">-</span> from <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> from
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="&#x6587;&#x4EF6;-randomoptionsscala">&#x6587;&#x4EF6;: <code>RandomOptions.scala</code></h4>
+<p>&#x8FD9;&#x4E2A;&#x7C7B;&#x4E3B;&#x8981;&#x751F;&#x6210;&#x5E26;&#x6709;&#x4E00;&#x5B9A;&#x6BD4;&#x91CD;&#x7684;&#x503C;.</p>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>sparkmall<span class="token punctuation">.</span>mock<span class="token punctuation">.</span>util
+
+<span class="token keyword">import</span> scala<span class="token punctuation">.</span>collection<span class="token punctuation">.</span>mutable<span class="token punctuation">.</span>ListBuffer
+
+<span class="token comment">/**
+  * &#x6839;&#x636E;&#x63D0;&#x4F9B;&#x7684;&#x503C;&#x548C;&#x6BD4;&#x91CD;, &#x6765;&#x521B;&#x5EFA;RandomOptions&#x5BF9;&#x8C61;.
+  * &#x7136;&#x540E;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;getRandomOption&#x6765;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x7684;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x503C;
+  */</span>
+<span class="token keyword">object</span> RandomOptions <span class="token punctuation">{</span>
+    <span class="token keyword">def</span> apply<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">(</span>opts<span class="token operator">:</span> <span class="token punctuation">(</span>T<span class="token punctuation">,</span> <span class="token builtin">Int</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token punctuation">{</span>
+        <span class="token keyword">val</span> randomOptions <span class="token operator">=</span> <span class="token keyword">new</span> RandomOptions<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        randomOptions<span class="token punctuation">.</span>totalWeight <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">/</span><span class="token operator">:</span> opts<span class="token punctuation">)</span><span class="token punctuation">(</span>_ <span class="token operator">+</span> _<span class="token punctuation">.</span>_2<span class="token punctuation">)</span> <span class="token comment">// &#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x603B;&#x7684;&#x6BD4;&#x91CD;</span>
+        opts<span class="token punctuation">.</span>foreach<span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token punctuation">(</span>value<span class="token punctuation">,</span> weight<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> randomOptions<span class="token punctuation">.</span>options <span class="token operator">++</span><span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> to weight<span class="token punctuation">)</span><span class="token punctuation">.</span>map<span class="token punctuation">(</span>_ <span class="token keyword">=&gt;</span> value<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        randomOptions
+    <span class="token punctuation">}</span>
+
+
+    <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x6D4B;&#x8BD5;</span>
+        <span class="token keyword">val</span> opts <span class="token operator">=</span> RandomOptions<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5F20;&#x4E09;&quot;</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;&#x674E;&#x56DB;&quot;</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">(</span><span class="token number">0</span> to <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">.</span>foreach<span class="token punctuation">(</span>_ <span class="token keyword">=&gt;</span> println<span class="token punctuation">(</span>opts<span class="token punctuation">.</span>getRandomOption<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> RandomOptions<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> totalWeight<span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> _
+    <span class="token keyword">var</span> options <span class="token operator">=</span> ListBuffer<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">/**
+      * &#x83B7;&#x53D6;&#x968F;&#x673A;&#x7684; Option &#x7684;&#x503C;
+      * @return
+      */</span>
+    <span class="token keyword">def</span> getRandomOption<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        options<span class="token punctuation">(</span>RandomDataUtil<span class="token punctuation">.</span>randomInt<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> totalWeight <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="&#x6587;&#x4EF6;-randomdatescala">&#x6587;&#x4EF6;: <code>RandomDate.scala</code></h4>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>sparkmall<span class="token punctuation">.</span>mock<span class="token punctuation">.</span>util
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Date
+
+<span class="token keyword">object</span> RandomDate <span class="token punctuation">{</span>
+    <span class="token keyword">def</span> apply<span class="token punctuation">(</span>startDate<span class="token operator">:</span> Date<span class="token punctuation">,</span> stopDate<span class="token operator">:</span> Date<span class="token punctuation">,</span> step<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> randomDate <span class="token operator">=</span> <span class="token keyword">new</span> RandomDate
+        <span class="token keyword">val</span> avgStepTime <span class="token operator">=</span> <span class="token punctuation">(</span>stopDate<span class="token punctuation">.</span>getTime <span class="token operator">-</span> stopDate<span class="token punctuation">.</span>getTime<span class="token punctuation">)</span> <span class="token operator">/</span> step
+        randomDate<span class="token punctuation">.</span>maxStepTime <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">*</span> avgStepTime
+        randomDate<span class="token punctuation">.</span>lastDateTIme <span class="token operator">=</span> startDate<span class="token punctuation">.</span>getTime
+        randomDate
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> RandomDate <span class="token punctuation">{</span>
+    <span class="token comment">// &#x4E0A;&#x6B21; action &#x7684;&#x65F6;&#x95F4;</span>
+    <span class="token keyword">var</span> lastDateTIme<span class="token operator">:</span> <span class="token builtin">Long</span> <span class="token operator">=</span> _
+    <span class="token comment">// &#x6BCF;&#x6B21;&#x6700;&#x5927;&#x7684;&#x6B65;&#x957F;&#x65F6;&#x95F4;</span>
+    <span class="token keyword">var</span> maxStepTime<span class="token operator">:</span> <span class="token builtin">Long</span> <span class="token operator">=</span> _
+
+    <span class="token comment">/**
+      * &#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x65F6;&#x95F4;
+      * @return
+      */</span>
+    <span class="token keyword">def</span> getRandomDate <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x8FD9;&#x6B21;&#x64CD;&#x4F5C;&#x7684;&#x76F8;&#x6BD4;&#x4E0A;&#x6B21;&#x7684;&#x6B65;&#x957F;</span>
+        <span class="token keyword">val</span> timeStep <span class="token operator">=</span> RandomNumUtil<span class="token punctuation">.</span>randomLong<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> maxStepTime<span class="token punctuation">)</span>
+        lastDateTIme <span class="token operator">+=</span> timeStep
+        <span class="token keyword">new</span> Date<span class="token punctuation">(</span>lastDateTIme<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="2-&#x751F;&#x6210;&#x6A21;&#x62DF;&#x6570;&#x636E;">2. &#x751F;&#x6210;&#x6A21;&#x62DF;&#x6570;&#x636E;</h3>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>sparkmall<span class="token punctuation">.</span>mock
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>text<span class="token punctuation">.</span>SimpleDateFormat
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>UUID
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>sparkmall<span class="token punctuation">.</span>common<span class="token punctuation">.</span>bean<span class="token punctuation">.</span><span class="token punctuation">{</span>CityInfo<span class="token punctuation">,</span> ProductInfo<span class="token punctuation">,</span> UserInfo<span class="token punctuation">,</span> UserVisitAction<span class="token punctuation">}</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>sparkmall<span class="token punctuation">.</span>common<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ConfigurationUtil
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>sparkmall<span class="token punctuation">.</span>mock<span class="token punctuation">.</span>util<span class="token punctuation">.</span><span class="token punctuation">{</span>RandomDate<span class="token punctuation">,</span> RandomNumUtil<span class="token punctuation">,</span> RandomOptions<span class="token punctuation">}</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>spark<span class="token punctuation">.</span>sql<span class="token punctuation">.</span><span class="token punctuation">{</span>DataFrame<span class="token punctuation">,</span> SparkSession<span class="token punctuation">}</span>
+
+<span class="token keyword">import</span> scala<span class="token punctuation">.</span>collection<span class="token punctuation">.</span>mutable<span class="token punctuation">.</span>ListBuffer
+
+<span class="token comment">/**
+  * &#x751F;&#x6210;&#x79BB;&#x7EBF;&#x6570;&#x636E;
+  */</span>
+<span class="token keyword">object</span> MockOffline <span class="token punctuation">{</span>
+    <span class="token comment">// --- &#x7528;&#x6237;&#x76F8;&#x5173;&#x53C2;&#x6570; &#x5F00;&#x59CB; ---</span>
+    <span class="token comment">// &#x7528;&#x6237;&#x6570;&#x91CF;</span>
+    <span class="token keyword">val</span> userNum <span class="token operator">=</span> <span class="token number">100</span>
+    <span class="token comment">// &#x5E74;&#x9F84;&#x8303;&#x56F4;</span>
+    <span class="token keyword">val</span> ageFrom <span class="token operator">=</span> <span class="token number">20</span>
+    <span class="token keyword">val</span> ageTo <span class="token operator">=</span> <span class="token number">60</span>
+    <span class="token comment">// &#x804C;&#x4E1A;</span>
+    <span class="token keyword">val</span> professionOpts <span class="token operator">=</span> RandomOptions<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5B66;&#x751F;&quot;</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;&#x7A0B;&#x5E8F;&#x5458;&quot;</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;&#x7ECF;&#x7406;&quot;</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;&#x8001;&#x5E08;&quot;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">// &#x6027;&#x522B;</span>
+    <span class="token keyword">val</span> genderOpts <span class="token operator">=</span> RandomOptions<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">&quot;&#x7537;&quot;</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;&#x5973;&quot;</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">// --- &#x7528;&#x6237;&#x76F8;&#x5173;&#x53C2;&#x6570; &#x7ED3;&#x675F; ---</span>
+
+    <span class="token comment">// --- &#x5546;&#x54C1;&#x76F8;&#x5173;&#x53C2;&#x6570; &#x5F00;&#x59CB; ---</span>
+    <span class="token comment">//&#x54C1;&#x7C7B;&#x6570;&#x91CF;</span>
+    <span class="token keyword">val</span> cargoryNum <span class="token operator">=</span> <span class="token number">20</span>
+    <span class="token comment">// &#x5546;&#x54C1;&#x6570;&#x91CF;</span>
+    <span class="token keyword">val</span> productNum <span class="token operator">=</span> <span class="token number">100</span>
+    <span class="token comment">// --- &#x5546;&#x54C1;&#x76F8;&#x5173;&#x53C2;&#x6570; &#x7ED3;&#x675F; ---</span>
+
+
+    <span class="token comment">// --- &#x7528;&#x6237;&#x884C;&#x4E3A;&#x76F8;&#x5173;&#x53C2;&#x6570; &#x5F00;&#x59CB; ---</span>
+    <span class="token comment">// &#x641C;&#x7D22;&#x5173;&#x952E;&#x8BCD;</span>
+    <span class="token keyword">val</span> searchKeywordsOpts <span class="token operator">=</span> RandomOptions<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">&quot;&#x624B;&#x673A;&quot;</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;&#x7B14;&#x8BB0;&#x672C;&quot;</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;&#x5185;&#x5B58;&quot;</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;i7&quot;</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;&#x82F9;&#x679C;&quot;</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;&#x5403;&#x9E21;&quot;</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">// &#x52A8;&#x4F5C;</span>
+    <span class="token keyword">val</span> actionOpts <span class="token operator">=</span> RandomOptions<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">&quot;search&quot;</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;click&quot;</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;order&quot;</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;pay&quot;</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;quit&quot;</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">// session &#x6570;&#x91CF;</span>
+    <span class="token keyword">val</span> sessionNum <span class="token operator">=</span> <span class="token number">10000</span>
+    <span class="token comment">//&#x7CFB;&#x7EDF;&#x9875;&#x9762;&#x6570;</span>
+    <span class="token keyword">val</span> pageNum <span class="token operator">=</span> <span class="token number">50</span>
+    <span class="token comment">// &#x65E5;&#x5FD7;&#x5927;&#x81F4;&#x6570;&#x91CF;&#xFF0C;&#x7528;&#x4E8E;&#x5206;&#x5E03;&#x65F6;&#x95F4;</span>
+    <span class="token keyword">val</span> logAboutNum <span class="token operator">=</span> <span class="token number">100000</span>
+    <span class="token comment">// --- &#x7528;&#x6237;&#x884C;&#x4E3A;&#x76F8;&#x5173;&#x53C2;&#x6570; &#x7ED3;&#x675F; ---</span>
+
+
+    <span class="token comment">/**
+      * &#x751F;&#x6210; UserInfo &#x6570;&#x636E;
+      *
+      * @return &#x6240;&#x6709;&#x7684; UserInfo &#x7EC4;&#x6210;&#x7684; List &#x96C6;&#x5408;
+      */</span>
+    <span class="token keyword">def</span> mockUserInfo<span class="token operator">:</span> List<span class="token punctuation">[</span>UserInfo<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+
+        <span class="token punctuation">(</span><span class="token number">1</span> to userNum<span class="token punctuation">)</span><span class="token punctuation">.</span>toList<span class="token punctuation">.</span>map<span class="token punctuation">(</span>
+            i <span class="token keyword">=&gt;</span> UserInfo<span class="token punctuation">(</span>i<span class="token punctuation">,</span>
+                s<span class="token string">&quot;user_$i&quot;</span><span class="token punctuation">,</span>
+                s<span class="token string">&quot;name_$i&quot;</span><span class="token punctuation">,</span>
+                RandomNumUtil<span class="token punctuation">.</span>randomInt<span class="token punctuation">(</span>ageFrom<span class="token punctuation">,</span> ageTo<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                professionOpts<span class="token punctuation">.</span>getRandomOption<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                genderOpts<span class="token punctuation">.</span>getRandomOption<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+      * &#x751F;&#x6210; CityInfo &#x6570;&#x636E;
+      *
+      * @return &#x6240;&#x6709;&#x7684; CityInfo &#x7EC4;&#x6210;&#x7684; List &#x96C6;&#x5408;
+      */</span>
+    <span class="token keyword">def</span> mockCityInfo<span class="token operator">:</span> List<span class="token punctuation">[</span>CityInfo<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        List<span class="token punctuation">(</span>CityInfo<span class="token punctuation">(</span><span class="token number">1L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x5317;&#x4EAC;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x5317;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">2L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x4E0A;&#x6D77;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x4E1C;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">3L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x6DF1;&#x5733;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x5357;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">4L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x5E7F;&#x5DDE;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x5357;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">5L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x6B66;&#x6C49;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x4E2D;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">6L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x5357;&#x4EAC;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x4E1C;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">7L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x5929;&#x6D25;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x5317;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">8L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x6210;&#x90FD;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x897F;&#x5357;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">9L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x54C8;&#x5C14;&#x6EE8;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x4E1C;&#x5317;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">10L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x5927;&#x8FDE;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x4E1C;&#x5317;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">11L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x6C88;&#x9633;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x4E1C;&#x5317;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">12L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x897F;&#x5B89;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x897F;&#x5317;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">13L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x957F;&#x6C99;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x4E2D;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">14L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x91CD;&#x5E86;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x897F;&#x5357;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">15L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x6D4E;&#x5357;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x4E1C;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">16L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x77F3;&#x5BB6;&#x5E84;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x5317;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">17L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x94F6;&#x5DDD;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x897F;&#x5317;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">18L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x676D;&#x5DDE;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x4E1C;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">19L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x4FDD;&#x5B9A;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x5317;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">20L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x798F;&#x5DDE;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x5357;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">21L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x8D35;&#x9633;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x897F;&#x5357;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">22L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x9752;&#x5C9B;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x4E1C;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">23L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x82CF;&#x5DDE;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x4E1C;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">24L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x90D1;&#x5DDE;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x5317;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">25L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x65E0;&#x9521;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x4E1C;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            CityInfo<span class="token punctuation">(</span><span class="token number">26L</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x53A6;&#x95E8;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x534E;&#x5357;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+      * &#x751F;&#x6210; ProductInfo &#x6570;&#x636E;
+      *
+      * @return &#x6240;&#x6709;&#x7684; ProductInfo &#x5BF9;&#x8C61;&#x7EC4;&#x6210;&#x7684; List &#x96C6;&#x5408;
+      */</span>
+    <span class="token keyword">def</span> mockProductInfo<span class="token operator">:</span> List<span class="token punctuation">[</span>ProductInfo<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// &#x5546;&#x54C1;&#x7684;&#x54C1;&#x7C7B;</span>
+        <span class="token keyword">val</span> productExtendOpts <span class="token operator">=</span> RandomOptions<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">&quot;&#x81EA;&#x8425;&quot;</span><span class="token punctuation">,</span> <span class="token number">70</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">&quot;&#x7B2C;&#x4E09;&#x65B9;&quot;</span><span class="token punctuation">,</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">(</span><span class="token number">1</span> to productNum<span class="token punctuation">)</span><span class="token punctuation">.</span>toList<span class="token punctuation">.</span>map<span class="token punctuation">(</span>
+            i <span class="token keyword">=&gt;</span> ProductInfo<span class="token punctuation">(</span>i<span class="token punctuation">,</span> s<span class="token string">&quot;&#x5546;&#x54C1;_$i&quot;</span><span class="token punctuation">,</span> productExtendOpts<span class="token punctuation">.</span>getRandomOption<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+      * &#x751F;&#x6210; UserVisitAction &#x6570;&#x636E;
+      */</span>
+    <span class="token keyword">def</span> mockUserVisitAction<span class="token operator">:</span> List<span class="token punctuation">[</span>UserVisitAction<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> dateFormatter <span class="token operator">=</span> <span class="token keyword">new</span> SimpleDateFormat<span class="token punctuation">(</span><span class="token string">&quot;yyy-MM-dd&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> timeFormatter <span class="token operator">=</span> <span class="token keyword">new</span> SimpleDateFormat<span class="token punctuation">(</span><span class="token string">&quot;yyy-MM-dd HH:mm:ss&quot;</span><span class="token punctuation">)</span>
+        <span class="token comment">// &#x5F00;&#x59CB;&#x65E5;&#x671F;</span>
+        <span class="token keyword">val</span> fromDate <span class="token operator">=</span> dateFormatter<span class="token punctuation">.</span>parse<span class="token punctuation">(</span><span class="token string">&quot;2019-03-20&quot;</span><span class="token punctuation">)</span>
+        <span class="token comment">// &#x7ED3;&#x675F;&#x65E5;&#x671F;</span>
+        <span class="token keyword">val</span> toDate <span class="token operator">=</span> dateFormatter<span class="token punctuation">.</span>parse<span class="token punctuation">(</span><span class="token string">&quot;2019-03-23&quot;</span><span class="token punctuation">)</span>
+
+
+        <span class="token keyword">val</span> randomDate <span class="token operator">=</span> RandomDate<span class="token punctuation">(</span>fromDate<span class="token punctuation">,</span> toDate<span class="token punctuation">,</span> logAboutNum<span class="token punctuation">)</span>
+        <span class="token keyword">val</span> rows <span class="token operator">=</span> ListBuffer<span class="token punctuation">[</span>UserVisitAction<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment">// &#x6839;&#x636E; session &#x6765;&#x521B;&#x5EFA;&#x5BF9;&#x5E94; action</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token keyword">&lt;-</span> <span class="token number">1</span> to sessionNum<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">val</span> userId <span class="token operator">=</span> RandomNumUtil<span class="token punctuation">.</span>randomInt<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> userNum<span class="token punctuation">)</span>
+            <span class="token keyword">val</span> sessionId <span class="token operator">=</span> UUID<span class="token punctuation">.</span>randomUUID<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toString
+            <span class="token keyword">var</span> isQuit <span class="token operator">=</span> <span class="token boolean">false</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>isQuit<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">val</span> action <span class="token operator">=</span> actionOpts<span class="token punctuation">.</span>getRandomOption<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>action <span class="token operator">==</span> <span class="token string">&quot;quit&quot;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    isQuit <span class="token operator">=</span> <span class="token boolean">true</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">val</span> date <span class="token operator">=</span> randomDate<span class="token punctuation">.</span>getRandomDate
+                    <span class="token keyword">val</span> actionDateString <span class="token operator">=</span> dateFormatter<span class="token punctuation">.</span>format<span class="token punctuation">(</span>date<span class="token punctuation">)</span>
+                    <span class="token keyword">val</span> actionTimeString <span class="token operator">=</span> timeFormatter<span class="token punctuation">.</span>format<span class="token punctuation">(</span>date<span class="token punctuation">)</span>
+
+                    <span class="token keyword">var</span> searchKeyword<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+                    <span class="token keyword">var</span> clickCategoryId<span class="token operator">:</span> <span class="token builtin">Long</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+                    <span class="token keyword">var</span> clickProductId<span class="token operator">:</span> <span class="token builtin">Long</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span>
+                    <span class="token keyword">var</span> orderCategoryIds<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+                    <span class="token keyword">var</span> orderProductIds<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+                    <span class="token keyword">var</span> payCategoryIds<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+                    <span class="token keyword">var</span> payProductIds<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+
+                    <span class="token keyword">val</span> cityId<span class="token operator">:</span> <span class="token builtin">Long</span> <span class="token operator">=</span> RandomNumUtil<span class="token punctuation">.</span>randomLong<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">)</span>
+                    action <span class="token keyword">match</span> <span class="token punctuation">{</span>
+                        <span class="token keyword">case</span> <span class="token string">&quot;search&quot;</span> <span class="token keyword">=&gt;</span> searchKeyword <span class="token operator">=</span> searchKeywordsOpts<span class="token punctuation">.</span>getRandomOption<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                        <span class="token keyword">case</span> <span class="token string">&quot;click&quot;</span> <span class="token keyword">=&gt;</span> <span class="token punctuation">{</span>
+                            clickCategoryId <span class="token operator">=</span> RandomNumUtil<span class="token punctuation">.</span>randomInt<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> cargoryNum<span class="token punctuation">)</span>
+                            clickProductId <span class="token operator">=</span> RandomNumUtil<span class="token punctuation">.</span>randomInt<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> productNum<span class="token punctuation">)</span>
+                        <span class="token punctuation">}</span>
+                        <span class="token keyword">case</span> <span class="token string">&quot;order&quot;</span> <span class="token keyword">=&gt;</span> <span class="token punctuation">{</span>
+                            orderCategoryIds <span class="token operator">=</span> RandomNumUtil<span class="token punctuation">.</span>randomMultiInt<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> cargoryNum<span class="token punctuation">,</span> RandomNumUtil<span class="token punctuation">.</span>randomInt<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mkString<span class="token punctuation">(</span><span class="token string">&quot;,&quot;</span><span class="token punctuation">)</span>
+                            orderProductIds <span class="token operator">=</span> RandomNumUtil<span class="token punctuation">.</span>randomMultiInt<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> productNum<span class="token punctuation">,</span> RandomNumUtil<span class="token punctuation">.</span>randomInt<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mkString<span class="token punctuation">(</span><span class="token string">&quot;,&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">}</span>
+                        <span class="token keyword">case</span> <span class="token string">&quot;pay&quot;</span> <span class="token keyword">=&gt;</span> <span class="token punctuation">{</span>
+                            payCategoryIds <span class="token operator">=</span> RandomNumUtil<span class="token punctuation">.</span>randomMultiInt<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> cargoryNum<span class="token punctuation">,</span> RandomNumUtil<span class="token punctuation">.</span>randomInt<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mkString<span class="token punctuation">(</span><span class="token string">&quot;,&quot;</span><span class="token punctuation">)</span>
+                            payProductIds <span class="token operator">=</span> RandomNumUtil<span class="token punctuation">.</span>randomMultiInt<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> productNum<span class="token punctuation">,</span> RandomNumUtil<span class="token punctuation">.</span>randomInt<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mkString<span class="token punctuation">(</span><span class="token string">&quot;,&quot;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                    rows <span class="token operator">+=</span> UserVisitAction<span class="token punctuation">(</span>actionDateString<span class="token punctuation">,</span>
+                        userId<span class="token punctuation">,</span>
+                        sessionId<span class="token punctuation">,</span>
+                        RandomNumUtil<span class="token punctuation">.</span>randomInt<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> pageNum<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        actionTimeString<span class="token punctuation">,</span>
+                        searchKeyword<span class="token punctuation">,</span>
+                        clickCategoryId<span class="token punctuation">,</span>
+                        clickProductId<span class="token punctuation">,</span>
+                        orderCategoryIds<span class="token punctuation">,</span>
+                        orderProductIds<span class="token punctuation">,</span>
+                        payCategoryIds<span class="token punctuation">,</span>
+                        payProductIds<span class="token punctuation">,</span>
+                        cityId<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        rows<span class="token punctuation">.</span>toList
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x6A21;&#x62DF;&#x6570;&#x636E;</span>
+        <span class="token keyword">val</span> userVisitActionData <span class="token operator">=</span> mockUserVisitAction
+        <span class="token keyword">val</span> userInfoData <span class="token operator">=</span> mockUserInfo
+        <span class="token keyword">val</span> productInfoData <span class="token operator">=</span> mockProductInfo
+        <span class="token keyword">val</span> cityInfoData <span class="token operator">=</span> mockCityInfo
+
+        <span class="token keyword">val</span> spark<span class="token operator">:</span> SparkSession <span class="token operator">=</span> SparkSession
+            <span class="token punctuation">.</span>builder<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>master<span class="token punctuation">(</span><span class="token string">&quot;local[1]&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>appName<span class="token punctuation">(</span><span class="token string">&quot;MockOffline&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>enableHiveSupport<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>config<span class="token punctuation">(</span><span class="token string">&quot;spark.sql.warehouse.dir&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;hdfs://hadoop201:9000/user/hive/warehouse&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>getOrCreate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">import</span> spark<span class="token punctuation">.</span>implicits<span class="token punctuation">.</span>_
+        <span class="token keyword">val</span> sc <span class="token operator">=</span> spark<span class="token punctuation">.</span>sparkContext
+        <span class="token keyword">val</span> userVisitActionDF <span class="token operator">=</span> sc<span class="token punctuation">.</span>makeRDD<span class="token punctuation">(</span>userVisitActionData<span class="token punctuation">)</span><span class="token punctuation">.</span>toDF
+        <span class="token keyword">val</span> userInfoDF <span class="token operator">=</span> sc<span class="token punctuation">.</span>makeRDD<span class="token punctuation">(</span>userInfoData<span class="token punctuation">)</span><span class="token punctuation">.</span>toDF
+        <span class="token keyword">val</span> productInfoDF <span class="token operator">=</span> sc<span class="token punctuation">.</span>makeRDD<span class="token punctuation">(</span>productInfoData<span class="token punctuation">)</span><span class="token punctuation">.</span>toDF
+        <span class="token keyword">val</span> cityInfoDF <span class="token operator">=</span> sc<span class="token punctuation">.</span>makeRDD<span class="token punctuation">(</span>cityInfoData<span class="token punctuation">)</span><span class="token punctuation">.</span>toDF
+
+        insertIntoHive<span class="token punctuation">(</span>spark<span class="token punctuation">,</span> <span class="token string">&quot;user_visit_action&quot;</span><span class="token punctuation">,</span> userVisitActionDF<span class="token punctuation">)</span>
+        insertIntoHive<span class="token punctuation">(</span>spark<span class="token punctuation">,</span> <span class="token string">&quot;user_info&quot;</span><span class="token punctuation">,</span> userInfoDF<span class="token punctuation">)</span>
+        insertIntoHive<span class="token punctuation">(</span>spark<span class="token punctuation">,</span> <span class="token string">&quot;product_info&quot;</span><span class="token punctuation">,</span> productInfoDF<span class="token punctuation">)</span>
+        insertIntoHive<span class="token punctuation">(</span>spark<span class="token punctuation">,</span> <span class="token string">&quot;city_info&quot;</span><span class="token punctuation">,</span> cityInfoDF<span class="token punctuation">)</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+      * &#x628A;&#x6570;&#x636E;&#x63D2;&#x5165;&#x5230; Hive &#x8868;&#x4E2D;
+      *
+      * @param spark
+      * @param tableName
+      * @param df
+      * @return
+      */</span>
+    <span class="token keyword">def</span> insertIntoHive<span class="token punctuation">(</span>spark<span class="token operator">:</span> SparkSession<span class="token punctuation">,</span> tableName<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">,</span> df<span class="token operator">:</span> DataFrame<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> database <span class="token operator">=</span> ConfigurationUtil<span class="token punctuation">(</span><span class="token string">&quot;config.properties&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getString<span class="token punctuation">(</span><span class="token string">&quot;hive.database&quot;</span><span class="token punctuation">)</span>
+        spark<span class="token punctuation">.</span>sql<span class="token punctuation">(</span>s<span class="token string">&quot;use $database&quot;</span><span class="token punctuation">)</span> <span class="token comment">// &#x5207;&#x6362;&#x6570;&#x636E;&#x5E93;</span>
+        spark<span class="token punctuation">.</span>sql<span class="token punctuation">(</span>s<span class="token string">&quot;drop table if exists $tableName&quot;</span><span class="token punctuation">)</span> <span class="token comment">// &#x5982;&#x679C;&#x8868;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;, &#x5219;&#x5220;&#x9664;&#x8BE5;&#x8868;</span>
+        df<span class="token punctuation">.</span>write<span class="token punctuation">.</span>saveAsTable<span class="token punctuation">(</span>tableName<span class="token punctuation">)</span> <span class="token comment">// &#x4FDD;&#x5B58;&#x6570;&#x636E;</span>
+        <span class="token comment">//        spark.sql(s&quot;select * from $tableName&quot;).show(10000)</span>
+        println<span class="token punctuation">(</span>s<span class="token string">&quot;$tableName &#x6570;&#x636E;&#x5199;&#x5165;&#x5B8C;&#x6BD5;!&quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-03-06 22:33:26
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="32-chuang-jian-gong-zuo-zi-mo-kuai.html" class="navigation navigation-prev " aria-label="Previous page: 3.2 创建通用子模块">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-4-zhang-xu-qiu-1.html" class="navigation navigation-next " aria-label="Next page: 第 4 章 需求1: Top10 热门品类">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.3 创建模拟数据子模块","level":"1.3.3","depth":2,"next":{"title":"第 4 章 需求1: Top10 热门品类","level":"2.1","depth":1,"path":"di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-4-zhang-xu-qiu-1.md","ref":"di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-4-zhang-xu-qiu-1.md","articles":[]},"previous":{"title":"3.2 创建通用子模块","level":"1.3.2","depth":2,"path":"di-3-zhang-xiang-mu-da-jian/32-chuang-jian-gong-zuo-zi-mo-kuai.md","ref":"di-3-zhang-xiang-mu-da-jian/32-chuang-jian-gong-zuo-zi-mo-kuai.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_mallanalyze_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-3-zhang-xiang-mu-da-jian/33-chuang-jian-mo-ni-shu-ju-zi-mo-kuai.md","mtime":"2019-03-06T14:33:26.974Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-11T09:53:23.145Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,913 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.3.2 Kafka 消费者之低级 API · 大数据 Fulume 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../di-5-zhang-lan-jie-qi.html" />
+    
+    
+    <link rel="prev" href="431-kafka-xiao-fei-zhe-zhi-gao-ji-api.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    第 1 章 Kafka 概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../11-xiao-xi-dui-lie.html">
+            
+                <a href="../../11-xiao-xi-dui-lie.html">
+            
+                    
+                    1.1 消息队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../12-wei-shi-yao-xu-yao-xiao-xi-dui-lie.html">
+            
+                <a href="../../12-wei-shi-yao-xu-yao-xiao-xi-dui-lie.html">
+            
+                    
+                    1.2 为什么需要消息队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../13-shi-yao-shi-kafka.html">
+            
+                <a href="../../13-shi-yao-shi-kafka.html">
+            
+                    
+                    1.3 什么是 Kafka
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../14-kafka-jia-gou.html">
+            
+                <a href="../../14-kafka-jia-gou.html">
+            
+                    
+                    1.4 Kafka 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../chapter1.html">
+            
+                <a href="../../chapter1.html">
+            
+                    
+                    第 2 章 Kafka 集群部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../chapter1/21-xia-zai-kafka.html">
+            
+                <a href="../../chapter1/21-xia-zai-kafka.html">
+            
+                    
+                    2.1 下载 Kafka
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../chapter1/22-bu-shu.html">
+            
+                <a href="../../chapter1/22-bu-shu.html">
+            
+                    
+                    2.2 部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../chapter1/23-kafka-chang-yong-ming-ling-cao-zuo.html">
+            
+                <a href="../../chapter1/23-kafka-chang-yong-ming-ling-cao-zuo.html">
+            
+                    
+                    2.3 Kafka 常用命令操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi.html">
+            
+                <a href="../../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi.html">
+            
+                    
+                    第 3 章 Kafka 工作流程分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/31-kafka-sheng-cheng-guo-cheng-fen-xi.html">
+            
+                <a href="../../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/31-kafka-sheng-cheng-guo-cheng-fen-xi.html">
+            
+                    
+                    3.1 Kafka 生产过程分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/32-broker-bao-cun-xiao-xi.html">
+            
+                <a href="../../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/32-broker-bao-cun-xiao-xi.html">
+            
+                    
+                    3.2 broker 保存消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/33-zookeeper-cun-chu-jie-gou.html">
+            
+                <a href="../../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/33-zookeeper-cun-chu-jie-gou.html">
+            
+                    
+                    3.3 Zookeeper 存储结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/34-kafka-xiao-fei-guo-cheng-fen-xi.html">
+            
+                <a href="../../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/34-kafka-xiao-fei-guo-cheng-fen-xi.html">
+            
+                    
+                    3.4 Kafka 消费过程分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/35-xiao-fei-zhe-zu-an-li.html">
+            
+                <a href="../../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/35-xiao-fei-zhe-zu-an-li.html">
+            
+                    
+                    3.5 消费者组案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../di-4-zhang-api-shi-zhan.html">
+            
+                <a href="../../di-4-zhang-api-shi-zhan.html">
+            
+                    
+                    第 4 章 API 实战
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../41-huan-jing-zhun-bei.html">
+            
+                <a href="../41-huan-jing-zhun-bei.html">
+            
+                    
+                    4.1 环境准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../42-kafka-sheng-chan-zhe-api.html">
+            
+                <a href="../42-kafka-sheng-chan-zhe-api.html">
+            
+                    
+                    4.2 Kafka 生产者 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../43-kafka-xiao-fei-zhe-api.html">
+            
+                <a href="../43-kafka-xiao-fei-zhe-api.html">
+            
+                    
+                    4.3 Kafka 消费者 API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="431-kafka-xiao-fei-zhe-zhi-gao-ji-api.html">
+            
+                <a href="431-kafka-xiao-fei-zhe-zhi-gao-ji-api.html">
+            
+                    
+                    4.3.1 Kafka 消费者之高级 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3.2" data-path="432-kafka-xiao-fei-zhe-zhi-di-ji-api.html">
+            
+                <a href="432-kafka-xiao-fei-zhe-zhi-di-ji-api.html">
+            
+                    
+                    4.3.2 Kafka 消费者之低级 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../di-5-zhang-lan-jie-qi.html">
+            
+                <a href="../../di-5-zhang-lan-jie-qi.html">
+            
+                    
+                    第 5 章 拦截器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../51-lan-jie-qi-yuan-li.html">
+            
+                <a href="../../51-lan-jie-qi-yuan-li.html">
+            
+                    
+                    5.1 拦截器原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../52-lan-jie-qi-an-li.html">
+            
+                <a href="../../52-lan-jie-qi-an-li.html">
+            
+                    
+                    5.2 拦截器案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../di-6-zhang-kafka-stream.html">
+            
+                <a href="../../di-6-zhang-kafka-stream.html">
+            
+                    
+                    第 6 章 Kafka stream
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../di-6-zhang-kafka-stream/61-gai-shu.html">
+            
+                <a href="../../di-6-zhang-kafka-stream/61-gai-shu.html">
+            
+                    
+                    6.1 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../di-6-zhang-kafka-stream/62-kafka-stream-shu-ju-qing-xi-an-li.html">
+            
+                <a href="../../di-6-zhang-kafka-stream/62-kafka-stream-shu-ju-qing-xi-an-li.html">
+            
+                    
+                    6.2 Kafka Stream 数据清洗案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../di-7-zhang-kuo-zhan.html">
+            
+                <a href="../../di-7-zhang-kuo-zhan.html">
+            
+                    
+                    第 7 章 扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../di-7-zhang-kuo-zhan/71-kafka-he-flume-ji-cheng.html">
+            
+                <a href="../../di-7-zhang-kuo-zhan/71-kafka-he-flume-ji-cheng.html">
+            
+                    
+                    7.1 Kafka 和 Flume 比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../di-7-zhang-kuo-zhan/72-kafka-he-flume-ji-cheng.html">
+            
+                <a href="../../di-7-zhang-kuo-zhan/72-kafka-he-flume-ji-cheng.html">
+            
+                    
+                    7.2 Kafka 和 Flume 集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi.html">
+            
+                <a href="../../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi.html">
+            
+                    
+                    7.3 Kafka 配置信息
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.3.1" data-path="../../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi/731-broker-pei-zhi-xin-xi.html">
+            
+                <a href="../../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi/731-broker-pei-zhi-xin-xi.html">
+            
+                    
+                    7.3.1 broker 配置信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.2" data-path="../../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi/732-producer-pei-zhi-xin-xi.html">
+            
+                <a href="../../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi/732-producer-pei-zhi-xin-xi.html">
+            
+                    
+                    7.3.2 Producer 配置信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.3" data-path="../../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi/733-consumer-pei-zhi-xin-xi.html">
+            
+                <a href="../../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi/733-consumer-pei-zhi-xin-xi.html">
+            
+                    
+                    7.3.3 Consumer 配置信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >4.3.2 Kafka 消费者之低级 API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="432-kafka-&#x6D88;&#x8D39;&#x8005;&#x4E4B;&#x4F4E;&#x7EA7;-api">4.3.2 Kafka &#x6D88;&#x8D39;&#x8005;&#x4E4B;&#x4F4E;&#x7EA7; API</h1>
+<p>&#x5B9E;&#x73B0;&#x4F7F;&#x7528;&#x4F4E;&#x7EA7; API &#x8BFB;&#x53D6;&#x6307;&#x5B9A; topic&#xFF0C;&#x6307;&#x5B9A; partition,&#x6307;&#x5B9A; offset &#x7684;&#x6570;&#x636E;&#x3002;</p>
+<h2 id="&#x6D88;&#x8D39;&#x8005;&#x4F7F;&#x7528;&#x4F4E;&#x7EA7;api-&#x7684;&#x4E3B;&#x8981;&#x6B65;&#x9AA4;">&#x6D88;&#x8D39;&#x8005;&#x4F7F;&#x7528;&#x4F4E;&#x7EA7;API &#x7684;&#x4E3B;&#x8981;&#x6B65;&#x9AA4;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x6B65;&#x9AA4;</th>
+<th>&#x4E3B;&#x8981;&#x5DE5;&#x4F5C;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>&#x6839;&#x636E;&#x6307;&#x5B9A;&#x7684;&#x5206;&#x533A;&#x4ECE;&#x4E3B;&#x9898;&#x5143;&#x6570;&#x636E;&#x4E2D;&#x627E;&#x5230;&#x5206;&#x533A;&#x9886;&#x5BFC; &#x2705;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&#x83B7;&#x53D6;&#x5206;&#x533A;&#x6700;&#x65B0;&#x7684;&#x6D88;&#x8D39;&#x8FDB;&#x5EA6;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&#x4ECE;&#x4E3B;&#x526F;&#x672C;&#x62C9;&#x53D6;&#x5206;&#x533A;&#x7684;&#x6D88;&#x606F;               &#x2705;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&#x8BC6;&#x522B;&#x4E3B;&#x526F;&#x672C;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x91CD;&#x8BD5;</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h2>
+<p>&#x5B98;&#x65B9;&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;:
+<a href="https://cwiki.apache.org/confluence/display/KAFKA/0.8.0+SimpleConsumer+Example" target="_blank">https://cwiki.apache.org/confluence/display/KAFKA/0.8.0+SimpleConsumer+Example</a></p>
+<p>&#x6211;&#x4EEC;&#x7CBE;&#x7B80;&#x4EE3;&#x7801;:</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>kafka<span class="token punctuation">.</span>consume<span class="token punctuation">;</span>
+
+
+<span class="token keyword">import</span> kafka<span class="token punctuation">.</span>api<span class="token punctuation">.</span>FetchRequest<span class="token punctuation">;</span>
+<span class="token keyword">import</span> kafka<span class="token punctuation">.</span>api<span class="token punctuation">.</span>FetchRequestBuilder<span class="token punctuation">;</span>
+<span class="token keyword">import</span> kafka<span class="token punctuation">.</span>javaapi<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> kafka<span class="token punctuation">.</span>javaapi<span class="token punctuation">.</span>consumer<span class="token punctuation">.</span>SimpleConsumer<span class="token punctuation">;</span>
+<span class="token keyword">import</span> kafka<span class="token punctuation">.</span>javaapi<span class="token punctuation">.</span>message<span class="token punctuation">.</span>ByteBufferMessageSet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> kafka<span class="token punctuation">.</span>message<span class="token punctuation">.</span>MessageAndOffset<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>UnsupportedEncodingException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>ByteBuffer<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Arrays<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LowerConsumer</span> <span class="token punctuation">{</span>
+
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> InterruptedException<span class="token punctuation">,</span> UnsupportedEncodingException <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// &#x5B9A;&#x4E49; 3 &#x4E2A; brokers</span>
+
+        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> brokers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">&quot;hadoop201&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;hadoop202&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;hadoop303&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// &#x5B9A;&#x4E49; brokers &#x7684;&#x7AEF;&#x53E3;&#x53F7;</span>
+        <span class="token keyword">int</span> port <span class="token operator">=</span> <span class="token number">9092</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// &#x5B9A;&#x4E49; topic</span>
+        String topic <span class="token operator">=</span> <span class="token string">&quot;first&quot;</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// &#x5B9A;&#x4E49; partition</span>
+        <span class="token keyword">int</span> partition <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> offset <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        LowerConsumer lowerConsumer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LowerConsumer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        lowerConsumer<span class="token punctuation">.</span><span class="token function">getData</span><span class="token punctuation">(</span>brokers<span class="token punctuation">,</span> port<span class="token punctuation">,</span> topic<span class="token punctuation">,</span> partition<span class="token punctuation">,</span> offset<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * &#x67E5;&#x627E;&#x6307;&#x5B9A; brokers &#x6307;&#x5B9A; topic &#x6307;&#x5B9A; partition &#x7684; leader
+     *
+     * @param brokers   brokers
+     * @param port
+     * @param topic
+     * @param partition
+     * @return
+     */</span>
+    <span class="token keyword">public</span> PartitionMetadata <span class="token function">findLeader</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> brokers<span class="token punctuation">,</span> <span class="token keyword">int</span> port<span class="token punctuation">,</span> String topic<span class="token punctuation">,</span> <span class="token keyword">int</span> partition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>String broker <span class="token operator">:</span> brokers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            SimpleConsumer consumer
+                    <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleConsumer</span><span class="token punctuation">(</span>broker<span class="token punctuation">,</span> port<span class="token punctuation">,</span> <span class="token number">100000</span><span class="token punctuation">,</span> <span class="token number">64</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">,</span> <span class="token string">&quot;lookup_leader&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// &#x521B;&#x5EFA; TopicMetadataRequest &#x5BF9;&#x8C61;, &#x4F7F;&#x7528; consumer &#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;</span>
+            TopicMetadataRequest request <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TopicMetadataRequest</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>topic<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// &#x53D1;&#x9001;&#x8BF7;&#x6C42;, &#x8FD4;&#x56DE;&#x503C;&#x4E3A; Topic &#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;</span>
+            TopicMetadataResponse topicMetadataResponse <span class="token operator">=</span> consumer<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// &#x62FF;&#x5230;&#x6BCF;&#x4E2A; topic &#x7684;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;</span>
+            List<span class="token operator">&lt;</span>TopicMetadata<span class="token operator">&gt;</span> topicMetadataList <span class="token operator">=</span> topicMetadataResponse<span class="token punctuation">.</span><span class="token function">topicsMetadata</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>TopicMetadata topicMetadata <span class="token operator">:</span> topicMetadataList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// &#x62FF;&#x5230;&#x6BCF;&#x4E2A; topic &#x7684;&#x6240;&#x6709;&#x5206;&#x533A;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;</span>
+                List<span class="token operator">&lt;</span>PartitionMetadata<span class="token operator">&gt;</span> partitionMetadataList <span class="token operator">=</span> topicMetadata<span class="token punctuation">.</span><span class="token function">partitionsMetadata</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>PartitionMetadata partitionMetadata <span class="token operator">:</span> partitionMetadataList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>partition <span class="token operator">==</span> partitionMetadata<span class="token punctuation">.</span><span class="token function">partitionId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+                        <span class="token keyword">return</span> partitionMetadata<span class="token punctuation">;</span>
+
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * &#x83B7;&#x53D6;&#x6307;&#x5B9A;brokers &#x4E2D;&#x6307;&#x5B9A;topic&#x7684;&#x6307;&#x5B9A;&#x5206;&#x533A;&#x7684;&#x6307;&#x5B9A;offset&#x5F00;&#x59CB;&#x7684;&#x6570;&#x636E;
+     *
+     * @param brokers
+     * @param port
+     * @param topic
+     * @param partition
+     * @param offset
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getData</span><span class="token punctuation">(</span>List<span class="token operator">&lt;</span>String<span class="token operator">&gt;</span> brokers<span class="token punctuation">,</span> <span class="token keyword">int</span> port<span class="token punctuation">,</span> String topic<span class="token punctuation">,</span> <span class="token keyword">int</span> partition<span class="token punctuation">,</span> <span class="token keyword">long</span> offset<span class="token punctuation">)</span> <span class="token keyword">throws</span> UnsupportedEncodingException<span class="token punctuation">,</span> InterruptedException <span class="token punctuation">{</span>
+        PartitionMetadata leader <span class="token operator">=</span> <span class="token function">findLeader</span><span class="token punctuation">(</span>brokers<span class="token punctuation">,</span> port<span class="token punctuation">,</span> topic<span class="token punctuation">,</span> partition<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String host <span class="token operator">=</span> leader<span class="token punctuation">.</span><span class="token function">leader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">host</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        SimpleConsumer c1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleConsumer</span><span class="token punctuation">(</span>host<span class="token punctuation">,</span> port<span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">,</span> <span class="token number">64</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">,</span> <span class="token string">&quot;c1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            FetchRequest request <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FetchRequestBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">clientId</span><span class="token punctuation">(</span><span class="token string">&quot;c1&quot;</span><span class="token punctuation">)</span>
+                    <span class="token comment" spellcheck="true">// fetchSize &#x8868;&#x793A;&#x4E00;&#x6B21;&#x8BFB;&#x53D6;&#x5230;&#x7684;&#x6700;&#x591A;&#x7684;&#x5B57;&#x8282;&#x6570;. &#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x503C;&#x8BBE;&#x7F6E;&#x8FC7;&#x5C0F;, &#x5219;&#x81F3;&#x5C11;&#x4FDD;&#x8BC1;&#x4E00;&#x6B21;&#x8BFB;&#x53D6;&#x4E00;&#x6761;&#x8BB0;&#x5F55;.</span>
+                    <span class="token comment" spellcheck="true">// &#x4E3A;&#x4E86;&#x8BFB;&#x53D6;&#x6548;&#x7387;&#x7684;&#x63D0;&#x9AD8;, &#x53EF;&#x4EE5;&#x628A;&#x8FD9;&#x4E2A;&#x503C;&#x8BBE;&#x7F6E;&#x7684;&#x5927;&#x4E00;&#x4E9B;.</span>
+                    <span class="token punctuation">.</span><span class="token function">addFetch</span><span class="token punctuation">(</span>topic<span class="token punctuation">,</span> partition<span class="token punctuation">,</span> offset<span class="token punctuation">,</span> <span class="token number">100000</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            FetchResponse response <span class="token operator">=</span> c1<span class="token punctuation">.</span><span class="token function">fetch</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ByteBufferMessageSet messageAndOffsets <span class="token operator">=</span> response<span class="token punctuation">.</span><span class="token function">messageSet</span><span class="token punctuation">(</span>topic<span class="token punctuation">,</span> partition<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>MessageAndOffset messageAndOffset <span class="token operator">:</span> messageAndOffsets<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                ByteBuffer buffer <span class="token operator">=</span> messageAndOffset<span class="token punctuation">.</span><span class="token function">message</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">payload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> data <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span>buffer<span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                buffer<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>messageAndOffset<span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; : &quot;</span> <span class="token operator">+</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">// &#x6BCF;&#x8BFB;&#x5B8C;&#x4E00;&#x6761;&#x6570;&#x636E;, &#x628A;offset &#x7684;&#x503C;&#x7F6E;&#x4E3A;&#x6700;&#x65B0;&#x7684;offset</span>
+                offset <span class="token operator">=</span> messageAndOffset<span class="token punctuation">.</span><span class="token function">offset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>messageAndOffsets<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// &#x5982;&#x679C;&#x8FD9;&#x6B21;&#x786E;&#x5B9E;&#x8BFB;&#x5230;&#x6570;&#x636E;&#x4E86;, &#x6240;&#x4EE5;&#x628A;offset&#x7684;&#x503C; ++, &#x4E0B;&#x4E00;&#x6B21;&#x8BFB;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4ECE;&#x65B0;&#x7684;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x8BFB;&#x4E86;</span>
+                <span class="token comment" spellcheck="true">// &#x5982;&#x679C;&#x8FD9;&#x6B21;&#x6CA1;&#x6709;&#x8BFB;&#x5230;&#x6570;&#x636E;, &#x8868;&#x793A;&#x6570;&#x636E;&#x5DF2;&#x7ECF;&#x8BFB;&#x5B8C;&#x4E86;, &#x6240;&#x4EE5;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x518D; ++ &#x4E86;</span>
+                <span class="token comment" spellcheck="true">// &#x5982;&#x679C;&#x8FD9;&#x4E2A;offset &#x53EA;&#x662F;&#x9488;&#x5BF9;&#x5F53;&#x524D;&#x5206;&#x533A;&#x7684;.</span>
+                <span class="token comment" spellcheck="true">// &#x5982;&#x679C;&#x60F3;&#x4E0B;&#x6B21;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x4ECE;&#x4E0A;&#x6B21;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x8BFB;&#x53D6;, &#x5219;&#x5E94;&#x8BE5;&#x628A; offset &#x7684;&#x503C;&#x6301;&#x4E45;&#x5316;,, &#x6BD4;&#x5982;&#x5B58;&#x5230;Zookeeper &#x6216;&#x8005; mysql &#x6570;&#x636E;&#x5E93;&#x4E2D;.</span>
+                offset<span class="token operator">++</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>offset<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-11-20 18:14:18
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="431-kafka-xiao-fei-zhe-zhi-gao-ji-api.html" class="navigation navigation-prev " aria-label="Previous page: 4.3.1 Kafka 消费者之高级 API">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../di-5-zhang-lan-jie-qi.html" class="navigation navigation-next " aria-label="Next page: 第 5 章 拦截器">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.3.2 Kafka 消费者之低级 API","level":"1.4.3.2","depth":3,"next":{"title":"第 5 章 拦截器","level":"1.5","depth":1,"path":"di-5-zhang-lan-jie-qi.md","ref":"di-5-zhang-lan-jie-qi.md","articles":[{"title":"5.1 拦截器原理","level":"1.5.1","depth":2,"path":"51-lan-jie-qi-yuan-li.md","ref":"51-lan-jie-qi-yuan-li.md","articles":[]},{"title":"5.2 拦截器案例","level":"1.5.2","depth":2,"path":"52-lan-jie-qi-an-li.md","ref":"52-lan-jie-qi-an-li.md","articles":[]}]},"previous":{"title":"4.3.1 Kafka 消费者之高级 API","level":"1.4.3.1","depth":3,"path":"di-4-zhang-api-shi-zhan/43-kafka-xiao-fei-zhe-api/431-kafka-xiao-fei-zhe-zhi-gao-ji-api.md","ref":"di-4-zhang-api-shi-zhan/43-kafka-xiao-fei-zhe-api/431-kafka-xiao-fei-zhe-zhi-gao-ji-api.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://www.gitbook.com/@zhenchao125"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 Fulume 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-4-zhang-api-shi-zhan/43-kafka-xiao-fei-zhe-api/432-kafka-xiao-fei-zhe-zhi-di-ji-api.md","mtime":"2018-11-20T10:14:18.093Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-25T01:42:15.294Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1088 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>8.10 HDFS的I/O流操作 · 大数据hadoop课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../di-9-zhang-hdfs-shu-ju-liang.html" />
+    
+    
+    <link rel="prev" href="89-wen-jian-he-wen-jian-jia-pan-duan.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">第 1 部分 Hadoop入门</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    本书介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../chapter1.html">
+            
+                <a href="../../chapter1.html">
+            
+                    
+                    第 1 章 大数据概论
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../chapter1/11da-shu-ju-gai-nian.html">
+            
+                <a href="../../chapter1/11da-shu-ju-gai-nian.html">
+            
+                    
+                    1.1大数据概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../chapter1/12-da-shu-ju-ying-yong-chang-jing.html">
+            
+                <a href="../../chapter1/12-da-shu-ju-ying-yong-chang-jing.html">
+            
+                    
+                    1.2 大数据应用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../chapter1/13-da-shu-ju-de-fa-zhan-qian-jing.html">
+            
+                <a href="../../chapter1/13-da-shu-ju-de-fa-zhan-qian-jing.html">
+            
+                    
+                    1.3 大数据的发展前景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../chapter1/14-da-shu-ju-de-te-dian.html">
+            
+                <a href="../../chapter1/14-da-shu-ju-de-te-dian.html">
+            
+                    
+                    1.4 大数据的特点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../di-2-zhang-hadoop-gai-shu.html">
+            
+                <a href="../../di-2-zhang-hadoop-gai-shu.html">
+            
+                    
+                    第 2 章 Hadoop 概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../di-2-zhang-hadoop-gai-shu/21-hadoopshi-shi-yao.html">
+            
+                <a href="../../di-2-zhang-hadoop-gai-shu/21-hadoopshi-shi-yao.html">
+            
+                    
+                    2.1 Hadoop是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../di-2-zhang-hadoop-gai-shu/22-hadoopfa-zhan-li-shi.html">
+            
+                <a href="../../di-2-zhang-hadoop-gai-shu/22-hadoopfa-zhan-li-shi.html">
+            
+                    
+                    2.2 Hadoop发展简史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../di-2-zhang-hadoop-gai-shu/23-hadoopde-san-da-fa-xing-ban-ben.html">
+            
+                <a href="../../di-2-zhang-hadoop-gai-shu/23-hadoopde-san-da-fa-xing-ban-ben.html">
+            
+                    
+                    2.3 Hadoop的发行版本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../di-2-zhang-hadoop-gai-shu/24-hadoopde-you-shi.html">
+            
+                <a href="../../di-2-zhang-hadoop-gai-shu/24-hadoopde-you-shi.html">
+            
+                    
+                    2.4 Hadoop的优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../di-3-zhang-hadoop-de-zu-cheng-mo-kuai.html">
+            
+                <a href="../../di-3-zhang-hadoop-de-zu-cheng-mo-kuai.html">
+            
+                    
+                    第 3 章 Hadoop的组成模块
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../di-3-zhang-hadoop-de-zu-cheng-mo-kuai/31-hadoop1xde-zu-cheng.html">
+            
+                <a href="../../di-3-zhang-hadoop-de-zu-cheng-mo-kuai/31-hadoop1xde-zu-cheng.html">
+            
+                    
+                    3.1 Hadoop1.x的组成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../di-3-zhang-hadoop-de-zu-cheng-mo-kuai/32-hadoop2xde-zu-cheng.html">
+            
+                <a href="../../di-3-zhang-hadoop-de-zu-cheng-mo-kuai/32-hadoop2xde-zu-cheng.html">
+            
+                    
+                    3.2 Hadoop2.x的组成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../di-3-zhang-hadoop-de-zu-cheng-mo-kuai/32-hadoop2xde-zu-cheng/321-hdfsjia-gou-gai-shu.html">
+            
+                <a href="../../di-3-zhang-hadoop-de-zu-cheng-mo-kuai/32-hadoop2xde-zu-cheng/321-hdfsjia-gou-gai-shu.html">
+            
+                    
+                    3.2.1 HDFS架构概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../../di-3-zhang-hadoop-de-zu-cheng-mo-kuai/32-hadoop2xde-zu-cheng/322-yarn-jia-gou-gai-shu.html">
+            
+                <a href="../../di-3-zhang-hadoop-de-zu-cheng-mo-kuai/32-hadoop2xde-zu-cheng/322-yarn-jia-gou-gai-shu.html">
+            
+                    
+                    3.2.2 YARN 架构概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../../di-3-zhang-hadoop-de-zu-cheng-mo-kuai/32-hadoop2xde-zu-cheng/323-mapreducejia-gou-gai-shu.html">
+            
+                <a href="../../di-3-zhang-hadoop-de-zu-cheng-mo-kuai/32-hadoop2xde-zu-cheng/323-mapreducejia-gou-gai-shu.html">
+            
+                    
+                    3.2.3 MapReduce架构概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../di-3-zhang-hadoop-kai-fa-huan-jing-da-jian.html">
+            
+                <a href="../../di-3-zhang-hadoop-kai-fa-huan-jing-da-jian.html">
+            
+                    
+                    第 4 章 Hadoop 运行环境搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../di-3-zhang-hadoop-kai-fa-huan-jing-da-jian/41-zhun-bei-xu-ni-ji-huan-jing.html">
+            
+                <a href="../../di-3-zhang-hadoop-kai-fa-huan-jing-da-jian/41-zhun-bei-xu-ni-ji-huan-jing.html">
+            
+                    
+                    4.1 准备虚拟机环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../di-3-zhang-hadoop-kai-fa-huan-jing-da-jian/42-an-zhuang-jdk.html">
+            
+                <a href="../../di-3-zhang-hadoop-kai-fa-huan-jing-da-jian/42-an-zhuang-jdk.html">
+            
+                    
+                    4.2 安装jdk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../di-3-zhang-hadoop-kai-fa-huan-jing-da-jian/43-an-zhuang-hadoop.html">
+            
+                <a href="../../di-3-zhang-hadoop-kai-fa-huan-jing-da-jian/43-an-zhuang-hadoop.html">
+            
+                    
+                    4.3 安装 Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../di-4-zhang-yun-xing-hadoop.html">
+            
+                <a href="../../di-4-zhang-yun-xing-hadoop.html">
+            
+                    
+                    第 5 章 运行 Hadoop
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../di-4-zhang-yun-xing-hadoop/51-ben-di-yun-xing-mo-shi.html">
+            
+                <a href="../../di-4-zhang-yun-xing-hadoop/51-ben-di-yun-xing-mo-shi.html">
+            
+                    
+                    5.1 本地运行模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../di-4-zhang-yun-xing-hadoop/52-wei-fen-bu-yun-xing-mo-shi.html">
+            
+                <a href="../../di-4-zhang-yun-xing-hadoop/52-wei-fen-bu-yun-xing-mo-shi.html">
+            
+                    
+                    5.2 伪分布运行模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../di-4-zhang-yun-xing-hadoop/53-wan-quan-fen-bu-yun-xing-mo-shi.html">
+            
+                <a href="../../di-4-zhang-yun-xing-hadoop/53-wan-quan-fen-bu-yun-xing-mo-shi.html">
+            
+                    
+                    5.3 完全分布运行模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 2 部分 HDFS</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../di-6-zhang-hdfs-gai-shu.html">
+            
+                <a href="../di-6-zhang-hdfs-gai-shu.html">
+            
+                    
+                    第 6 章 HDFS概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../di-7-zhang-hdfs-de-shell-cao-zuo.html">
+            
+                <a href="../di-7-zhang-hdfs-de-shell-cao-zuo.html">
+            
+                    
+                    第 7 章 HDFS的shell操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../di-8-zhang-hdfs-ke-hu-duan-cao-zuo.html">
+            
+                <a href="../di-8-zhang-hdfs-ke-hu-duan-cao-zuo.html">
+            
+                    
+                    第 8 章 HDFS客户端操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="81-ke-hu-duan-huan-jing-zhun-bei.html">
+            
+                <a href="81-ke-hu-duan-huan-jing-zhun-bei.html">
+            
+                    
+                    8.1 客户端环境准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="82-shi-yong-java-cheng-xu-lai-fang-wen-hdfs.html">
+            
+                <a href="82-shi-yong-java-cheng-xu-lai-fang-wen-hdfs.html">
+            
+                    
+                    8.2 使用Java程序来访问HDFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="83-zai-hdfs-zhong-chuang-jian-mu-lu.html">
+            
+                <a href="83-zai-hdfs-zhong-chuang-jian-mu-lu.html">
+            
+                    
+                    8.3 在HDFS中创建目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="84-hdfschang-yong-api-cao-zuo.html">
+            
+                <a href="84-hdfschang-yong-api-cao-zuo.html">
+            
+                    
+                    8.4 上传文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="85-xia-zai-wen-jian.html">
+            
+                <a href="85-xia-zai-wen-jian.html">
+            
+                    
+                    8.5 下载文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="86-wen-jian-jia-shan-chu.html">
+            
+                <a href="86-wen-jian-jia-shan-chu.html">
+            
+                    
+                    8.6 文件夹删除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="87-wen-jian-ming-geng-gai.html">
+            
+                <a href="87-wen-jian-ming-geng-gai.html">
+            
+                    
+                    8.7 文件名更改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="88-wen-jian-xiang-qing-cha-kan.html">
+            
+                <a href="88-wen-jian-xiang-qing-cha-kan.html">
+            
+                    
+                    8.8 文件详情查看
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="89-wen-jian-he-wen-jian-jia-pan-duan.html">
+            
+                <a href="89-wen-jian-he-wen-jian-jia-pan-duan.html">
+            
+                    
+                    8.9 文件和文件夹判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3.10" data-path="810-hdfsde-i-o-liu-cao-zuo.html">
+            
+                <a href="810-hdfsde-i-o-liu-cao-zuo.html">
+            
+                    
+                    8.10 HDFS的I/O流操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../di-9-zhang-hdfs-shu-ju-liang.html">
+            
+                <a href="../di-9-zhang-hdfs-shu-ju-liang.html">
+            
+                    
+                    第 9 章 HDFS读写数据流
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../di-9-zhang-hdfs-shu-ju-liang/91-xiang-hdfs-xie-ru-shu-ju-de-liu-cheng.html">
+            
+                <a href="../di-9-zhang-hdfs-shu-ju-liang/91-xiang-hdfs-xie-ru-shu-ju-de-liu-cheng.html">
+            
+                    
+                    9.1 从HDFS读取数据的流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../di-9-zhang-hdfs-shu-ju-liang/92-cong-hdfs-du-qu-shu-ju-de-liu-cheng.html">
+            
+                <a href="../di-9-zhang-hdfs-shu-ju-liang/92-cong-hdfs-du-qu-shu-ju-de-liu-cheng.html">
+            
+                    
+                    9.2 向HDFS写入数据的流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../di-10-zhang-namenode-he-secondarynamenode.html">
+            
+                <a href="../di-10-zhang-namenode-he-secondarynamenode.html">
+            
+                    
+                    第 10 章 NameNode和SecondaryNameNode
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../di-10-zhang-namenode-he-secondarynamenode/101-gong-zuo-ji-zhi.html">
+            
+                <a href="../di-10-zhang-namenode-he-secondarynamenode/101-gong-zuo-ji-zhi.html">
+            
+                    
+                    10.1 NameNode和SecondaryNameNode工作机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../di-10-zhang-namenode-he-secondarynamenode/102-namenodede-wen-jian-mu-lu-jie-gou.html">
+            
+                <a href="../di-10-zhang-namenode-he-secondarynamenode/102-namenodede-wen-jian-mu-lu-jie-gou.html">
+            
+                    
+                    10.2 NameNode的文件目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../di-10-zhang-namenode-he-secondarynamenode/103-secondarynamenodede-wen-jian-mu-lu-jie-gou.html">
+            
+                <a href="../di-10-zhang-namenode-he-secondarynamenode/103-secondarynamenodede-wen-jian-mu-lu-jie-gou.html">
+            
+                    
+                    10.3 SecondaryNameNode的文件目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../di-10-zhang-namenode-he-secondarynamenode/104-namenodegu-zhang-chu-li.html">
+            
+                <a href="../di-10-zhang-namenode-he-secondarynamenode/104-namenodegu-zhang-chu-li.html">
+            
+                    
+                    10.4 NameNode故障处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../di-10-zhang-namenode-he-secondarynamenode/105-ji-qun-an-quan-mo-shi.html">
+            
+                <a href="../di-10-zhang-namenode-he-secondarynamenode/105-ji-qun-an-quan-mo-shi.html">
+            
+                    
+                    10.5 集群安全模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../di-10-zhang-namenode-he-secondarynamenode/106-namenodeduo-mu-lu-pei-zhi.html">
+            
+                <a href="../di-10-zhang-namenode-he-secondarynamenode/106-namenodeduo-mu-lu-pei-zhi.html">
+            
+                    
+                    10.6 NameNode多目录配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../di-11-zhang-datanode.html">
+            
+                <a href="../di-11-zhang-datanode.html">
+            
+                    
+                    第 11 章 DataNode
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../di-11-zhang-datanode/111-datanodegong-zuo-ji-zhi.html">
+            
+                <a href="../di-11-zhang-datanode/111-datanodegong-zuo-ji-zhi.html">
+            
+                    
+                    11.1 DataNode工作机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../di-11-zhang-datanode/112-datanodede-mu-lu-jie-gou.html">
+            
+                <a href="../di-11-zhang-datanode/112-datanodede-mu-lu-jie-gou.html">
+            
+                    
+                    11.2 DataNode的目录结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../di-11-zhang-datanode/112-shu-ju-wan-zheng-xing.html">
+            
+                <a href="../di-11-zhang-datanode/112-shu-ju-wan-zheng-xing.html">
+            
+                    
+                    11.3 数据完整性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../di-11-zhang-datanode/114-diao-xian-shi-xian-can-shu-she-zhi.html">
+            
+                <a href="../di-11-zhang-datanode/114-diao-xian-shi-xian-can-shu-she-zhi.html">
+            
+                    
+                    11.4 掉线时限参数设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../di-11-zhang-datanode/115-datanodeduo-mu-lu-pei-zhi.html">
+            
+                <a href="../di-11-zhang-datanode/115-datanodeduo-mu-lu-pei-zhi.html">
+            
+                    
+                    11.5 DataNode多目录配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 3 部分 MapReduce</li>
+        
+        
+    
+
+    
+        
+        <li class="header">第 4 部分 Hadoop高级特性</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >8.10 HDFS的I/O流操作</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="810-hdfs&#x7684;io&#x64CD;&#x4F5C;">8.10 <code>HDFS</code>&#x7684;<code>I/O</code>&#x64CD;&#x4F5C;</h1>
+<p><code>HDFS</code>&#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x76F8;&#x5E94;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x6D41;, &#x6765;&#x5B8C;&#x6210;&#x6587;&#x4EF6;&#x7684;&#x8BFB;&#x4E0E;&#x5199;.</p>
+<p>&#x76F8;&#x6BD4;<code>copyFromLocal&#x548C;copyToLocal</code>&#x6709;&#x66F4;&#x591A;&#x7684;&#x53C2;&#x6570;&#x53EF;&#x9009;.
+&#x5176;&#x5B9E;<code>copyFromLocal&#x548C;copyToLocal</code>&#x4E5F;&#x662F;&#x4F7F;&#x7528;<code>I/O</code>&#x6D41;&#x6765;&#x5B8C;&#x6210;&#x7684;.</p>
+<h2 id="8101-io&#x4E0A;&#x4F20;&#x6587;&#x4EF6;">8.10.1 <code>I/O</code>&#x4E0A;&#x4F20;&#x6587;&#x4EF6;</h2>
+<pre class="language-"><code class="lang-java"><span class="token comment" spellcheck="true">// &#x4F7F;&#x7528;IO&#x6D41;&#x4E0A;&#x4F20;&#x6587;&#x4EF6;</span>
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">IOUpload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 1. &#x521B;&#x5EFA;&#x4ECE;&#x672C;&#x5730;&#x78C1;&#x76D8;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x7684;&#x8F93;&#x5165;&#x6D41;</span>
+    FileInputStream fis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span><span class="token string">&quot;c:/test/copy.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 2. &#x83B7;&#x53D6;&#x60F3;HDFS&#x6587;&#x4EF6;&#x7684;&#x8F93;&#x51FA;&#x6D41;</span>
+    FSDataOutputStream fos <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Path</span><span class="token punctuation">(</span><span class="token string">&quot;/copy_01.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 3. &#x4ECE;&#x8F93;&#x5165;&#x6D41;&#x60F3;&#x8F93;&#x51FA;&#x6D41;&#x5199;&#x5165;&#x6570;&#x636E;</span>
+    IOUtils<span class="token punctuation">.</span><span class="token function">copyBytes</span><span class="token punctuation">(</span>fis<span class="token punctuation">,</span> fos<span class="token punctuation">,</span> conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 4. &#x5173;&#x95ED;&#x8D44;&#x6E90;</span>
+    IOUtils<span class="token punctuation">.</span><span class="token function">closeStream</span><span class="token punctuation">(</span>fis<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    IOUtils<span class="token punctuation">.</span><span class="token function">closeStream</span><span class="token punctuation">(</span>fos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<h2 id="8102-io&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;">8.10.2 <code>I/O</code>&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;</h2>
+<pre class="language-"><code class="lang-java"><span class="token comment" spellcheck="true">// &#x4F7F;&#x7528;IO&#x6D41;&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;</span>
+<span class="token annotation punctuation">@Test</span>
+<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">IODownload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 1. &#x521B;&#x5EFA;&#x6765;&#x81EA;HDFS&#x7684;&#x8F93;&#x5165;&#x6D41;</span>
+    FSDataInputStream fis <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Path</span><span class="token punctuation">(</span><span class="token string">&quot;/copy_01.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 2. &#x521B;&#x5EFA;&#x5199;&#x5165;&#x5230;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x8F93;&#x51FA;&#x6D41;</span>
+    FileOutputStream fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">&quot;c:/test/down.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 3. &#x6D41;&#x7684;&#x5BF9;&#x62F7;&#x8D1D;</span>
+    IOUtils<span class="token punctuation">.</span><span class="token function">copyBytes</span><span class="token punctuation">(</span>fis<span class="token punctuation">,</span> fos<span class="token punctuation">,</span> conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 4. &#x5173;&#x95ED;&#x8D44;&#x6E90;</span>
+    IOUtils<span class="token punctuation">.</span><span class="token function">closeStream</span><span class="token punctuation">(</span>fis<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    IOUtils<span class="token punctuation">.</span><span class="token function">closeStream</span><span class="token punctuation">(</span>fos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2013-2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-11-20 18:14:11
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="89-wen-jian-he-wen-jian-jia-pan-duan.html" class="navigation navigation-prev " aria-label="Previous page: 8.9 文件和文件夹判断">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../di-9-zhang-hdfs-shu-ju-liang.html" class="navigation navigation-next " aria-label="Next page: 第 9 章 HDFS读写数据流">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"8.10 HDFS的I/O流操作","level":"2.3.10","depth":2,"next":{"title":"第 9 章 HDFS读写数据流","level":"2.4","depth":1,"path":"di-2-bu-fen-hdfs/di-9-zhang-hdfs-shu-ju-liang.md","ref":"di-2-bu-fen-hdfs/di-9-zhang-hdfs-shu-ju-liang.md","articles":[{"title":"9.1 从HDFS读取数据的流程","level":"2.4.1","depth":2,"path":"di-2-bu-fen-hdfs/di-9-zhang-hdfs-shu-ju-liang/91-xiang-hdfs-xie-ru-shu-ju-de-liu-cheng.md","ref":"di-2-bu-fen-hdfs/di-9-zhang-hdfs-shu-ju-liang/91-xiang-hdfs-xie-ru-shu-ju-de-liu-cheng.md","articles":[]},{"title":"9.2 向HDFS写入数据的流程","level":"2.4.2","depth":2,"path":"di-2-bu-fen-hdfs/di-9-zhang-hdfs-shu-ju-liang/92-cong-hdfs-du-qu-shu-ju-de-liu-cheng.md","ref":"di-2-bu-fen-hdfs/di-9-zhang-hdfs-shu-ju-liang/92-cong-hdfs-du-qu-shu-ju-de-liu-cheng.md","articles":[]}]},"previous":{"title":"8.9 文件和文件夹判断","level":"2.3.9","depth":2,"path":"di-2-bu-fen-hdfs/di-8-zhang-hdfs-ke-hu-duan-cao-zuo/89-wen-jian-he-wen-jian-jia-pan-duan.md","ref":"di-2-bu-fen-hdfs/di-8-zhang-hdfs-ke-hu-duan-cao-zuo/89-wen-jian-he-wen-jian-jia-pan-duan.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2013-2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://www.gitbook.com/@zhenchao125"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据hadoop课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-2-bu-fen-hdfs/di-8-zhang-hdfs-ke-hu-duan-cao-zuo/810-hdfsde-i-o-liu-cao-zuo.md","mtime":"2018-11-20T10:14:11.933Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-28T00:23:48.052Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

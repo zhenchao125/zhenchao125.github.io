@@ -1,0 +1,843 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.3.4.2 包: com.atguigu.dataanalasis.conversion · 大数据 电信项目 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3343-53053a-com-atguigu-dataanalasis-mapred.html" />
+    
+    
+    <link rel="prev" href="3341-53053a-com-atguigu-dataanalasis-bean.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    第 1 章 项目背景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../chapter1.html">
+            
+                <a href="../../../chapter1.html">
+            
+                    
+                    第 2 章 项目架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../di-3-zhang-xiang-shi-xian.html">
+            
+                <a href="../../../di-3-zhang-xiang-shi-xian.html">
+            
+                    
+                    第 3 章 项目实现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../31-shu-ju-sheng-cheng.html">
+            
+                <a href="../../31-shu-ju-sheng-cheng.html">
+            
+                    
+                    3.1 数据生产模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../32-shu-ju-cai-ji-he-xiao-fei.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei.html">
+            
+                    
+                    3.2 数据采集和消费
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../32-shu-ju-cai-ji-he-xiao-fei/321-shu-ju-cai-ji.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei/321-shu-ju-cai-ji.html">
+            
+                    
+                    3.2.1 数据采集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei.html">
+            
+                    
+                    3.2.2 数据消费
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.2.1" data-path="../../32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei/3221-7c7b3a-propertyutil.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei/3221-7c7b3a-propertyutil.html">
+            
+                    
+                    3.2.2.1 类:PropertyUtil
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2.2" data-path="../../32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei/3222-7c7b3ahbasedao.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei/3222-7c7b3ahbasedao.html">
+            
+                    
+                    3.2.2.2 类: HBaseDao
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2.3" data-path="../../32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei/3223-7c7b3ahbaseutil.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei/3223-7c7b3ahbaseutil.html">
+            
+                    
+                    3.2.2.3 类: HBaseUtil
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2.4" data-path="../../32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei/3224-7c7b3ahbaseconsumer.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei/3224-7c7b3ahbaseconsumer.html">
+            
+                    
+                    3.2.2.4 类: HBaseConsumer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../32-shu-ju-cai-ji-he-xiao-fei/323-shu-ju-cha-xun-fang-shi-1.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei/323-shu-ju-cha-xun-fang-shi-1.html">
+            
+                    
+                    3.2.3 数据查询方式1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.3.1" data-path="../../32-shu-ju-cai-ji-he-xiao-fei/323-shu-ju-cha-xun-fang-shi-1/3231-hbasefilterutil.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei/323-shu-ju-cha-xun-fang-shi-1/3231-hbasefilterutil.html">
+            
+                    
+                    3.2.3.1 类: HBaseFilterUtil
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3.2" data-path="../../32-shu-ju-cai-ji-he-xiao-fei/323-shu-ju-cha-xun-fang-shi-1/3232-7c7b3a-querywithfilter.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei/323-shu-ju-cha-xun-fang-shi-1/3232-7c7b3a-querywithfilter.html">
+            
+                    
+                    3.2.3.2 类: QueryWithFilter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../../32-shu-ju-cai-ji-he-xiao-fei/323-shu-ju-cha-xun-fang-shi-2.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei/323-shu-ju-cha-xun-fang-shi-2.html">
+            
+                    
+                    3.2.4 数据查询方式2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.4.1" data-path="../../32-shu-ju-cai-ji-he-xiao-fei/323-shu-ju-cha-xun-fang-shi-2/3241-shou-dong-cha-ru-bei-jiao-xin-xi.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei/323-shu-ju-cha-xun-fang-shi-2/3241-shou-dong-cha-ru-bei-jiao-xin-xi.html">
+            
+                    
+                    3.2.4.1 手动写入被叫信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4.2" data-path="../../32-shu-ju-cai-ji-he-xiao-fei/323-shu-ju-cha-xun-fang-shi-2/3242-shi-yong-xie-chu-li-qi-xie-ru-bei-jiao-xin-xi.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei/323-shu-ju-cha-xun-fang-shi-2/3242-shi-yong-xie-chu-li-qi-xie-ru-bei-jiao-xin-xi.html">
+            
+                    
+                    3.2.4.2 使用协处理器写入被叫信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../../32-shu-ju-cai-ji-he-xiao-fei/325-ba-zheng-ge-xiao-fei-mo-kuai-da-bao-dao-ji-qun-zhong-yun-xing.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei/325-ba-zheng-ge-xiao-fei-mo-kuai-da-bao-dao-ji-qun-zhong-yun-xing.html">
+            
+                    
+                    3.2.5 把整个消费模块打包到集群中运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../33-shu-ju-fen-xi.html">
+            
+                <a href="../../33-shu-ju-fen-xi.html">
+            
+                    
+                    3.3 数据分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../331-xu-qiu-fen-xi.html">
+            
+                <a href="../331-xu-qiu-fen-xi.html">
+            
+                    
+                    3.3.1 数据分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../332-mysql-biao-jie-gou-she-ji.html">
+            
+                <a href="../332-mysql-biao-jie-gou-she-ji.html">
+            
+                    
+                    3.3.2 Mysql 表结构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../333-huan-jing-da-jian.html">
+            
+                <a href="../333-huan-jing-da-jian.html">
+            
+                    
+                    3.3.3 环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../334-xu-qiu-shi-xian.html">
+            
+                <a href="../334-xu-qiu-shi-xian.html">
+            
+                    
+                    3.3.4 需求实现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.4.1" data-path="3341-53053a-com-atguigu-dataanalasis-bean.html">
+            
+                <a href="3341-53053a-com-atguigu-dataanalasis-bean.html">
+            
+                    
+                    3.3.4.1 包: com.atguigu.dataanalasis.bean
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3.4.2" data-path="3342-53053a-com-atguigu-dataanalasis-conversion.html">
+            
+                <a href="3342-53053a-com-atguigu-dataanalasis-conversion.html">
+            
+                    
+                    3.3.4.2 包: com.atguigu.dataanalasis.conversion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4.3" data-path="3343-53053a-com-atguigu-dataanalasis-mapred.html">
+            
+                <a href="3343-53053a-com-atguigu-dataanalasis-mapred.html">
+            
+                    
+                    3.3.4.3 包:com.atguigu.dataanalasis.mapred
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4.4" data-path="3344-53053a-com-atguigu-dataanalasis-outputformat.html">
+            
+                <a href="3344-53053a-com-atguigu-dataanalasis-outputformat.html">
+            
+                    
+                    3.3.4.4 包:com.atguigu.dataanalasis.outputformat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4.5" data-path="3345-53053a-com-atguigu-dataanalasis-util.html">
+            
+                <a href="3345-53053a-com-atguigu-dataanalasis-util.html">
+            
+                    
+                    3.3.4.5 包: com.atguigu.dataanalasis.util
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../335-yun-xing-ce-shi.html">
+            
+                <a href="../335-yun-xing-ce-shi.html">
+            
+                    
+                    3.3.5 运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../34-shu-ju-zhan-shi.html">
+            
+                <a href="../../34-shu-ju-zhan-shi.html">
+            
+                    
+                    3.4 数据展示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >3.3.4.2 包: com.atguigu.dataanalasis.conversion</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="3342-&#x5305;-comatguigudataanalasisconversion">3.3.4.2 &#x5305;: <code>com.atguigu.dataanalasis.conversion</code></h1>
+<h2 id="1-&#x7C7B;-dimensionconversion">1. &#x7C7B;: <code>DimensionConversion</code></h2>
+<p>&#x7EF4;&#x5EA6;&#x8F6C;&#x6362;&#x7684;&#x7C7B;, &#x8D1F;&#x8D23;&#x6839;&#x636E;&#x7EF4;&#x5EA6;&#x4FE1;&#x606F;, &#x6216;&#x8005;&#x76F8;&#x5173;&#x7684;id&#x503C;, &#x7136;&#x540E;&#x63D2;&#x5165;&#x5230;&#x4E3B;&#x8868;&#x4E2D;.</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>dataanalasis<span class="token punctuation">.</span>conversion<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>dataanalasis<span class="token punctuation">.</span>bean<span class="token punctuation">.</span>ContactDimension<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>dataanalasis<span class="token punctuation">.</span>bean<span class="token punctuation">.</span>DateDimension<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>dataanalasis<span class="token punctuation">.</span>bean<span class="token punctuation">.</span>IDimension<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>dataanalasis<span class="token punctuation">.</span>util<span class="token punctuation">.</span>JDBCUtil<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>dataanalasis<span class="token punctuation">.</span>util<span class="token punctuation">.</span>LRUCache<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Connection<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>PreparedStatement<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>ResultSet<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>SQLException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>logging<span class="token punctuation">.</span>Logger<span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * &#x8FD9;&#x4E2A;&#x7C7B;&#x7684;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x662F;&#x6839;&#x636E;
+ * 1. &#x7535;&#x8BDD;&#x53F7;&#x7801; &#x5F97;&#x5230;&#x5728; &#x8054;&#x7CFB;&#x4EBA;&#x8868;&#x4E2D;&#x7684;&#x8FD9;&#x4E2A;&#x7535;&#x8BDD;&#x53F7;&#x7801;&#x7684;id
+ * 2. &#x5E74;&#x6708;&#x65E5; &#x5F97;&#x5230;&#x8FD9;&#x4E2A;&#x65E5;&#x671F;&#x7684; id
+ * &lt;p&gt;
+ * &#x5F97;&#x5230;&#x8FD9;&#x4E9B;id&#x4E4B;&#x540E;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x5728;&#x4E3B;&#x8868;&#x4E2D;
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DimensionConversion</span> <span class="token punctuation">{</span>
+    LRUCache lruCache <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LRUCache</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getDimensionId</span><span class="token punctuation">(</span>IDimension dimension<span class="token punctuation">)</span> <span class="token keyword">throws</span> SQLException <span class="token punctuation">{</span>
+        <span class="token comment">//         &#x5148;&#x5728;&#x7F13;&#x5B58;&#x4E2D;&#x67E5;&#x8BE2;</span>
+        String lruKey <span class="token operator">=</span> <span class="token function">getLruKey</span><span class="token punctuation">(</span>dimension<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>lruCache<span class="token punctuation">.</span><span class="token function">containsKey</span><span class="token punctuation">(</span>lruKey<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// &#x5982;&#x679C;&#x7F13;&#x5B58;&#x4E2D;&#x5B58;&#x5728;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x4E86;</span>
+            <span class="token keyword">return</span> lruCache<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>lruKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// &#x83B7;&#x53D6;&#x67E5;&#x8BE2;&#x548C;&#x63D2;&#x5165;&#x6570;&#x636E;&#x7684;sql&#x8BED;&#x53E5;</span>
+        String<span class="token punctuation">[</span><span class="token punctuation">]</span> sqls <span class="token operator">=</span> <span class="token function">getSqls</span><span class="token punctuation">(</span>dimension<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x83B7;&#x53D6;id</span>
+        Connection conn <span class="token operator">=</span> JDBCUtil<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> id <span class="token operator">=</span> <span class="token function">execSql</span><span class="token punctuation">(</span>conn<span class="token punctuation">,</span> sqls<span class="token punctuation">,</span> dimension<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token string">&quot;&#x672A;&#x627E;&#x5230;&#x5339;&#x914D;&#x7684;&#x7EF4;&#x5EA6;id&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x5B58;&#x5165;&#x7F13;&#x5B58;</span>
+        lruCache<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>lruKey<span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x8FD4;&#x56DE;id</span>
+        <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x6267;&#x884C;sql&#x8BED;&#x53E5;: &#x67E5;&#x8BE2;, &#x63D2;&#x5165;, &#x67E5;&#x8BE2;
+     *
+     * @param conn
+     * @param sqls
+     * @param dimension
+     * @return
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">synchronized</span> <span class="token keyword">int</span> <span class="token function">execSql</span><span class="token punctuation">(</span>Connection conn<span class="token punctuation">,</span> String<span class="token punctuation">[</span><span class="token punctuation">]</span> sqls<span class="token punctuation">,</span> IDimension dimension<span class="token punctuation">)</span> <span class="token keyword">throws</span> SQLException <span class="token punctuation">{</span>
+        <span class="token comment">// &#x6267;&#x884C;&#x7B2C;&#x4E00;&#x6B21;&#x67E5;&#x8BE2;</span>
+        PreparedStatement preparedStatement <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sqls<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setArguments</span><span class="token punctuation">(</span>preparedStatement<span class="token punctuation">,</span> dimension<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ResultSet resultSet <span class="token operator">=</span> preparedStatement<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>resultSet<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> resultSet<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        JDBCUtil<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span>resultSet<span class="token punctuation">,</span> preparedStatement<span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x6267;&#x884C;&#x63D2;&#x5165;</span>
+        preparedStatement <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sqls<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setArguments</span><span class="token punctuation">(</span>preparedStatement<span class="token punctuation">,</span> dimension<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        preparedStatement<span class="token punctuation">.</span><span class="token function">executeUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        JDBCUtil<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span>null<span class="token punctuation">,</span> preparedStatement<span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x6267;&#x884C;&#x7B2C;&#x4E8C;&#x6B21;&#x67E5;&#x8BE2;</span>
+        preparedStatement <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>sqls<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setArguments</span><span class="token punctuation">(</span>preparedStatement<span class="token punctuation">,</span> dimension<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        resultSet <span class="token operator">=</span> preparedStatement<span class="token punctuation">.</span><span class="token function">executeQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>resultSet<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> resultSet<span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        JDBCUtil<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span>resultSet<span class="token punctuation">,</span> preparedStatement<span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x7ED9;&#x9884;&#x6267;&#x884C;&#x8BED;&#x53E5;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;
+     *
+     * @param preparedStatement
+     * @param dimension
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">setArguments</span><span class="token punctuation">(</span>PreparedStatement preparedStatement<span class="token punctuation">,</span> IDimension dimension<span class="token punctuation">)</span> <span class="token keyword">throws</span> SQLException <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>dimension <span class="token keyword">instanceof</span> <span class="token class-name">ContactDimension</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            ContactDimension cd <span class="token operator">=</span> <span class="token punctuation">(</span>ContactDimension<span class="token punctuation">)</span> dimension<span class="token punctuation">;</span>
+            preparedStatement<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> cd<span class="token punctuation">.</span><span class="token function">getTelephone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            preparedStatement<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> cd<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>dimension <span class="token keyword">instanceof</span> <span class="token class-name">DateDimension</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            DateDimension dd <span class="token operator">=</span> <span class="token punctuation">(</span>DateDimension<span class="token punctuation">)</span> dimension<span class="token punctuation">;</span>
+            preparedStatement<span class="token punctuation">.</span><span class="token function">setInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>dd<span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            preparedStatement<span class="token punctuation">.</span><span class="token function">setInt</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>dd<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            preparedStatement<span class="token punctuation">.</span><span class="token function">setInt</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>dd<span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment">/**
+     * &#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;&#x7EF4;&#x5EA6;&#x8FD4;&#x56DE;&#x4E24;&#x6761; sql&#x8BED;&#x53E5;: &#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x548C;&#x63D2;&#x5165;&#x8BED;&#x53E5;
+     *
+     * @param dimension
+     * @return
+     */</span>
+    <span class="token keyword">private</span> String<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getSqls</span><span class="token punctuation">(</span>IDimension dimension<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String<span class="token punctuation">[</span><span class="token punctuation">]</span> sqls <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>dimension <span class="token keyword">instanceof</span> <span class="token class-name">ContactDimension</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            sqls<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;SELECT `id` FROM `tb_contacts` WHERE `telephone`=? AND `name`=?&quot;</span><span class="token punctuation">;</span>
+            sqls<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;INSERT INTO `tb_contacts` VALUES(NULL, ?, ?)&quot;</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>dimension <span class="token keyword">instanceof</span> <span class="token class-name">DateDimension</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            sqls<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;SELECT `id` FROM `tb_date` WHERE `year`=? AND `month`=? AND `day`=?&quot;</span><span class="token punctuation">;</span>
+            sqls<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">&quot;INSERT INTO `tb_date` VALUES(NULL, ?, ?, ?)&quot;</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> sqls<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x6839;&#x636E;&#x7EF4;&#x5EA6;&#x4FE1;&#x606F;, &#x83B7;&#x53D6;&#x76F8;&#x5E94;&#x7684;&#x7F13;&#x5B58;&#x7684;key
+     *
+     * @param dimension
+     * @return
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> String <span class="token function">getLruKey</span><span class="token punctuation">(</span>IDimension dimension<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        StringBuffer sb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>dimension <span class="token keyword">instanceof</span> <span class="token class-name">ContactDimension</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            ContactDimension cd <span class="token operator">=</span> <span class="token punctuation">(</span>ContactDimension<span class="token punctuation">)</span> dimension<span class="token punctuation">;</span>
+            Logger global <span class="token operator">=</span> Logger<span class="token punctuation">.</span><span class="token function">getGlobal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            global<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token operator">++</span>i <span class="token operator">+</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            global<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span>cd<span class="token punctuation">.</span><span class="token function">getTelephone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>cd<span class="token punctuation">.</span><span class="token function">getTelephone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            DateDimension dd <span class="token operator">=</span> <span class="token punctuation">(</span>DateDimension<span class="token punctuation">)</span> dimension<span class="token punctuation">;</span>
+            sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>dd<span class="token punctuation">.</span><span class="token function">getYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>dd<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>dd<span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> sb<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-11-27 15:58:11
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3341-53053a-com-atguigu-dataanalasis-bean.html" class="navigation navigation-prev " aria-label="Previous page: 3.3.4.1 包: com.atguigu.dataanalasis.bean">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3343-53053a-com-atguigu-dataanalasis-mapred.html" class="navigation navigation-next " aria-label="Next page: 3.3.4.3 包:com.atguigu.dataanalasis.mapred">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.3.4.2 包: com.atguigu.dataanalasis.conversion","level":"1.3.3.4.2","depth":4,"next":{"title":"3.3.4.3 包:com.atguigu.dataanalasis.mapred","level":"1.3.3.4.3","depth":4,"path":"di-3-zhang-xiang-shi-xian/33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3343-53053a-com-atguigu-dataanalasis-mapred.md","ref":"di-3-zhang-xiang-shi-xian/33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3343-53053a-com-atguigu-dataanalasis-mapred.md","articles":[]},"previous":{"title":"3.3.4.1 包: com.atguigu.dataanalasis.bean","level":"1.3.3.4.1","depth":4,"path":"di-3-zhang-xiang-shi-xian/33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3341-53053a-com-atguigu-dataanalasis-bean.md","ref":"di-3-zhang-xiang-shi-xian/33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3341-53053a-com-atguigu-dataanalasis-bean.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://www.gitbook.com/@zhenchao125"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 电信项目 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-3-zhang-xiang-shi-xian/33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3342-53053a-com-atguigu-dataanalasis-conversion.md","mtime":"2018-11-27T07:58:11.318Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T05:25:15.048Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

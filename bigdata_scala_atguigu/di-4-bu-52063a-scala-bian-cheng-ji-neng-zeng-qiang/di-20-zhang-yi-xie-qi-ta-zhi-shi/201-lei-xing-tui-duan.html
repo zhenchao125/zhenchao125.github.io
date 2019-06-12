@@ -1,0 +1,2928 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>17.1 类型推断 · 大数据 bigdata_scala_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2012-ji-chu-lei-xing.html" />
+    
+    
+    <link rel="prev" href="../di-20-zhang-yi-xie-qi-ta-zhi-shi.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">第 1 部分: 基础语法</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    第 1 章 Scala 概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../11-wei-shi-yao-yao-xue-xi-scala.html">
+            
+                <a href="../../11-wei-shi-yao-yao-xue-xi-scala.html">
+            
+                    
+                    1.1 为什么要学习 Scala
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../12-scala-yu-yan-dan-sheng-xiao-gu-shi.html">
+            
+                <a href="../../12-scala-yu-yan-dan-sheng-xiao-gu-shi.html">
+            
+                    
+                    1.2 Scala 语言诞生小故事
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../13-scala-he-java-yi-ji-jvm-de-guan-xi.html">
+            
+                <a href="../../13-scala-he-java-yi-ji-jvm-de-guan-xi.html">
+            
+                    
+                    1.3 Scala 和 Java 以及 JVM 的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../../14-scala-yu-yan-te-dian.html">
+            
+                <a href="../../14-scala-yu-yan-te-dian.html">
+            
+                    
+                    1.4 Scala 语言特点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../../15-scala-ying-yong-qu-shi.html">
+            
+                <a href="../../15-scala-ying-yong-qu-shi.html">
+            
+                    
+                    1.5 Scala 应用趋势
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../chapter1.html">
+            
+                <a href="../../chapter1.html">
+            
+                    
+                    第 2 章 Scala 开发环境搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../chapter1/21-window-xia-da-jian-kai-fa-huan-jing.html">
+            
+                <a href="../../chapter1/21-window-xia-da-jian-kai-fa-huan-jing.html">
+            
+                    
+                    2.1 Window 下搭建开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../chapter1/22-linux-xia-da-jian-kai-fa-huan-jing.html">
+            
+                <a href="../../chapter1/22-linux-xia-da-jian-kai-fa-huan-jing.html">
+            
+                    
+                    2.2  Linux 下搭建开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../chapter1/23-geiidea-kai-fa-an-zhuang-cha-jian.html">
+            
+                <a href="../../chapter1/23-geiidea-kai-fa-an-zhuang-cha-jian.html">
+            
+                    
+                    2.3 给 IDEA 开发安装插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../chapter1/24-scala-de-hello-world-an-li.html">
+            
+                <a href="../../chapter1/24-scala-de-hello-world-an-li.html">
+            
+                    
+                    2.4 Scala 的 Hello world 案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../chapter1/25-tong-guo-fan-bian-yi-le-jie-scala-de-zhi-xing-liu-cheng.html">
+            
+                <a href="../../chapter1/25-tong-guo-fan-bian-yi-le-jie-scala-de-zhi-xing-liu-cheng.html">
+            
+                    
+                    2.5 通过反编译了解 Scala 的执行流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../chapter1/26-scala-cheng-xu-kai-fa-zhu-yi-shi-xiang.html">
+            
+                <a href="../../chapter1/26-scala-cheng-xu-kai-fa-zhu-yi-shi-xiang.html">
+            
+                    
+                    2.6 Scala 程序开发注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../chapter1/27-guan-li-scala-yuan-ma.html">
+            
+                <a href="../../chapter1/27-guan-li-scala-yuan-ma.html">
+            
+                    
+                    2.7 关联 Scala 源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../chapter1/28-cha-kan-guan-fang-wen-dang.html">
+            
+                <a href="../../chapter1/28-cha-kan-guan-fang-wen-dang.html">
+            
+                    
+                    2.8 查看官方文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing.html">
+            
+                <a href="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing.html">
+            
+                    
+                    第 3 章 变量和数据类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing/31-zhu-shi.html">
+            
+                <a href="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing/31-zhu-shi.html">
+            
+                    
+                    3.1 注释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing/32-bian-liang.html">
+            
+                <a href="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing/32-bian-liang.html">
+            
+                    
+                    3.2 变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing/33-shu-ju-lei-xing.html">
+            
+                <a href="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing/33-shu-ju-lei-xing.html">
+            
+                    
+                    3.3 数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing/34-lei-xing-zhuan-huan.html">
+            
+                <a href="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing/34-lei-xing-zhuan-huan.html">
+            
+                    
+                    3.4 值类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing/35-zi-fu-chuan-de-yi-xie-ji-ben-cao-zuo.html">
+            
+                <a href="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing/35-zi-fu-chuan-de-yi-xie-ji-ben-cao-zuo.html">
+            
+                    
+                    3.5 字符串的一些基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing/36-biao-shi-fu-de-ming-ming-gui-ze.html">
+            
+                <a href="../../di-3-zhang-bian-liang-he-shu-ju-lei-xing/36-biao-shi-fu-de-ming-ming-gui-ze.html">
+            
+                    
+                    3.6 标识符的命名规则
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../di-4-zhang-yun-suan-fu.html">
+            
+                <a href="../../di-4-zhang-yun-suan-fu.html">
+            
+                    
+                    第 4 章 运算符
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../di-4-zhang-yun-suan-fu/41-yun-suan-fu-zong-lan.html">
+            
+                <a href="../../di-4-zhang-yun-suan-fu/41-yun-suan-fu-zong-lan.html">
+            
+                    
+                    4.1 运算符总览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../di-4-zhang-yun-suan-fu/42-scala-yun-suan-fu-de-zhu-yi-dian.html">
+            
+                <a href="../../di-4-zhang-yun-suan-fu/42-scala-yun-suan-fu-de-zhu-yi-dian.html">
+            
+                    
+                    4.2 Scala 运算符的注意点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../di-4-zhang-yun-suan-fu/43-scala-yu-fa-jie-gou-de-zhi-he-lei-xing.html">
+            
+                <a href="../../di-4-zhang-yun-suan-fu/43-scala-yu-fa-jie-gou-de-zhi-he-lei-xing.html">
+            
+                    
+                    4.3 Scala 语法结构的值和类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../di-4-zhang-yun-suan-fu/44-cong-jian-pan-du-ru-shu-ju.html">
+            
+                <a href="../../di-4-zhang-yun-suan-fu/44-cong-jian-pan-du-ru-shu-ju.html">
+            
+                    
+                    4.4 从键盘读入数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../di-5-zhang-liu-cheng-kong-zhi.html">
+            
+                <a href="../../di-5-zhang-liu-cheng-kong-zhi.html">
+            
+                    
+                    第 5 章 流程控制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../di-5-zhang-liu-cheng-kong-zhi/51-fen-zhi.html">
+            
+                <a href="../../di-5-zhang-liu-cheng-kong-zhi/51-fen-zhi.html">
+            
+                    
+                    5.1 分支
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan.html">
+            
+                <a href="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan.html">
+            
+                    
+                    5.2 循环
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan.html">
+            
+                <a href="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan.html">
+            
+                    
+                    5.2.1 for 循环
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1.1" data-path="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5211-for-xun-huan-ji-ben-shi-yong.html">
+            
+                <a href="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5211-for-xun-huan-ji-ben-shi-yong.html">
+            
+                    
+                    5.2.1.1 for 循环基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.1.2" data-path="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5212-for-bian-li-zi-fu-chuan-zhong-de-zi-fu.html">
+            
+                <a href="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5212-for-bian-li-zi-fu-chuan-zhong-de-zi-fu.html">
+            
+                    
+                    5.2.1.2 for 遍历字符串中的字符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.1.3" data-path="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5213-tui-chu-xun-huan.html">
+            
+                <a href="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5213-tui-chu-xun-huan.html">
+            
+                    
+                    5.2.1.3 退出循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.1.4" data-path="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5214-yin-ru-bian-liang.html">
+            
+                <a href="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5214-yin-ru-bian-liang.html">
+            
+                    
+                    5.2.1.4 引入变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.1.5" data-path="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5215-xun-huan-qian-tao.html">
+            
+                <a href="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5215-xun-huan-qian-tao.html">
+            
+                    
+                    5.2.1.5 循环嵌套
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.1.6" data-path="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5216-xun-huan-de-fan-hui-zhi.html">
+            
+                <a href="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5216-xun-huan-de-fan-hui-zhi.html">
+            
+                    
+                    5.2.1.6 循环的返回值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.1.7" data-path="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5217-xun-huan-de-bu-chang.html">
+            
+                <a href="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/521-for-xun-huan/5217-xun-huan-de-bu-chang.html">
+            
+                    
+                    5.2.1.7 循环的步长
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/522-while-xun-huan.html">
+            
+                <a href="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/522-while-xun-huan.html">
+            
+                    
+                    5.2.2 while 循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/523-dowhile-xun-huan.html">
+            
+                <a href="../../di-5-zhang-liu-cheng-kong-zhi/52-xun-huan/523-dowhile-xun-huan.html">
+            
+                    
+                    5.2.3 do...while 循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu.html">
+            
+                <a href="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu.html">
+            
+                    
+                    第 6 章 函数式编程基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu/61-han-shu-shi-bian-cheng-de-yi-xie-gai-nian.html">
+            
+                <a href="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu/61-han-shu-shi-bian-cheng-de-yi-xie-gai-nian.html">
+            
+                    
+                    6.1 函数式编程的一些概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu/62-scala-zhong-han-shu-de-ji-ben-yu-fa.html">
+            
+                <a href="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu/62-scala-zhong-han-shu-de-ji-ben-yu-fa.html">
+            
+                    
+                    6.2 Scala 中函数的基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu/63-han-shu-diao-yong-guo-cheng.html">
+            
+                <a href="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu/63-han-shu-diao-yong-guo-cheng.html">
+            
+                    
+                    6.3 函数调用过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu/64-han-shu-de-sheng-ming-he-diao-yong-shi-cao.html">
+            
+                <a href="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu/64-han-shu-de-sheng-ming-he-diao-yong-shi-cao.html">
+            
+                    
+                    6.4 函数的声明和调用实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu/64-guo-7a0b28-procedure.html">
+            
+                <a href="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu/64-guo-7a0b28-procedure.html">
+            
+                    
+                    6.5 过程(Procedure)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu/65-duo-xing-han-shu.html">
+            
+                <a href="../../di-6-zhang-han-shu-shi-bian-cheng-ji-chu/65-duo-xing-han-shu.html">
+            
+                    
+                    6.6 惰性求值
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../di-7-zhang-yi-chang.html">
+            
+                <a href="../../di-7-zhang-yi-chang.html">
+            
+                    
+                    第 7 章 异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../zong-jie.html">
+            
+                <a href="../../zong-jie.html">
+            
+                    
+                    基础语法部分总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 2 部分: 面向对象</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29.html">
+            
+                    
+                    第 8 章 面向对象(上)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/81-lei-he-dui-xiang.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/81-lei-he-dui-xiang.html">
+            
+                    
+                    8.1 类和对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/82-bao.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/82-bao.html">
+            
+                    
+                    8.2 包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/83-feng-zhuang.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/83-feng-zhuang.html">
+            
+                    
+                    8.3 封装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng.html">
+            
+                    
+                    8.4 继承
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.4.1" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/841-scala-ji-cheng-de-ji-ben-yu-fa.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/841-scala-ji-cheng-de-ji-ben-yu-fa.html">
+            
+                    
+                    8.4.1 Scala 继承的基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4.2" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/842-fang-fa-de-zhong-xie.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/842-fang-fa-de-zhong-xie.html">
+            
+                    
+                    8.4.2 方法的重写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4.3" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/843-scala-zhong-lei-xing-jian-cha-he-zhuan-huan.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/843-scala-zhong-lei-xing-jian-cha-he-zhuan-huan.html">
+            
+                    
+                    8.4.3 Scala 中类型检查和转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4.4" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/844-scala-zhong-chao-lei-de-gou-zao.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/844-scala-zhong-chao-lei-de-gou-zao.html">
+            
+                    
+                    8.4.4 Scala 中超类的构造
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4.5" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/845-zhong-xie-zi-duan.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/845-zhong-xie-zi-duan.html">
+            
+                    
+                    8.4.5 重写字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4.6" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/846-chou-xiang-lei.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/846-chou-xiang-lei.html">
+            
+                    
+                    8.4.6 抽象类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4.7" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/847-ni-ming-zi-lei.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-8-zhang-mian-xiang-dui-8c6128-4e0a29/84-ji-cheng/847-ni-ming-zi-lei.html">
+            
+                    
+                    8.4.7 匿名子类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29.html">
+            
+                    
+                    第 9 章 面向对象(下)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/92-dan-li-dui-xiang.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/92-dan-li-dui-xiang.html">
+            
+                    
+                    9.1 单例对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/91-ban-sheng-dui-xiang.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/91-ban-sheng-dui-xiang.html">
+            
+                    
+                    9.2 独立对象和伴生对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi.html">
+            
+                    
+                    9.3 特质(trait)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.3.1" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/931-java-zhong-de-jie-kou-yu-scala-zhong-de-trait.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/931-java-zhong-de-jie-kou-yu-scala-zhong-de-trait.html">
+            
+                    
+                    9.3.1  Java 中的接口与 Scala 中的 trait
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.2" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/932-zui-jian-dan-de-te-8d283a-dang-zuo-jie-kou-shi-yong-de-te-zhi.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/932-zui-jian-dan-de-te-8d283a-dang-zuo-jie-kou-shi-yong-de-te-zhi.html">
+            
+                    
+                    9.3.2 最简单的特质: 当做接口使用的特质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.3" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/933-dai-you-ju-ti-shi-xian-de-te-zhi.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/933-dai-you-ju-ti-shi-xian-de-te-zhi.html">
+            
+                    
+                    9.3.3 带有具体实现的特质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.4" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/934-dai-you-te-zhi-de-dui-8c613a-dong-tai-hun-ru.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/934-dai-you-te-zhi-de-dui-8c613a-dong-tai-hun-ru.html">
+            
+                    
+                    9.3.4 带有特质的对象:动态混入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.5" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/935-die-jia-te-zhi.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/935-die-jia-te-zhi.html">
+            
+                    
+                    9.3.5 叠加特质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.6" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/936-dang-zuo-fu-jie-kou-shi-yong-de-te-zhi.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/936-dang-zuo-fu-jie-kou-shi-yong-de-te-zhi.html">
+            
+                    
+                    9.3.6 当做富接口使用的特质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.7" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/937-te-zhi-zhong-de-ju-ti-zi-duan.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/937-te-zhi-zhong-de-ju-ti-zi-duan.html">
+            
+                    
+                    9.3.7 特质中的具体字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.8" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/938-te-zhi-de-gou-zao-shun-xu.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/938-te-zhi-de-gou-zao-shun-xu.html">
+            
+                    
+                    9.3.8 特质的构造顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.9" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/939-te-zhi-ji-cheng-lei.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/939-te-zhi-ji-cheng-lei.html">
+            
+                    
+                    9.3.9 特质继承类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.10" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/9310-zi-shen-lei-xing.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/93-te-zhi/9310-zi-shen-lei-xing.html">
+            
+                    
+                    9.3.10 自身类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/94-qian-tao-lei.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/di-9-zhang-mian-xiang-dui-8c6128-4e0b29/94-qian-tao-lei.html">
+            
+                    
+                    9.4 嵌套类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../di-2-bu-52063a-mian-xiang-dui-xiang/mian-xiang-dui-xiang-zong-jie.html">
+            
+                <a href="../../di-2-bu-52063a-mian-xiang-dui-xiang/mian-xiang-dui-xiang-zong-jie.html">
+            
+                    
+                    面向对象总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 3 部分: 高级语法</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu.html">
+            
+                    
+                    第 10 章 隐式转换和隐式参数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/101-yin-shi-zhuan-huan.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/101-yin-shi-zhuan-huan.html">
+            
+                    
+                    10.1 隐式转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/102-li-yong-yin-shi-han-shu-feng-fu-xian-you-de-lei-ku.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/102-li-yong-yin-shi-han-shu-feng-fu-xian-you-de-lei-ku.html">
+            
+                    
+                    10.2 利用隐式函数丰富现有的类库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/103-yin-shi-zhi.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/103-yin-shi-zhi.html">
+            
+                    
+                    10.3 隐式值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/104-yin-shi-lei.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/104-yin-shi-lei.html">
+            
+                    
+                    10.4 隐式类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/105-yin-shi-zhuan-huan-shi-ji.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/105-yin-shi-zhuan-huan-shi-ji.html">
+            
+                    
+                    10.5 隐式转换时机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/106-yin-shi-zhuan-huan-ji-zhi.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/106-yin-shi-zhuan-huan-ji-zhi.html">
+            
+                    
+                    10.6 隐式转换机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.7" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/107-yin-shi-zhuan-huan-de-qian-ti.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-10-zhang-yin-shi-zhuan-huan-he-yin-shi-han-shu/107-yin-shi-zhuan-huan-de-qian-ti.html">
+            
+                    
+                    10.7 隐式转换的前提
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/yin-shi-zhuan-huan-zong-jie.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/yin-shi-zhuan-huan-zong-jie.html">
+            
+                    
+                    隐式转换总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he.html">
+            
+                    
+                    第 11 章 数据结构(上)-集合
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/111-scala-de-ji-he-gai-shu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/111-scala-de-ji-he-gai-shu.html">
+            
+                    
+                    11.1 Scala 的集合概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu.html">
+            
+                    
+                    11.2 数组
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.2.1" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1121-ding-chang-shu-zu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1121-ding-chang-shu-zu.html">
+            
+                    
+                    11.2.1 定长数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.2" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1122-bian-chang-shu-zu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1122-bian-chang-shu-zu.html">
+            
+                    
+                    11.2.2 变长数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.3" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1123-bian-li-shu-zu-he-shu-zu-huan-chong.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1123-bian-li-shu-zu-he-shu-zu-huan-chong.html">
+            
+                    
+                    11.2.3 遍历数组和数组缓冲
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.4" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1124-shu-zu-de-zhuan-huan.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1124-shu-zu-de-zhuan-huan.html">
+            
+                    
+                    11.2.4 数组的转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.5" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1125-chang-yong-suan-fa.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1125-chang-yong-suan-fa.html">
+            
+                    
+                    11.2.5 常用算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.6" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1126-duo-wei-shu-zu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1126-duo-wei-shu-zu.html">
+            
+                    
+                    11.2.6 多维数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.7" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1127-yu-shu-zu-de-jiao-hu-cao-zuo.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1127-yu-shu-zu-de-jiao-hu-cao-zuo.html">
+            
+                    
+                    11.2.7 与数组的交互操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.8" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1128-shu-zu-chang-yong-cao-zuo.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/112-shu-zu/1128-shu-zu-chang-yong-cao-zuo.html">
+            
+                    
+                    11.2.8 其他操作方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/113-yuan-zu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/113-yuan-zu.html">
+            
+                    
+                    11.3 元组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/114-lie-biao-list.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/114-lie-biao-list.html">
+            
+                    
+                    11.4 列表 List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/115-dui-lie.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/115-dui-lie.html">
+            
+                    
+                    11.5 队列(Queue)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/116-ying-5c0428-map.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/116-ying-5c0428-map.html">
+            
+                    
+                    11.6 映射(Map)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.6.1" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/116-ying-5c0428-map/1161-map-qu-zhi.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/116-ying-5c0428-map/1161-map-qu-zhi.html">
+            
+                    
+                    11.6.1 Map 取值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6.2" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/116-ying-5c0428-map/1162-ying-she-de-zeng-shan-gai.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/116-ying-5c0428-map/1162-ying-she-de-zeng-shan-gai.html">
+            
+                    
+                    11.6.2 映射的增删改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6.3" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/116-ying-5c0428-map/1163-bian-li-map.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/116-ying-5c0428-map/1163-bian-li-map.html">
+            
+                    
+                    11.6.3 遍历 Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.7" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/117-set.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-11-zhang-shu-ju-jie-678428-4e0a29-ji-he/117-set.html">
+            
+                    
+                    11.7 Set 集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao.html">
+            
+                    
+                    第 12 章 数据结构(下)-集合操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.4.1" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/121-map-ying-she.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/121-map-ying-she.html">
+            
+                    
+                    12.1 map 映射操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.2" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/122-bian-ping-hua-ying-she.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/122-bian-ping-hua-ying-she.html">
+            
+                    
+                    12.2 扁平化映射(flatMap)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.3" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/113-guo-lv-ji-540828-filter.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/113-guo-lv-ji-540828-filter.html">
+            
+                    
+                    11.3 过滤集合(filter)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.4" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/114-gui-na-ji-540828-reduce.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/114-gui-na-ji-540828-reduce.html">
+            
+                    
+                    11.4 归纳集合(reduce)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.5" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/115-zhe-53e028-fold.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/115-zhe-53e028-fold.html">
+            
+                    
+                    11.5 折叠(fold)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.6" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/116-sao-miao.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/116-sao-miao.html">
+            
+                    
+                    11.6 扫描(scan)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.7" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/117-la-94fe28-he-5e7629.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/117-la-94fe28-he-5e7629.html">
+            
+                    
+                    11.7 拉链(合并)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.8" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/117-die-dai-qi.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/117-die-dai-qi.html">
+            
+                    
+                    11.7 迭代器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.9" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/118-6d4128-stream.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/118-6d4128-stream.html">
+            
+                    
+                    11.8 流(Stream)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.10" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/119-shi-56fe28-view.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/119-shi-56fe28-view.html">
+            
+                    
+                    11.9 视图(view)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.11" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/1110-xian-cheng-an-quan-de-ji-he.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/1110-xian-cheng-an-quan-de-ji-he.html">
+            
+                    
+                    11.10 线程安全的集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.12" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/1111-bing-xing-ji-he.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/1111-bing-xing-ji-he.html">
+            
+                    
+                    11.11 并行集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.13" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/1112-pai-xu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/1112-pai-xu.html">
+            
+                    
+                    11.12 排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4.14" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/1113-fen-zu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-12-zhang-shu-ju-jie-678428-4e0b29-ji-he-shi-cao/1113-fen-zu.html">
+            
+                    
+                    11.13 分组
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/shu-ju-jie-gou-zong-jie.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/shu-ju-jie-gou-zong-jie.html">
+            
+                    
+                    数据结构总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei.html">
+            
+                    
+                    第 13 章 模式匹配
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.1" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/131-mo-shi-pi-pei-de-ji-ben-shi-yong.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/131-mo-shi-pi-pei-de-ji-ben-shi-yong.html">
+            
+                    
+                    13.1 模式匹配的基本使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.2" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/132-shou-wei.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/132-shou-wei.html">
+            
+                    
+                    13.2 守卫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.3" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/133-mo-shi-zhong-de-bian-liang.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/133-mo-shi-zhong-de-bian-liang.html">
+            
+                    
+                    13.3 模式中的变量和常量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.4" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/134-lei-xing-pi-pei.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/134-lei-xing-pi-pei.html">
+            
+                    
+                    13.4 类型匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.5" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/134-pi-pei-shu-zu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/134-pi-pei-shu-zu.html">
+            
+                    
+                    13.5 匹配数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.6" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/136-pi-pei-lie-biao.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/136-pi-pei-lie-biao.html">
+            
+                    
+                    13.6 匹配列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.7" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/137-pi-pei-yuan-zu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/137-pi-pei-yuan-zu.html">
+            
+                    
+                    13.7 匹配元组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.8" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/138-dui-xiang-pi-pei.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/138-dui-xiang-pi-pei.html">
+            
+                    
+                    13.8 对象匹配(提取器)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.9" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/138-bian-liang-sheng-ming-zhong-de-mo-shi.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/138-bian-liang-sheng-ming-zhong-de-mo-shi.html">
+            
+                    
+                    13.9 变量声明中的模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.10" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1310-for-biao-da-shi-zhong-de-mo-shi.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1310-for-biao-da-shi-zhong-de-mo-shi.html">
+            
+                    
+                    13.10 for 表达式中的模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.11" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1310-yang-li-lei.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1310-yang-li-lei.html">
+            
+                    
+                    13.11 样例类(重点)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.6.11.1" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1310-yang-li-lei/13111-yang-li-lei-zui-jia-shi-jian-1.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1310-yang-li-lei/13111-yang-li-lei-zui-jia-shi-jian-1.html">
+            
+                    
+                    13.11.1 样例类最佳实践1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.11.2" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1310-yang-li-lei/12112-yang-li-lei-zui-jia-shi-jian-2.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1310-yang-li-lei/12112-yang-li-lei-zui-jia-shi-jian-2.html">
+            
+                    
+                    12.11.2 样例类最佳实践2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.12" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1311-caseyu-ju-zhong-de-zhong-zhi-biao-shi-fa.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1311-caseyu-ju-zhong-de-zhong-zhi-biao-shi-fa.html">
+            
+                    
+                    13.12 case语句中的中置表示法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.13" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1312-pi-pei-qian-tao-jie-gou.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1312-pi-pei-qian-tao-jie-gou.html">
+            
+                    
+                    13.13 匹配嵌套结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.14" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1314-mi-feng-lei.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1314-mi-feng-lei.html">
+            
+                    
+                    13.14 密封类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6.15" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1315-mo-ni-mei-ju-lei.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-13-zhang-mo-shi-pi-pei/1315-mo-ni-mei-ju-lei.html">
+            
+                    
+                    13.15 模拟枚举类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/mo-shi-pi-pei-zong-jie.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/mo-shi-pi-pei-zong-jie.html">
+            
+                    
+                    模式匹配总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji.html">
+            
+                    
+                    第 14 章 函数式编程高级
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.8.1" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/141-pian-han-shu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/141-pian-han-shu.html">
+            
+                    
+                    14.1 偏函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.2" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/143-zuo-wei-zhi-de-han-shu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/143-zuo-wei-zhi-de-han-shu.html">
+            
+                    
+                    14.2 作为值的函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.3" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/143-ni-ming-han-shu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/143-ni-ming-han-shu.html">
+            
+                    
+                    14.3 匿名函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.4" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/142-zuo-wei-can-shu-de-han-shu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/142-zuo-wei-can-shu-de-han-shu.html">
+            
+                    
+                    14.4 作为参数的函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.5" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/146-can-657028-lei-578b29-tui-duan.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/146-can-657028-lei-578b29-tui-duan.html">
+            
+                    
+                    14.5 参数(类型)推断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.6" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/144-gao-jie-han-shu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/144-gao-jie-han-shu.html">
+            
+                    
+                    14.6 高阶函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.7" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/146-bi-bao.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/146-bi-bao.html">
+            
+                    
+                    14.7 闭包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.8" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/147-han-shu-ke-li-hua.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/147-han-shu-ke-li-hua.html">
+            
+                    
+                    14.8 函数柯里化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.9" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/148-kong-zhi-chou-xiang.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/148-kong-zhi-chou-xiang.html">
+            
+                    
+                    14.9 控制抽象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8.10" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/1410-bu-fen-ying-yong-han-shu.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/di-14-zhang-han-shu-shi-bian-cheng-gao-ji/1410-bu-fen-ying-yong-han-shu.html">
+            
+                    
+                    14.10  部分应用函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="../../di-3-bu-52063a-gao-ji-yu-fa/han-shu-gao-ji-zhi-shi-zong-jie.html">
+            
+                <a href="../../di-3-bu-52063a-gao-ji-yu-fa/han-shu-gao-ji-zhi-shi-zong-jie.html">
+            
+                    
+                    函数高级知识总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 4 部分: Scala 编程技能增强</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../di-15-zhang-han-shu-shi-bian-cheng-zhong-de-di-gui-si-xiang.html">
+            
+                <a href="../di-15-zhang-han-shu-shi-bian-cheng-zhong-de-di-gui-si-xiang.html">
+            
+                    
+                    第 15 章 函数式编程中的递归思想
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../di-15-zhang-han-shu-shi-bian-cheng-zhong-de-di-gui-si-xiang/151-di-gui-si-xiang.html">
+            
+                <a href="../di-15-zhang-han-shu-shi-bian-cheng-zhong-de-di-gui-si-xiang/151-di-gui-si-xiang.html">
+            
+                    
+                    15.1 递归思想
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../di-15-zhang-han-shu-shi-bian-cheng-zhong-de-di-gui-si-xiang/152-ying-yong-shi-li.html">
+            
+                <a href="../di-15-zhang-han-shu-shi-bian-cheng-zhong-de-di-gui-si-xiang/152-ying-yong-shi-li.html">
+            
+                    
+                    15.2 应用实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka.html">
+            
+                    
+                    第 16 章 并发编程模型: Akka
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/171-akka-gai-shu.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/171-akka-gai-shu.html">
+            
+                    
+                    16.1 Akka 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/172-akka-zhu-yu-he-yi-xie-gai-nian.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/172-akka-zhu-yu-he-yi-xie-gai-nian.html">
+            
+                    
+                    16.2 Actor模型介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.2.1" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/172-akka-zhu-yu-he-yi-xie-gai-nian/1721-actor.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/172-akka-zhu-yu-he-yi-xie-gai-nian/1721-actor.html">
+            
+                    
+                    16.2.1 Actor 模型的起源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2.2" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/172-akka-zhu-yu-he-yi-xie-gai-nian/1722-shi-yao-shi-actor.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/172-akka-zhu-yu-he-yi-xie-gai-nian/1722-shi-yao-shi-actor.html">
+            
+                    
+                    16.2.2 什么是 Actor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2.3" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/172-akka-zhu-yu-he-yi-xie-gai-nian/1722-actor-ke-xiao-xi-chuan-di.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/172-akka-zhu-yu-he-yi-xie-gai-nian/1722-actor-ke-xiao-xi-chuan-di.html">
+            
+                    
+                    16.2.3 Actor 和消息传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2.4" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/172-akka-zhu-yu-he-yi-xie-gai-nian/1724-mo-xing-ji-shuo-ming.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/172-akka-zhu-yu-he-yi-xie-gai-nian/1724-mo-xing-ji-shuo-ming.html">
+            
+                    
+                    16.2.4 Actor 模型及说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/173-actor-mo-xing-kuai-su-ru-men.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/173-actor-mo-xing-kuai-su-ru-men.html">
+            
+                    
+                    16.3 Actor 模型快速入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.3.1" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/173-actor-mo-xing-kuai-su-ru-men/1731-pou-xi-yi-ge-actor.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/173-actor-mo-xing-kuai-su-ru-men/1731-pou-xi-yi-ge-actor.html">
+            
+                    
+                    16.3.1 剖析一个 Actor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3.2" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/173-actor-mo-xing-kuai-su-ru-men/1732-actor-de-chuang-jian.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/173-actor-mo-xing-kuai-su-ru-men/1732-actor-de-chuang-jian.html">
+            
+                    
+                    16.3.2 Actor 的创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3.3" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/173-actor-mo-xing-kuai-su-ru-men/1733-actor-de-helloworld.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/173-actor-mo-xing-kuai-su-ru-men/1733-actor-de-helloworld.html">
+            
+                    
+                    16.3.3 Actor 的 HelloWorld
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/174-actorjian-tong-xun.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/174-actorjian-tong-xun.html">
+            
+                    
+                    16.4 Actor间通讯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/175-akka-wang-luo-bian-cheng.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/175-akka-wang-luo-bian-cheng.html">
+            
+                    
+                    16.5 Akka 网络编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.5.1" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/175-akka-wang-luo-bian-cheng/1751-acctor-de-xun-zhi.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/175-akka-wang-luo-bian-cheng/1751-acctor-de-xun-zhi.html">
+            
+                    
+                    16.5.1 Acctor 的寻址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5.2" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/175-akka-wang-luo-bian-cheng/1752-actortong-guo-wang-luo-tong-xun.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/175-akka-wang-luo-bian-cheng/1752-actortong-guo-wang-luo-tong-xun.html">
+            
+                    
+                    16.5.2 Actor通过网络通讯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5.3" data-path="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/175-akka-wang-luo-bian-cheng/1753-actortong-guo-wang-luo-tong-xun-sheng-ji-ban.html">
+            
+                <a href="../di-18-zhang-bing-fabian-cheng-mo-578b3a-akka/175-akka-wang-luo-bian-cheng/1753-actortong-guo-wang-luo-tong-xun-sheng-ji-ban.html">
+            
+                    
+                    16.5.3 Actor通过网络通讯升级版
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../di-20-zhang-yi-xie-qi-ta-zhi-shi.html">
+            
+                <a href="../di-20-zhang-yi-xie-qi-ta-zhi-shi.html">
+            
+                    
+                    第 17 章 一些杂乱的知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.3.1" data-path="201-lei-xing-tui-duan.html">
+            
+                <a href="201-lei-xing-tui-duan.html">
+            
+                    
+                    17.1 类型推断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="2012-ji-chu-lei-xing.html">
+            
+                <a href="2012-ji-chu-lei-xing.html">
+            
+                    
+                    17.2 基础类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../di-19-zhang-yi-xie-qi-ta-zhi-shi.html">
+            
+                <a href="../di-19-zhang-yi-xie-qi-ta-zhi-shi.html">
+            
+                    
+                    第 18 章 类型参数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="../di-19-zhang-yi-xie-qi-ta-zhi-shi/181-fan-xing-lei.html">
+            
+                <a href="../di-19-zhang-yi-xie-qi-ta-zhi-shi/181-fan-xing-lei.html">
+            
+                    
+                    18.1 泛型类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="../di-19-zhang-yi-xie-qi-ta-zhi-shi/182-fan-xing-han-shu.html">
+            
+                <a href="../di-19-zhang-yi-xie-qi-ta-zhi-shi/182-fan-xing-han-shu.html">
+            
+                    
+                    18.2 泛型函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" data-path="../di-19-zhang-yi-xie-qi-ta-zhi-shi/183-lei-xing-bian-liang-jie-ding.html">
+            
+                <a href="../di-19-zhang-yi-xie-qi-ta-zhi-shi/183-lei-xing-bian-liang-jie-ding.html">
+            
+                    
+                    18.3 类型变量界定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="../di-19-zhang-yi-xie-qi-ta-zhi-shi/184-shi-tu-jie-ding.html">
+            
+                <a href="../di-19-zhang-yi-xie-qi-ta-zhi-shi/184-shi-tu-jie-ding.html">
+            
+                    
+                    18.4 视图界定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.5" data-path="../di-19-zhang-yi-xie-qi-ta-zhi-shi/185-shang-xia-wen-jie-ding.html">
+            
+                <a href="../di-19-zhang-yi-xie-qi-ta-zhi-shi/185-shang-xia-wen-jie-ding.html">
+            
+                    
+                    18.5 上下文界定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6" data-path="../di-19-zhang-yi-xie-qi-ta-zhi-shi/186-xie-53d82c-ni-bian-he-bu-bian.html">
+            
+                <a href="../di-19-zhang-yi-xie-qi-ta-zhi-shi/186-xie-53d82c-ni-bian-he-bu-bian.html">
+            
+                    
+                    18.6 协变,逆变和不变
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../fan-xing-zong-jie.html">
+            
+                <a href="../fan-xing-zong-jie.html">
+            
+                    
+                    泛型总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../di-19-zhang-cao-zuo-fu.html">
+            
+                <a href="../di-19-zhang-cao-zuo-fu.html">
+            
+                    
+                    第 19 章 操作符
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="../di-19-zhang-cao-zuo-fu/192-zhong-zhi-cao-zuo-fu.html">
+            
+                <a href="../di-19-zhang-cao-zuo-fu/192-zhong-zhi-cao-zuo-fu.html">
+            
+                    
+                    19.1 中置操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.2" data-path="../di-19-zhang-cao-zuo-fu/193-yi-yuan-cao-zuo-fu.html">
+            
+                <a href="../di-19-zhang-cao-zuo-fu/193-yi-yuan-cao-zuo-fu.html">
+            
+                    
+                    19.2 一元操作符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.3" data-path="../di-19-zhang-cao-zuo-fu/194-cao-zuo-fu-de-jie-he-xing.html">
+            
+                <a href="../di-19-zhang-cao-zuo-fu/194-cao-zuo-fu-de-jie-he-xing.html">
+            
+                    
+                    19.3 操作符的结合性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.4" data-path="../di-19-zhang-cao-zuo-fu/195-applyhe-update-fang-fa.html">
+            
+                <a href="../di-19-zhang-cao-zuo-fu/195-applyhe-update-fang-fa.html">
+            
+                    
+                    19.4 apply和 update 方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.5" data-path="../di-19-zhang-cao-zuo-fu/196-fang-fa-ming-de-yue-ding.html">
+            
+                <a href="../di-19-zhang-cao-zuo-fu/196-fang-fa-ming-de-yue-ding.html">
+            
+                    
+                    19.5 方法名的约定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.6" data-path="../di-19-zhang-cao-zuo-fu/197-xia-hua-xian-yong-fa-zong-jie.html">
+            
+                <a href="../di-19-zhang-cao-zuo-fu/197-xia-hua-xian-yong-fa-zong-jie.html">
+            
+                    
+                    19.6 下划线用法总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >17.1 类型推断</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="171-&#x7C7B;&#x578B;&#x63A8;&#x65AD;">17.1 &#x7C7B;&#x578B;&#x63A8;&#x65AD;</h1>
+<p>scala &#x5177;&#x6709;&#x5F3A;&#x5927;&#x7684;&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#x80FD;&#x529B;, &#x4F46;&#x662F;&#x4E5F;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x7684;&#x5730;&#x65B9;&#x90FD;&#x53EF;&#x4EE5;&#x63A8;&#x65AD;&#x51FA;&#x6765;&#x7C7B;&#x578B;, &#x4E0B;&#x9762;&#x7684;&#x51E0;&#x79CD;&#x60C5;&#x51B5;&#x5C31;<my>&#x65E0;&#x6CD5;&#x4F7F;&#x7528; scala &#x7684;&#x7C7B;&#x578B;&#x63A8;&#x65AD;</my>:</p>
+<ul>
+<li><p>&#x5F53;&#x5B9A;&#x4E49;&#x6CA1;&#x6709;&#x521D;&#x59CB;&#x503C;&#x7684;&#x7C7B;&#x5B57;&#x6BB5;&#x65F6;<code>val a: Int = _</code></p>
+</li>
+<li><p>&#x5F53;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x6216;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x65F6;&#xFF1B;</p>
+</li>
+<li><p>&#x5F53;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x6216;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#xFF0C;&#x4EC5;&#x5F53;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x663E;&#x5F0F;&#x7684; return &#x8BED;&#x53E5;&#x6216;&#x8005;&#x4F7F;&#x7528;&#x9012;&#x5F52;&#x65F6;</p>
+</li>
+<li><p>&#x5F53;&#x5C06;&#x53D8;&#x91CF;&#x5B9A;&#x4E49;&#x4E3A;&#x53E6;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x88AB;&#x76F4;&#x63A5;&#x63A8;&#x65AD;&#x51FA;&#x7684;&#x7C7B;&#x578B;&#x65F6;&#xFF0C;&#x5982; <code>val d1: Double = 1</code>&#x3002;</p>
+</li>
+</ul>
+<p>&#x9664;&#x4E86;&#x8FD9;&#x51E0;&#x79CD;&#x60C5;&#x51B5;, &#x7C7B;&#x578B;&#x4FE1;&#x606F;&#x90FD;&#x662F;&#x53EF;&#x9009;&#x7684;, &#x5982;&#x679C;&#x5FFD;&#x7565;&#x7C7B;&#x578B;, &#x5219; scala &#x4F1A;&#x8FDB;&#x884C;&#x63A8;&#x65AD;.</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-04-12 09:02:32
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../di-20-zhang-yi-xie-qi-ta-zhi-shi.html" class="navigation navigation-prev " aria-label="Previous page: 第 17 章 一些杂乱的知识">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2012-ji-chu-lei-xing.html" class="navigation navigation-next " aria-label="Next page: 17.2 基础类型">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"17.1 类型推断","level":"4.3.1","depth":2,"next":{"title":"17.2 基础类型","level":"4.3.2","depth":2,"path":"di-4-bu-52063a-scala-bian-cheng-ji-neng-zeng-qiang/di-20-zhang-yi-xie-qi-ta-zhi-shi/2012-ji-chu-lei-xing.md","ref":"di-4-bu-52063a-scala-bian-cheng-ji-neng-zeng-qiang/di-20-zhang-yi-xie-qi-ta-zhi-shi/2012-ji-chu-lei-xing.md","articles":[]},"previous":{"title":"第 17 章 一些杂乱的知识","level":"4.3","depth":1,"path":"di-4-bu-52063a-scala-bian-cheng-ji-neng-zeng-qiang/di-20-zhang-yi-xie-qi-ta-zhi-shi.md","ref":"di-4-bu-52063a-scala-bian-cheng-ji-neng-zeng-qiang/di-20-zhang-yi-xie-qi-ta-zhi-shi.md","articles":[{"title":"17.1 类型推断","level":"4.3.1","depth":2,"path":"di-4-bu-52063a-scala-bian-cheng-ji-neng-zeng-qiang/di-20-zhang-yi-xie-qi-ta-zhi-shi/201-lei-xing-tui-duan.md","ref":"di-4-bu-52063a-scala-bian-cheng-ji-neng-zeng-qiang/di-20-zhang-yi-xie-qi-ta-zhi-shi/201-lei-xing-tui-duan.md","articles":[]},{"title":"17.2 基础类型","level":"4.3.2","depth":2,"path":"di-4-bu-52063a-scala-bian-cheng-ji-neng-zeng-qiang/di-20-zhang-yi-xie-qi-ta-zhi-shi/2012-ji-chu-lei-xing.md","ref":"di-4-bu-52063a-scala-bian-cheng-ji-neng-zeng-qiang/di-20-zhang-yi-xie-qi-ta-zhi-shi/2012-ji-chu-lei-xing.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_scala_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-4-bu-52063a-scala-bian-cheng-ji-neng-zeng-qiang/di-20-zhang-yi-xie-qi-ta-zhi-shi/201-lei-xing-tui-duan.md","mtime":"2019-04-12T01:02:32.744Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-04T12:35:18.070Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

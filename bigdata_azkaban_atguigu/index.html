@@ -1,0 +1,482 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第 1 章 Azkaban 概述 · 大数据 Azkaban 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter1.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第 1 章 Azkaban 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    第 2 章 Azkaban 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="di-3-zhang-azkaban-shi-zhan.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan.html">
+            
+                    
+                    第 3 章 Azkaban 实战
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="di-3-zhang-azkaban-shi-zhan/31-dan-yi-job-an-li.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan/31-dan-yi-job-an-li.html">
+            
+                    
+                    3.1 单一 job 案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="di-3-zhang-azkaban-shi-zhan/32-javacao-zuo-ren-wu.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan/32-javacao-zuo-ren-wu.html">
+            
+                    
+                    3.2 java操作任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="di-3-zhang-azkaban-shi-zhan/33-hdfs-cao-zuo.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan/33-hdfs-cao-zuo.html">
+            
+                    
+                    3.3 HDFS 操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="di-3-zhang-azkaban-shi-zhan/34-mapreduce-ren-wu.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan/34-mapreduce-ren-wu.html">
+            
+                    
+                    3.4 MapReduce 任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="di-3-zhang-azkaban-shi-zhan/35-hive-jiao-ben.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan/35-hive-jiao-ben.html">
+            
+                    
+                    3.5 hive 脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="di-3-zhang-azkaban-shi-zhan/36-duo-job-gong-zuo-liu-an-li.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan/36-duo-job-gong-zuo-liu-an-li.html">
+            
+                    
+                    3.6 多 job 工作流案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第 1 章 Azkaban 概述</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;-1-&#x7AE0;-azkaban-&#x6982;&#x8FF0;">&#x7B2C; 1 &#x7AE0; Azkaban &#x6982;&#x8FF0;</h1>
+<h2 id="11-&#x4EC0;&#x4E48;&#x662F;-azkaban">1.1 &#x4EC0;&#x4E48;&#x662F; Azkaban</h2>
+<p>Azkaban &#x662F;&#x548C; Oozie &#x7C7B;&#x4F3C;&#x7684;&#x7528;&#x4E8E;&#x8FDB;&#x884C;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x7684;&#x5DE5;&#x5177;, &#x4F46;&#x662F;&#x4F7F;&#x7528;&#x8D77;&#x6765;&#x8981;&#x6BD4; Oozie &#x5BB9;&#x6613;&#x7684;&#x591A;.</p>
+<p>Azkaban &#x662F;&#x7531; Linkedin &#x516C;&#x53F8;&#x63A8;&#x51FA;&#x7684;&#x4E00;&#x4E2A;&#x6279;&#x91CF;&#x5DE5;&#x4F5C;&#x6D41;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x5728;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x6D41;&#x5185;&#x4EE5;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x987A;&#x5E8F;&#x8FD0;&#x884C;&#x4E00;&#x7EC4;&#x5DE5;&#x4F5C;&#x548C;&#x6D41;&#x7A0B;&#xFF0C;&#x5B83;&#x7684;&#x914D;&#x7F6E;&#x662F;&#x901A;&#x8FC7;&#x7B80;&#x5355;&#x7684; <code>key:value</code>&#x5BF9;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x4E2D;&#x7684; <code>dependencies</code> &#x6765;&#x8BBE;&#x7F6E;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x3002;</p>
+<p>Azkaban&#x4F7F;&#x7528; job &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5EFA;&#x7ACB;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x6613;&#x4E8E;&#x4F7F;&#x7528;&#x7684; web &#x7528;&#x6237;&#x754C;&#x9762;&#x7EF4;&#x62A4;&#x548C;&#x8DDF;&#x8E2A;&#x4F60;&#x7684;&#x5DE5;&#x4F5C;&#x6D41;&#x3002;</p>
+<hr>
+<h2 id="12-azkban-&#x7684;&#x7279;&#x70B9;">1.2 Azkban &#x7684;&#x7279;&#x70B9;</h2>
+<ol>
+<li>&#x517C;&#x5BB9;&#x4EFB;&#x4F55;&#x7248;&#x672C;&#x7684;hadoop</li>
+<li>&#x6613;&#x4E8E;&#x4F7F;&#x7528;&#x7684;Web&#x7528;&#x6237;&#x754C;&#x9762;</li>
+<li>&#x7B80;&#x5355;&#x7684;&#x5DE5;&#x4F5C;&#x6D41;&#x7684;&#x4E0A;&#x4F20;</li>
+<li>&#x65B9;&#x4FBF;&#x8BBE;&#x7F6E;&#x4EFB;&#x52A1;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</li>
+<li>&#x8C03;&#x5EA6;&#x5DE5;&#x4F5C;&#x6D41;</li>
+<li>&#x6A21;&#x5757;&#x5316;&#x548C;&#x53EF;&#x63D2;&#x62D4;&#x7684;&#x63D2;&#x4EF6;&#x673A;&#x5236;</li>
+<li>&#x8BA4;&#x8BC1;/&#x6388;&#x6743;(&#x6743;&#x9650;&#x7684;&#x5DE5;&#x4F5C;)</li>
+<li>&#x80FD;&#x591F;&#x6740;&#x6B7B;&#x5E76;&#x91CD;&#x65B0;&#x542F;&#x52A8;&#x5DE5;&#x4F5C;&#x6D41;</li>
+<li>&#x6709;&#x5173;&#x5931;&#x8D25;&#x548C;&#x6210;&#x529F;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x63D0;&#x9192;</li>
+</ol>
+<hr>
+<h2 id="13-&#x5E38;&#x89C1;&#x5DE5;&#x4F5C;&#x6D41;&#x8C03;&#x5EA6;&#x7CFB;&#x7EDF;">1.3 &#x5E38;&#x89C1;&#x5DE5;&#x4F5C;&#x6D41;&#x8C03;&#x5EA6;&#x7CFB;&#x7EDF;</h2>
+<ol>
+<li><p>&#x7B80;&#x5355;&#x7684;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#xFF1A;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>crontab</code>&#x5B9E;&#x73B0;&#xFF1B;</p>
+</li>
+<li><p>&#x590D;&#x6742;&#x7684;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#xFF1A;&#x5F00;&#x53D1;&#x8C03;&#x5EA6;&#x5E73;&#x53F0;&#x6216;&#x4F7F;&#x7528;&#x73B0;&#x6210;&#x7684;&#x5F00;&#x6E90;&#x8C03;&#x5EA6;&#x7CFB;&#x7EDF;&#xFF0C;&#x6BD4;&#x5982;<code>ooize</code>&#x3001;<code>azkaban</code>&#x7B49;</p>
+</li>
+</ol>
+<hr>
+<h2 id="14-oozie-&#x548C;-azkaban-&#x7684;&#x5BF9;&#x6BD4;">1.4 Oozie &#x548C; Azkaban &#x7684;&#x5BF9;&#x6BD4;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x7279;&#x6027;</th>
+<th>Oozie</th>
+<th>Azkaban</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x5DE5;&#x4F5C;&#x6D41;&#x63CF;&#x8FF0;&#x8BED;&#x8A00;</td>
+<td>XML</td>
+<td>text file with   key/value pairs</td>
+</tr>
+<tr>
+<td>&#x662F;&#x5426;&#x8981;web&#x5BB9;&#x5668;</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>&#x8FDB;&#x5EA6;&#x8DDF;&#x8E2A;</td>
+<td>web page</td>
+<td>web page</td>
+</tr>
+<tr>
+<td>Hadoop job&#x8C03;&#x5EA6;&#x652F;&#x6301;</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>&#x8FD0;&#x884C;&#x6A21;&#x5F0F;</td>
+<td>daemon</td>
+<td>daemon</td>
+</tr>
+<tr>
+<td>&#x4E8B;&#x4EF6;&#x901A;&#x77E5;</td>
+<td>no</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>&#x9700;&#x8981;&#x5B89;&#x88C5;</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>&#x652F;&#x6301;&#x7684;hadoop&#x7248;&#x672C;</td>
+<td>0.20+</td>
+<td>currently unknown</td>
+</tr>
+<tr>
+<td>&#x91CD;&#x8BD5;&#x652F;&#x6301;</td>
+<td>workflownode   evel</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>&#x8FD0;&#x884C;&#x4EFB;&#x610F;&#x547D;&#x4EE4;</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="15-azzkaban-&#x7684;&#x57FA;&#x672C;&#x67B6;&#x6784;">1.5 Azzkaban &#x7684;&#x57FA;&#x672C;&#x67B6;&#x6784;</h2>
+<p>Azkaban &#x7531;&#x4E09;&#x4E2A;&#x5173;&#x952E;&#x7EC4;&#x4EF6;&#x6784;&#x6210;&#xFF1A;</p>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1552447448.png-atguiguText" alt=""></p>
+<h3 id="azkabanwebserver">AzkabanWebServer</h3>
+<p>AzkabanWebServer &#x662F;&#x6574;&#x4E2A; Azkaban &#x5DE5;&#x4F5C;&#x6D41;&#x7CFB;&#x7EDF;&#x7684;&#x4E3B;&#x8981;&#x7BA1;&#x7406;&#x8005;&#xFF0C;&#x5B83;&#x8D1F;&#x8D23;&#x7528;&#x6237;&#x767B;&#x5F55;&#x8BA4;&#x8BC1;&#x3001;&#x8D1F;&#x8D23;project&#x7BA1;&#x7406;&#x3001;&#x5B9A;&#x65F6;&#x6267;&#x884C;&#x5DE5;&#x4F5C;&#x6D41;&#x3001;&#x8DDF;&#x8E2A;&#x5DE5;&#x4F5C;&#x6D41;&#x6267;&#x884C;&#x8FDB;&#x5EA6;&#x7B49;&#x4E00;&#x7CFB;&#x5217;&#x4EFB;&#x52A1;&#x3002;</p>
+<h3 id="azkabanexecutorserver">AzkabanExecutorServer</h3>
+<p>AzkabanExecutorServer &#x8D1F;&#x8D23;&#x5177;&#x4F53;&#x7684;&#x5DE5;&#x4F5C;&#x6D41;&#x7684;&#x63D0;&#x4EA4;&#x3001;&#x6267;&#x884C;&#xFF0C;&#x5B83;&#x4EEC;&#x901A;&#x8FC7; mysql &#x6570;&#x636E;&#x5E93;&#x6765;&#x534F;&#x8C03;&#x4EFB;&#x52A1;&#x7684;&#x6267;&#x884C;&#x3002;</p>
+<h3 id="&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;-mysql">&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93; Mysql</h3>
+<p>&#x5B58;&#x50A8;&#x5927;&#x90E8;&#x5206;&#x6267;&#x884C;&#x6D41;&#x72B6;&#x6001;&#xFF0C;AzkabanWebServer &#x548C; AzkabanExecutorServer &#x90FD;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-04-02 13:02:50
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="chapter1.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 第 2 章 Azkaban 安装部署">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第 1 章 Azkaban 概述","level":"1.1","depth":1,"next":{"title":"第 2 章 Azkaban 安装部署","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 Azkaban 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"README.md","mtime":"2019-04-02T05:02:50.227Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-02T05:03:07.664Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

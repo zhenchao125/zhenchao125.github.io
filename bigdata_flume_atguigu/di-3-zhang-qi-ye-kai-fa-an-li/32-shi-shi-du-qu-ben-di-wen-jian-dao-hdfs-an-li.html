@@ -1,0 +1,648 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.2 实时读取本地文件到HDFS案例 · 大数据 Fulume 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="33-shi-shi-du-qu-mu-lu-wen-jian-dao-hdfs.html" />
+    
+    
+    <link rel="prev" href="31-guan-fang-an-4f8b3a-jian-kong-duan-kou-shu-ju.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第 1 章 概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../11-flume-de-zuo-yong.html">
+            
+                <a href="../11-flume-de-zuo-yong.html">
+            
+                    
+                    1.1 Flume 是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../12-flume-zu-cheng-jia-gou.html">
+            
+                <a href="../12-flume-zu-cheng-jia-gou.html">
+            
+                    
+                    1.2 Flume 组成架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../13-flume-tuo-pu-jia-gou.html">
+            
+                <a href="../13-flume-tuo-pu-jia-gou.html">
+            
+                    
+                    1.3 Flume 拓扑架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../14-flume-nei-bu-yuan-li.html">
+            
+                <a href="../14-flume-nei-bu-yuan-li.html">
+            
+                    
+                    1.4 Flume 内部原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    第 2 章 快速入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../di-3-zhang-qi-ye-kai-fa-an-li.html">
+            
+                <a href="../di-3-zhang-qi-ye-kai-fa-an-li.html">
+            
+                    
+                    第 3 章 企业开发案例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="31-guan-fang-an-4f8b3a-jian-kong-duan-kou-shu-ju.html">
+            
+                <a href="31-guan-fang-an-4f8b3a-jian-kong-duan-kou-shu-ju.html">
+            
+                    
+                    3.1 官方案例:监控端口数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="32-shi-shi-du-qu-ben-di-wen-jian-dao-hdfs-an-li.html">
+            
+                <a href="32-shi-shi-du-qu-ben-di-wen-jian-dao-hdfs-an-li.html">
+            
+                    
+                    3.2 实时读取本地文件到HDFS案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="33-shi-shi-du-qu-mu-lu-wen-jian-dao-hdfs.html">
+            
+                <a href="33-shi-shi-du-qu-mu-lu-wen-jian-dao-hdfs.html">
+            
+                    
+                    3.3 实时读取目录文件到 HDFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="34-dan-shu-ju-yuan-duo-chu-kou-an-li.html">
+            
+                <a href="34-dan-shu-ju-yuan-duo-chu-kou-an-li.html">
+            
+                    
+                    3.4 单数据源多出口案例(选择器)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="35-dan-shu-ju-yuan-duo-chu-kou-an-4f8b28-sink-7ec429.html">
+            
+                <a href="35-dan-shu-ju-yuan-duo-chu-kou-an-4f8b28-sink-7ec429.html">
+            
+                    
+                    3.5 单数据源多出口案例(Sink组)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="36-duo-shu-ju-yuan-hui-zong-an-li.html">
+            
+                <a href="36-duo-shu-ju-yuan-hui-zong-an-li.html">
+            
+                    
+                    3.6 多数据源汇总案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../di-4-zhang-flume-jian-kong-zhi-ganglia.html">
+            
+                <a href="../di-4-zhang-flume-jian-kong-zhi-ganglia.html">
+            
+                    
+                    第 4 章 Flume 监控之 Ganglia
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../di-4-zhang-flume-jian-kong-zhi-ganglia/41-ganglia-de-an-zhuang-he-bu-shu.html">
+            
+                <a href="../di-4-zhang-flume-jian-kong-zhi-ganglia/41-ganglia-de-an-zhuang-he-bu-shu.html">
+            
+                    
+                    4.1 Ganglia 的安装和部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../di-4-zhang-flume-jian-kong-zhi-ganglia/42-cao-zuo-flume-ce-shi-jian-kong.html">
+            
+                <a href="../di-4-zhang-flume-jian-kong-zhi-ganglia/42-cao-zuo-flume-ce-shi-jian-kong.html">
+            
+                    
+                    4.2 操作 Flume 测试监控
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../di-5-zhang-zi-ding-yi-source.html">
+            
+                <a href="../di-5-zhang-zi-ding-yi-source.html">
+            
+                    
+                    第 5 章 自定义 source
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../di-5-zhang-zi-ding-yi-source/51-xu-qiu.html">
+            
+                <a href="../di-5-zhang-zi-ding-yi-source/51-xu-qiu.html">
+            
+                    
+                    5.1 需求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../di-5-zhang-zi-ding-yi-source/52-fen-xi.html">
+            
+                <a href="../di-5-zhang-zi-ding-yi-source/52-fen-xi.html">
+            
+                    
+                    5.2 分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../di-5-zhang-zi-ding-yi-source/53-bian-ma.html">
+            
+                <a href="../di-5-zhang-zi-ding-yi-source/53-bian-ma.html">
+            
+                    
+                    5.3 编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../di-5-zhang-zi-ding-yi-source/54-ce-shi.html">
+            
+                <a href="../di-5-zhang-zi-ding-yi-source/54-ce-shi.html">
+            
+                    
+                    5.4 测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../di-5-zhang-qi-ye-zhen-shi-mian-shi-ti.html">
+            
+                <a href="../di-5-zhang-qi-ye-zhen-shi-mian-shi-ti.html">
+            
+                    
+                    第 6 章 企业真实面试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.2 实时读取本地文件到HDFS案例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="32-&#x5B9E;&#x65F6;&#x8BFB;&#x53D6;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x5230;-hdfs-&#x6848;&#x4F8B;">3.2 &#x5B9E;&#x65F6;&#x8BFB;&#x53D6;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x5230; HDFS &#x6848;&#x4F8B;</h1>
+<h2 id="321-&#x6848;&#x4F8B;&#x9700;&#x6C42;">3.2.1 &#x6848;&#x4F8B;&#x9700;&#x6C42;</h2>
+<p>&#x5B9E;&#x65F6;&#x76D1;&#x63A7; Hive &#x65E5;&#x5FD7;&#xFF0C;&#x5E76;&#x4E0A;&#x4F20;&#x5230; HDFS &#x4E2D;</p>
+<h2 id="322-&#x9700;&#x6C42;&#x5206;&#x6790;">3.2.2 &#x9700;&#x6C42;&#x5206;&#x6790;</h2>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1541496151.png-atguiguText" alt=""></p>
+<h2 id="323-&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;">3.2.3 &#x64CD;&#x4F5C;&#x6B65;&#x9AA4;</h2>
+<h3 id="&#x6B65;&#x9AA4;1-&#x914D;&#x7F6E;-hadoophome-&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x6B65;&#x9AA4;1: &#x914D;&#x7F6E; <code>HADOOP_HOME</code> &#x73AF;&#x5883;&#x53D8;&#x91CF;</h3>
+<p>&#x5982;&#x679C;&#x8981; sink &#x5230; HDFS, Flume &#x9700;&#x8981; HADOOP &#x7684;&#x76F8;&#x5173; jar &#x5305;, &#x6240;&#x4EE5;&#x52A1;&#x5FC5;&#x914D;&#x7F6E; <code>HADOOP_HOME</code> &#x73AF;&#x5883;&#x53D8;&#x91CF;, &#x7136;&#x540E; Flume &#x53EF;&#x4EE5;&#x901A;&#x8FC7; <code>HADOOP_HOME</code> &#x627E;&#x5230;&#x9700;&#x8981;&#x7684; jar &#x5305;.</p>
+<p><my>&#x5982;&#x679C;&#x524D;&#x9762;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x542F;&#x52A8;&#x5931;&#x8D25;, &#x5C31;&#x9700;&#x8981;&#x624B;&#x52A8;copy&#x4E0B;&#x9762;&#x51E0;&#x4E2A; jar &#x5305;&#x5230;<code>/opt/module/flume/lib</code> &#x76EE;&#x5F55;&#x4E0B;</my></p>
+<pre class="language-"><code>commons-configuration-1.6.jar&#x3001;
+hadoop-auth-2.7.2.jar&#x3001;
+hadoop-common-2.7.2.jar&#x3001;
+hadoop-hdfs-2.7.2.jar&#x3001;
+commons-io-2.4.jar&#x3001;
+htrace-core-3.1.0-incubating.jar
+</code></pre><h3 id="&#x6B65;&#x9AA4;2-&#x521B;&#x5EFA;flume-file-hdfsconf&#x6587;&#x4EF6;">&#x6B65;&#x9AA4;2: &#x521B;&#x5EFA;flume-file-hdfs.conf&#x6587;&#x4EF6;</h3>
+<p>&#x5728; job &#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x6587;&#x4EF6;:</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">touch</span> flume-file-hdfs.conf
+</code></pre>
+<p>&#x5728;&#x6587;&#x4EF6;&#x5185;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x5185;&#x5BB9;:</p>
+<pre class="language-"><code class="lang-bash"><span class="token comment" spellcheck="true"># Name the components on this agent</span>
+a2.sources <span class="token operator">=</span> r2
+a2.sinks <span class="token operator">=</span> k2
+a2.channels <span class="token operator">=</span> c2
+
+<span class="token comment" spellcheck="true"># Describe/configure the source</span>
+a2.sources.r2.type <span class="token operator">=</span> <span class="token function">exec</span>
+a2.sources.r2.command <span class="token operator">=</span> <span class="token function">tail</span> -F /opt/module/hive-2.3.3/logs/hive.log
+a2.sources.r2.shell <span class="token operator">=</span> /bin/bash -c
+
+<span class="token comment" spellcheck="true"># Describe the sink</span>
+a2.sinks.k2.type <span class="token operator">=</span> hdfs
+a2.sinks.k2.hdfs.path <span class="token operator">=</span> hdfs://hadoop201:9000/flume/%Y%m%d/%H
+<span class="token comment" spellcheck="true">#&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x7684;&#x524D;&#x7F00;</span>
+a2.sinks.k2.hdfs.filePrefix <span class="token operator">=</span> logs-
+<span class="token comment" spellcheck="true">#&#x662F;&#x5426;&#x6309;&#x7167;&#x65F6;&#x95F4;&#x6EDA;&#x52A8;&#x6587;&#x4EF6;&#x5939;</span>
+a2.sinks.k2.hdfs.round <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token comment" spellcheck="true">#&#x591A;&#x5C11;&#x65F6;&#x95F4;&#x5355;&#x4F4D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x5939;</span>
+a2.sinks.k2.hdfs.roundValue <span class="token operator">=</span> 1
+<span class="token comment" spellcheck="true">#&#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x65F6;&#x95F4;&#x5355;&#x4F4D;</span>
+a2.sinks.k2.hdfs.roundUnit <span class="token operator">=</span> hour
+<span class="token comment" spellcheck="true">#&#x662F;&#x5426;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x65F6;&#x95F4;&#x6233;</span>
+a2.sinks.k2.hdfs.useLocalTimeStamp <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token comment" spellcheck="true">#&#x79EF;&#x6512;&#x591A;&#x5C11;&#x4E2A;Event&#x624D;flush&#x5230;HDFS&#x4E00;&#x6B21;</span>
+a2.sinks.k2.hdfs.batchSize <span class="token operator">=</span> 1000
+<span class="token comment" spellcheck="true">#&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x652F;&#x6301;&#x538B;&#x7F29;</span>
+a2.sinks.k2.hdfs.fileType <span class="token operator">=</span> DataStream
+<span class="token comment" spellcheck="true">#&#x591A;&#x4E45;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6587;&#x4EF6;</span>
+a2.sinks.k2.hdfs.rollInterval <span class="token operator">=</span> 600
+<span class="token comment" spellcheck="true">#&#x8BBE;&#x7F6E;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x6EDA;&#x52A8;&#x5927;&#x5C0F;</span>
+a2.sinks.k2.hdfs.rollSize <span class="token operator">=</span> 134217700
+<span class="token comment" spellcheck="true">#&#x6587;&#x4EF6;&#x7684;&#x6EDA;&#x52A8;&#x4E0E;Event&#x6570;&#x91CF;&#x65E0;&#x5173;</span>
+a2.sinks.k2.hdfs.rollCount <span class="token operator">=</span> 0
+<span class="token comment" spellcheck="true">#&#x6700;&#x5C0F;&#x5197;&#x4F59;&#x6570;</span>
+a2.sinks.k2.hdfs.minBlockReplicas <span class="token operator">=</span> 1
+
+<span class="token comment" spellcheck="true"># Use a channel which buffers events in memory</span>
+a2.channels.c2.type <span class="token operator">=</span> memory
+a2.channels.c2.capacity <span class="token operator">=</span> 1000
+a2.channels.c2.transactionCapacity <span class="token operator">=</span> 100
+
+<span class="token comment" spellcheck="true"># Bind the source and sink to the channel</span>
+a2.sources.r2.channels <span class="token operator">=</span> c2
+a2.sinks.k2.channel <span class="token operator">=</span> c2
+</code></pre>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1541551439.png-atguiguText" alt=""></p>
+<h3 id="&#x6B65;&#x9AA4;3-&#x6267;&#x884C;&#x76D1;&#x63A7;&#x914D;&#x7F6E;">&#x6B65;&#x9AA4;3: &#x6267;&#x884C;&#x76D1;&#x63A7;&#x914D;&#x7F6E;</h3>
+<pre class="language-"><code class="lang-bash">flume-ng agent --conf conf --conf-file job/flume-file-hdfs.conf --name a2
+</code></pre>
+<h3 id="&#x6B65;&#x9AA4;4-hdfs-&#x4E0A;&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;">&#x6B65;&#x9AA4;4: HDFS &#x4E0A;&#x67E5;&#x770B;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;</h3>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1541514118.png-atguiguText" alt=""></p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-12-16 13:31:27
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="31-guan-fang-an-4f8b3a-jian-kong-duan-kou-shu-ju.html" class="navigation navigation-prev " aria-label="Previous page: 3.1 官方案例:监控端口数据">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="33-shi-shi-du-qu-mu-lu-wen-jian-dao-hdfs.html" class="navigation navigation-next " aria-label="Next page: 3.3 实时读取目录文件到 HDFS">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.2 实时读取本地文件到HDFS案例","level":"1.3.2","depth":2,"next":{"title":"3.3 实时读取目录文件到 HDFS","level":"1.3.3","depth":2,"path":"di-3-zhang-qi-ye-kai-fa-an-li/33-shi-shi-du-qu-mu-lu-wen-jian-dao-hdfs.md","ref":"di-3-zhang-qi-ye-kai-fa-an-li/33-shi-shi-du-qu-mu-lu-wen-jian-dao-hdfs.md","articles":[]},"previous":{"title":"3.1 官方案例:监控端口数据","level":"1.3.1","depth":2,"path":"di-3-zhang-qi-ye-kai-fa-an-li/31-guan-fang-an-4f8b3a-jian-kong-duan-kou-shu-ju.md","ref":"di-3-zhang-qi-ye-kai-fa-an-li/31-guan-fang-an-4f8b3a-jian-kong-duan-kou-shu-ju.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://o7cqr8cfk.bkt.clouddn.com/18-3-4/62171757.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/83394736.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/15906185.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/15906185.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/3394270.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/65028582.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/20359261.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/37472401.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/3355397.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://www.gitbook.com/@zhenchao125"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 Fulume 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-3-zhang-qi-ye-kai-fa-an-li/32-shi-shi-du-qu-ben-di-wen-jian-dao-hdfs-an-li.md","mtime":"2018-12-16T05:31:27.769Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-25T01:39:38.954Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

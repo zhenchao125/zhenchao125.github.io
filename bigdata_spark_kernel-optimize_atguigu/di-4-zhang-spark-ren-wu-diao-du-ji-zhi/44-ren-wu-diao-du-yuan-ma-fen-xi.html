@@ -1,0 +1,1197 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.4 Stage 级别任务调度源码分析 · 大数据 bigdata_spark_kernel-optimize_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="45-task-ji-bie-ren-wu-diao-du-yuan-ma-fen-xi.html" />
+    
+    
+    <link rel="prev" href="43-spark-task-ji-bie-diao-du/433-shi-bai-zhong-shi-he-hei-ming-dan.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">第 1 部分: Spark 内核</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第 1 章 Spark 内核概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../11-spark-he-xin-zu-jian-hui-gu.html">
+            
+                <a href="../11-spark-he-xin-zu-jian-hui-gu.html">
+            
+                    
+                    1.1 Spark 核心组件回顾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../12-spark-tong-yong-yun-xing-liu-cheng-gai-shu.html">
+            
+                <a href="../12-spark-tong-yong-yun-xing-liu-cheng-gai-shu.html">
+            
+                    
+                    1.2 Spark 通用运行流程概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    第 2 章 Spark 通讯架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter1/21-spark-tong-xun-jia-gou-gai-shu.html">
+            
+                <a href="../chapter1/21-spark-tong-xun-jia-gou-gai-shu.html">
+            
+                    
+                    2.1 Spark 通讯架构概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter1/23-spark-tong-xin-jia-gou-jie-xi.html">
+            
+                <a href="../chapter1/23-spark-tong-xin-jia-gou-jie-xi.html">
+            
+                    
+                    2.2 Spark 通信架构解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter1/22-spark-qi-dong-liu-cheng-fen-xi.html">
+            
+                <a href="../chapter1/22-spark-qi-dong-liu-cheng-fen-xi.html">
+            
+                    
+                    2.3 Spark 启动流程分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../chapter1/22-spark-qi-dong-liu-cheng-fen-xi/231-master-liu-cheng-fen-xi.html">
+            
+                <a href="../chapter1/22-spark-qi-dong-liu-cheng-fen-xi/231-master-liu-cheng-fen-xi.html">
+            
+                    
+                    2.3.1 Master 启动源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../chapter1/22-spark-qi-dong-liu-cheng-fen-xi/232-worker-liu-cheng-fen-xi.html">
+            
+                <a href="../chapter1/22-spark-qi-dong-liu-cheng-fen-xi/232-worker-liu-cheng-fen-xi.html">
+            
+                    
+                    2.3.2 Worker 启动源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../di-3-zhang-spark-bu-shu-mo-shi.html">
+            
+                <a href="../di-3-zhang-spark-bu-shu-mo-shi.html">
+            
+                    
+                    第 3 章 Spark 部署模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi.html">
+            
+                <a href="../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi.html">
+            
+                    
+                    3.1 Yarn 模式运行机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.html">
+            
+                <a href="../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.html">
+            
+                    
+                    1. Yarn cluster 模式运行机制源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-client-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.html">
+            
+                <a href="../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-client-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.html">
+            
+                    
+                    2. Yarn client 模式运行机制源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../di-3-zhang-spark-bu-shu-mo-shi/32-standalone-mo-shi-yun-xing-ji-zhi.html">
+            
+                <a href="../di-3-zhang-spark-bu-shu-mo-shi/32-standalone-mo-shi-yun-xing-ji-zhi.html">
+            
+                    
+                    3.2 Standalone 模式运行机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../di-4-zhang-spark-ren-wu-diao-du-ji-zhi.html">
+            
+                <a href="../di-4-zhang-spark-ren-wu-diao-du-ji-zhi.html">
+            
+                    
+                    第 4 章 Spark 任务调度机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="41-spark-ren-wu-diao-du-gai-shu.html">
+            
+                <a href="41-spark-ren-wu-diao-du-gai-shu.html">
+            
+                    
+                    4.1 Spark 任务调度概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="42-spark-stage-ji-bie-diao-du.html">
+            
+                <a href="42-spark-stage-ji-bie-diao-du.html">
+            
+                    
+                    4.2 Spark Stage 级别调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="43-spark-task-ji-bie-diao-du.html">
+            
+                <a href="43-spark-task-ji-bie-diao-du.html">
+            
+                    
+                    4.3 Spark Task 级别调度
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="43-spark-task-ji-bie-diao-du/431-diao-du-ce-lve.html">
+            
+                <a href="43-spark-task-ji-bie-diao-du/431-diao-du-ce-lve.html">
+            
+                    
+                    4.3.1 调度策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="43-spark-task-ji-bie-diao-du/432-ben-di-hua-diao-du.html">
+            
+                <a href="43-spark-task-ji-bie-diao-du/432-ben-di-hua-diao-du.html">
+            
+                    
+                    4.3.2 本地化调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="43-spark-task-ji-bie-diao-du/433-shi-bai-zhong-shi-he-hei-ming-dan.html">
+            
+                <a href="43-spark-task-ji-bie-diao-du/433-shi-bai-zhong-shi-he-hei-ming-dan.html">
+            
+                    
+                    4.3.3 失败重试和黑名单
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4" data-path="44-ren-wu-diao-du-yuan-ma-fen-xi.html">
+            
+                <a href="44-ren-wu-diao-du-yuan-ma-fen-xi.html">
+            
+                    
+                    4.4 Stage 级别任务调度源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="45-task-ji-bie-ren-wu-diao-du-yuan-ma-fen-xi.html">
+            
+                <a href="45-task-ji-bie-ren-wu-diao-du-yuan-ma-fen-xi.html">
+            
+                    
+                    4.5 Task 级别任务调度源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../di-5-zhang-spark-shuffle-jie-xi.html">
+            
+                <a href="../di-5-zhang-spark-shuffle-jie-xi.html">
+            
+                    
+                    第 5 章 Spark Shuffle 解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../di-5-zhang-spark-shuffle-jie-xi/51-shuffle-de-he-xin-yao-dian.html">
+            
+                <a href="../di-5-zhang-spark-shuffle-jie-xi/51-shuffle-de-he-xin-yao-dian.html">
+            
+                    
+                    5.1 Shuffle 的核心要点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../di-5-zhang-spark-shuffle-jie-xi/52-hashshuffle-jie-xi.html">
+            
+                <a href="../di-5-zhang-spark-shuffle-jie-xi/52-hashshuffle-jie-xi.html">
+            
+                    
+                    5.2 HashShuffle 解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../di-5-zhang-spark-shuffle-jie-xi/53-sortshuffle-jie-xi.html">
+            
+                <a href="../di-5-zhang-spark-shuffle-jie-xi/53-sortshuffle-jie-xi.html">
+            
+                    
+                    5.3 SortShuffle 解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../di-5-zhang-spark-shuffle-jie-xi/53-sortshuffle-jie-xi/sortshuffle-yuan-ma-jie-xi.html">
+            
+                <a href="../di-5-zhang-spark-shuffle-jie-xi/53-sortshuffle-jie-xi/sortshuffle-yuan-ma-jie-xi.html">
+            
+                    
+                    SortShuffle 源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../di-6-zhang-spark-nei-cun-jie-xi.html">
+            
+                <a href="../di-6-zhang-spark-nei-cun-jie-xi.html">
+            
+                    
+                    第 6 章 Spark 内存管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../61-dui-nei-he-dui-wai-nei-cun-gui-hua.html">
+            
+                <a href="../61-dui-nei-he-dui-wai-nei-cun-gui-hua.html">
+            
+                    
+                    6.1 堆内核堆外内存规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../62-nei-cun-kong-jian-fen-pei.html">
+            
+                <a href="../62-nei-cun-kong-jian-fen-pei.html">
+            
+                    
+                    6.2 内存空间分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../63-cun-chu-nei-cun-guan-li.html">
+            
+                <a href="../63-cun-chu-nei-cun-guan-li.html">
+            
+                    
+                    6.3 存储内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../64-zhi-xing-nei-cun-guan-li.html">
+            
+                <a href="../64-zhi-xing-nei-cun-guan-li.html">
+            
+                    
+                    6.4 执行内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 2 部分: Spark 性能优化和故障处理</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua.html">
+            
+                <a href="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua.html">
+            
+                    
+                    第 7 章 Spark 性能优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/71-chang-gui-xing-neng-diao-you.html">
+            
+                <a href="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/71-chang-gui-xing-neng-diao-you.html">
+            
+                    
+                    7.1 常规性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/72-suan-zi-diao-you.html">
+            
+                <a href="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/72-suan-zi-diao-you.html">
+            
+                    
+                    7.2 算子调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/73-shuffle-diao-you.html">
+            
+                <a href="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/73-shuffle-diao-you.html">
+            
+                    
+                    7.3 Shuffle 调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/74-jvm-diao-you.html">
+            
+                <a href="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/74-jvm-diao-you.html">
+            
+                    
+                    7.4 JVM 调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-8-zhang-spark-shu-ju-qing-xie.html">
+            
+                <a href="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-8-zhang-spark-shu-ju-qing-xie.html">
+            
+                    
+                    第 8 章 Spark 数据倾斜解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-9-zhang-spark-troubleshooting.html">
+            
+                <a href="../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-9-zhang-spark-troubleshooting.html">
+            
+                    
+                    第 9 章 Spark Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.4 Stage 级别任务调度源码分析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="44-stage-&#x7EA7;&#x522B;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x6E90;&#x7801;&#x5206;&#x6790;">4.4 Stage &#x7EA7;&#x522B;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x6E90;&#x7801;&#x5206;&#x6790;</h1>
+<h2 id="sparkcontext&#x521D;&#x59CB;&#x5316;"><code>SparkContext</code>&#x521D;&#x59CB;&#x5316;</h2>
+<p>&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x7684;&#x65F6;&#x5019;, &#x9700;&#x8981;&#x7528;&#x5230; 3 &#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x7EC4;&#x4EF6;, &#x90FD;&#x662F;&#x5728; <code>SparkContext</code> &#x521D;&#x59CB;&#x5316;&#x7684;&#x65F6;&#x5019;&#x521B;&#x5EFA;&#x5E76;&#x542F;&#x52A8;:</p>
+<p>&#x8FD9;&#x4E09;&#x4E2A;&#x7EC4;&#x4EF6;&#x5206;&#x522B;&#x662F;: </p>
+<p><code>SchedulerBackend</code>
+<code>TaskScheduler</code>
+<code>DAGScheduler</code></p>
+<pre class="language-"><code class="lang-scala"><span class="token comment">// &#x7528;&#x6765;&#x4E0E;&#x5176;&#x4ED6;&#x7EC4;&#x4EF6;&#x901A;&#x8BAF;&#x7528;</span>
+<span class="token keyword">private</span> <span class="token keyword">var</span> _schedulerBackend<span class="token operator">:</span> SchedulerBackend <span class="token operator">=</span> _
+<span class="token comment">// DAG &#x8C03;&#x5EA6;&#x5668;, &#x662F;&#x8C03;&#x5EA6;&#x7CFB;&#x7EDF;&#x7684;&#x4E2D;&#x7684;&#x4E2D;&#x7684;&#x91CD;&#x8981;&#x7EC4;&#x4EF6;&#x4E4B;&#x4E00;, &#x8D1F;&#x8D23;&#x521B;&#x5EFA; Job, &#x5C06; DAG &#x4E2D;&#x7684; RDD &#x5212;&#x5206;&#x5230;&#x4E0D;&#x540C;&#x7684; Stage, &#x63D0;&#x4EA4; Stage &#x7B49;.</span>
+<span class="token comment">// SparkUI &#x4E2D;&#x6709;&#x5173; Job &#x548C; Stage &#x7684;&#x76D1;&#x63A7;&#x6570;&#x636E;&#x90FD;&#x6765;&#x81EA; DAGScheduler</span>
+<span class="token annotation punctuation">@volatile</span> <span class="token keyword">private</span> <span class="token keyword">var</span> _dagScheduler<span class="token operator">:</span> DAGScheduler <span class="token operator">=</span> _
+<span class="token comment">// TaskScheduler &#x6309;&#x7167;&#x8C03;&#x5EA6;&#x7B97;&#x6CD5;&#x5BF9;&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x5668;&#x5DF2;&#x7ECF;&#x5206;&#x914D;&#x7ED9;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x8D44;&#x6E90;&#x8FDB;&#x884C;&#x4E8C;&#x6B21;&#x8C03;&#x5EA6;&#x540E;&#x5206;&#x914D;&#x7ED9;&#x4EFB;&#x52A1;</span>
+<span class="token comment">// TaskScheduler &#x8C03;&#x5EA6;&#x7684; Task &#x662F;&#x7531;DAGScheduler &#x521B;&#x5EFA;&#x7684;, &#x6240;&#x4EE5; DAGScheduler &#x662F; TaskScheduler&#x7684;&#x524D;&#x7F6E;&#x8C03;&#x5EA6;&#x5668;</span>
+<span class="token keyword">private</span> <span class="token keyword">var</span> _taskScheduler<span class="token operator">:</span> TaskScheduler <span class="token operator">=</span> _
+
+<span class="token comment">// &#x521B;&#x5EFA; SchedulerBackend &#x548C; TaskScheduler</span>
+<span class="token keyword">val</span> <span class="token punctuation">(</span>sched<span class="token punctuation">,</span> ts<span class="token punctuation">)</span><span class="token operator">:</span><span class="token punctuation">(</span>SchedulerBackend<span class="token punctuation">,</span> TaskScheduler<span class="token punctuation">)</span> <span class="token operator">=</span> SparkContext<span class="token punctuation">.</span>createTaskScheduler<span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> master<span class="token punctuation">,</span> deployMode<span class="token punctuation">)</span>
+_schedulerBackend <span class="token operator">=</span> sched
+_taskScheduler <span class="token operator">=</span> ts
+<span class="token comment">// &#x521B;&#x5EFA; DAGScheduler</span>
+_dagScheduler <span class="token operator">=</span> <span class="token keyword">new</span> DAGScheduler<span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+<span class="token comment">// &#x542F;&#x52A8; TaskScheduler, &#x5185;&#x90E8;&#x4F1A;&#x4E5F;&#x4F1A;&#x542F;&#x52A8; SchedulerBackend</span>
+_taskScheduler<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p>&#x6211;&#x4EEC;&#x4ECE;&#x4E00;&#x4E2A; <code>action</code> &#x5F00;&#x59CB;.  &#x4F8B;&#x5982;: <code>collect</code></p>
+</blockquote>
+<h2 id="rdd-&#x7C7B;&#x6E90;&#x7801;&#x5206;&#x6790;"><code>RDD</code> &#x7C7B;&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">def</span> collect<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Array<span class="token punctuation">[</span>T<span class="token punctuation">]</span> <span class="token operator">=</span> withScope <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> results <span class="token operator">=</span> sc<span class="token punctuation">.</span>runJob<span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>iter<span class="token operator">:</span> Iterator<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> iter<span class="token punctuation">.</span>toArray<span class="token punctuation">)</span>
+    Array<span class="token punctuation">.</span>concat<span class="token punctuation">(</span>results<span class="token operator">:</span> _<span class="token operator">*</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>sc.runJob</code> &#x65B9;&#x6CD5;</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">def</span> runJob<span class="token punctuation">[</span>T<span class="token punctuation">,</span> U<span class="token operator">:</span> ClassTag<span class="token punctuation">]</span><span class="token punctuation">(</span>
+                              rdd<span class="token operator">:</span> RDD<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">,</span>
+                              func<span class="token operator">:</span> <span class="token punctuation">(</span>TaskContext<span class="token punctuation">,</span> Iterator<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> U<span class="token punctuation">,</span>
+                              partitions<span class="token operator">:</span> Seq<span class="token punctuation">[</span><span class="token builtin">Int</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                              resultHandler<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">,</span> U<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> <span class="token builtin">Unit</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x4F5C;&#x4E1A;&#x7684;&#x5207;&#x5206;                          </span>
+    dagScheduler<span class="token punctuation">.</span>runJob<span class="token punctuation">(</span>rdd<span class="token punctuation">,</span> cleanedFunc<span class="token punctuation">,</span> partitions<span class="token punctuation">,</span> callSite<span class="token punctuation">,</span> resultHandler<span class="token punctuation">,</span> localProperties<span class="token punctuation">.</span>get<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="dagscheduler&#x7C7B;&#x6E90;&#x7801;&#x5206;&#x6790;"><code>DAGScheduler</code>&#x7C7B;&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
+<blockquote>
+<p><code>dagScheduler.runJob</code> &#x65B9;&#x6CD5;</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala">
+<span class="token keyword">def</span> runJob<span class="token punctuation">[</span>T<span class="token punctuation">,</span> U<span class="token punctuation">]</span><span class="token punctuation">(</span>
+                    rdd<span class="token operator">:</span> RDD<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    func<span class="token operator">:</span> <span class="token punctuation">(</span>TaskContext<span class="token punctuation">,</span> Iterator<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> U<span class="token punctuation">,</span>
+                    partitions<span class="token operator">:</span> Seq<span class="token punctuation">[</span><span class="token builtin">Int</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    callSite<span class="token operator">:</span> CallSite<span class="token punctuation">,</span>
+                    resultHandler<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">,</span> U<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> <span class="token builtin">Unit</span><span class="token punctuation">,</span>
+                    properties<span class="token operator">:</span> Properties<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x63D0;&#x4EA4;&#x4EFB;&#x52A1;  &#x8FD4;&#x56DE;&#x503C; JobWaiter &#x7528;&#x6765;&#x786E;&#x5B9A; Job &#x7684;&#x6210;&#x529F;&#x4E0E;&#x5931;&#x8D25;</span>
+    <span class="token keyword">val</span> waiter <span class="token operator">=</span> submitJob<span class="token punctuation">(</span>rdd<span class="token punctuation">,</span> func<span class="token punctuation">,</span> partitions<span class="token punctuation">,</span> callSite<span class="token punctuation">,</span> resultHandler<span class="token punctuation">,</span> properties<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>dagScheduler.submitJob</code> &#x65B9;&#x6CD5;</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">def</span> submitJob<span class="token punctuation">[</span>T<span class="token punctuation">,</span> U<span class="token punctuation">]</span><span class="token punctuation">(</span>
+                       rdd<span class="token operator">:</span> RDD<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">,</span>
+                       func<span class="token operator">:</span> <span class="token punctuation">(</span>TaskContext<span class="token punctuation">,</span> Iterator<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> U<span class="token punctuation">,</span>
+                       partitions<span class="token operator">:</span> Seq<span class="token punctuation">[</span><span class="token builtin">Int</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                       callSite<span class="token operator">:</span> CallSite<span class="token punctuation">,</span>
+                       resultHandler<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token builtin">Int</span><span class="token punctuation">,</span> U<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> <span class="token builtin">Unit</span><span class="token punctuation">,</span>
+                       properties<span class="token operator">:</span> Properties<span class="token punctuation">)</span><span class="token operator">:</span> JobWaiter<span class="token punctuation">[</span>U<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x521B;&#x5EFA; JobWaiter &#x5BF9;&#x8C61;</span>
+    <span class="token keyword">val</span> waiter <span class="token operator">=</span> <span class="token keyword">new</span> JobWaiter<span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> jobId<span class="token punctuation">,</span> partitions<span class="token punctuation">.</span>size<span class="token punctuation">,</span> resultHandler<span class="token punctuation">)</span>
+    <span class="token comment">// &#x5411;&#x5185;&#x90E8;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x5668;&#x53D1;&#x9001;&#x6D88;&#x606F; JobSubmitted</span>
+    eventProcessLoop<span class="token punctuation">.</span>post<span class="token punctuation">(</span>JobSubmitted<span class="token punctuation">(</span>
+        jobId<span class="token punctuation">,</span> rdd<span class="token punctuation">,</span> func2<span class="token punctuation">,</span> partitions<span class="token punctuation">.</span>toArray<span class="token punctuation">,</span> callSite<span class="token punctuation">,</span> waiter<span class="token punctuation">,</span>
+        SerializationUtils<span class="token punctuation">.</span>clone<span class="token punctuation">(</span>properties<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    waiter
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>DAGSchedulerEventProcessLoop</code> &#x7C7B;</p>
+</blockquote>
+<p><code>DAGSchedulerEventProcessLoop</code> &#x662F; <code>DAGSheduler</code>&#x5185;&#x90E8;&#x7684;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x5904;&#x7406;&#x5668;, &#x7528;&#x4E8E;&#x5904;&#x7406;<code>DAGSchedulerEvent</code>&#x7C7B;&#x578B;&#x7684;&#x4E8B;&#x4EF6;.</p>
+<p>&#x524D;&#x9762;&#x53D1;&#x9001;&#x7684;&#x662F;<code>JobSubmitted</code>&#x7C7B;&#x578B;&#x7684;&#x4E8B;&#x4EF6;</p>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">private</span> <span class="token keyword">def</span> doOnReceive<span class="token punctuation">(</span>event<span class="token operator">:</span> DAGSchedulerEvent<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> event <span class="token keyword">match</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> JobSubmitted<span class="token punctuation">(</span>jobId<span class="token punctuation">,</span> rdd<span class="token punctuation">,</span> func<span class="token punctuation">,</span> partitions<span class="token punctuation">,</span> callSite<span class="token punctuation">,</span> listener<span class="token punctuation">,</span> properties<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
+        <span class="token comment">// &#x5904;&#x7406;&#x63D0;&#x4EA4;&#x7684; Job</span>
+        dagScheduler<span class="token punctuation">.</span>handleJobSubmitted<span class="token punctuation">(</span>jobId<span class="token punctuation">,</span> rdd<span class="token punctuation">,</span> func<span class="token punctuation">,</span> partitions<span class="token punctuation">,</span> callSite<span class="token punctuation">,</span> listener<span class="token punctuation">,</span> properties<span class="token punctuation">)</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>DAGScheduler.handleJobSubmitted</code></p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">private</span><span class="token punctuation">[</span>scheduler<span class="token punctuation">]</span> <span class="token keyword">def</span> handleJobSubmitted<span class="token punctuation">(</span>jobId<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span>
+                                          finalRDD<span class="token operator">:</span> RDD<span class="token punctuation">[</span>_<span class="token punctuation">]</span><span class="token punctuation">,</span>
+                                          func<span class="token operator">:</span> <span class="token punctuation">(</span>TaskContext<span class="token punctuation">,</span> Iterator<span class="token punctuation">[</span>_<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> _<span class="token punctuation">,</span>
+                                          partitions<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">Int</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                                          callSite<span class="token operator">:</span> CallSite<span class="token punctuation">,</span>
+                                          listener<span class="token operator">:</span> JobListener<span class="token punctuation">,</span>
+                                          properties<span class="token operator">:</span> Properties<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">var</span> finalStage<span class="token operator">:</span> ResultStage <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token comment">// New stage creation may throw an exception if, for example, jobs are run on a</span>
+        <span class="token comment">// HadoopRDD whose underlying HDFS files have been deleted.</span>
+        <span class="token comment">// Stage &#x7684;&#x5212;&#x5206;&#x662F;&#x4ECE;&#x540E;&#x5411;&#x524D;&#x63A8;&#x65AD;&#x7684;, &#x6240;&#x4EE5;&#x5148;&#x521B;&#x5EFA;&#x6700;&#x540E;&#x7684;&#x9636;&#x6BB5;</span>
+        finalStage <span class="token operator">=</span> createResultStage<span class="token punctuation">(</span>finalRDD<span class="token punctuation">,</span> func<span class="token punctuation">,</span> partitions<span class="token punctuation">,</span> jobId<span class="token punctuation">,</span> callSite<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    submitStage<span class="token punctuation">(</span>finalStage<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>DAGScheduler.createResultStage()</code> &#x65B9;&#x6CD5;</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">private</span> <span class="token keyword">def</span> createResultStage<span class="token punctuation">(</span>
+                                 rdd<span class="token operator">:</span> RDD<span class="token punctuation">[</span>_<span class="token punctuation">]</span><span class="token punctuation">,</span>
+                                 func<span class="token operator">:</span> <span class="token punctuation">(</span>TaskContext<span class="token punctuation">,</span> Iterator<span class="token punctuation">[</span>_<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> _<span class="token punctuation">,</span>
+                                 partitions<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">Int</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                                 jobId<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span>
+                                 callSite<span class="token operator">:</span> CallSite<span class="token punctuation">)</span><span class="token operator">:</span> ResultStage <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 1. &#x83B7;&#x53D6;&#x6240;&#x6709;&#x7236; Stage &#x7684;&#x5217;&#x8868;</span>
+    <span class="token keyword">val</span> parents<span class="token operator">:</span> List<span class="token punctuation">[</span>Stage<span class="token punctuation">]</span> <span class="token operator">=</span> getOrCreateParentStages<span class="token punctuation">(</span>rdd<span class="token punctuation">,</span> jobId<span class="token punctuation">)</span>
+    <span class="token comment">// 2. &#x7ED9; resultStage &#x751F;&#x6210;&#x4E00;&#x4E2A; id</span>
+    <span class="token keyword">val</span> id <span class="token operator">=</span> nextStageId<span class="token punctuation">.</span>getAndIncrement<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">// 3. &#x521B;&#x5EFA; ResultStage</span>
+    <span class="token keyword">val</span> stage<span class="token operator">:</span> ResultStage <span class="token operator">=</span> <span class="token keyword">new</span> ResultStage<span class="token punctuation">(</span>id<span class="token punctuation">,</span> rdd<span class="token punctuation">,</span> func<span class="token punctuation">,</span> partitions<span class="token punctuation">,</span> parents<span class="token punctuation">,</span> jobId<span class="token punctuation">,</span> callSite<span class="token punctuation">)</span>
+    <span class="token comment">// 4. stageId &#x548C; ResultStage &#x505A;&#x6620;&#x5C04;</span>
+    stageIdToStage<span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token operator">=</span> stage
+    updateJobIdStageIdMaps<span class="token punctuation">(</span>jobId<span class="token punctuation">,</span> stage<span class="token punctuation">)</span>
+    stage
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>DAGScheduler.getOrCreateParentStages()</code> &#x65B9;&#x6CD5;</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">private</span> <span class="token keyword">def</span> getOrCreateParentStages<span class="token punctuation">(</span>rdd<span class="token operator">:</span> RDD<span class="token punctuation">[</span>_<span class="token punctuation">]</span><span class="token punctuation">,</span> firstJobId<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span><span class="token operator">:</span> List<span class="token punctuation">[</span>Stage<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684; Shuffle &#x4F9D;&#x8D56;(&#x5BBD;&#x4F9D;&#x8D56;)</span>
+    getShuffleDependencies<span class="token punctuation">(</span>rdd<span class="token punctuation">)</span><span class="token punctuation">.</span>map <span class="token punctuation">{</span> shuffleDep <span class="token keyword">=&gt;</span>
+        <span class="token comment">// &#x5BF9;&#x6BCF;&#x4E2A; shuffle &#x4F9D;&#x8D56;,  &#x83B7;&#x53D6;&#x6216;&#x8005;&#x521B;&#x5EFA;&#x65B0;&#x7684; Stage: ShuffleMapStage</span>
+        getOrCreateShuffleMapStage<span class="token punctuation">(</span>shuffleDep<span class="token punctuation">,</span> firstJobId<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">.</span>toList
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<h4 id="&#x8BF4;&#x660E;"><em>&#x8BF4;&#x660E;:</em></h4>
+</blockquote>
+<ul>
+<li>&#x4E00;&#x5171;&#x6709;&#x4E24;&#x79CD;<code>Stage</code>: <code>ResultStage</code>&#x548C;<code>ShuffleMapStage</code></li>
+</ul>
+<blockquote>
+<p><code>DAGScheduler.getShuffleDependencies</code></p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token comment">// &#x5F97;&#x5230;&#x6240;&#x6709;&#x5BBD;&#x4F9D;&#x8D56;</span>
+<span class="token keyword">private</span><span class="token punctuation">[</span>scheduler<span class="token punctuation">]</span> <span class="token keyword">def</span> getShuffleDependencies<span class="token punctuation">(</span>
+                                                 rdd<span class="token operator">:</span> RDD<span class="token punctuation">[</span>_<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> HashSet<span class="token punctuation">[</span>ShuffleDependency<span class="token punctuation">[</span>_<span class="token punctuation">,</span> _<span class="token punctuation">,</span> _<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> parents <span class="token operator">=</span> <span class="token keyword">new</span> HashSet<span class="token punctuation">[</span>ShuffleDependency<span class="token punctuation">[</span>_<span class="token punctuation">,</span> _<span class="token punctuation">,</span> _<span class="token punctuation">]</span><span class="token punctuation">]</span>
+    <span class="token keyword">val</span> visited <span class="token operator">=</span> <span class="token keyword">new</span> HashSet<span class="token punctuation">[</span>RDD<span class="token punctuation">[</span>_<span class="token punctuation">]</span><span class="token punctuation">]</span>
+    <span class="token keyword">val</span> waitingForVisit <span class="token operator">=</span> <span class="token keyword">new</span> Stack<span class="token punctuation">[</span>RDD<span class="token punctuation">[</span>_<span class="token punctuation">]</span><span class="token punctuation">]</span>
+    waitingForVisit<span class="token punctuation">.</span>push<span class="token punctuation">(</span>rdd<span class="token punctuation">)</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>waitingForVisit<span class="token punctuation">.</span>nonEmpty<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> toVisit <span class="token operator">=</span> waitingForVisit<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">(</span>toVisit<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            visited <span class="token operator">+=</span> toVisit
+            toVisit<span class="token punctuation">.</span>dependencies<span class="token punctuation">.</span>foreach <span class="token punctuation">{</span>
+                <span class="token keyword">case</span> shuffleDep<span class="token operator">:</span> ShuffleDependency<span class="token punctuation">[</span>_<span class="token punctuation">,</span> _<span class="token punctuation">,</span> _<span class="token punctuation">]</span> <span class="token keyword">=&gt;</span>
+                    parents <span class="token operator">+=</span> shuffleDep
+                <span class="token keyword">case</span> dependency <span class="token keyword">=&gt;</span>
+                    waitingForVisit<span class="token punctuation">.</span>push<span class="token punctuation">(</span>dependency<span class="token punctuation">.</span>rdd<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    parents
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>DAGScheduler.submitStage(finalStage)</code> &#x65B9;&#x6CD5;</p>
+</blockquote>
+<p>&#x63D0;&#x4EA4; <code>finalStage</code></p>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">private</span> <span class="token keyword">def</span> submitStage<span class="token punctuation">(</span>stage<span class="token operator">:</span> Stage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> jobId <span class="token operator">=</span> activeJobForStage<span class="token punctuation">(</span>stage<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>jobId<span class="token punctuation">.</span>isDefined<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>waitingStages<span class="token punctuation">(</span>stage<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>runningStages<span class="token punctuation">(</span>stage<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>failedStages<span class="token punctuation">(</span>stage<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// &#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;&#x7236; Stage</span>
+            <span class="token keyword">val</span> missing <span class="token operator">=</span> getMissingParentStages<span class="token punctuation">(</span>stage<span class="token punctuation">)</span><span class="token punctuation">.</span>sortBy<span class="token punctuation">(</span>_<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
+            <span class="token comment">// &#x5982;&#x679C;&#x4E3A;&#x7A7A;, &#x5219;&#x63D0;&#x4EA4;&#x8FD9;&#x4E2A; Stage</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>missing<span class="token punctuation">.</span>isEmpty<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                submitMissingTasks<span class="token punctuation">(</span>stage<span class="token punctuation">,</span> jobId<span class="token punctuation">.</span>get<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token comment">// &#x5982;&#x679C;&#x8FD8;&#x6709;&#x7236; Stage , &#x5219;&#x9012;&#x5F52;&#x8C03;&#x7528;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>parent <span class="token keyword">&lt;-</span> missing<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    submitStage<span class="token punctuation">(</span>parent<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+                waitingStages <span class="token operator">+=</span> stage
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<h4 id="&#x8BF4;&#x660E;"><em>&#x8BF4;&#x660E;:</em></h4>
+</blockquote>
+<ul>
+<li><p>&#x4ECE;&#x524D;&#x9762;&#x7684;&#x5206;&#x6790;&#x53EF;&#x4EE5;&#x770B;&#x5230;, &#x9636;&#x6BB5;&#x5212;&#x5206;&#x662F;&#x4ECE;&#x540E;&#x5411;&#x524D;</p>
+</li>
+<li><p>&#x6700;&#x524D;&#x9762;&#x7684; Stage &#x5148;&#x63D0;&#x4EA4;</p>
+</li>
+</ul>
+<blockquote>
+<p><code>DAGScheduler.submitMissingTasks</code> &#x65B9;&#x6CD5;</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">private</span> <span class="token keyword">def</span> submitMissingTasks<span class="token punctuation">(</span>stage<span class="token operator">:</span> Stage<span class="token punctuation">,</span> jobId<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// &#x4EFB;&#x52A1;&#x5212;&#x5206;. &#x6BCF;&#x4E2A;&#x5206;&#x533A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; Task</span>
+    <span class="token keyword">val</span> tasks<span class="token operator">:</span> Seq<span class="token punctuation">[</span>Task<span class="token punctuation">[</span>_<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        stage <span class="token keyword">match</span> <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> stage<span class="token operator">:</span> ShuffleMapStage <span class="token keyword">=&gt;</span>
+                partitionsToCompute<span class="token punctuation">.</span>map <span class="token punctuation">{</span> id <span class="token keyword">=&gt;</span>
+                    <span class="token keyword">val</span> locs <span class="token operator">=</span> taskIdToLocations<span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+                    <span class="token keyword">val</span> part <span class="token operator">=</span> stage<span class="token punctuation">.</span>rdd<span class="token punctuation">.</span>partitions<span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+                    <span class="token keyword">new</span> ShuffleMapTask<span class="token punctuation">(</span>stage<span class="token punctuation">.</span>id<span class="token punctuation">,</span> stage<span class="token punctuation">.</span>latestInfo<span class="token punctuation">.</span>attemptId<span class="token punctuation">,</span>
+                        taskBinary<span class="token punctuation">,</span> part<span class="token punctuation">,</span> locs<span class="token punctuation">,</span> stage<span class="token punctuation">.</span>latestInfo<span class="token punctuation">.</span>taskMetrics<span class="token punctuation">,</span> properties<span class="token punctuation">,</span> Option<span class="token punctuation">(</span>jobId<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        Option<span class="token punctuation">(</span>sc<span class="token punctuation">.</span>applicationId<span class="token punctuation">)</span><span class="token punctuation">,</span> sc<span class="token punctuation">.</span>applicationAttemptId<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+
+            <span class="token keyword">case</span> stage<span class="token operator">:</span> ResultStage <span class="token keyword">=&gt;</span>
+                partitionsToCompute<span class="token punctuation">.</span>map <span class="token punctuation">{</span> id <span class="token keyword">=&gt;</span>
+                    <span class="token keyword">val</span> p<span class="token operator">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> stage<span class="token punctuation">.</span>partitions<span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+                    <span class="token keyword">val</span> part <span class="token operator">=</span> stage<span class="token punctuation">.</span>rdd<span class="token punctuation">.</span>partitions<span class="token punctuation">(</span>p<span class="token punctuation">)</span>
+                    <span class="token keyword">val</span> locs <span class="token operator">=</span> taskIdToLocations<span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+                    <span class="token keyword">new</span> ResultTask<span class="token punctuation">(</span>stage<span class="token punctuation">.</span>id<span class="token punctuation">,</span> stage<span class="token punctuation">.</span>latestInfo<span class="token punctuation">.</span>attemptId<span class="token punctuation">,</span>
+                        taskBinary<span class="token punctuation">,</span> part<span class="token punctuation">,</span> locs<span class="token punctuation">,</span> id<span class="token punctuation">,</span> properties<span class="token punctuation">,</span> stage<span class="token punctuation">.</span>latestInfo<span class="token punctuation">.</span>taskMetrics<span class="token punctuation">,</span>
+                        Option<span class="token punctuation">(</span>jobId<span class="token punctuation">)</span><span class="token punctuation">,</span> Option<span class="token punctuation">(</span>sc<span class="token punctuation">.</span>applicationId<span class="token punctuation">)</span><span class="token punctuation">,</span> sc<span class="token punctuation">.</span>applicationAttemptId<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token comment">// &#x63D0;&#x4EA4;&#x4EFB;&#x52A1;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>tasks<span class="token punctuation">.</span>size <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// &#x4F7F;&#x7528; taskScheduler &#x63D0;&#x4EA4;&#x4EFB;&#x52A1;</span>
+        taskScheduler<span class="token punctuation">.</span>submitTasks<span class="token punctuation">(</span><span class="token keyword">new</span> TaskSet<span class="token punctuation">(</span>
+            tasks<span class="token punctuation">.</span>toArray<span class="token punctuation">,</span> stage<span class="token punctuation">.</span>id<span class="token punctuation">,</span> stage<span class="token punctuation">.</span>latestInfo<span class="token punctuation">.</span>attemptId<span class="token punctuation">,</span> jobId<span class="token punctuation">,</span> properties<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<h2 id="taskscheduler&#x7C7B;&#x6E90;&#x7801;&#x5206;&#x6790;"><code>TaskScheduler</code>&#x7C7B;&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
+<p><code>TaskScheduler</code>&#x662F;&#x4E00;&#x4E2A;<code>Trait</code>, &#x6211;&#x4EEC;&#x5206;&#x6790;&#x5B83;&#x7684;&#x5B9E;&#x73B0;&#x7C7B;: <code>TaskSchedulerImpl</code></p>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">override</span> <span class="token keyword">def</span> submitTasks<span class="token punctuation">(</span>taskSet<span class="token operator">:</span> TaskSet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> tasks <span class="token operator">=</span> taskSet<span class="token punctuation">.</span>tasks
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>synchronized <span class="token punctuation">{</span>
+        <span class="token comment">// &#x521B;&#x5EFA; TaskManger &#x5BF9;&#x8C61;. &#x7528;&#x6765;&#x8FFD;&#x8E2A;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;</span>
+        <span class="token keyword">val</span> manager<span class="token operator">:</span> TaskSetManager <span class="token operator">=</span> createTaskSetManager<span class="token punctuation">(</span>taskSet<span class="token punctuation">,</span> maxTaskFailures<span class="token punctuation">)</span>
+        <span class="token keyword">val</span> stage <span class="token operator">=</span> taskSet<span class="token punctuation">.</span>stageId
+
+        <span class="token comment">// manage &#x548C; TaskSet &#x4EA4;&#x7ED9;&#x5408;&#x9002;&#x7684;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x5668;&#x6765;&#x8C03;&#x5EA6;</span>
+        schedulableBuilder<span class="token punctuation">.</span>addTaskSetManager<span class="token punctuation">(</span>manager<span class="token punctuation">,</span> manager<span class="token punctuation">.</span>taskSet<span class="token punctuation">.</span>properties<span class="token punctuation">)</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token comment">// &#x8DDF; ExecutorBackend &#x901A;&#x8BAF;</span>
+    backend<span class="token punctuation">.</span>reviveOffers<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>CoarseGrainedSchedulerBackend.reviveOffers</code></p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">override</span> <span class="token keyword">def</span> reviveOffers<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// DriverEndpoint &#x7ED9;&#x81EA;&#x5DF1;&#x53D1;&#x4FE1;&#x606F;: ReviveOffers</span>
+    driverEndpoint<span class="token punctuation">.</span>send<span class="token punctuation">(</span>ReviveOffers<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>DriverEndpoint.receive</code> &#x65B9;&#x6CD5;</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">private</span> <span class="token keyword">def</span> makeOffers<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x8FC7;&#x6EE4;&#x51FA; Active &#x7684;Executor</span>
+    <span class="token keyword">val</span> activeExecutors <span class="token operator">=</span> executorDataMap<span class="token punctuation">.</span>filterKeys<span class="token punctuation">(</span>executorIsAlive<span class="token punctuation">)</span>
+    <span class="token comment">// &#x5C01;&#x88C5;&#x8D44;&#x6E90;</span>
+    <span class="token keyword">val</span> workOffers <span class="token operator">=</span> activeExecutors<span class="token punctuation">.</span>map <span class="token punctuation">{</span> <span class="token keyword">case</span> <span class="token punctuation">(</span>id<span class="token punctuation">,</span> executorData<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
+        <span class="token keyword">new</span> WorkerOffer<span class="token punctuation">(</span>id<span class="token punctuation">,</span> executorData<span class="token punctuation">.</span>executorHost<span class="token punctuation">,</span> executorData<span class="token punctuation">.</span>freeCores<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">.</span>toIndexedSeq
+    <span class="token comment">// &#x542F;&#x52A8;&#x4EFB;&#x52A1;</span>
+    launchTasks<span class="token punctuation">(</span>scheduler<span class="token punctuation">.</span>resourceOffers<span class="token punctuation">(</span>workOffers<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>DriverEndpoint.launchTasks</code></p>
+</blockquote>
+<pre class="language-"><code class="lang-scala">
+<span class="token keyword">private</span> <span class="token keyword">def</span> launchTasks<span class="token punctuation">(</span>tasks<span class="token operator">:</span> Seq<span class="token punctuation">[</span>Seq<span class="token punctuation">[</span>TaskDescription<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>task <span class="token keyword">&lt;-</span> tasks<span class="token punctuation">.</span>flatten<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x5E8F;&#x5217;&#x5316;&#x4EFB;&#x52A1;</span>
+        <span class="token keyword">val</span> serializedTask <span class="token operator">=</span> ser<span class="token punctuation">.</span>serialize<span class="token punctuation">(</span>task<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>serializedTask<span class="token punctuation">.</span>limit <span class="token operator">&gt;=</span> maxRpcMessageSize<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token punctuation">{</span>
+
+            <span class="token keyword">val</span> executorData <span class="token operator">=</span> executorDataMap<span class="token punctuation">(</span>task<span class="token punctuation">.</span>executorId<span class="token punctuation">)</span>
+            executorData<span class="token punctuation">.</span>freeCores <span class="token operator">-=</span> scheduler<span class="token punctuation">.</span>CPUS_PER_TASK
+
+            <span class="token comment">// &#x53D1;&#x9001;&#x4EFB;&#x52A1;&#x5230; Executor. CoarseGrainedExecutorBackend &#x4F1A;&#x6536;&#x5230;&#x6D88;&#x606F;</span>
+            executorData<span class="token punctuation">.</span>executorEndpoint<span class="token punctuation">.</span>send<span class="token punctuation">(</span>LaunchTask<span class="token punctuation">(</span><span class="token keyword">new</span> SerializableBuffer<span class="token punctuation">(</span>serializedTask<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="coarsegrainedexecutorbackend-&#x6E90;&#x7801;&#x5206;&#x6790;"><code>CoarseGrainedExecutorBackend</code> &#x6E90;&#x7801;&#x5206;&#x6790;</h2>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">override</span> <span class="token keyword">def</span> receive<span class="token operator">:</span> PartialFunction<span class="token punctuation">[</span><span class="token builtin">Any</span><span class="token punctuation">,</span> <span class="token builtin">Unit</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// </span>
+    <span class="token keyword">case</span> LaunchTask<span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>executor <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            exitExecutor<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;Received LaunchTask command but executor was null&quot;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token comment">// &#x628A;&#x8981;&#x6267;&#x884C;&#x7684;&#x4EFB;&#x52A1;&#x53CD;&#x5E8F;&#x5217;&#x5316;</span>
+            <span class="token keyword">val</span> taskDesc <span class="token operator">=</span> ser<span class="token punctuation">.</span>deserialize<span class="token punctuation">[</span>TaskDescription<span class="token punctuation">]</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+            <span class="token comment">// &#x542F;&#x52A8;&#x4EFB;&#x52A1;&#x5F00;&#x59CB;&#x6267;&#x884C;</span>
+            executor<span class="token punctuation">.</span>launchTask<span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> taskId <span class="token operator">=</span> taskDesc<span class="token punctuation">.</span>taskId<span class="token punctuation">,</span> attemptNumber <span class="token operator">=</span> taskDesc<span class="token punctuation">.</span>attemptNumber<span class="token punctuation">,</span>
+                taskDesc<span class="token punctuation">.</span>name<span class="token punctuation">,</span> taskDesc<span class="token punctuation">.</span>serializedTask<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x81F3;&#x6B64;-stage-&#x7EA7;&#x522B;&#x7684;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x5B8C;&#x6210;">&#x81F3;&#x6B64;, stage &#x7EA7;&#x522B;&#x7684;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x5B8C;&#x6210;</h3>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-06-10 18:44:29
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="43-spark-task-ji-bie-diao-du/433-shi-bai-zhong-shi-he-hei-ming-dan.html" class="navigation navigation-prev " aria-label="Previous page: 4.3.3 失败重试和黑名单">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="45-task-ji-bie-ren-wu-diao-du-yuan-ma-fen-xi.html" class="navigation navigation-next " aria-label="Next page: 4.5 Task 级别任务调度源码分析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.4 Stage 级别任务调度源码分析","level":"1.4.4","depth":2,"next":{"title":"4.5 Task 级别任务调度源码分析","level":"1.4.5","depth":2,"path":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/45-task-ji-bie-ren-wu-diao-du-yuan-ma-fen-xi.md","ref":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/45-task-ji-bie-ren-wu-diao-du-yuan-ma-fen-xi.md","articles":[]},"previous":{"title":"4.3.3 失败重试和黑名单","level":"1.4.3.3","depth":3,"path":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/433-shi-bai-zhong-shi-he-hei-ming-dan.md","ref":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/433-shi-bai-zhong-shi-he-hei-ming-dan.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_spark_kernel-optimize_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-4-zhang-spark-ren-wu-diao-du-ji-zhi/44-ren-wu-diao-du-yuan-ma-fen-xi.md","mtime":"2019-06-10T10:44:29.754Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-06T13:28:03.104Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

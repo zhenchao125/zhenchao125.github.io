@@ -1,0 +1,564 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.3 Kylin 技术架构 · 大数据 bigdata_kylin_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="14-he-xin-suan-fa.html" />
+    
+    
+    <link rel="prev" href="12-kylin-gong-zuo-yuan-li.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第 1 章 Kylin 概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="11-kylin-te-dian.html">
+            
+                <a href="11-kylin-te-dian.html">
+            
+                    
+                    1.1  Kylin 特点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="12-kylin-gong-zuo-yuan-li.html">
+            
+                <a href="12-kylin-gong-zuo-yuan-li.html">
+            
+                    
+                    1.2 Kylin 工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.3" data-path="12-kylin-jia-gou.html">
+            
+                <a href="12-kylin-jia-gou.html">
+            
+                    
+                    1.3 Kylin 技术架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="14-he-xin-suan-fa.html">
+            
+                <a href="14-he-xin-suan-fa.html">
+            
+                    
+                    1.4 核心算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="15-kylin-zhong-de-ji-he-xin-gai-nian.html">
+            
+                <a href="15-kylin-zhong-de-ji-he-xin-gai-nian.html">
+            
+                    
+                    1.5 Kylin 中的几核心概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    第 2 章 Kylin 环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="di-3-zhang-kylin-kuai-su-ru-men.html">
+            
+                <a href="di-3-zhang-kylin-kuai-su-ru-men.html">
+            
+                    
+                    第 3 章 kylin 快速入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="di-3-zhang-kylin-kuai-su-ru-men/31-shu-ju-zhun-bei.html">
+            
+                <a href="di-3-zhang-kylin-kuai-su-ru-men/31-shu-ju-zhun-bei.html">
+            
+                    
+                    3.1 数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="di-3-zhang-kylin-kuai-su-ru-men/32-chuang-jian-project.html">
+            
+                <a href="di-3-zhang-kylin-kuai-su-ru-men/32-chuang-jian-project.html">
+            
+                    
+                    3.2 创建 Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="di-3-zhang-kylin-kuai-su-ru-men/33-chuang-jian-shu-ju-mo-578b28-model.html">
+            
+                <a href="di-3-zhang-kylin-kuai-su-ru-men/33-chuang-jian-shu-ju-mo-578b28-model.html">
+            
+                    
+                    3.3 创建数据模型(Model)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="di-3-zhang-kylin-kuai-su-ru-men/34-chuang-jian-cube.html">
+            
+                <a href="di-3-zhang-kylin-kuai-su-ru-men/34-chuang-jian-cube.html">
+            
+                    
+                    3.4 创建 Cube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="di-3-zhang-kylin-kuai-su-ru-men/35-cha-xun.html">
+            
+                <a href="di-3-zhang-kylin-kuai-su-ru-men/35-cha-xun.html">
+            
+                    
+                    3.5 查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="di-4-zhang-kylin-ke-shi-hua.html">
+            
+                <a href="di-4-zhang-kylin-ke-shi-hua.html">
+            
+                    
+                    第 4 章 Kylin 可视化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="di-4-zhang-kylin-ke-shi-hua/41-jdbc.html">
+            
+                <a href="di-4-zhang-kylin-ke-shi-hua/41-jdbc.html">
+            
+                    
+                    4.1 JDBC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="di-4-zhang-kylin-ke-shi-hua/42-zepplin-cha-jian.html">
+            
+                <a href="di-4-zhang-kylin-ke-shi-hua/42-zepplin-cha-jian.html">
+            
+                    
+                    4.2 Zepplin 插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="di-5-zhang-cube-gou-jian-you-hua.html">
+            
+                <a href="di-5-zhang-cube-gou-jian-you-hua.html">
+            
+                    
+                    第 5 章 Cube 构建优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="di-5-zhang-cube-gou-jian-you-hua/51-zhao-dao-wen-ti-cube.html">
+            
+                <a href="di-5-zhang-cube-gou-jian-you-hua/51-zhao-dao-wen-ti-cube.html">
+            
+                    
+                    5.1 找到问题 Cube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="di-5-zhang-cube-gou-jian-you-hua/52-you-hua-gou-jian.html">
+            
+                <a href="di-5-zhang-cube-gou-jian-you-hua/52-you-hua-gou-jian.html">
+            
+                    
+                    5.2 优化构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >1.3 Kylin 技术架构</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="12-kylin-&#x67B6;&#x6784;">1.2 Kylin &#x67B6;&#x6784;</h1>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1552550173.png-atguiguText" alt=""></p>
+<p><a href="../../ppt/kylin">key &#x67B6;&#x6784; ppt</a></p>
+<h2 id="1-&#x6570;&#x636E;&#x6E90;">1. &#x6570;&#x636E;&#x6E90;</h2>
+<p>&#x6211;&#x4EEC;&#x9996;&#x5148;&#x6765;&#x770B;&#x770B;&#x79BB;&#x7EBF;&#x6784;&#x5EFA;&#x7684;&#x90E8;&#x5206;.</p>
+<p>&#x4ECE;&#x4E0A;&#x56FE;&#x53EF;&#x4EE5;&#x770B;&#x51FA;, &#x6570;&#x636E;&#x6E90;&#x5728;&#x5DE6;&#x4FA7;, &#x4FDD;&#x5B58;&#x7740;&#x5F85;&#x5206;&#x6790;&#x7684;&#x7528;&#x6237;&#x6570;&#x636E;. </p>
+<p>&#x6570;&#x636E;&#x6E90;&#x53EF;&#x4EE5;&#x662F;: Hadoop, <my>Hive</my>, Kafka, RDBMS.</p>
+<p>&#x4F46;&#x662F; Hive &#x662F;&#x7528;&#x7684;&#x6700;&#x591A;&#x7684;&#x4E00;&#x4E2D;&#x6570;&#x636E;&#x6E90;</p>
+<h2 id="2-cube-&#x6784;&#x5EFA;&#x5F15;&#x64CE;">2. Cube &#x6784;&#x5EFA;&#x5F15;&#x64CE;</h2>
+<p>Cube &#x6784;&#x5EFA;&#x5F15;&#x64CE;&#x6839;&#x636E;&#x5143;&#x6570;&#x636E;&#x7684;&#x5B9A;&#x4E49;, &#x4ECE;&#x6570;&#x636E;&#x6E90;&#x62BD;&#x53D6;&#x6570;&#x636E;, &#x5E76;&#x6784;&#x5EFA; Cube. </p>
+<p>&#x8FD9;&#x5957;&#x5F15;&#x64CE;&#x7684;&#x8BBE;&#x8BA1;&#x76EE;&#x7684;&#x5728;&#x4E8E;&#x5904;&#x7406;&#x6240;&#x6709;&#x79BB;&#x7EBF;&#x4EFB;&#x52A1;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x62EC; shell &#x811A;&#x672C;&#x3001;Java API &#x4EE5;&#x53CA; Map Reduce &#x4EFB;&#x52A1;&#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x4EFB;&#x52A1;&#x5F15;&#x64CE;&#x5BF9; Kylin &#x5F53;&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x4EFB;&#x52A1;&#x52A0;&#x4EE5;&#x7BA1;&#x7406;&#x4E0E;&#x534F;&#x8C03;&#xFF0C;&#x4ECE;&#x800C;&#x786E;&#x4FDD;&#x6BCF;&#x4E00;&#x9879;&#x4EFB;&#x52A1;&#x90FD;&#x80FD;&#x5F97;&#x5230;&#x5207;&#x5B9E;&#x6267;&#x884C;&#x5E76;&#x89E3;&#x51B3;&#x5176;&#x95F4;&#x51FA;&#x73B0;&#x7684;&#x6545;&#x969C;&#x3002; </p>
+<h2 id="3-&#x5143;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x5DE5;&#x5177;">3. &#x5143;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x5DE5;&#x5177;</h2>
+<p>Kylin &#x662F;&#x4E00;&#x6B3E;&#x5143;&#x6570;&#x636E;&#x9A71;&#x52A8;&#x578B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x5143;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#x662F;&#x4E00;&#x5927;&#x5173;&#x952E;&#x6027;&#x7EC4;&#x4EF6;&#xFF0C;&#x7528;&#x4E8E;&#x5BF9;&#x4FDD;&#x5B58;&#x5728; Kylin &#x5F53;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x62EC;&#x6700;&#x4E3A;&#x91CD;&#x8981;&#x7684; Cube &#x5143;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x5176;&#x5B83;&#x5168;&#x90E8;&#x7EC4;&#x4EF6;&#x7684;&#x6B63;&#x5E38;&#x8FD0;&#x4F5C;&#x90FD;&#x9700;&#x4EE5;&#x5143;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#x4E3A;&#x57FA;&#x7840;&#x3002; <my>Kylin &#x7684;&#x5143;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5728; Hbase&#x4E2D;</my>&#x3002; </p>
+<h2 id="4-rest-server">4. REST Server</h2>
+<my>&#x662F;&#x4E00;&#x5957;&#x9762;&#x5411;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x7684;&#x5165;&#x53E3;&#x70B9;&#xFF0C;&#x65E8;&#x5728;&#x5B9E;&#x73B0;&#x9488;&#x5BF9; Kylin &#x5E73;&#x53F0;&#x7684;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x5DE5;&#x4F5C;&#x3002;</my> 
+
+<p>&#x6B64;&#x7C7B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x67E5;&#x8BE2;&#x3001;&#x83B7;&#x53D6;&#x7ED3;&#x679C;&#x3001;&#x89E6;&#x53D1;cube&#x6784;&#x5EFA;&#x4EFB;&#x52A1;&#x3001;&#x83B7;&#x53D6;&#x5143;&#x6570;&#x636E;&#x4EE5;&#x53CA;&#x83B7;&#x53D6;&#x7528;&#x6237;&#x6743;&#x9650;&#x7B49;&#x7B49;&#x3002;&#x53E6;&#x5916;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; Restful &#x63A5;&#x53E3;&#x5B9E;&#x73B0; SQL &#x67E5;&#x8BE2;&#x3002;</p>
+<h2 id="5-&#x67E5;&#x8BE2;&#x5F15;&#x64CE;">5. &#x67E5;&#x8BE2;&#x5F15;&#x64CE;</h2>
+<p>&#x5F53; Cube &#x51C6;&#x5907;&#x5C31;&#x7EEA;&#x540E;&#xFF0C;&#x67E5;&#x8BE2;&#x5F15;&#x64CE;&#x5C31;&#x80FD;&#x591F;&#x83B7;&#x53D6;&#x5E76;&#x89E3;&#x6790;&#x7528;&#x6237;&#x67E5;&#x8BE2;&#x3002;&#x5B83;&#x968F;&#x540E;&#x4F1A;&#x4E0E;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x5176;&#x5B83;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#xFF0C;&#x4ECE;&#x800C;&#x5411;&#x7528;&#x6237;&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x7684;&#x7ED3;&#x679C;&#x3002; </p>
+<h2 id="6-routing&#x8DEF;&#x7531;&#x9009;&#x62E9;">6. Routing(&#x8DEF;&#x7531;&#x9009;&#x62E9;)</h2>
+<p>&#x8D1F;&#x8D23;&#x5C06;&#x89E3;&#x6790;&#x7684; SQL &#x751F;&#x6210;&#x7684;&#x6267;&#x884C;&#x8BA1;&#x5212;&#x8F6C;&#x6362;&#x6210; Cube &#x7F13;&#x5B58;&#x7684;&#x67E5;&#x8BE2;.</p>
+<p>Cube &#x662F;&#x901A;&#x8FC7;&#x9884;&#x8BA1;&#x7B97;&#x7F13;&#x5B58;&#x5728; Hbase &#x4E2D;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x5728;&#x79D2;&#x7EA7;&#x751A;&#x81F3;&#x6BEB;&#x79D2;&#x7EA7;&#x5B8C;&#x6210;</p>
+<p>&#x800C;&#x4E14;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x67E5;&#x8BE2;&#x539F;&#x59CB;&#x6570;&#x636E;&#xFF08;&#x5B58;&#x50A8;&#x5728; Hadoop &#x7684; hdfs &#x4E2D;&#x901A;&#x8FC7; hive &#x67E5;&#x8BE2;&#xFF09;&#x3002;&#x8FD9;&#x90E8;&#x5206;&#x67E5;&#x8BE2;&#x5EF6;&#x8FDF;&#x8F83;&#x9AD8;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-04-02 13:32:43
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="12-kylin-gong-zuo-yuan-li.html" class="navigation navigation-prev " aria-label="Previous page: 1.2 Kylin 工作原理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="14-he-xin-suan-fa.html" class="navigation navigation-next " aria-label="Next page: 1.4 核心算法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.3 Kylin 技术架构","level":"1.1.3","depth":2,"next":{"title":"1.4 核心算法","level":"1.1.4","depth":2,"path":"14-he-xin-suan-fa.md","ref":"14-he-xin-suan-fa.md","articles":[]},"previous":{"title":"1.2 Kylin 工作原理","level":"1.1.2","depth":2,"path":"12-kylin-gong-zuo-yuan-li.md","ref":"12-kylin-gong-zuo-yuan-li.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_kylin_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"12-kylin-jia-gou.md","mtime":"2019-04-02T05:32:43.380Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-02T05:15:02.510Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

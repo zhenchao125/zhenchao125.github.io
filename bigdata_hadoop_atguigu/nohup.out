@@ -1,0 +1,318 @@
+Live reload server started on port: 35729
+Press CTRL+C to quit ...
+
+[0;36minfo:[0m 15 plugins are installed 
+[0;36minfo:[0m 14 explicitly listed 
+[0;36minfo:[0m loading plugin "splitter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "expandable-chapters-small"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "page-toc-button"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism-themes"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "tbfed-pagefooter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sitemap"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "change_girls"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "livereload"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "search"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "lunr"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sharing"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "fontsettings"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "theme-default"... [0;32mOK[0m 
+[0;36minfo:[0m found 46 pages 
+[0;36minfo:[0m found 2 asset files 
+[0;33mwarn:[0m "options" property is deprecated, use config.get(key) instead 
+[0;33mwarn:[0m "options.generator" property is deprecated, use "output.name" instead 
+[0;36minfo:[0m [0;32m>> [0mgeneration finished with success in 5.5s ! 
+
+Starting server ...
+Serving book on http://localhost:4000
+Live reload server started on port: 35729
+Press CTRL+C to quit ...
+
+[0;36minfo:[0m 15 plugins are installed 
+[0;36minfo:[0m 14 explicitly listed 
+[0;36minfo:[0m loading plugin "splitter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "expandable-chapters-small"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "page-toc-button"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism-themes"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "tbfed-pagefooter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sitemap"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "change_girls"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "livereload"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "search"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "lunr"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sharing"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "fontsettings"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "theme-default"... [0;32mOK[0m 
+[0;36minfo:[0m found 46 pages 
+[0;36minfo:[0m found 2 asset files 
+[0;33mwarn:[0m "options" property is deprecated, use config.get(key) instead 
+[0;33mwarn:[0m "options.generator" property is deprecated, use "output.name" instead 
+[0;36minfo:[0m [0;32m>> [0mgeneration finished with success in 5.5s ! 
+
+Starting server ...
+Serving book on http://localhost:4000
+Live reload server started on port: 35729
+Press CTRL+C to quit ...
+
+[0;36minfo:[0m 15 plugins are installed 
+[0;36minfo:[0m 14 explicitly listed 
+[0;36minfo:[0m loading plugin "splitter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "expandable-chapters-small"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "page-toc-button"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism-themes"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "tbfed-pagefooter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sitemap"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "change_girls"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "livereload"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "search"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "lunr"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sharing"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "fontsettings"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "theme-default"... [0;32mOK[0m 
+[0;36minfo:[0m found 46 pages 
+[0;36minfo:[0m found 2 asset files 
+[0;33mwarn:[0m "options" property is deprecated, use config.get(key) instead 
+[0;33mwarn:[0m "options.generator" property is deprecated, use "output.name" instead 
+[0;36minfo:[0m [0;32m>> [0mgeneration finished with success in 6.7s ! 
+
+Starting server ...
+Serving book on http://localhost:4000
+Live reload server started on port: 35729
+Press CTRL+C to quit ...
+
+[0;36minfo:[0m 15 plugins are installed 
+[0;36minfo:[0m 14 explicitly listed 
+[0;36minfo:[0m loading plugin "splitter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "expandable-chapters-small"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "page-toc-button"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism-themes"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "tbfed-pagefooter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sitemap"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "change_girls"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "livereload"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "search"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "lunr"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sharing"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "fontsettings"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "theme-default"... [0;32mOK[0m 
+[0;36minfo:[0m found 46 pages 
+[0;36minfo:[0m found 2 asset files 
+[0;33mwarn:[0m "options" property is deprecated, use config.get(key) instead 
+[0;33mwarn:[0m "options.generator" property is deprecated, use "output.name" instead 
+[0;36minfo:[0m [0;32m>> [0mgeneration finished with success in 5.6s ! 
+
+Starting server ...
+Serving book on http://localhost:4000
+Live reload server started on port: 35729
+Press CTRL+C to quit ...
+
+[0;36minfo:[0m 15 plugins are installed 
+[0;36minfo:[0m 14 explicitly listed 
+[0;36minfo:[0m loading plugin "splitter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "expandable-chapters-small"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "page-toc-button"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism-themes"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "tbfed-pagefooter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sitemap"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "change_girls"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "livereload"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "search"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "lunr"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sharing"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "fontsettings"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "theme-default"... [0;32mOK[0m 
+[0;36minfo:[0m found 46 pages 
+[0;36minfo:[0m found 2 asset files 
+[0;33mwarn:[0m "options" property is deprecated, use config.get(key) instead 
+[0;33mwarn:[0m "options.generator" property is deprecated, use "output.name" instead 
+[0;36minfo:[0m [0;32m>> [0mgeneration finished with success in 5.6s ! 
+
+Starting server ...
+Serving book on http://localhost:4000
+Live reload server started on port: 35729
+Press CTRL+C to quit ...
+
+[0;36minfo:[0m 15 plugins are installed 
+[0;36minfo:[0m 14 explicitly listed 
+[0;36minfo:[0m loading plugin "splitter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "expandable-chapters-small"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "page-toc-button"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism-themes"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "tbfed-pagefooter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sitemap"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "change_girls"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "livereload"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "search"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "lunr"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sharing"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "fontsettings"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "theme-default"... [0;32mOK[0m 
+[0;36minfo:[0m found 46 pages 
+[0;36minfo:[0m found 2 asset files 
+[0;33mwarn:[0m "options" property is deprecated, use config.get(key) instead 
+[0;33mwarn:[0m "options.generator" property is deprecated, use "output.name" instead 
+Live reload server started on port: 35729
+Press CTRL+C to quit ...
+
+[0;36minfo:[0m 15 plugins are installed 
+[0;36minfo:[0m 14 explicitly listed 
+[0;36minfo:[0m loading plugin "splitter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "expandable-chapters-small"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "page-toc-button"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism-themes"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "tbfed-pagefooter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sitemap"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "change_girls"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "livereload"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "search"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "lunr"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sharing"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "fontsettings"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "theme-default"... [0;32mOK[0m 
+[0;36minfo:[0m found 46 pages 
+[0;36minfo:[0m found 2 asset files 
+[0;33mwarn:[0m "options" property is deprecated, use config.get(key) instead 
+[0;33mwarn:[0m "options.generator" property is deprecated, use "output.name" instead 
+[0;36minfo:[0m [0;32m>> [0mgeneration finished with success in 5.4s ! 
+
+Starting server ...
+Serving book on http://localhost:4000
+Live reload server started on port: 35729
+Press CTRL+C to quit ...
+
+[0;36minfo:[0m 15 plugins are installed 
+[0;36minfo:[0m 14 explicitly listed 
+[0;36minfo:[0m loading plugin "splitter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "expandable-chapters-small"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "page-toc-button"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism-themes"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "tbfed-pagefooter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sitemap"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "change_girls"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "livereload"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "search"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "lunr"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sharing"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "fontsettings"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "theme-default"... [0;32mOK[0m 
+[0;36minfo:[0m found 46 pages 
+[0;36minfo:[0m found 2 asset files 
+[0;33mwarn:[0m "options" property is deprecated, use config.get(key) instead 
+[0;33mwarn:[0m "options.generator" property is deprecated, use "output.name" instead 
+[0;36minfo:[0m [0;32m>> [0mgeneration finished with success in 7.1s ! 
+
+Starting server ...
+Serving book on http://localhost:4000
+
+... Uhoh. Got error listen EADDRINUSE :::35729 ...
+Error: listen EADDRINUSE :::35729
+    at Object._errnoException (util.js:1024:11)
+    at _exceptionWithHostPort (util.js:1046:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at Server.listen (net.js:1476:7)
+    at Server.listen (/Users/lzc/.gitbook/versions/3.2.3/node_modules/tiny-lr/lib/server.js:164:15)
+    at Promise.apply (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:1165:26)
+    at Promise.promise.promiseDispatch (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:788:41)
+    at /Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:1391:14
+    at runSingle (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:137:13)
+
+You already have a server listening on 35729
+You should stop it and try again.
+
+
+... Uhoh. Got error listen EADDRINUSE :::35729 ...
+Error: listen EADDRINUSE :::35729
+    at Object._errnoException (util.js:1024:11)
+    at _exceptionWithHostPort (util.js:1046:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at Server.listen (net.js:1476:7)
+    at Server.listen (/Users/lzc/.gitbook/versions/3.2.3/node_modules/tiny-lr/lib/server.js:164:15)
+    at Promise.apply (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:1165:26)
+    at Promise.promise.promiseDispatch (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:788:41)
+    at /Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:1391:14
+    at runSingle (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:137:13)
+
+You already have a server listening on 35729
+You should stop it and try again.
+
+
+... Uhoh. Got error listen EADDRINUSE :::35729 ...
+Error: listen EADDRINUSE :::35729
+    at Object._errnoException (util.js:1024:11)
+    at _exceptionWithHostPort (util.js:1046:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at Server.listen (net.js:1476:7)
+    at Server.listen (/Users/lzc/.gitbook/versions/3.2.3/node_modules/tiny-lr/lib/server.js:164:15)
+    at Promise.apply (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:1165:26)
+    at Promise.promise.promiseDispatch (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:788:41)
+    at /Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:1391:14
+    at runSingle (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:137:13)
+
+You already have a server listening on 35729
+You should stop it and try again.
+
+
+... Uhoh. Got error listen EADDRINUSE :::35729 ...
+Error: listen EADDRINUSE :::35729
+    at Object._errnoException (util.js:1024:11)
+    at _exceptionWithHostPort (util.js:1046:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at Server.listen (net.js:1476:7)
+    at Server.listen (/Users/lzc/.gitbook/versions/3.2.3/node_modules/tiny-lr/lib/server.js:164:15)
+    at Promise.apply (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:1165:26)
+    at Promise.promise.promiseDispatch (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:788:41)
+    at /Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:1391:14
+    at runSingle (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:137:13)
+
+You already have a server listening on 35729
+You should stop it and try again.
+
+
+... Uhoh. Got error listen EADDRINUSE :::35729 ...
+Error: listen EADDRINUSE :::35729
+    at Object._errnoException (util.js:1024:11)
+    at _exceptionWithHostPort (util.js:1046:20)
+    at Server.setupListenHandle [as _listen2] (net.js:1351:14)
+    at listenInCluster (net.js:1392:12)
+    at Server.listen (net.js:1476:7)
+    at Server.listen (/Users/lzc/.gitbook/versions/3.2.3/node_modules/tiny-lr/lib/server.js:164:15)
+    at Promise.apply (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:1165:26)
+    at Promise.promise.promiseDispatch (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:788:41)
+    at /Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:1391:14
+    at runSingle (/Users/lzc/.gitbook/versions/3.2.3/node_modules/q/q.js:137:13)
+
+You already have a server listening on 35729
+You should stop it and try again.
+
+Restart after change in file di-2-bu-fen-hdfs/di-10-zhang-namenode-he-secondarynamenode/102-namenodede-wen-jian-mu-lu-jie-gou.md
+
+Stopping server
+[0;36minfo:[0m 15 plugins are installed 
+[0;36minfo:[0m 14 explicitly listed 
+[0;36minfo:[0m loading plugin "splitter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "expandable-chapters-small"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "page-toc-button"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "prism-themes"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "tbfed-pagefooter"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sitemap"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "change_girls"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "livereload"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "search"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "lunr"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "sharing"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "fontsettings"... [0;32mOK[0m 
+[0;36minfo:[0m loading plugin "theme-default"... [0;32mOK[0m 
+[0;36minfo:[0m found 46 pages 
+[0;36minfo:[0m found 2 asset files 

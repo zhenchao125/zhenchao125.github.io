@@ -1,0 +1,68 @@
+{
+    "title" : "大数据 Azkaban 课堂笔记",
+    "author":" 李振超",
+
+    "description":"课堂笔记,学生提前预习",
+    "language":"zh-hans",
+    "links" : {
+        "sidebar" : {
+            "联系我们" : "http://www.atguigu.com/"
+        }
+    },
+    "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css",
+        "pdf": "styles/pdf.css",
+        "mobi": "styles/mobi.css",
+        "epub": "styles/epub.css"
+    },
+    "plugins":[
+       "splitter",
+       "expandable-chapters-small",
+       "page-toc-button",
+       "-highlight", 
+       "prism", 
+       "prism-themes",
+       "tbfed-pagefooter",
+       "sitemap",
+       "change_girls"
+    ],
+    "pluginsConfig": {
+        "change_girls" : {
+            "time" : 30,
+            "urls" : [
+                "http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg",
+                "http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg",
+                "http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg",
+                "http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg",
+                "http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg",
+                "http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg",
+                "http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg",
+                "http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg",
+                "http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg",
+                "http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"
+            ]
+        },
+        "page-toc-button": {
+            "maxTocDepth": 3,
+            "minTocSize": 2
+        },
+        "disqus": {
+            "shortName": "zhenchao125"
+        },
+        "prism": {
+            "css": [
+              "prismjs/themes/prism-solarizedlight.css"
+            ]
+         },
+         "tbfed-pagefooter": {
+            "copyright":"Copyright &copy 尚硅谷大数据 2019",
+            "modify_label": "<br>该文件最后修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "sitemap": {
+            "hostname": "http://bigdataatguigu.applinzi.com/"
+        }
+    }
+}
+

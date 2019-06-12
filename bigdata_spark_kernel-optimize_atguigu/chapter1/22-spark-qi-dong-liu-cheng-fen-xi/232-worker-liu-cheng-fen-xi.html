@@ -1,0 +1,1040 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.3.2 Worker 启动源码分析 · 大数据 bigdata_spark_kernel-optimize_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../di-3-zhang-spark-bu-shu-mo-shi.html" />
+    
+    
+    <link rel="prev" href="231-master-liu-cheng-fen-xi.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">第 1 部分: Spark 内核</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    第 1 章 Spark 内核概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../11-spark-he-xin-zu-jian-hui-gu.html">
+            
+                <a href="../../11-spark-he-xin-zu-jian-hui-gu.html">
+            
+                    
+                    1.1 Spark 核心组件回顾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../12-spark-tong-yong-yun-xing-liu-cheng-gai-shu.html">
+            
+                <a href="../../12-spark-tong-yong-yun-xing-liu-cheng-gai-shu.html">
+            
+                    
+                    1.2 Spark 通用运行流程概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../chapter1.html">
+            
+                <a href="../../chapter1.html">
+            
+                    
+                    第 2 章 Spark 通讯架构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../21-spark-tong-xun-jia-gou-gai-shu.html">
+            
+                <a href="../21-spark-tong-xun-jia-gou-gai-shu.html">
+            
+                    
+                    2.1 Spark 通讯架构概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../23-spark-tong-xin-jia-gou-jie-xi.html">
+            
+                <a href="../23-spark-tong-xin-jia-gou-jie-xi.html">
+            
+                    
+                    2.2 Spark 通信架构解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../22-spark-qi-dong-liu-cheng-fen-xi.html">
+            
+                <a href="../22-spark-qi-dong-liu-cheng-fen-xi.html">
+            
+                    
+                    2.3 Spark 启动流程分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="231-master-liu-cheng-fen-xi.html">
+            
+                <a href="231-master-liu-cheng-fen-xi.html">
+            
+                    
+                    2.3.1 Master 启动源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3.2" data-path="232-worker-liu-cheng-fen-xi.html">
+            
+                <a href="232-worker-liu-cheng-fen-xi.html">
+            
+                    
+                    2.3.2 Worker 启动源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../di-3-zhang-spark-bu-shu-mo-shi.html">
+            
+                <a href="../../di-3-zhang-spark-bu-shu-mo-shi.html">
+            
+                    
+                    第 3 章 Spark 部署模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi.html">
+            
+                <a href="../../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi.html">
+            
+                    
+                    3.1 Yarn 模式运行机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.html">
+            
+                <a href="../../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.html">
+            
+                    
+                    1. Yarn cluster 模式运行机制源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-client-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.html">
+            
+                <a href="../../di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-client-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.html">
+            
+                    
+                    2. Yarn client 模式运行机制源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../di-3-zhang-spark-bu-shu-mo-shi/32-standalone-mo-shi-yun-xing-ji-zhi.html">
+            
+                <a href="../../di-3-zhang-spark-bu-shu-mo-shi/32-standalone-mo-shi-yun-xing-ji-zhi.html">
+            
+                    
+                    3.2 Standalone 模式运行机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi.html">
+            
+                <a href="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi.html">
+            
+                    
+                    第 4 章 Spark 任务调度机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/41-spark-ren-wu-diao-du-gai-shu.html">
+            
+                <a href="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/41-spark-ren-wu-diao-du-gai-shu.html">
+            
+                    
+                    4.1 Spark 任务调度概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/42-spark-stage-ji-bie-diao-du.html">
+            
+                <a href="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/42-spark-stage-ji-bie-diao-du.html">
+            
+                    
+                    4.2 Spark Stage 级别调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du.html">
+            
+                <a href="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du.html">
+            
+                    
+                    4.3 Spark Task 级别调度
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/431-diao-du-ce-lve.html">
+            
+                <a href="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/431-diao-du-ce-lve.html">
+            
+                    
+                    4.3.1 调度策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/432-ben-di-hua-diao-du.html">
+            
+                <a href="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/432-ben-di-hua-diao-du.html">
+            
+                    
+                    4.3.2 本地化调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/433-shi-bai-zhong-shi-he-hei-ming-dan.html">
+            
+                <a href="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/43-spark-task-ji-bie-diao-du/433-shi-bai-zhong-shi-he-hei-ming-dan.html">
+            
+                    
+                    4.3.3 失败重试和黑名单
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/44-ren-wu-diao-du-yuan-ma-fen-xi.html">
+            
+                <a href="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/44-ren-wu-diao-du-yuan-ma-fen-xi.html">
+            
+                    
+                    4.4 Stage 级别任务调度源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/45-task-ji-bie-ren-wu-diao-du-yuan-ma-fen-xi.html">
+            
+                <a href="../../di-4-zhang-spark-ren-wu-diao-du-ji-zhi/45-task-ji-bie-ren-wu-diao-du-yuan-ma-fen-xi.html">
+            
+                    
+                    4.5 Task 级别任务调度源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../di-5-zhang-spark-shuffle-jie-xi.html">
+            
+                <a href="../../di-5-zhang-spark-shuffle-jie-xi.html">
+            
+                    
+                    第 5 章 Spark Shuffle 解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../di-5-zhang-spark-shuffle-jie-xi/51-shuffle-de-he-xin-yao-dian.html">
+            
+                <a href="../../di-5-zhang-spark-shuffle-jie-xi/51-shuffle-de-he-xin-yao-dian.html">
+            
+                    
+                    5.1 Shuffle 的核心要点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../di-5-zhang-spark-shuffle-jie-xi/52-hashshuffle-jie-xi.html">
+            
+                <a href="../../di-5-zhang-spark-shuffle-jie-xi/52-hashshuffle-jie-xi.html">
+            
+                    
+                    5.2 HashShuffle 解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../di-5-zhang-spark-shuffle-jie-xi/53-sortshuffle-jie-xi.html">
+            
+                <a href="../../di-5-zhang-spark-shuffle-jie-xi/53-sortshuffle-jie-xi.html">
+            
+                    
+                    5.3 SortShuffle 解析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../di-5-zhang-spark-shuffle-jie-xi/53-sortshuffle-jie-xi/sortshuffle-yuan-ma-jie-xi.html">
+            
+                <a href="../../di-5-zhang-spark-shuffle-jie-xi/53-sortshuffle-jie-xi/sortshuffle-yuan-ma-jie-xi.html">
+            
+                    
+                    SortShuffle 源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../di-6-zhang-spark-nei-cun-jie-xi.html">
+            
+                <a href="../../di-6-zhang-spark-nei-cun-jie-xi.html">
+            
+                    
+                    第 6 章 Spark 内存管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../61-dui-nei-he-dui-wai-nei-cun-gui-hua.html">
+            
+                <a href="../../61-dui-nei-he-dui-wai-nei-cun-gui-hua.html">
+            
+                    
+                    6.1 堆内核堆外内存规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../62-nei-cun-kong-jian-fen-pei.html">
+            
+                <a href="../../62-nei-cun-kong-jian-fen-pei.html">
+            
+                    
+                    6.2 内存空间分配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../63-cun-chu-nei-cun-guan-li.html">
+            
+                <a href="../../63-cun-chu-nei-cun-guan-li.html">
+            
+                    
+                    6.3 存储内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../64-zhi-xing-nei-cun-guan-li.html">
+            
+                <a href="../../64-zhi-xing-nei-cun-guan-li.html">
+            
+                    
+                    6.4 执行内存管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 2 部分: Spark 性能优化和故障处理</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua.html">
+            
+                    
+                    第 7 章 Spark 性能优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/71-chang-gui-xing-neng-diao-you.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/71-chang-gui-xing-neng-diao-you.html">
+            
+                    
+                    7.1 常规性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/72-suan-zi-diao-you.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/72-suan-zi-diao-you.html">
+            
+                    
+                    7.2 算子调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/73-shuffle-diao-you.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/73-shuffle-diao-you.html">
+            
+                    
+                    7.3 Shuffle 调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/74-jvm-diao-you.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-7-zhang-spark-xing-neng-you-hua/74-jvm-diao-you.html">
+            
+                    
+                    7.4 JVM 调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-8-zhang-spark-shu-ju-qing-xie.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-8-zhang-spark-shu-ju-qing-xie.html">
+            
+                    
+                    第 8 章 Spark 数据倾斜解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-9-zhang-spark-troubleshooting.html">
+            
+                <a href="../../di-2-bu-52063a-spark-xing-neng-you-hua-he-gu-zhang-chu-li/di-9-zhang-spark-troubleshooting.html">
+            
+                    
+                    第 9 章 Spark Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >2.3.2 Worker 启动源码分析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="232-worker-&#x542F;&#x52A8;&#x6E90;&#x7801;&#x5206;&#x6790;">2.3.2 Worker &#x542F;&#x52A8;&#x6E90;&#x7801;&#x5206;&#x6790;</h1>
+<h2 id="worker&#x6E90;&#x7801;&#x5206;&#x6790;"><code>Worker</code>&#x6E90;&#x7801;&#x5206;&#x6790;</h2>
+<p><code>org.apache.spark.deploy.worker.Worker</code></p>
+<h3 id="worker&#x4F34;&#x751F;&#x5BF9;&#x8C61;"><code>Worker</code>&#x4F34;&#x751F;&#x5BF9;&#x8C61;</h3>
+<p>&#x542F;&#x52A8;&#x6D41;&#x7A0B;&#x57FA;&#x672C;&#x548C; Master &#x4E00;&#x81F4;.</p>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">private</span><span class="token punctuation">[</span>deploy<span class="token punctuation">]</span> <span class="token keyword">object</span> Worker <span class="token keyword">extends</span> Logging <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> SYSTEM_NAME <span class="token operator">=</span> <span class="token string">&quot;sparkWorker&quot;</span>
+    <span class="token keyword">val</span> ENDPOINT_NAME <span class="token operator">=</span> <span class="token string">&quot;Worker&quot;</span>
+
+    <span class="token keyword">def</span> main<span class="token punctuation">(</span>argStrings<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Utils<span class="token punctuation">.</span>initDaemon<span class="token punctuation">(</span>log<span class="token punctuation">)</span>
+        <span class="token keyword">val</span> conf <span class="token operator">=</span> <span class="token keyword">new</span> SparkConf
+        <span class="token comment">// &#x6784;&#x5EFA;&#x89E3;&#x6790;&#x53C2;&#x6570;&#x7684;&#x5B9E;&#x4F8B;</span>
+        <span class="token keyword">val</span> args <span class="token operator">=</span> <span class="token keyword">new</span> WorkerArguments<span class="token punctuation">(</span>argStrings<span class="token punctuation">,</span> conf<span class="token punctuation">)</span>
+        <span class="token comment">// &#x542F;&#x52A8; Rpc &#x73AF;&#x5883;&#x548C; Rpc &#x7EC8;&#x7AEF;</span>
+        <span class="token keyword">val</span> rpcEnv <span class="token operator">=</span> startRpcEnvAndEndpoint<span class="token punctuation">(</span>args<span class="token punctuation">.</span>host<span class="token punctuation">,</span> args<span class="token punctuation">.</span>port<span class="token punctuation">,</span> args<span class="token punctuation">.</span>webUiPort<span class="token punctuation">,</span> args<span class="token punctuation">.</span>cores<span class="token punctuation">,</span>
+            args<span class="token punctuation">.</span>memory<span class="token punctuation">,</span> args<span class="token punctuation">.</span>masters<span class="token punctuation">,</span> args<span class="token punctuation">.</span>workDir<span class="token punctuation">,</span> conf <span class="token operator">=</span> conf<span class="token punctuation">)</span>
+        rpcEnv<span class="token punctuation">.</span>awaitTermination<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">def</span> startRpcEnvAndEndpoint<span class="token punctuation">(</span>
+                                  host<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">,</span>
+                                  port<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span>
+                                  webUiPort<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span>
+                                  cores<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span>
+                                  memory<span class="token operator">:</span> <span class="token builtin">Int</span><span class="token punctuation">,</span>
+                                  masterUrls<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                                  workDir<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">,</span>
+                                  workerNumber<span class="token operator">:</span> Option<span class="token punctuation">[</span><span class="token builtin">Int</span><span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+                                  conf<span class="token operator">:</span> SparkConf <span class="token operator">=</span> <span class="token keyword">new</span> SparkConf<span class="token punctuation">)</span><span class="token operator">:</span> RpcEnv <span class="token operator">=</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// The LocalSparkCluster runs multiple local sparkWorkerX RPC Environments</span>
+        <span class="token keyword">val</span> systemName <span class="token operator">=</span> SYSTEM_NAME <span class="token operator">+</span> workerNumber<span class="token punctuation">.</span>map<span class="token punctuation">(</span>_<span class="token punctuation">.</span>toString<span class="token punctuation">)</span><span class="token punctuation">.</span>getOrElse<span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> securityMgr <span class="token operator">=</span> <span class="token keyword">new</span> SecurityManager<span class="token punctuation">(</span>conf<span class="token punctuation">)</span>
+        <span class="token comment">// &#x521B;&#x5EFA; RpcEnv &#x5B9E;&#x4F8B;  &#x53C2;&#x6570;: &quot;sparkWorker&quot;, &quot;hadoop201&quot;, 8081, conf, securityMgr</span>
+        <span class="token keyword">val</span> rpcEnv <span class="token operator">=</span> RpcEnv<span class="token punctuation">.</span>create<span class="token punctuation">(</span>systemName<span class="token punctuation">,</span> host<span class="token punctuation">,</span> port<span class="token punctuation">,</span> conf<span class="token punctuation">,</span> securityMgr<span class="token punctuation">)</span>
+        <span class="token comment">// &#x6839;&#x636E;&#x4F20;&#x5165; masterUrls &#x5F97;&#x5230; masterAddresses.  &#x5C31;&#x662F;&#x4ECE;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684; Master &#x5730;&#x5740;</span>
+        <span class="token keyword">val</span> masterAddresses <span class="token operator">=</span> masterUrls<span class="token punctuation">.</span>map<span class="token punctuation">(</span>RpcAddress<span class="token punctuation">.</span>fromSparkURL<span class="token punctuation">(</span>_<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment">// &#x6700;&#x7EC8;&#x5B9E;&#x4F8B;&#x5316; Worker &#x5F97;&#x5230; Worker &#x7684; RpcEndpoint</span>
+        rpcEnv<span class="token punctuation">.</span>setupEndpoint<span class="token punctuation">(</span>ENDPOINT_NAME<span class="token punctuation">,</span> <span class="token keyword">new</span> Worker<span class="token punctuation">(</span>rpcEnv<span class="token punctuation">,</span> webUiPort<span class="token punctuation">,</span> cores<span class="token punctuation">,</span> memory<span class="token punctuation">,</span>
+            masterAddresses<span class="token punctuation">,</span> ENDPOINT_NAME<span class="token punctuation">,</span> workDir<span class="token punctuation">,</span> conf<span class="token punctuation">,</span> securityMgr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        rpcEnv
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="worker&#x4F34;&#x751F;&#x7C7B;"><code>Worker</code>&#x4F34;&#x751F;&#x7C7B;</h3>
+<blockquote>
+<p><code>onStart</code> &#x65B9;&#x6CD5;</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">override</span> <span class="token keyword">def</span> onStart<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x7B2C;&#x4E00;&#x6B21;&#x542F;&#x52A8;&#x65AD;&#x8A00; Worker &#x672A;&#x6CE8;&#x518C;</span>
+    assert<span class="token punctuation">(</span><span class="token operator">!</span>registered<span class="token punctuation">)</span>
+    <span class="token comment">// &#x521B;&#x5EFA;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</span>
+    createWorkDir<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">// &#x542F;&#x52A8; shuffle &#x670D;&#x52A1;</span>
+    shuffleService<span class="token punctuation">.</span>startIfEnabled<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">// Worker&#x7684; WebUI</span>
+    webUi <span class="token operator">=</span> <span class="token keyword">new</span> WorkerWebUI<span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> workDir<span class="token punctuation">,</span> webUiPort<span class="token punctuation">)</span>
+    webUi<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    workerWebUiUrl <span class="token operator">=</span> s<span class="token string">&quot;http://$publicAddress:${webUi.boundPort}&quot;</span>
+    <span class="token comment">// &#x5411; Master &#x6CE8;&#x518C; Worker</span>
+    registerWithMaster<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>registerWithMaster</code> &#x65B9;&#x6CD5;</p>
+</blockquote>
+<p>&#x5173;&#x952E;&#x4EE3;&#x7801;:</p>
+<pre class="language-"><code class="lang-scala"><span class="token comment">// &#x5411;&#x6240;&#x6709;&#x7684; Master &#x6CE8;&#x518C;</span>
+registerMasterFutures <span class="token operator">=</span> tryRegisterAllMasters<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p><code>tryRegisterAllMasters()</code> &#x65B9;&#x6CD5;</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">private</span> <span class="token keyword">def</span> tryRegisterAllMasters<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> Array<span class="token punctuation">[</span>JFuture<span class="token punctuation">[</span>_<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    masterRpcAddresses<span class="token punctuation">.</span>map <span class="token punctuation">{</span> masterAddress <span class="token keyword">=&gt;</span>
+        <span class="token comment">// &#x4ECE;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x542F;&#x52A8;&#x7EBF;&#x7A0B;&#x6765;&#x6267;&#x884C; Worker &#x5411; Master &#x6CE8;&#x518C;</span>
+        registerMasterThreadPool<span class="token punctuation">.</span>submit<span class="token punctuation">(</span><span class="token keyword">new</span> Runnable <span class="token punctuation">{</span>
+            <span class="token keyword">override</span> <span class="token keyword">def</span> run<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+                <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                    <span class="token comment">// &#x6839;&#x636E; Master &#x7684;&#x5730;&#x5740;&#x5F97;&#x5230;&#x4E00;&#x4E2A; Master &#x7684; RpcEndpointRef, &#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x548C; Master &#x8FDB;&#x884C;&#x901A;&#x8BAF;&#x4E86;.</span>
+                    <span class="token keyword">val</span> masterEndpoint <span class="token operator">=</span> rpcEnv<span class="token punctuation">.</span>setupEndpointRef<span class="token punctuation">(</span>masterAddress<span class="token punctuation">,</span> Master<span class="token punctuation">.</span>ENDPOINT_NAME<span class="token punctuation">)</span>
+                    <span class="token comment">// &#x5411; Master &#x6CE8;&#x518C;</span>
+                    registerWithMaster<span class="token punctuation">(</span>masterEndpoint<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">{</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>registerWithMaster</code> &#x65B9;&#x6CD5;</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">private</span> <span class="token keyword">def</span> registerWithMaster<span class="token punctuation">(</span>masterEndpoint<span class="token operator">:</span> RpcEndpointRef<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// &#x5411; Master &#x5BF9;&#x5E94;&#x7684; receiveAndReply &#x65B9;&#x6CD5;&#x53D1;&#x9001;&#x4FE1;&#x606F;</span>
+    <span class="token comment">// &#x4FE1;&#x606F;&#x7684;&#x7C7B;&#x578B;&#x662F; RegisterWorker, &#x5305;&#x62EC; Worker &#x7684;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;: id, &#x4E3B;&#x673A;&#x5730;&#x5740;, &#x7AEF;&#x53E3;&#x53F7;, &#x5185;&#x5B58;, webUi</span>
+    masterEndpoint<span class="token punctuation">.</span>ask<span class="token punctuation">[</span>RegisterWorkerResponse<span class="token punctuation">]</span><span class="token punctuation">(</span>RegisterWorker<span class="token punctuation">(</span>
+        workerId<span class="token punctuation">,</span> host<span class="token punctuation">,</span> port<span class="token punctuation">,</span> <span class="token keyword">self</span><span class="token punctuation">,</span> cores<span class="token punctuation">,</span> memory<span class="token punctuation">,</span> workerWebUiUrl<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span>onComplete <span class="token punctuation">{</span>
+            <span class="token comment">// This is a very fast action so we can use &quot;ThreadUtils.sameThread&quot;</span>
+            <span class="token comment">// &#x6CE8;&#x518C;&#x6210;&#x529F;</span>
+            <span class="token keyword">case</span> Success<span class="token punctuation">(</span>msg<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
+
+                Utils<span class="token punctuation">.</span>tryLogNonFatalError <span class="token punctuation">{</span>
+                    handleRegisterResponse<span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token comment">// &#x6CE8;&#x518C;&#x5931;&#x8D25;</span>
+            <span class="token keyword">case</span> Failure<span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
+                logError<span class="token punctuation">(</span>s<span class="token string">&quot;Cannot register with master: ${masterEndpoint.address}&quot;</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span>
+                System<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">(</span>ThreadUtils<span class="token punctuation">.</span>sameThread<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>Master</code>&#x7684;<code>receiveAndReply</code>&#x65B9;&#x6CD5;</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token comment">// &#x5904;&#x7406; Worker &#x7684;&#x6CE8;&#x518C;&#x4FE1;&#x606F;</span>
+<span class="token keyword">case</span> RegisterWorker<span class="token punctuation">(</span>
+id<span class="token punctuation">,</span> workerHost<span class="token punctuation">,</span> workerPort<span class="token punctuation">,</span> workerRef<span class="token punctuation">,</span> cores<span class="token punctuation">,</span> memory<span class="token punctuation">,</span> workerWebUiUrl<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>state <span class="token operator">==</span> RecoveryState<span class="token punctuation">.</span>STANDBY<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x7ED9;&#x53D1;&#x9001;&#x8005;&#x56DE;&#x5E94;&#x6D88;&#x606F;.  &#x5BF9;&#x65B9;&#x7684; receive &#x65B9;&#x6CD5;&#x4F1A;&#x6536;&#x5230;&#x8FD9;&#x4E2A;&#x4FE1;&#x606F;</span>
+        context<span class="token punctuation">.</span>reply<span class="token punctuation">(</span>MasterInStandby<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>idToWorker<span class="token punctuation">.</span>contains<span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// &#x5982;&#x679C;&#x8981;&#x6CE8;&#x518C;&#x7684; Worker &#x5DF2;&#x7ECF;&#x5B58;&#x5728;</span>
+        context<span class="token punctuation">.</span>reply<span class="token punctuation">(</span>RegisterWorkerFailed<span class="token punctuation">(</span><span class="token string">&quot;Duplicate worker ID&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x6839;&#x636E;&#x4F20;&#x6765;&#x7684;&#x4FE1;&#x606F;&#x5C01;&#x88C5; WorkerInfo</span>
+        <span class="token keyword">val</span> worker <span class="token operator">=</span> <span class="token keyword">new</span> WorkerInfo<span class="token punctuation">(</span>id<span class="token punctuation">,</span> workerHost<span class="token punctuation">,</span> workerPort<span class="token punctuation">,</span> cores<span class="token punctuation">,</span> memory<span class="token punctuation">,</span>
+            workerRef<span class="token punctuation">,</span> workerWebUiUrl<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>registerWorker<span class="token punctuation">(</span>worker<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// &#x6CE8;&#x518C;&#x6210;&#x529F;</span>
+            persistenceEngine<span class="token punctuation">.</span>addWorker<span class="token punctuation">(</span>worker<span class="token punctuation">)</span>
+            <span class="token comment">// &#x54CD;&#x5E94;&#x4FE1;&#x606F;</span>
+            context<span class="token punctuation">.</span>reply<span class="token punctuation">(</span>RegisteredWorker<span class="token punctuation">(</span><span class="token keyword">self</span><span class="token punctuation">,</span> masterWebUiUrl<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            schedule<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">val</span> workerAddress <span class="token operator">=</span> worker<span class="token punctuation">.</span>endpoint<span class="token punctuation">.</span>address
+            context<span class="token punctuation">.</span>reply<span class="token punctuation">(</span>RegisterWorkerFailed<span class="token punctuation">(</span><span class="token string">&quot;Attempted to re-register worker at same address: &quot;</span>
+                <span class="token operator">+</span> workerAddress<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>worker</code>&#x7684;<code>handleRegisterResponse</code>&#x65B9;&#x6CD5;</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">case</span> RegisteredWorker<span class="token punctuation">(</span>masterRef<span class="token punctuation">,</span> masterWebUiUrl<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
+    logInfo<span class="token punctuation">(</span><span class="token string">&quot;Successfully registered with master &quot;</span> <span class="token operator">+</span> masterRef<span class="token punctuation">.</span>address<span class="token punctuation">.</span>toSparkURL<span class="token punctuation">)</span>
+    <span class="token comment">// &#x5DF2;&#x7ECF;&#x6CE8;&#x518C;&#x8FC7;&#x4E86;</span>
+    registered <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token comment">// &#x66F4;&#x65B0; Master</span>
+    changeMaster<span class="token punctuation">(</span>masterRef<span class="token punctuation">,</span> masterWebUiUrl<span class="token punctuation">)</span>
+    <span class="token comment">// &#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x7ED9; Master &#x53D1;&#x9001;&#x5FC3;&#x8DF3;&#x4FE1;&#x606F;  &#x9ED8;&#x8BA4; 1 &#x5206;&#x949F; 4 &#x6B21;</span>
+    forwordMessageScheduler<span class="token punctuation">.</span>scheduleAtFixedRate<span class="token punctuation">(</span><span class="token keyword">new</span> Runnable <span class="token punctuation">{</span>
+        <span class="token keyword">override</span> <span class="token keyword">def</span> run<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> Utils<span class="token punctuation">.</span>tryLogNonFatalError <span class="token punctuation">{</span>
+            <span class="token keyword">self</span><span class="token punctuation">.</span>send<span class="token punctuation">(</span>SendHeartbeat<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> HEARTBEAT_MILLIS<span class="token punctuation">,</span> TimeUnit<span class="token punctuation">.</span>MILLISECONDS<span class="token punctuation">)</span>
+</code></pre>
+<blockquote>
+<p><code>Worker</code>&#x7684;<code>receive</code>&#x65B9;&#x6CD5;:</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">case</span> SendHeartbeat <span class="token keyword">=&gt;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>connected<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x7ED9; Master &#x53D1;&#x9001;&#x5FC3;&#x8DF3;</span>
+        sendToMaster<span class="token punctuation">(</span>Heartbeat<span class="token punctuation">(</span>workerId<span class="token punctuation">,</span> <span class="token keyword">self</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><code>Master</code>&#x7684;<code>receive</code>&#x65B9;&#x6CD5;:</p>
+</blockquote>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">case</span> Heartbeat<span class="token punctuation">(</span>workerId<span class="token punctuation">,</span> worker<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
+    idToWorker<span class="token punctuation">.</span>get<span class="token punctuation">(</span>workerId<span class="token punctuation">)</span> <span class="token keyword">match</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> Some<span class="token punctuation">(</span>workerInfo<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
+            <span class="token comment">// &#x8BB0;&#x5F55;&#x8BE5; Worker &#x7684;&#x6700;&#x65B0;&#x5FC3;&#x8DF3;</span>
+            workerInfo<span class="token punctuation">.</span>lastHeartbeat <span class="token operator">=</span> System<span class="token punctuation">.</span>currentTimeMillis<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x5230;&#x6B64;-worker&#x542F;&#x52A8;&#x5B8C;&#x6210;">&#x5230;&#x6B64;, <code>Worker</code>&#x542F;&#x52A8;&#x5B8C;&#x6210;</h3>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-06-07 17:48:44
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="231-master-liu-cheng-fen-xi.html" class="navigation navigation-prev " aria-label="Previous page: 2.3.1 Master 启动源码分析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../di-3-zhang-spark-bu-shu-mo-shi.html" class="navigation navigation-next " aria-label="Next page: 第 3 章 Spark 部署模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.3.2 Worker 启动源码分析","level":"1.2.3.2","depth":3,"next":{"title":"第 3 章 Spark 部署模式","level":"1.3","depth":1,"path":"di-3-zhang-spark-bu-shu-mo-shi.md","ref":"di-3-zhang-spark-bu-shu-mo-shi.md","articles":[{"title":"3.1 Yarn 模式运行机制","level":"1.3.1","depth":2,"path":"di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi.md","ref":"di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi.md","articles":[{"title":"1. Yarn cluster 模式运行机制源码分析","level":"1.3.1.1","depth":3,"path":"di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.md","ref":"di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.md","articles":[]},{"title":"2. Yarn client 模式运行机制源码分析","level":"1.3.1.2","depth":3,"path":"di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-client-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.md","ref":"di-3-zhang-spark-bu-shu-mo-shi/31-yarn-mo-shi-yun-xing-ji-zhi/yarn-client-mo-shi-yun-xing-ji-zhi-yuan-ma-fen-xi.md","articles":[]}]},{"title":"3.2 Standalone 模式运行机制","level":"1.3.2","depth":2,"path":"di-3-zhang-spark-bu-shu-mo-shi/32-standalone-mo-shi-yun-xing-ji-zhi.md","ref":"di-3-zhang-spark-bu-shu-mo-shi/32-standalone-mo-shi-yun-xing-ji-zhi.md","articles":[]}]},"previous":{"title":"2.3.1 Master 启动源码分析","level":"1.2.3.1","depth":3,"path":"chapter1/22-spark-qi-dong-liu-cheng-fen-xi/231-master-liu-cheng-fen-xi.md","ref":"chapter1/22-spark-qi-dong-liu-cheng-fen-xi/231-master-liu-cheng-fen-xi.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_spark_kernel-optimize_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"chapter1/22-spark-qi-dong-liu-cheng-fen-xi/232-worker-liu-cheng-fen-xi.md","mtime":"2019-06-07T09:48:44.334Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-06T13:28:03.104Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

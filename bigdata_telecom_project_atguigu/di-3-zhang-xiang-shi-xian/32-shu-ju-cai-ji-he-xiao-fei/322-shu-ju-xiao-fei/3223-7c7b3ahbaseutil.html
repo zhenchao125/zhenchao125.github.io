@@ -1,0 +1,942 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.2.2.3 类: HBaseUtil · 大数据 电信项目 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="3224-7c7b3ahbaseconsumer.html" />
+    
+    
+    <link rel="prev" href="3222-7c7b3ahbasedao.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    第 1 章 项目背景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../chapter1.html">
+            
+                <a href="../../../chapter1.html">
+            
+                    
+                    第 2 章 项目架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../di-3-zhang-xiang-shi-xian.html">
+            
+                <a href="../../../di-3-zhang-xiang-shi-xian.html">
+            
+                    
+                    第 3 章 项目实现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../31-shu-ju-sheng-cheng.html">
+            
+                <a href="../../31-shu-ju-sheng-cheng.html">
+            
+                    
+                    3.1 数据生产模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../32-shu-ju-cai-ji-he-xiao-fei.html">
+            
+                <a href="../../32-shu-ju-cai-ji-he-xiao-fei.html">
+            
+                    
+                    3.2 数据采集和消费
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../321-shu-ju-cai-ji.html">
+            
+                <a href="../321-shu-ju-cai-ji.html">
+            
+                    
+                    3.2.1 数据采集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../322-shu-ju-xiao-fei.html">
+            
+                <a href="../322-shu-ju-xiao-fei.html">
+            
+                    
+                    3.2.2 数据消费
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.2.1" data-path="3221-7c7b3a-propertyutil.html">
+            
+                <a href="3221-7c7b3a-propertyutil.html">
+            
+                    
+                    3.2.2.1 类:PropertyUtil
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2.2" data-path="3222-7c7b3ahbasedao.html">
+            
+                <a href="3222-7c7b3ahbasedao.html">
+            
+                    
+                    3.2.2.2 类: HBaseDao
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2.2.3" data-path="3223-7c7b3ahbaseutil.html">
+            
+                <a href="3223-7c7b3ahbaseutil.html">
+            
+                    
+                    3.2.2.3 类: HBaseUtil
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2.4" data-path="3224-7c7b3ahbaseconsumer.html">
+            
+                <a href="3224-7c7b3ahbaseconsumer.html">
+            
+                    
+                    3.2.2.4 类: HBaseConsumer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../323-shu-ju-cha-xun-fang-shi-1.html">
+            
+                <a href="../323-shu-ju-cha-xun-fang-shi-1.html">
+            
+                    
+                    3.2.3 数据查询方式1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.3.1" data-path="../323-shu-ju-cha-xun-fang-shi-1/3231-hbasefilterutil.html">
+            
+                <a href="../323-shu-ju-cha-xun-fang-shi-1/3231-hbasefilterutil.html">
+            
+                    
+                    3.2.3.1 类: HBaseFilterUtil
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3.2" data-path="../323-shu-ju-cha-xun-fang-shi-1/3232-7c7b3a-querywithfilter.html">
+            
+                <a href="../323-shu-ju-cha-xun-fang-shi-1/3232-7c7b3a-querywithfilter.html">
+            
+                    
+                    3.2.3.2 类: QueryWithFilter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../323-shu-ju-cha-xun-fang-shi-2.html">
+            
+                <a href="../323-shu-ju-cha-xun-fang-shi-2.html">
+            
+                    
+                    3.2.4 数据查询方式2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.4.1" data-path="../323-shu-ju-cha-xun-fang-shi-2/3241-shou-dong-cha-ru-bei-jiao-xin-xi.html">
+            
+                <a href="../323-shu-ju-cha-xun-fang-shi-2/3241-shou-dong-cha-ru-bei-jiao-xin-xi.html">
+            
+                    
+                    3.2.4.1 手动写入被叫信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4.2" data-path="../323-shu-ju-cha-xun-fang-shi-2/3242-shi-yong-xie-chu-li-qi-xie-ru-bei-jiao-xin-xi.html">
+            
+                <a href="../323-shu-ju-cha-xun-fang-shi-2/3242-shi-yong-xie-chu-li-qi-xie-ru-bei-jiao-xin-xi.html">
+            
+                    
+                    3.2.4.2 使用协处理器写入被叫信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="../325-ba-zheng-ge-xiao-fei-mo-kuai-da-bao-dao-ji-qun-zhong-yun-xing.html">
+            
+                <a href="../325-ba-zheng-ge-xiao-fei-mo-kuai-da-bao-dao-ji-qun-zhong-yun-xing.html">
+            
+                    
+                    3.2.5 把整个消费模块打包到集群中运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../33-shu-ju-fen-xi.html">
+            
+                <a href="../../33-shu-ju-fen-xi.html">
+            
+                    
+                    3.3 数据分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../33-shu-ju-fen-xi/331-xu-qiu-fen-xi.html">
+            
+                <a href="../../33-shu-ju-fen-xi/331-xu-qiu-fen-xi.html">
+            
+                    
+                    3.3.1 数据分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../33-shu-ju-fen-xi/332-mysql-biao-jie-gou-she-ji.html">
+            
+                <a href="../../33-shu-ju-fen-xi/332-mysql-biao-jie-gou-she-ji.html">
+            
+                    
+                    3.3.2 Mysql 表结构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../33-shu-ju-fen-xi/333-huan-jing-da-jian.html">
+            
+                <a href="../../33-shu-ju-fen-xi/333-huan-jing-da-jian.html">
+            
+                    
+                    3.3.3 环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../33-shu-ju-fen-xi/334-xu-qiu-shi-xian.html">
+            
+                <a href="../../33-shu-ju-fen-xi/334-xu-qiu-shi-xian.html">
+            
+                    
+                    3.3.4 需求实现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.4.1" data-path="../../33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3341-53053a-com-atguigu-dataanalasis-bean.html">
+            
+                <a href="../../33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3341-53053a-com-atguigu-dataanalasis-bean.html">
+            
+                    
+                    3.3.4.1 包: com.atguigu.dataanalasis.bean
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4.2" data-path="../../33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3342-53053a-com-atguigu-dataanalasis-conversion.html">
+            
+                <a href="../../33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3342-53053a-com-atguigu-dataanalasis-conversion.html">
+            
+                    
+                    3.3.4.2 包: com.atguigu.dataanalasis.conversion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4.3" data-path="../../33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3343-53053a-com-atguigu-dataanalasis-mapred.html">
+            
+                <a href="../../33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3343-53053a-com-atguigu-dataanalasis-mapred.html">
+            
+                    
+                    3.3.4.3 包:com.atguigu.dataanalasis.mapred
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4.4" data-path="../../33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3344-53053a-com-atguigu-dataanalasis-outputformat.html">
+            
+                <a href="../../33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3344-53053a-com-atguigu-dataanalasis-outputformat.html">
+            
+                    
+                    3.3.4.4 包:com.atguigu.dataanalasis.outputformat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4.5" data-path="../../33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3345-53053a-com-atguigu-dataanalasis-util.html">
+            
+                <a href="../../33-shu-ju-fen-xi/334-xu-qiu-shi-xian/3345-53053a-com-atguigu-dataanalasis-util.html">
+            
+                    
+                    3.3.4.5 包: com.atguigu.dataanalasis.util
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../../33-shu-ju-fen-xi/335-yun-xing-ce-shi.html">
+            
+                <a href="../../33-shu-ju-fen-xi/335-yun-xing-ce-shi.html">
+            
+                    
+                    3.3.5 运行测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../34-shu-ju-zhan-shi.html">
+            
+                <a href="../../34-shu-ju-zhan-shi.html">
+            
+                    
+                    3.4 数据展示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >3.2.2.3 类: HBaseUtil</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="3223-&#x7C7B;-hbaseutil">3.2.2.3 &#x7C7B;: HBaseUtil</h1>
+<pre class="language-"><code class="lang-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>dataconsumer<span class="token punctuation">.</span>util<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>hadoop<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>hadoop<span class="token punctuation">.</span>hbase<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>hadoop<span class="token punctuation">.</span>hbase<span class="token punctuation">.</span>client<span class="token punctuation">.</span>Admin<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>hadoop<span class="token punctuation">.</span>hbase<span class="token punctuation">.</span>client<span class="token punctuation">.</span>Connection<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>hadoop<span class="token punctuation">.</span>hbase<span class="token punctuation">.</span>client<span class="token punctuation">.</span>ConnectionFactory<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>hadoop<span class="token punctuation">.</span>hbase<span class="token punctuation">.</span>client<span class="token punctuation">.</span>Table<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>hadoop<span class="token punctuation">.</span>hbase<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Bytes<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>text<span class="token punctuation">.</span>DecimalFormat<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Arrays<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Map<span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * &#x8BE5;&#x7C7B;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x5C01;&#x88C5;&#x4E00;&#x4E9B;HBase&#x7684;&#x5E38;&#x7528;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x521B;&#x5EFA;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x521B;&#x5EFA;&#x8868;&#x7B49;&#x7B49;
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HBaseUtil</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Configuration conf<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Connection conn<span class="token punctuation">;</span>
+    <span class="token comment">/**
+     * &#x9884;&#x5206;&#x533A;&#x7684;&#x6570;&#x91CF;
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> regions <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>PropertyUtil<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">&quot;hbase.regions&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> DecimalFormat formatter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DecimalFormat</span><span class="token punctuation">(</span><span class="token string">&quot;0000&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A; HBaseConfiguration, &#x4F1A;&#x81EA;&#x52A8;&#x7684;&#x6DFB;&#x52A0;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x4E2D;&#x7684; hbase-site.xml&#x4E2D;&#x7684;&#x914D;&#x7F6E;</span>
+            conf <span class="token operator">=</span> HBaseConfiguration<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// &#x521B;&#x5EFA; Connection &#x5BF9;&#x8C61;</span>
+            conn <span class="token operator">=</span> ConnectionFactory<span class="token punctuation">.</span><span class="token function">createConnection</span><span class="token punctuation">(</span>conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment">/**
+     * &#x5728; HBase &#x4E2D;&#x5EFA;&#x8868;
+     *
+     * @param tableName &#x8868;&#x540D;
+     * @param cf        &#x5217;&#x65CF;
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">createTable</span><span class="token punctuation">(</span>String tableName<span class="token punctuation">,</span> String cf<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x5982;&#x679C;&#x8868;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x5219;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isTableExists</span><span class="token punctuation">(</span>tableName<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+        Admin admin <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            admin <span class="token operator">=</span> <span class="token function">getAdmin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            HTableDescriptor desc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HTableDescriptor</span><span class="token punctuation">(</span>TableName<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>tableName<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>cf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            desc<span class="token punctuation">.</span><span class="token function">addFamily</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">HColumnDescriptor</span><span class="token punctuation">(</span>cf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            admin<span class="token punctuation">.</span><span class="token function">createTable</span><span class="token punctuation">(</span>desc<span class="token punctuation">,</span> <span class="token function">getSplitKeys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                admin<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x83B7;&#x53D6;&#x9884;&#x5206;&#x533A;&#x952E;
+     * &lt;p&gt;
+     * &#x53EA;&#x8003;&#x8651; 5 &#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x9884;&#x5148;&#x5206;&#x533A;: 4&#x4E2A;&#x6570;&#x5B57;, &#x52A0;&#x4E00;&#x4E2A;&#x7AD6;&#x7EBF; |
+     * 0000| , 0001|,....
+     * &lt;p&gt;
+     * &#x5C06;&#x6765;&#x7684;rowKey &#x4F7F;&#x7528; 0000_ &#x6765;&#x5F00;&#x5934;, &#x5219; 0000_&#x4E00;&#x5B9A;&#x4F1A;&#x843D;&#x5728;  &#x65E0;&#x7A77;-&gt;0000| &#x4E4B;&#x95F4;, &#x56E0;&#x4E3A; &quot;_&quot;&#x6BD4;&quot;|&quot;&#x5C0F;
+     *
+     * @return &#x5B58;&#x50A8;&#x9884;&#x5206;&#x533A;&#x952E;&#x7684;&#x4E8C;&#x7EF4;&#x5B57;&#x8282;&#x6570;&#x7EC4;
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getSplitKeys</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment">// &#x521B;&#x5EFA;&#x5B58;&#x50A8;&#x9884;&#x5206;&#x533A;&#x952E;&#x7684;&#x4E8C;&#x7EF4;&#x5B57;&#x8282;&#x6570;&#x7EC4;</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> splitKeys <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span>regions<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> splitKeys<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            String key <span class="token operator">=</span> formatter<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;|&quot;</span><span class="token punctuation">;</span>
+            splitKeys<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> Bytes<span class="token punctuation">.</span><span class="token function">toBytes</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> splitKeys<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x521B;&#x5EFA;&#x547D;&#x540D;&#x7A7A;&#x95F4;
+     *
+     * @param NSName &#x547D;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x540D;&#x5B57;
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">createNS</span><span class="token punctuation">(</span>String NSName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isNSExists</span><span class="token punctuation">(</span>NSName<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+        NamespaceDescriptor build <span class="token operator">=</span> NamespaceDescriptor<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>NSName<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addConfiguration</span><span class="token punctuation">(</span><span class="token string">&quot;creator&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;atguigu&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">addConfiguration</span><span class="token punctuation">(</span><span class="token string">&quot;create_time&quot;</span><span class="token punctuation">,</span> System<span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Admin admin <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            admin <span class="token operator">=</span> <span class="token function">getAdmin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            admin<span class="token punctuation">.</span><span class="token function">createNamespace</span><span class="token punctuation">(</span>build<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                admin<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x83B7;&#x53D6;&#x5230; HBase &#x7684; Admin &#x5BF9;&#x8C61;
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Admin <span class="token function">getAdmin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+        Admin admin <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">getAdmin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> admin<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x5224;&#x65AD;&#x6307;&#x5B9A;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x662F;&#x5426;&#x5B58;&#x5728;
+     *
+     * @param nameSpace
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">isNSExists</span><span class="token punctuation">(</span>String nameSpace<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Admin admin <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            admin <span class="token operator">=</span> <span class="token function">getAdmin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            NamespaceDescriptor descriptor <span class="token operator">=</span> admin<span class="token punctuation">.</span><span class="token function">getNamespaceDescriptor</span><span class="token punctuation">(</span>nameSpace<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// &#x5982;&#x679C;&#x5728;&#x83B7;&#x53D6;&#x914D;&#x7F6E;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x6CA1;&#x6709;&#x62A5;&#x9519;, &#x5219;&#x8BC1;&#x660E;&#x8FD9;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x662F;&#x5B58;&#x5728;&#x7684;</span>
+            Map<span class="token generics function"><span class="token punctuation">&lt;</span>String<span class="token punctuation">,</span> String<span class="token punctuation">&gt;</span></span> conf <span class="token operator">=</span> descriptor<span class="token punctuation">.</span><span class="token function">getConfiguration</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                admin<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x5224;&#x65AD;&#x6307;&#x5B9A;&#x7684;&#x8868;&#x662F;&#x5426;&#x5B58;&#x5728;
+     *
+     * @param tableName
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">isTableExists</span><span class="token punctuation">(</span>String tableName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Admin admin <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            admin <span class="token operator">=</span> <span class="token function">getAdmin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> admin<span class="token punctuation">.</span><span class="token function">tableExists</span><span class="token punctuation">(</span>TableName<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>tableName<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                admin<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7684;&#x8868;
+     *
+     * @param tableName &#x8868;&#x540D;
+     * @return &#x8868;&#x5BF9;&#x8C61;
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Table <span class="token function">getTable</span><span class="token punctuation">(</span>String tableName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            Table table <span class="token operator">=</span> conn<span class="token punctuation">.</span><span class="token function">getTable</span><span class="token punctuation">(</span>TableName<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>tableName<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> table<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x6839;&#x636E;&#x8981;&#x5B58;&#x5165;&#x7684;&#x503C;, &#x8FD4;&#x56DE;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684; rowKey
+     * &lt;p&gt;
+     *                   this.call1 + &quot;,&quot;
+     *                 + dateFormatter.format(new Date(this.startTime)) + &quot;,&quot;
+     *                 + this.call2 + &quot;,&quot;
+     *                 + this.duration + &quot;,&quot;
+     *                 + this.flag;
+     *
+     * &#x6765;&#x7684;&#x4FE1;&#x606F;&#x683C;&#x5F0F;: call1,startTime,call2,duration,flag
+     * &lt;p&gt;
+     * rowKey : 0001_call1_startTime_call2_duration_flag
+     * @param value
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getRowKey</span><span class="token punctuation">(</span>String value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        String<span class="token punctuation">[</span><span class="token punctuation">]</span> split <span class="token operator">=</span> value<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&quot;,&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        String rowKeyStr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token comment">// &#x53EA;&#x8981;call1&#x76F8;&#x540C;&#x548C;&#x901A;&#x8BDD;&#x65F6;&#x95F4;&#x7684;&#x5E74;&#x548C;&#x6708;&#x4E00;&#x81F4;&#x5C31;&#x8FDB;&#x5165;&#x540C;&#x4E00;&#x4E2A;&#x5206;&#x533A;</span>
+                <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token function">getRowKeyPrefix</span><span class="token punctuation">(</span>split<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> split<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">// &#x5206;&#x533A;&#x524D;&#x7F00;</span>
+                <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;_&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>split<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// &#x7535;&#x8BDD;&#x53F7;&#x7801;</span>
+                <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;_&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>split<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">// &#x5EFA;&#x7ACB;&#x901A;&#x8BDD;&#x7684;&#x65F6;&#x95F4;</span>
+                <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;_&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>split<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">// &#x88AB;&#x53EB;&#x53F7;&#x7801;</span>
+                <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;_&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>split<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">// &#x901A;&#x8BDD;&#x65F6;&#x957F;</span>
+                <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;_&quot;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>split<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">// &#x901A;&#x8BDD;&#x7C7B;&#x578B;</span>
+                <span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> Bytes<span class="token punctuation">.</span><span class="token function">toBytes</span><span class="token punctuation">(</span>rowKeyStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">/**
+     * &#x83B7;&#x53D6; rowKey &#x7684;&#x5206;&#x533A;&#x524D;&#x7F00;
+     * &lt;p&gt;
+     * &#x8FD4;&#x56DE;: 0001   0002  ....
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> String <span class="token function">getRowKeyPrefix</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> arms<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>arms<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> regions<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> formatter<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-11-25 17:42:12
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="3222-7c7b3ahbasedao.html" class="navigation navigation-prev " aria-label="Previous page: 3.2.2.2 类: HBaseDao">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="3224-7c7b3ahbaseconsumer.html" class="navigation navigation-next " aria-label="Next page: 3.2.2.4 类: HBaseConsumer">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.2.2.3 类: HBaseUtil","level":"1.3.2.2.3","depth":4,"next":{"title":"3.2.2.4 类: HBaseConsumer","level":"1.3.2.2.4","depth":4,"path":"di-3-zhang-xiang-shi-xian/32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei/3224-7c7b3ahbaseconsumer.md","ref":"di-3-zhang-xiang-shi-xian/32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei/3224-7c7b3ahbaseconsumer.md","articles":[]},"previous":{"title":"3.2.2.2 类: HBaseDao","level":"1.3.2.2.2","depth":4,"path":"di-3-zhang-xiang-shi-xian/32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei/3222-7c7b3ahbasedao.md","ref":"di-3-zhang-xiang-shi-xian/32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei/3222-7c7b3ahbasedao.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://www.gitbook.com/@zhenchao125"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 电信项目 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-3-zhang-xiang-shi-xian/32-shu-ju-cai-ji-he-xiao-fei/322-shu-ju-xiao-fei/3223-7c7b3ahbaseutil.md","mtime":"2018-11-25T09:42:12.685Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-14T05:25:15.048Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

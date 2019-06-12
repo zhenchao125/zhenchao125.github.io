@@ -1,0 +1,526 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.3 案例三: Oozie 调度 MapReduce 任务 · 大数据 bigdata_oozie_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="44-an-li-56db3a-oozie-ding-shi-ren-52a1-xun-huan-ren-wu.html" />
+    
+    
+    <link rel="prev" href="42-an-li-er-ff1a-oozie-luo-ji-diao-du-zhi-xing-duo-ge-job.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第 1 章 Oozie 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    第 2 章 Oozie 的功能模块介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../di-3-zhang-oozie-bu-shu.html">
+            
+                <a href="../di-3-zhang-oozie-bu-shu.html">
+            
+                    
+                    第 3 章 Oozie 部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../di-3-zhang-oozie-bu-shu/31-bu-shu-cdh-ban-ben-de-hadoop.html">
+            
+                <a href="../di-3-zhang-oozie-bu-shu/31-bu-shu-cdh-ban-ben-de-hadoop.html">
+            
+                    
+                    3.1 部署 CDH 版本的 Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../di-3-zhang-oozie-bu-shu/32-bu-shu-cdh-ban-ben-de-oozie.html">
+            
+                <a href="../di-3-zhang-oozie-bu-shu/32-bu-shu-cdh-ban-ben-de-oozie.html">
+            
+                    
+                    3.2 部署 CDH 版本的 Oozie
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../di-4-zhang-oozie-de-shi-yong-an-li.html">
+            
+                <a href="../di-4-zhang-oozie-de-shi-yong-an-li.html">
+            
+                    
+                    第 4 章 Oozie 的使用案例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="41-an-li-4e003a-oozie-diao-du-shell-jiao-ben.html">
+            
+                <a href="41-an-li-4e003a-oozie-diao-du-shell-jiao-ben.html">
+            
+                    
+                    4.1 案例一: Oozie调度shell脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="42-an-li-er-ff1a-oozie-luo-ji-diao-du-zhi-xing-duo-ge-job.html">
+            
+                <a href="42-an-li-er-ff1a-oozie-luo-ji-diao-du-zhi-xing-duo-ge-job.html">
+            
+                    
+                    4.2 案例二：Oozie 逻辑调度执行多个 Job
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="43-an-li-4e093a-oozie-diao-du-mapreduce-ren-wu.html">
+            
+                <a href="43-an-li-4e093a-oozie-diao-du-mapreduce-ren-wu.html">
+            
+                    
+                    4.3 案例三: Oozie 调度 MapReduce 任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="44-an-li-56db3a-oozie-ding-shi-ren-52a1-xun-huan-ren-wu.html">
+            
+                <a href="44-an-li-56db3a-oozie-ding-shi-ren-52a1-xun-huan-ren-wu.html">
+            
+                    
+                    4.4 案例四: Oozie 定时任务/循环任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../di-5-zhang-chang-jian-wen-ti-zong-jie.html">
+            
+                <a href="../di-5-zhang-chang-jian-wen-ti-zong-jie.html">
+            
+                    
+                    第 5 章 常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.3 案例三: Oozie 调度 MapReduce 任务</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="43-&#x6848;&#x4F8B;&#x4E09;-oozie-&#x8C03;&#x5EA6;-mapreduce-&#x4EFB;&#x52A1;">4.3 &#x6848;&#x4F8B;&#x4E09;: Oozie &#x8C03;&#x5EA6; MapReduce &#x4EFB;&#x52A1;</h1>
+<h2 id="&#x76EE;&#x6807;&#xFF1A;&#x4F7F;&#x7528;-oozie-&#x8C03;&#x5EA6;-mapreduce-&#x4EFB;&#x52A1;">&#x76EE;&#x6807;&#xFF1A;&#x4F7F;&#x7528; Oozie &#x8C03;&#x5EA6; MapReduce &#x4EFB;&#x52A1;</h2>
+<h2 id="&#x6B65;&#x9AA4;1-&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x7684;-mapreduce-&#x4EFB;&#x52A1;&#x7684;-jar-&#x5305;">&#x6B65;&#x9AA4;1: &#x627E;&#x5230;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x7684; mapreduce &#x4EFB;&#x52A1;&#x7684; jar &#x5305;</h2>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Hadoop &#x63D0;&#x4F9B;&#x7684;&#x6848;&#x4F8B;, &#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x5199;.</p>
+<p>&#x6211;&#x4EEC;&#x4EE5;&#x524D;&#x9762;&#x7528;&#x5230;&#x8FC7;&#x7684;<code>wordcount</code></p>
+<h2 id="&#x6B65;&#x9AA4;2-&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;-wordcount-&#x5728;-yarn-&#x4E2D;&#x7684;&#x8FD0;&#x884C;">&#x6B65;&#x9AA4;2: &#x6D4B;&#x8BD5;&#x4E00;&#x4E0B; wordcount &#x5728; yarn &#x4E2D;&#x7684;&#x8FD0;&#x884C;</h2>
+<p>&#x9700;&#x8981;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x7528;&#x5230;&#x7684;&#x51E0;&#x4E2A;&#x7C7B;, &#x5728;&#x5DE5;&#x4F5C;&#x6D41;&#x7684;&#x914D;&#x7F6E;&#x4E2D;&#x4F7F;&#x7528;&#x5230;:</p>
+<p>&#x5728; oozie &#x7684;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;<code>inputs</code>, &#x968F;&#x4FBF;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;, &#x968F;&#x4FBF;&#x5199;&#x5165;&#x4E9B;&#x5185;&#x5BB9;, &#x7528;&#x6765;&#x7EDF;&#x8BA1;&#x5185;&#x5BB9;&#x4E2D;&#x5355;&#x8BCD;&#x51FA;&#x73B0;&#x7684;&#x9891;&#x7387;.</p>
+<pre class="language-"><code>mkdir inputs
+</code></pre><p>&#x6D4B;&#x8BD5; wordcount:</p>
+<pre class="language-"><code class="lang-bash">/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/bin/hadoop fs -put inputs /inputs
+
+/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/bin/yarn jar /opt/module/cdh/hadoop-2.5.0-cdh5.3.6/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.5.0-cdh5.3.6.jar wordcount /inputs /output
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;3-&#x62F7;&#x8D1D;&#x5B98;&#x65B9;&#x6A21;&#x677F;&#x5230;oozie-apps&#x76EE;&#x5F55;">&#x6B65;&#x9AA4;3: &#x62F7;&#x8D1D;&#x5B98;&#x65B9;&#x6A21;&#x677F;&#x5230;<code>oozie-apps</code>&#x76EE;&#x5F55;</h2>
+<pre class="language-"><code class="lang-bash"><span class="token function">cp</span> -r examples/apps/map-reduce oozie-apps
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;4-&#x914D;&#x7F6E;-mapreduce-&#x4EFB;&#x52A1;&#x7684;jobproperties">&#x6B65;&#x9AA4;4: &#x914D;&#x7F6E; MapReduce &#x4EFB;&#x52A1;&#x7684;<code>job.properties</code></h2>
+<pre class="language-"><code class="lang-jva">nameNode=hdfs://hadoop201:8000
+jobTracker=hadoop202:8032
+queueName=default
+mrRoot=oozie-apps
+
+oozie.wf.application.path=${nameNode}/user/${user.name}/${mrRoot}/map-reduce/workflow.xml
+outputDir=map-reduce
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;5-&#x914D;&#x7F6E;workflowxml">&#x6B65;&#x9AA4;5: &#x914D;&#x7F6E;<code>workflow.xml</code></h2>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>workflow-app</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>uri:oozie:workflow:0.2<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>map-reduce-wf<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>start</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>mr-node<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>mr-node<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>map-reduce</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>job-tracker</span><span class="token punctuation">&gt;</span></span>${jobTracker}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>job-tracker</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name-node</span><span class="token punctuation">&gt;</span></span>${nameNode}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name-node</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>prepare</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>delete</span> <span class="token attr-name">path</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>${nameNode}/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>prepare</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapred.job.queue.name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>${queueName}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+                <span class="token comment">&lt;!-- &#x6307;&#x5B9A;Mapper &#x548C; Reducer &#x90FD;&#x4F7F;&#x7528;&#x65B0; API --&gt;</span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapred.mapper.new-api<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapred.reducer.new-api<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+                <span class="token comment">&lt;!-- &#x6307;&#x5B9A;Mapper &#x7C7B; --&gt;</span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapreduce.job.map.class<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>org.apache.hadoop.examples.WordCount$TokenizerMapper<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+                <span class="token comment">&lt;!-- &#x6307;&#x5B9A;Reducer &#x7C7B; --&gt;</span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapreduce.job.reduce.class<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>org.apache.hadoop.examples.WordCount$IntSumReducer<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+                <span class="token comment">&lt;!-- &#x6307;&#x5B9A;Job Key&#x8F93;&#x51FA;&#x7C7B;&#x578B; --&gt;</span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapreduce.job.output.key.class<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>org.apache.hadoop.io.Text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token comment">&lt;!-- &#x6307;&#x5B9A;Job Value&#x8F93;&#x51FA;&#x7C7B;&#x578B; --&gt;</span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapreduce.job.output.value.class<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>org.apache.hadoop.io.IntWritable<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapred.map.tasks<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapred.input.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>/inputs<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapred.output.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>/output<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>map-reduce</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ok</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>end<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>error</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>fail<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kill</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>fail<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>message</span><span class="token punctuation">&gt;</span></span>Map/Reduce failed, error message[${wf:errorMessage(wf:lastErrorNode())}]<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>message</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kill</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>end</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>end<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>workflow-app</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;6-&#x5F85;&#x6267;&#x884C;&#x7684;&#x5B98;&#x65B9;&#x6848;&#x4F8B;&#x7684;-jar-&#x5305;-copy-&#x5230;&#x4EFB;&#x52A1;&#x7684;-lib-&#x76EE;&#x5F55;&#x4E0B;">&#x6B65;&#x9AA4;6: &#x5F85;&#x6267;&#x884C;&#x7684;&#x5B98;&#x65B9;&#x6848;&#x4F8B;&#x7684; jar &#x5305; copy &#x5230;&#x4EFB;&#x52A1;&#x7684; lib &#x76EE;&#x5F55;&#x4E0B;</h2>
+<pre class="language-"><code class="lang-bash"><span class="token comment"># &#x5220;&#x9664;&#x539F;&#x6765;&#x7684; oozie &#x7684;&#x5B98;&#x65B9;&#x6848;&#x4F8B;jar</span>
+<span class="token function">rm</span> lib/oozie-examples-4.0.0-cdh5.3.6.jar
+<span class="token function">cp</span> /opt/module/cdh/hadoop-2.5.0-cdh5.3.6/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.5.0-cdh5.3.6.jar lib/
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;7-&#x4E0A;&#x4F20;&#x914D;&#x7F6E;&#x597D;&#x7684;-app-&#x6587;&#x4EF6;&#x5939;&#x5230;-hdfs">&#x6B65;&#x9AA4;7: &#x4E0A;&#x4F20;&#x914D;&#x7F6E;&#x597D;&#x7684; app &#x6587;&#x4EF6;&#x5939;&#x5230; HDFS</h2>
+<pre class="language-"><code>/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/bin/hdfs dfs -put oozie-apps/map-reduce/ /user/atguigu/oozie-apps
+</code></pre><h2 id="&#x6B65;&#x9AA4;8-&#x6267;&#x884C;&#x4EFB;&#x52A1;">&#x6B65;&#x9AA4;8: &#x6267;&#x884C;&#x4EFB;&#x52A1;</h2>
+<pre class="language-"><code>bin/oozie job -oozie http://hadoop201:11000/oozie -config oozie-apps/map-reduce/job.properties -run
+</code></pre><footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-04-02 12:58:24
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="42-an-li-er-ff1a-oozie-luo-ji-diao-du-zhi-xing-duo-ge-job.html" class="navigation navigation-prev " aria-label="Previous page: 4.2 案例二：Oozie 逻辑调度执行多个 Job">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="44-an-li-56db3a-oozie-ding-shi-ren-52a1-xun-huan-ren-wu.html" class="navigation navigation-next " aria-label="Next page: 4.4 案例四: Oozie 定时任务/循环任务">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.3 案例三: Oozie 调度 MapReduce 任务","level":"1.4.3","depth":2,"next":{"title":"4.4 案例四: Oozie 定时任务/循环任务","level":"1.4.4","depth":2,"path":"di-4-zhang-oozie-de-shi-yong-an-li/44-an-li-56db3a-oozie-ding-shi-ren-52a1-xun-huan-ren-wu.md","ref":"di-4-zhang-oozie-de-shi-yong-an-li/44-an-li-56db3a-oozie-ding-shi-ren-52a1-xun-huan-ren-wu.md","articles":[]},"previous":{"title":"4.2 案例二：Oozie 逻辑调度执行多个 Job","level":"1.4.2","depth":2,"path":"di-4-zhang-oozie-de-shi-yong-an-li/42-an-li-er-ff1a-oozie-luo-ji-diao-du-zhi-xing-duo-ge-job.md","ref":"di-4-zhang-oozie-de-shi-yong-an-li/42-an-li-er-ff1a-oozie-luo-ji-diao-du-zhi-xing-duo-ge-job.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_oozie_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-4-zhang-oozie-de-shi-yong-an-li/43-an-li-4e093a-oozie-diao-du-mapreduce-ren-wu.md","mtime":"2019-04-02T04:58:24.636Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-02T04:57:56.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

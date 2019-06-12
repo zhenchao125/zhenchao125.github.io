@@ -1,0 +1,821 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第 7 章 需求4: 各区域热门商品 Top3 · 大数据 bigdata_mallanalyze_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji.html" />
+    
+    
+    <link rel="prev" href="di-6-zhang-xu-qiu-3-dan-ye-mian-tiao-zhuan-lv.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">第 1 部分 电商分析系统介绍</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第 1 章 项目简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../11-xiang-mu-zheng-ti-jie-shao.html">
+            
+                <a href="../11-xiang-mu-zheng-ti-jie-shao.html">
+            
+                    
+                    1.1 项目整体介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../12-xiang-mu-zheng-ti-jia-gou.html">
+            
+                <a href="../12-xiang-mu-zheng-ti-jia-gou.html">
+            
+                    
+                    1.2 项目整体架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../13-ye-wu-xu-qiu.html">
+            
+                <a href="../13-ye-wu-xu-qiu.html">
+            
+                    
+                    1.3 数据源分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../14-xiang-mu-xu-qiu.html">
+            
+                <a href="../14-xiang-mu-xu-qiu.html">
+            
+                    
+                    1.4 项目需求
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    第 2 章 预备知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../di-3-zhang-xiang-mu-da-jian.html">
+            
+                <a href="../di-3-zhang-xiang-mu-da-jian.html">
+            
+                    
+                    第 3 章 项目搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../di-3-zhang-xiang-mu-da-jian/31-chuang-jian-fu-gong-cheng.html">
+            
+                <a href="../di-3-zhang-xiang-mu-da-jian/31-chuang-jian-fu-gong-cheng.html">
+            
+                    
+                    3.1 创建父工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../di-3-zhang-xiang-mu-da-jian/32-chuang-jian-gong-zuo-zi-mo-kuai.html">
+            
+                <a href="../di-3-zhang-xiang-mu-da-jian/32-chuang-jian-gong-zuo-zi-mo-kuai.html">
+            
+                    
+                    3.2 创建通用子模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../di-3-zhang-xiang-mu-da-jian/33-chuang-jian-mo-ni-shu-ju-zi-mo-kuai.html">
+            
+                <a href="../di-3-zhang-xiang-mu-da-jian/33-chuang-jian-mo-ni-shu-ju-zi-mo-kuai.html">
+            
+                    
+                    3.3 创建模拟数据子模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 2 部分 电商分析系统需求实现</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="di-4-zhang-xu-qiu-1.html">
+            
+                <a href="di-4-zhang-xu-qiu-1.html">
+            
+                    
+                    第 4 章 需求1: Top10 热门品类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="di-5-zhang-xu-qiu-2-top10-remen-pin-lei-zhong-de-top10-session-tong-ji.html">
+            
+                <a href="di-5-zhang-xu-qiu-2-top10-remen-pin-lei-zhong-de-top10-session-tong-ji.html">
+            
+                    
+                    第 5 章 需求2: Top10热门品类中的 Top10 活跃 Session 统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="di-6-zhang-xu-qiu-3-dan-ye-mian-tiao-zhuan-lv.html">
+            
+                <a href="di-6-zhang-xu-qiu-3-dan-ye-mian-tiao-zhuan-lv.html">
+            
+                    
+                    第 6 章 需求3: 页面单条转化率统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="di-7-zhang-xu-qiu-4-ge-qu-yu-re-men-shang-pin-top3.html">
+            
+                <a href="di-7-zhang-xu-qiu-4-ge-qu-yu-re-men-shang-pin-top3.html">
+            
+                    
+                    第 7 章 需求4: 各区域热门商品 Top3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji.html">
+            
+                <a href="di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji.html">
+            
+                    
+                    第 8 章 需求5:  广告黑名单实时统计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/81-li-xian-xiang-mu-yu-bei-zhi-shi.html">
+            
+                <a href="di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/81-li-xian-xiang-mu-yu-bei-zhi-shi.html">
+            
+                    
+                    8.1 离线项目预备知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/81-shi-shi-huan-jing-da-jian.html">
+            
+                <a href="di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/81-shi-shi-huan-jing-da-jian.html">
+            
+                    
+                    8.2 实时环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/82-xu-qiu-5-guang-gao-hei-ming-dan-shi-shi-tong-ji.html">
+            
+                <a href="di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/82-xu-qiu-5-guang-gao-hei-ming-dan-shi-shi-tong-ji.html">
+            
+                    
+                    8.3 需求5: 广告黑名单实时统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="di-9-zhang-xu-qiu-6-guang-gao-dian-ji-liang-shi-shi-tong-ji.html">
+            
+                <a href="di-9-zhang-xu-qiu-6-guang-gao-dian-ji-liang-shi-shi-tong-ji.html">
+            
+                    
+                    第 9 章 需求6: 广告点击量实时统计 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="di-10-zhang-xu-qiu-7-mei-tian-mei-di-qu-re-men-guang-gao-top3.html">
+            
+                <a href="di-10-zhang-xu-qiu-7-mei-tian-mei-di-qu-re-men-guang-gao-top3.html">
+            
+                    
+                    第 10 章 需求7: 每天每地区 热门广告 Top3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="di-11-zhang-xin-zeng-xu-6c423a-zui-jin-1-xiao-shi-guang-gao-dian-ji-liang-shi-shi-tong-ji.html">
+            
+                <a href="di-11-zhang-xin-zeng-xu-6c423a-zui-jin-1-xiao-shi-guang-gao-dian-ji-liang-shi-shi-tong-ji.html">
+            
+                    
+                    第 11 章 新增需求: 最近 1 小时广告点击量实时统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第 7 章 需求4: 各区域热门商品 Top3</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;-7-&#x7AE0;-&#x9700;&#x6C42;4-&#x5404;&#x533A;&#x57DF;&#x70ED;&#x95E8;&#x5546;&#x54C1;-top3">&#x7B2C; 7 &#x7AE0; &#x9700;&#x6C42;4: &#x5404;&#x533A;&#x57DF;&#x70ED;&#x95E8;&#x5546;&#x54C1; Top3</h1>
+<h2 id="71-&#x9700;&#x6C42;&#x7B80;&#x4ECB;">7.1 &#x9700;&#x6C42;&#x7B80;&#x4ECB;</h2>
+<p>&#x8FD9;&#x91CC;&#x7684;&#x70ED;&#x95E8;&#x5546;&#x54C1;&#x662F;&#x4ECE;&#x70B9;&#x51FB;&#x91CF;&#x7684;&#x7EF4;&#x5EA6;&#x6765;&#x770B;&#x7684;.</p>
+<p>&#x8BA1;&#x7B97;&#x5404;&#x4E2A;&#x533A;&#x57DF;&#x524D;&#x4E09;&#x5927;&#x70ED;&#x95E8;&#x5546;&#x54C1;&#xFF0C;&#x5E76;&#x5907;&#x6CE8;&#x4E0A;&#x6BCF;&#x4E2A;&#x5546;&#x54C1;&#x5728;&#x4E3B;&#x8981;&#x57CE;&#x5E02;&#x4E2D;&#x7684;&#x5206;&#x5E03;&#x6BD4;&#x4F8B;&#xFF0C;&#x8D85;&#x8FC7;&#x4E24;&#x4E2A;&#x57CE;&#x5E02;&#x7528;&#x5176;&#x4ED6;&#x663E;&#x793A;&#x3002;</p>
+<p>&#x4F8B;&#x5982;: </p>
+<table>
+<thead>
+<tr>
+<th><strong>&#x5730;&#x533A;</strong></th>
+<th><strong>&#x5546;&#x54C1;&#x540D;&#x79F0;</strong></th>
+<th><strong>&#x70B9;&#x51FB;&#x6B21;&#x6570;</strong></th>
+<th><strong>&#x57CE;&#x5E02;&#x5907;&#x6CE8;</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>&#x534E;&#x5317;</strong></td>
+<td>&#x5546;&#x54C1;A</td>
+<td>100000</td>
+<td>&#x5317;&#x4EAC;21.2%&#xFF0C;&#x5929;&#x6D25;13.2%&#xFF0C;&#x5176;&#x4ED6;65.6%</td>
+</tr>
+<tr>
+<td><strong>&#x534E;&#x5317;</strong></td>
+<td>&#x5546;&#x54C1;P</td>
+<td>80200</td>
+<td>&#x5317;&#x4EAC;63.0%&#xFF0C;&#x592A;&#x539F;10%&#xFF0C;&#x5176;&#x4ED6;27.0%</td>
+</tr>
+<tr>
+<td><strong>&#x534E;&#x5317;</strong></td>
+<td>&#x5546;&#x54C1;M</td>
+<td>40000</td>
+<td>&#x5317;&#x4EAC;63.0%&#xFF0C;&#x592A;&#x539F;10%&#xFF0C;&#x5176;&#x4ED6;27.0%</td>
+</tr>
+<tr>
+<td><strong>&#x4E1C;&#x5317;</strong></td>
+<td>&#x5546;&#x54C1;J</td>
+<td>92000</td>
+<td>&#x5927;&#x8FDE;28%&#xFF0C;&#x8FBD;&#x5B81;17.0%&#xFF0C;&#x5176;&#x4ED6; 55.0%</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="72-&#x601D;&#x8DEF;&#x5206;&#x6790;">7.2 &#x601D;&#x8DEF;&#x5206;&#x6790;</h2>
+<p>&#x8BE5;&#x9700;&#x6C42;&#x6211;&#x4EEC;&#x4E0D;&#x4F7F;&#x7528; RDD, &#x4F7F;&#x7528; sql &#x6765;&#x5B8C;&#x6210;. &#x78B0;&#x5230;&#x590D;&#x6742;&#x7684;&#x9700;&#x6C42;, &#x53EF;&#x4EE5;&#x4F7F;&#x7528; udf &#x6216; udaf</p>
+<ol>
+<li><p>&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x6240;&#x6709;&#x7684;&#x70B9;&#x51FB;&#x8BB0;&#x5F55;, &#x5E76;&#x4E0E; city_info &#x8868;&#x8FDE;&#x63A5;, &#x5F97;&#x5230;&#x6BCF;&#x4E2A;&#x57CE;&#x5E02;&#x6240;&#x5728;&#x7684;&#x5730;&#x533A;.</p>
+</li>
+<li><p>&#x6309;&#x7167;&#x5730;&#x533A;&#x548C;&#x5546;&#x54C1; id &#x5206;&#x7EC4;, &#x7EDF;&#x8BA1;&#x51FA;&#x6BCF;&#x4E2A;&#x5546;&#x54C1;&#x5728;&#x6BCF;&#x4E2A;&#x5730;&#x533A;&#x7684;&#x603B;&#x70B9;&#x51FB;&#x6B21;&#x6570;</p>
+</li>
+<li><p>&#x6BCF;&#x4E2A;&#x5730;&#x533A;&#x5185;&#x6309;&#x7167;&#x70B9;&#x51FB;&#x6B21;&#x6570;&#x964D;&#x5E8F;&#x6392;&#x5217;</p>
+</li>
+<li><p>&#x53EA;&#x53D6;&#x524D;&#x4E09;&#x540D;. &#x5E76;&#x628A;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;</p>
+</li>
+<li><p>&#x57CE;&#x5E02;&#x5907;&#x6CE8;&#x9700;&#x8981;&#x81EA;&#x5B9A;&#x4E49; UDAF &#x51FD;&#x6570;</p>
+</li>
+</ol>
+<hr>
+<h2 id="73-&#x5177;&#x4F53;&#x4E1A;&#x52A1;&#x5B9E;&#x73B0;">7.3 &#x5177;&#x4F53;&#x4E1A;&#x52A1;&#x5B9E;&#x73B0;</h2>
+<h3 id="1-&#x5177;&#x4F53;&#x4E1A;&#x52A1;&#x5B9E;&#x73B0;">1. &#x5177;&#x4F53;&#x4E1A;&#x52A1;&#x5B9E;&#x73B0;</h3>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>sparkmall<span class="token punctuation">.</span>offline<span class="token punctuation">.</span>app
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Properties
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>sparkmall<span class="token punctuation">.</span>common<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ConfigurationUtil
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>sparkmall<span class="token punctuation">.</span>offline<span class="token punctuation">.</span>udf<span class="token punctuation">.</span>CityClickCountUDAF
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>spark<span class="token punctuation">.</span>sql<span class="token punctuation">.</span><span class="token punctuation">{</span>SaveMode<span class="token punctuation">,</span> SparkSession<span class="token punctuation">}</span>
+
+<span class="token keyword">object</span> AreaClickTop3App <span class="token punctuation">{</span>
+    <span class="token keyword">def</span> statAreaClickTop3Product<span class="token punctuation">(</span>spark<span class="token operator">:</span> SparkSession<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x6CE8;&#x518C; UDAF &#x51FD;&#x6570;</span>
+        spark<span class="token punctuation">.</span>udf<span class="token punctuation">.</span>register<span class="token punctuation">(</span><span class="token string">&quot;city_remark&quot;</span><span class="token punctuation">,</span> <span class="token keyword">new</span> CityClickCountUDAF<span class="token punctuation">)</span>
+        spark<span class="token punctuation">.</span>sql<span class="token punctuation">(</span><span class="token string">&quot;use sparkmall&quot;</span><span class="token punctuation">)</span>
+        <span class="token comment">// 1. &#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x6240;&#x6709;&#x7684;&#x70B9;&#x51FB;&#x8BB0;&#x5F55;, &#x5E76;&#x4E0E; city_info &#x8868;&#x8FDE;&#x63A5;, &#x5F97;&#x5230;&#x6BCF;&#x4E2A;&#x57CE;&#x5E02;&#x6240;&#x5728;&#x7684;&#x5730;&#x533A;.</span>
+        spark<span class="token punctuation">.</span>sql<span class="token punctuation">(</span>
+            <span class="token string">&quot;&quot;&quot;
+              |select
+              |    c.*,
+              |    v.click_product_id
+              |from city_info c join user_visit_action v on c.city_id=v.city_id
+              |where v.click_product_id &gt; -1
+            &quot;&quot;&quot;</span><span class="token punctuation">.</span>stripMargin<span class="token punctuation">)</span><span class="token punctuation">.</span>createOrReplaceTempView<span class="token punctuation">(</span><span class="token string">&quot;t1&quot;</span><span class="token punctuation">)</span>
+        <span class="token comment">// 2. &#x6309;&#x7167;&#x5730;&#x533A;&#x5546;&#x54C1; id &#x5206;&#x7EC4;, &#x7EDF;&#x8BA1;&#x51FA;&#x6BCF;&#x4E2A;&#x5546;&#x54C1;&#x7684;&#x603B;&#x70B9;&#x51FB;&#x6B21;&#x6570;</span>
+        spark<span class="token punctuation">.</span>sql<span class="token punctuation">(</span>
+            <span class="token string">&quot;&quot;&quot;
+              |select
+              |    t1.area,
+              |    t1.click_product_id,
+              |    count(*) click_count,
+              |    city_remark(t1.city_name) remark
+              |from t1
+              |group by t1.area, t1.click_product_id
+            &quot;&quot;&quot;</span><span class="token punctuation">.</span>stripMargin<span class="token punctuation">)</span><span class="token punctuation">.</span>createOrReplaceTempView<span class="token punctuation">(</span><span class="token string">&quot;t2&quot;</span><span class="token punctuation">)</span>
+        <span class="token comment">// 3. &#x6BCF;&#x4E2A;&#x5730;&#x533A;&#x5185;&#x6309;&#x7167;&#x70B9;&#x51FB;&#x6B21;&#x6570;&#x964D;&#x5E8F;&#x6392;&#x5217;</span>
+        spark<span class="token punctuation">.</span>sql<span class="token punctuation">(</span>
+            <span class="token string">&quot;&quot;&quot;
+              |select
+              |    *,
+              |    rank() over(partition by t2.area sort by t2.click_count desc) rank
+              |from t2
+            &quot;&quot;&quot;</span><span class="token punctuation">.</span>stripMargin<span class="token punctuation">)</span><span class="token punctuation">.</span>createOrReplaceTempView<span class="token punctuation">(</span><span class="token string">&quot;t3&quot;</span><span class="token punctuation">)</span>
+        <span class="token comment">// 4. &#x53EA;&#x53D6;&#x524D;&#x4E09;&#x540D;. &#x5E76;&#x628A;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x5728;&#x6570;&#x636E;&#x5E93;&#x4E2D;</span>
+        <span class="token keyword">val</span> conf <span class="token operator">=</span> ConfigurationUtil<span class="token punctuation">(</span><span class="token string">&quot;config.properties&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> props <span class="token operator">=</span> <span class="token keyword">new</span> Properties<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        props<span class="token punctuation">.</span>setProperty<span class="token punctuation">(</span><span class="token string">&quot;user&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;root&quot;</span><span class="token punctuation">)</span>
+        props<span class="token punctuation">.</span>setProperty<span class="token punctuation">(</span><span class="token string">&quot;password&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;aaa&quot;</span><span class="token punctuation">)</span>
+        spark<span class="token punctuation">.</span>sql<span class="token punctuation">(</span>
+            <span class="token string">&quot;&quot;&quot;
+              |select
+              |    t3.area,
+              |    p.product_name,
+              |    t3.click_count,
+              |    t3.remark,
+              |    t3.rank
+              |from t3 join product_info p on t3.click_product_id=p.product_id
+              |where t3.rank &lt;= 3
+            &quot;&quot;&quot;</span><span class="token punctuation">.</span>stripMargin<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>write<span class="token punctuation">.</span>mode<span class="token punctuation">(</span>SaveMode<span class="token punctuation">.</span>Overwrite<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>jdbc<span class="token punctuation">(</span>conf<span class="token punctuation">.</span>getString<span class="token punctuation">(</span><span class="token string">&quot;jdbc.url&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;area_click_top10&quot;</span><span class="token punctuation">,</span> props<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/*
+1. &#x67E5;&#x8BE2;&#x51FA;&#x6765;&#x6240;&#x6709;&#x7684;&#x70B9;&#x51FB;&#x8BB0;&#x5F55;, &#x5E76;&#x4E0E; city &#x53D8;&#x8FDE;&#x63A5;, &#x5F97;&#x5230;&#x6BCF;&#x4E2A;&#x57CE;&#x5E02;&#x6240;&#x5728;&#x7684;&#x5730;&#x533A;
+    select c.*
+    from city_info c join user_visit_action v on c.cit_id=v.city_id
+    where v.click_product_id &gt; -1
+
+    t1
+2. &#x6309;&#x7167;&#x5730;&#x533A;&#x5206;&#x7EC4;&#x548C;&#x5546;&#x54C1; id, &#x7EDF;&#x8BA1;&#x51FA;&#x6765;&#x5546;&#x54C1;&#x7684;&#x70B9;&#x51FB;&#x6B21;&#x6570;
+
+    select
+        t1.area,
+        t1.click_product_id,
+        count(*) click_count
+    from t1
+    group by t1.area, t1.click_product_id
+
+    t2
+
+3. &#x6BCF;&#x4E2A;&#x5730;&#x533A;&#x5185;&#x6309;&#x7167;&#x70B9;&#x51FB;&#x6B21;&#x6570;&#x8FDB;&#x884C;&#x6392;&#x540D;
+    select
+        *,
+        rank() over(partition by t2.area sort by t2.click_count desc) rank
+    from t2
+
+    t3
+4. &#x6BCF;&#x4E2A;&#x5730;&#x533A;&#x53D6; 3 &#x540D;
+
+    select
+        *
+    from t3
+    where rank &lt;= 3
+
+    t4
+
+5. &#x524D;3&#x540D;&#x7684;&#x5546;&#x54C1;&#x4E2D;&#x6BCF;&#x4E2A;&#x57CE;&#x5E02;&#x7684;&#x70B9;&#x51FB;&#x91CF;&#x767E;&#x5206;&#x6BD4;
+
+
+6. &#x81EA;&#x5B9A;&#x4E49;&#x805A;&#x5408;&#x51FD;&#x6570;
+
+ */</span>
+</code></pre>
+<h3 id="2-udaf-&#x51FD;&#x6570;">2. UDAF &#x51FD;&#x6570;</h3>
+<pre class="language-"><code class="lang-scala"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>sparkmall<span class="token punctuation">.</span>offline<span class="token punctuation">.</span>udf
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>text<span class="token punctuation">.</span>DecimalFormat
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>spark<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Row
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>spark<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>expressions<span class="token punctuation">.</span><span class="token punctuation">{</span>MutableAggregationBuffer<span class="token punctuation">,</span> UserDefinedAggregateFunction<span class="token punctuation">}</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>spark<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>types<span class="token punctuation">.</span>_
+
+<span class="token keyword">class</span> CityClickCountUDAF <span class="token keyword">extends</span> UserDefinedAggregateFunction <span class="token punctuation">{</span>
+
+
+    <span class="token comment">// &#x8F93;&#x51FA;&#x6570;&#x636E;&#x7684;&#x7C7B;&#x578B; &#x5317;&#x4EAC;:String</span>
+    <span class="token keyword">override</span> <span class="token keyword">def</span> inputSchema<span class="token operator">:</span> StructType <span class="token operator">=</span> <span class="token punctuation">{</span>
+        StructType<span class="token punctuation">(</span>StructField<span class="token punctuation">(</span><span class="token string">&quot;city_name&quot;</span><span class="token punctuation">,</span> StringType<span class="token punctuation">)</span> <span class="token operator">:</span><span class="token operator">:</span> Nil<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// &#x5B58;&#x50A8;&#x7C7B;&#x578B; map[&#x5317;&#x4EAC;, count]  &#x603B;&#x70B9;&#x51FB;&#x6570;:total_count</span>
+    <span class="token keyword">override</span> <span class="token keyword">def</span> bufferSchema<span class="token operator">:</span> StructType <span class="token operator">=</span> <span class="token punctuation">{</span>
+        StructType<span class="token punctuation">(</span>StructField<span class="token punctuation">(</span><span class="token string">&quot;city_count&quot;</span><span class="token punctuation">,</span> MapType<span class="token punctuation">(</span>StringType<span class="token punctuation">,</span> LongType<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">:</span><span class="token operator">:</span> StructField<span class="token punctuation">(</span><span class="token string">&quot;total_count&quot;</span><span class="token punctuation">,</span> LongType<span class="token punctuation">)</span> <span class="token operator">:</span><span class="token operator">:</span> Nil<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// &#x8F93;&#x51FA;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;  String</span>
+    <span class="token keyword">override</span> <span class="token keyword">def</span> dataType<span class="token operator">:</span> DataType <span class="token operator">=</span> StringType
+
+    <span class="token comment">// &#x6821;&#x9A8C; &#x76F8;&#x540C;&#x8F93;&#x5165;&#x662F;&#x5426;&#x6709;&#x76F8;&#x540C;&#x7684;&#x8F93;&#x51FA; true</span>
+    <span class="token keyword">override</span> <span class="token keyword">def</span> deterministic<span class="token operator">:</span> <span class="token builtin">Boolean</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+
+    <span class="token comment">// &#x521D;&#x59CB;&#x5316;  &#x7ED9; map &#x548C; totalCount &#x8D4B;&#x521D;&#x503C;</span>
+    <span class="token keyword">override</span> <span class="token keyword">def</span> initialize<span class="token punctuation">(</span>buffer<span class="token operator">:</span> MutableAggregationBuffer<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x521D;&#x59CB;&#x5316; map</span>
+        buffer<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">=</span> Map<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token builtin">Long</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment">// &#x521D;&#x59CB;&#x5316;&#x603B;&#x503C;</span>
+        buffer<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0L</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// &#x5206;&#x533A;&#x6267;&#x884C;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;.  executor &#x5185;&#x7684;&#x5408;&#x5E76;</span>
+    <span class="token keyword">override</span> <span class="token keyword">def</span> update<span class="token punctuation">(</span>buffer<span class="token operator">:</span> MutableAggregationBuffer<span class="token punctuation">,</span> input<span class="token operator">:</span> Row<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> cityName<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> input<span class="token punctuation">.</span>getString<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> map<span class="token operator">:</span> Map<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token builtin">Long</span><span class="token punctuation">]</span> <span class="token operator">=</span> buffer<span class="token punctuation">.</span>getAs<span class="token punctuation">[</span>Map<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token builtin">Long</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token comment">// &#x66F4;&#x65B0;&#x5404;&#x4E2A;&#x57CE;&#x5E02;&#x7684;&#x8BA1;&#x6570;</span>
+        buffer<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">=</span> map <span class="token operator">+</span> <span class="token punctuation">(</span>cityName <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>map<span class="token punctuation">.</span>getOrElse<span class="token punctuation">(</span>cityName<span class="token punctuation">,</span> <span class="token number">0L</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1L</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment">// &#x66F4;&#x65B0;&#x603B;&#x6570;</span>
+        buffer<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> buffer<span class="token punctuation">.</span>getLong<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// &#x591A;&#x4E2A; buffer &#x5408;&#x5E76;. &#x8DE8; executor &#x5408;&#x5E76;</span>
+    <span class="token keyword">override</span> <span class="token keyword">def</span> merge<span class="token punctuation">(</span>buffer1<span class="token operator">:</span> MutableAggregationBuffer<span class="token punctuation">,</span> buffer2<span class="token operator">:</span> Row<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token comment">// &#x5408;&#x5E76;&#x5404;&#x4E2A;&#x57CE;&#x5E02;&#x7684;&#x7D2F;&#x8BA1;</span>
+        <span class="token keyword">val</span> map1<span class="token operator">:</span> Map<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token builtin">Long</span><span class="token punctuation">]</span> <span class="token operator">=</span> buffer1<span class="token punctuation">.</span>getAs<span class="token punctuation">[</span>Map<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token builtin">Long</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> map2<span class="token operator">:</span> Map<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token builtin">Long</span><span class="token punctuation">]</span> <span class="token operator">=</span> buffer2<span class="token punctuation">.</span>getAs<span class="token punctuation">[</span>Map<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token builtin">Long</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+        buffer1<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">=</span> map1<span class="token punctuation">.</span>foldLeft<span class="token punctuation">(</span>map2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token punctuation">(</span>m<span class="token punctuation">,</span> <span class="token punctuation">(</span>cityName<span class="token punctuation">,</span> cityCount<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> <span class="token punctuation">{</span>
+                m <span class="token operator">+</span> <span class="token punctuation">(</span>cityName <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>m<span class="token punctuation">.</span>getOrElse<span class="token punctuation">(</span>cityName<span class="token punctuation">,</span> <span class="token number">0L</span><span class="token punctuation">)</span> <span class="token operator">+</span> cityCount<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// &#x5408;&#x5E76;&#x603B;&#x6570;</span>
+        buffer1<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span> buffer1<span class="token punctuation">.</span>getLong<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> buffer2<span class="token punctuation">.</span>getLong<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// &#x6700;&#x7EC8;&#x7684;&#x8F93;&#x51FA;  &#x628A; buffer &#x4E2D;&#x7684;&#x6570;&#x636E;&#x5C55;&#x793A;&#x6210;&#x5B57;&#x7B26;&#x4E32;</span>
+    <span class="token keyword">override</span> <span class="token keyword">def</span> evaluate<span class="token punctuation">(</span>buffer<span class="token operator">:</span> Row<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Any</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 1. &#x53D6;&#x503C;</span>
+        <span class="token keyword">val</span> map<span class="token operator">:</span> Map<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token builtin">Long</span><span class="token punctuation">]</span> <span class="token operator">=</span> buffer<span class="token punctuation">.</span>getAs<span class="token punctuation">[</span>Map<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token builtin">Long</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> totalCount <span class="token operator">=</span> buffer<span class="token punctuation">.</span>getLong<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token comment">// 2. &#x6392;&#x5E8F;&#x4E4B;&#x540E;&#x622A;&#x53D6;&#x524D;2&#x4E2A;, &#x5E76;&#x7EDF;&#x8BA1;&#x4ED6;&#x4EEC;&#x7684;&#x6BD4;&#x503C;</span>
+        <span class="token keyword">var</span> cityTop2<span class="token operator">:</span> List<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token builtin">String</span><span class="token punctuation">,</span> <span class="token builtin">Long</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> map<span class="token punctuation">.</span>toList<span class="token punctuation">.</span>sortBy<span class="token punctuation">(</span>_<span class="token punctuation">.</span>_2<span class="token punctuation">)</span><span class="token punctuation">(</span>Ordering<span class="token punctuation">.</span><span class="token builtin">Long</span><span class="token punctuation">.</span>reverse<span class="token punctuation">)</span><span class="token punctuation">.</span>take<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token keyword">var</span> cityRemarks<span class="token operator">:</span> List<span class="token punctuation">[</span>CityRemark<span class="token punctuation">]</span> <span class="token operator">=</span> cityTop2<span class="token punctuation">.</span>map <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token punctuation">(</span>cityName<span class="token punctuation">,</span> cityCount<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token keyword">val</span> ratio<span class="token operator">:</span> <span class="token builtin">Double</span> <span class="token operator">=</span> cityCount<span class="token punctuation">.</span>toDouble <span class="token operator">/</span> totalCount
+                CityRemark<span class="token punctuation">(</span>cityName<span class="token punctuation">,</span> ratio<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 3. &#x5269;&#x4E0B;&#x7684;&#x5408;&#x5E76;&#x7684;&#x5176;&#x4ED6;</span>
+        <span class="token keyword">var</span> otherRadio <span class="token operator">=</span> <span class="token number">1D</span>
+        cityRemarks<span class="token punctuation">.</span>foreach<span class="token punctuation">(</span>otherRadio <span class="token operator">-=</span> _<span class="token punctuation">.</span>cityRatio<span class="token punctuation">)</span>
+        cityRemarks <span class="token operator">=</span> cityRemarks <span class="token operator">:</span><span class="token operator">+</span> CityRemark<span class="token punctuation">(</span><span class="token string">&quot;&#x5176;&#x4ED6;&quot;</span><span class="token punctuation">,</span> otherRadio<span class="token punctuation">)</span>
+        <span class="token comment">// 4. &#x62FC;&#x63A5;&#x6210;&#x5B57;&#x7B26;&#x4E32;</span>
+        cityRemarks<span class="token punctuation">.</span>mkString<span class="token punctuation">(</span><span class="token string">&quot;, &quot;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">case</span> <span class="token keyword">class</span> CityRemark<span class="token punctuation">(</span>cityName<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">,</span> cityRatio<span class="token operator">:</span> <span class="token builtin">Double</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> formatter <span class="token operator">=</span> <span class="token keyword">new</span> DecimalFormat<span class="token punctuation">(</span><span class="token string">&quot;0.00%&quot;</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">override</span> <span class="token keyword">def</span> toString<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> s<span class="token string">&quot;$cityName:${formatter.format(cityRatio)}&quot;</span>
+    <span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-03-08 17:17:27
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="di-6-zhang-xu-qiu-3-dan-ye-mian-tiao-zhuan-lv.html" class="navigation navigation-prev " aria-label="Previous page: 第 6 章 需求3: 页面单条转化率统计">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji.html" class="navigation navigation-next " aria-label="Next page: 第 8 章 需求5:  广告黑名单实时统计">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第 7 章 需求4: 各区域热门商品 Top3","level":"2.4","depth":1,"next":{"title":"第 8 章 需求5:  广告黑名单实时统计","level":"2.5","depth":1,"path":"di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji.md","ref":"di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji.md","articles":[{"title":"8.1 离线项目预备知识","level":"2.5.1","depth":2,"path":"di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/81-li-xian-xiang-mu-yu-bei-zhi-shi.md","ref":"di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/81-li-xian-xiang-mu-yu-bei-zhi-shi.md","articles":[]},{"title":"8.2 实时环境搭建","level":"2.5.2","depth":2,"path":"di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/81-shi-shi-huan-jing-da-jian.md","ref":"di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/81-shi-shi-huan-jing-da-jian.md","articles":[]},{"title":"8.3 需求5: 广告黑名单实时统计","level":"2.5.3","depth":2,"path":"di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/82-xu-qiu-5-guang-gao-hei-ming-dan-shi-shi-tong-ji.md","ref":"di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-8-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji/82-xu-qiu-5-guang-gao-hei-ming-dan-shi-shi-tong-ji.md","articles":[]}]},"previous":{"title":"第 6 章 需求3: 页面单条转化率统计","level":"2.3","depth":1,"path":"di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-6-zhang-xu-qiu-3-dan-ye-mian-tiao-zhuan-lv.md","ref":"di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-6-zhang-xu-qiu-3-dan-ye-mian-tiao-zhuan-lv.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_mallanalyze_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-2-bu-fen-dian-shang-fen-xi-xi-tong-xu-qiu-shi-xian/di-7-zhang-xu-qiu-4-ge-qu-yu-re-men-shang-pin-top3.md","mtime":"2019-03-08T09:17:27.711Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-11T09:53:23.145Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

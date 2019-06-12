@@ -1,0 +1,593 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第 2 章 Azkaban 安装部署 · 大数据 Azkaban 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="di-3-zhang-azkaban-shi-zhan.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第 1 章 Azkaban 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    第 2 章 Azkaban 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="di-3-zhang-azkaban-shi-zhan.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan.html">
+            
+                    
+                    第 3 章 Azkaban 实战
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="di-3-zhang-azkaban-shi-zhan/31-dan-yi-job-an-li.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan/31-dan-yi-job-an-li.html">
+            
+                    
+                    3.1 单一 job 案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="di-3-zhang-azkaban-shi-zhan/32-javacao-zuo-ren-wu.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan/32-javacao-zuo-ren-wu.html">
+            
+                    
+                    3.2 java操作任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="di-3-zhang-azkaban-shi-zhan/33-hdfs-cao-zuo.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan/33-hdfs-cao-zuo.html">
+            
+                    
+                    3.3 HDFS 操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="di-3-zhang-azkaban-shi-zhan/34-mapreduce-ren-wu.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan/34-mapreduce-ren-wu.html">
+            
+                    
+                    3.4 MapReduce 任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="di-3-zhang-azkaban-shi-zhan/35-hive-jiao-ben.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan/35-hive-jiao-ben.html">
+            
+                    
+                    3.5 hive 脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="di-3-zhang-azkaban-shi-zhan/36-duo-job-gong-zuo-liu-an-li.html">
+            
+                <a href="di-3-zhang-azkaban-shi-zhan/36-duo-job-gong-zuo-liu-an-li.html">
+            
+                    
+                    3.6 多 job 工作流案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第 2 章 Azkaban 安装部署</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;-2-&#x7AE0;-azkaban-&#x5B89;&#x88C5;&#x90E8;&#x7F72;">&#x7B2C; 2 &#x7AE0; Azkaban &#x5B89;&#x88C5;&#x90E8;&#x7F72;</h1>
+<h2 id="&#x6B65;&#x9AA4;1-&#x51C6;&#x5907;&#x5B89;&#x88C5;&#x5305;">&#x6B65;&#x9AA4;1: &#x51C6;&#x5907;&#x5B89;&#x88C5;&#x5305;</h2>
+<p>&#x5047;&#x8BBE;&#x4F60;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x597D;&#x4E86; Mysql. &#x9009;&#x62E9; Mysql &#x4F5C;&#x4E3A; Azkaban &#x6570;&#x636E;&#x5E93;&#xFF0C;&#x56E0;&#x4E3A; Azkaban &#x5EFA;&#x7ACB;&#x4E86;&#x4E00;&#x4E9B; Mysql &#x8FDE;&#x63A5;&#x589E;&#x5F3A;&#x529F;&#x80FD;&#xFF0C;&#x4EE5;&#x65B9;&#x4FBF; Azkaban &#x8BBE;&#x7F6E;&#xFF0C;&#x5E76;&#x589E;&#x5F3A;&#x670D;&#x52A1;&#x53EF;&#x9760;&#x6027;</p>
+<p>&#x9700;&#x8981;&#x51C6;&#x5907;&#x4E0B;&#x9762; 3 &#x4E2A;&#x5B89;&#x88C5;&#x5305;:</p>
+<ol>
+<li>azkaban-web-server-2.5.0.tar.gz</li>
+<li>azkaban-executor-server-2.5.0.tar.gz</li>
+<li>azkaban-sql-script-2.5.0.tar.gz</li>
+</ol>
+<hr>
+<h2 id="&#x6B65;&#x9AA4;2-&#x5206;&#x522B;&#x89E3;&#x538B;&#x524D;&#x9762;&#x7684;-3-&#x4E2A;&#x5B89;&#x88C5;&#x5305;">&#x6B65;&#x9AA4;2: &#x5206;&#x522B;&#x89E3;&#x538B;&#x524D;&#x9762;&#x7684; 3 &#x4E2A;&#x5B89;&#x88C5;&#x5305;</h2>
+<p>&#x5728; <code>/opt/module</code>&#x4E0B;&#x521B;&#x5EFA;&#x76EE;&#x5F55;<code>azkaban</code>, &#x7136;&#x540E;&#x628A; 3 &#x4E2A;&#x5B89;&#x88C5;&#x5305;&#x5206;&#x522B;&#x89E3;&#x538B;&#x5230;<code>azkaban</code>&#x76EE;&#x5F55;&#x4E0B;.</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">tar</span> -zxvf azkaban-executor-server-2.5.0.tar.gz -C /opt/module/azkaban
+
+<span class="token function">tar</span> -zxvf azkaban-sql-script-2.5.0.tar.gz -C /opt/module/azkaban
+
+<span class="token function">tar</span> -zxvf azkaban-web-server-2.5.0.tar.gz -C /opt/module/azkaban
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x8BBF;&#x95EE;, &#x5BF9;&#x89E3;&#x538B;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x91CD;&#x547D;&#x540D;:</p>
+<pre class="language-"><code class="lang-bash"><span class="token function">mv</span> azkaban-executor-2.5.0 executo
+<span class="token function">mv</span> azkaban-web-2.5.0 server
+<span class="token function">mv</span> azkaban-2.5.0 sql
+</code></pre>
+<hr>
+<h2 id="&#x6B65;&#x9AA4;3-&#x5728;-mysql-&#x4E2D;&#x521B;&#x5EFA;-azkaban-&#x9700;&#x8981;&#x7684;&#x8868;">&#x6B65;&#x9AA4;3: &#x5728; mysql &#x4E2D;&#x521B;&#x5EFA; azkaban &#x9700;&#x8981;&#x7684;&#x8868;</h2>
+<p>&#x8FDB;&#x5165; mysql, &#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;:<code>azkaban</code>, &#x5E76;&#x521B;&#x5EFA;&#x9700;&#x8981;&#x7684;&#x8868;</p>
+<pre class="language-"><code class="lang-sql">mysql<span class="token operator">&gt;</span> <span class="token keyword">create</span> <span class="token keyword">database</span> azkaban<span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token keyword">row</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+
+mysql<span class="token operator">&gt;</span> <span class="token keyword">use</span> azkaban<span class="token punctuation">;</span>
+<span class="token keyword">Database</span> changed
+
+mysql<span class="token operator">&gt;</span> source <span class="token operator">/</span>opt<span class="token operator">/</span>module<span class="token operator">/</span>azkaban<span class="token operator">/</span><span class="token keyword">sql</span><span class="token operator">/</span><span class="token keyword">create</span><span class="token operator">-</span><span class="token keyword">all</span><span class="token operator">-</span><span class="token keyword">sql</span><span class="token operator">-</span><span class="token number">2.5</span><span class="token number">.0</span><span class="token punctuation">.</span><span class="token keyword">sql</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.02</span> sec<span class="token punctuation">)</span>
+
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre>
+<hr>
+<h2 id="&#x6B65;&#x9AA4;4-&#x751F;&#x6210;&#x79D8;&#x94A5;&#x5E93;">&#x6B65;&#x9AA4;4: &#x751F;&#x6210;&#x79D8;&#x94A5;&#x5E93;</h2>
+<p>&#x4F7F;&#x7528; Java &#x63D0;&#x4F9B;&#x7684;&#x6570;&#x636E;&#x6574;&#x6570;&#x7BA1;&#x7406;&#x5DE5;&#x5177;<code>Keytool</code>&#x6765;&#x751F;&#x6210;&#x79D8;&#x94A5;.</p>
+<pre class="language-"><code class="lang-bash">keytool -keystore keystore -alias lzc -genkey -keyalg RSA
+&#x8F93;&#x5165;&#x5BC6;&#x94A5;&#x5E93;&#x53E3;&#x4EE4;:
+&#x5BC6;&#x94A5;&#x5E93;&#x53E3;&#x4EE4;&#x592A;&#x77ED; - &#x81F3;&#x5C11;&#x5FC5;&#x987B;&#x4E3A; 6 &#x4E2A;&#x5B57;&#x7B26;
+&#x8F93;&#x5165;&#x5BC6;&#x94A5;&#x5E93;&#x53E3;&#x4EE4;:
+&#x518D;&#x6B21;&#x8F93;&#x5165;&#x65B0;&#x53E3;&#x4EE4;:
+&#x60A8;&#x7684;&#x540D;&#x5B57;&#x4E0E;&#x59D3;&#x6C0F;&#x662F;&#x4EC0;&#x4E48;?
+  <span class="token punctuation">[</span>Unknown<span class="token punctuation">]</span>:
+&#x60A8;&#x7684;&#x7EC4;&#x7EC7;&#x5355;&#x4F4D;&#x540D;&#x79F0;&#x662F;&#x4EC0;&#x4E48;?
+  <span class="token punctuation">[</span>Unknown<span class="token punctuation">]</span>:
+&#x60A8;&#x7684;&#x7EC4;&#x7EC7;&#x540D;&#x79F0;&#x662F;&#x4EC0;&#x4E48;?
+  <span class="token punctuation">[</span>Unknown<span class="token punctuation">]</span>:
+&#x60A8;&#x6240;&#x5728;&#x7684;&#x57CE;&#x5E02;&#x6216;&#x533A;&#x57DF;&#x540D;&#x79F0;&#x662F;&#x4EC0;&#x4E48;?
+  <span class="token punctuation">[</span>Unknown<span class="token punctuation">]</span>:
+&#x60A8;&#x6240;&#x5728;&#x7684;&#x7701;/&#x5E02;/&#x81EA;&#x6CBB;&#x533A;&#x540D;&#x79F0;&#x662F;&#x4EC0;&#x4E48;?
+  <span class="token punctuation">[</span>Unknown<span class="token punctuation">]</span>:
+&#x8BE5;&#x5355;&#x4F4D;&#x7684;&#x53CC;&#x5B57;&#x6BCD;&#x56FD;&#x5BB6;/&#x5730;&#x533A;&#x4EE3;&#x7801;&#x662F;&#x4EC0;&#x4E48;?
+  <span class="token punctuation">[</span>Unknown<span class="token punctuation">]</span>:
+CN<span class="token operator">=</span>Unknown, OU<span class="token operator">=</span>Unknown, O<span class="token operator">=</span>Unknown, L<span class="token operator">=</span>Unknown, ST<span class="token operator">=</span>Unknown, C<span class="token operator">=</span>Unknown&#x662F;&#x5426;&#x6B63;&#x786E;?
+  <span class="token punctuation">[</span>&#x5426;<span class="token punctuation">]</span>:  y
+
+&#x8F93;&#x5165; <span class="token operator">&lt;</span>lzc<span class="token operator">&gt;</span> &#x7684;&#x5BC6;&#x94A5;&#x53E3;&#x4EE4;
+    <span class="token punctuation">(</span>&#x5982;&#x679C;&#x548C;&#x5BC6;&#x94A5;&#x5E93;&#x53E3;&#x4EE4;&#x76F8;&#x540C;, &#x6309;&#x56DE;&#x8F66;<span class="token punctuation">)</span>:
+</code></pre>
+<blockquote>
+<h4 id="&#x8BF4;&#x660E;"><em>&#x8BF4;&#x660E;:</em></h4>
+</blockquote>
+<ul>
+<li><code>-keystore</code>    &#x6307;&#x5B9A;&#x5BC6;&#x94A5;&#x5E93;&#x7684;&#x540D;&#x79F0;&#x53CA;&#x4F4D;&#x7F6E;(&#x4EA7;&#x751F;&#x7684;&#x5404;&#x7C7B;&#x4FE1;&#x606F;&#x5C06;&#x5B58;&#x5728;.keystore&#x6587;&#x4EF6;&#x4E2D;)</li>
+<li><code>-genkey</code>      &#x5728;&#x7528;&#x6237;&#x4E3B;&#x76EE;&#x5F55;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x6587;&#x4EF6;<code>&quot;.keystore&quot;</code></li>
+<li><code>-alias</code>  &#x5BF9;&#x6211;&#x4EEC;&#x751F;&#x6210;&#x7684;<code>.keystore</code> &#x8FDB;&#x884C;&#x6307;&#x8BA4;&#x522B;&#x540D;&#xFF1B;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x9ED8;&#x8BA4;&#x662F;<code>mykey</code></li>
+<li><code>keyalg</code>  &#x6307;&#x5B9A;&#x5BC6;&#x94A5;&#x7684;&#x7B97;&#x6CD5; <code>RSA/DSA</code> &#x9ED8;&#x8BA4;&#x662F;<code>DSA</code></li>
+</ul>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1552457630.png-atguiguText" alt=""> </p>
+<blockquote>
+<h4 id="&#x6CE8;&#x610F;"><em>&#x6CE8;&#x610F;:</em></h4>
+</blockquote>
+<ul>
+<li>&#x8FD9;&#x91CC;&#x7684; <code>keytool</code> &#x662F;&#x4F7F;&#x7528;&#x7684; java &#x4E2D;&#x7684;&#x5DE5;&#x5177;, &#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;.</li>
+</ul>
+<hr>
+<h2 id="&#x6B65;&#x9AA4;5-&#x7EDF;&#x4E00;&#x65F6;&#x533A;&#x548C;&#x540C;&#x6B65;&#x65F6;&#x95F4;">&#x6B65;&#x9AA4;5: &#x7EDF;&#x4E00;&#x65F6;&#x533A;&#x548C;&#x540C;&#x6B65;&#x65F6;&#x95F4;</h2>
+<p>&#x53C2;&#x8003;: <a href="http://bigdataatguigu.applinzi.com/bigdata_oozie_atguigu/di-4-zhang-oozie-de-shi-yong-an-li/44-an-li-56db3a-oozie-ding-shi-ren-52a1-xun-huan-ren-wu.html" target="_blank">http://bigdataatguigu.applinzi.com/bigdata_oozie_atguigu/di-4-zhang-oozie-de-shi-yong-an-li/44-an-li-56db3a-oozie-ding-shi-ren-52a1-xun-huan-ren-wu.html</a></p>
+<hr>
+<h2 id="&#x6B65;&#x9AA4;6-&#x914D;&#x7F6E;-web-&#x670D;&#x52A1;&#x5668;">&#x6B65;&#x9AA4;6: &#x914D;&#x7F6E; Web &#x670D;&#x52A1;&#x5668;</h2>
+<h3 id="1-web-&#x670D;&#x52A1;&#x5668;&#x7684;&#x5C5E;&#x6027;&#x914D;&#x7F6E;">1. web &#x670D;&#x52A1;&#x5668;&#x7684;&#x5C5E;&#x6027;&#x914D;&#x7F6E;</h3>
+<p>&#x6253;&#x5F00;<code>server/conf/azkaban.properties</code>&#x6587;&#x4EF6;, &#x7136;&#x505A;&#x5982;&#x4E0B;&#x914D;&#x7F6E;:</p>
+<pre class="language-"><code class="lang-java">#Azkaban Personalization Settings
+azkaban<span class="token punctuation">.</span>name<span class="token operator">=</span>atguigu
+azkaban<span class="token punctuation">.</span>label<span class="token operator">=</span>My Local Azkaban
+azkaban<span class="token punctuation">.</span>color<span class="token operator">=</span>#FF3601
+azkaban<span class="token punctuation">.</span><span class="token keyword">default</span><span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>path<span class="token operator">=</span><span class="token operator">/</span>index
+# &#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;
+web<span class="token punctuation">.</span>resource<span class="token punctuation">.</span>dir<span class="token operator">=</span><span class="token operator">/</span>opt<span class="token operator">/</span>module<span class="token operator">/</span>azkaban<span class="token operator">/</span>server<span class="token operator">/</span>web<span class="token operator">/</span>
+# &#x914D;&#x7F6E;&#x65F6;&#x533A;
+<span class="token keyword">default</span><span class="token punctuation">.</span>timezone<span class="token punctuation">.</span>id<span class="token operator">=</span>Asia<span class="token operator">/</span>Shanghai
+
+#Azkaban UserManager <span class="token keyword">class</span>
+<span class="token class-name">user<span class="token punctuation">.</span>manager<span class="token punctuation">.</span>class</span><span class="token operator">=</span>azkaban<span class="token punctuation">.</span>user<span class="token punctuation">.</span>XmlUserManager
+# &#x7528;&#x6237;&#x6743;&#x9650;&#x7BA1;&#x7406;&#x6587;&#x4EF6;
+user<span class="token punctuation">.</span>manager<span class="token punctuation">.</span>xml<span class="token punctuation">.</span>file<span class="token operator">=</span><span class="token operator">/</span>opt<span class="token operator">/</span>module<span class="token operator">/</span>azkaban<span class="token operator">/</span>server<span class="token operator">/</span>conf<span class="token operator">/</span>azkaban<span class="token operator">-</span>users<span class="token punctuation">.</span>xml
+
+#Loader <span class="token keyword">for</span> projects
+executor<span class="token punctuation">.</span>global<span class="token punctuation">.</span>properties<span class="token operator">=</span><span class="token operator">/</span>opt<span class="token operator">/</span>module<span class="token operator">/</span>azkaban<span class="token operator">/</span>server<span class="token operator">/</span>conf<span class="token operator">/</span>global<span class="token punctuation">.</span>properties
+# project &#x76EE;&#x5F55;<span class="token punctuation">,</span> &#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;
+azkaban<span class="token punctuation">.</span>project<span class="token punctuation">.</span>dir<span class="token operator">=</span>projects
+
+database<span class="token punctuation">.</span>type<span class="token operator">=</span>mysql
+mysql<span class="token punctuation">.</span>port<span class="token operator">=</span><span class="token number">3306</span>
+mysql<span class="token punctuation">.</span>host<span class="token operator">=</span>hadoop201
+mysql<span class="token punctuation">.</span>database<span class="token operator">=</span>azkaban
+mysql<span class="token punctuation">.</span>user<span class="token operator">=</span>root
+mysql<span class="token punctuation">.</span>password<span class="token operator">=</span>aaa
+mysql<span class="token punctuation">.</span>numconnections<span class="token operator">=</span><span class="token number">100</span>
+
+# Velocity dev mode
+velocity<span class="token punctuation">.</span>dev<span class="token punctuation">.</span>mode<span class="token operator">=</span><span class="token boolean">false</span>
+
+# Azkaban Jetty server properties<span class="token punctuation">.</span>
+jetty<span class="token punctuation">.</span>maxThreads<span class="token operator">=</span><span class="token number">25</span>
+jetty<span class="token punctuation">.</span>ssl<span class="token punctuation">.</span>port<span class="token operator">=</span><span class="token number">8443</span>
+jetty<span class="token punctuation">.</span>port<span class="token operator">=</span><span class="token number">8081</span>
+jetty<span class="token punctuation">.</span>keystore<span class="token operator">=</span><span class="token operator">/</span>opt<span class="token operator">/</span>module<span class="token operator">/</span>azkaban<span class="token operator">/</span>server<span class="token operator">/</span>keystore
+jetty<span class="token punctuation">.</span>password<span class="token operator">=</span>aaaaaa
+jetty<span class="token punctuation">.</span>keypassword<span class="token operator">=</span>aaaaaa
+jetty<span class="token punctuation">.</span>truststore<span class="token operator">=</span><span class="token operator">/</span>opt<span class="token operator">/</span>module<span class="token operator">/</span>azkaban<span class="token operator">/</span>server<span class="token operator">/</span>keystore
+jetty<span class="token punctuation">.</span>trustpassword<span class="token operator">=</span>aaaaaa
+
+# Azkaban Executor settings
+executor<span class="token punctuation">.</span>port<span class="token operator">=</span><span class="token number">12321</span>
+
+# mail settings
+mail<span class="token punctuation">.</span>sender<span class="token operator">=</span>
+mail<span class="token punctuation">.</span>host<span class="token operator">=</span>
+job<span class="token punctuation">.</span>failure<span class="token punctuation">.</span>email<span class="token operator">=</span>
+job<span class="token punctuation">.</span>success<span class="token punctuation">.</span>email<span class="token operator">=</span>
+
+lockdown<span class="token punctuation">.</span>create<span class="token punctuation">.</span>projects<span class="token operator">=</span><span class="token boolean">false</span>
+
+cache<span class="token punctuation">.</span>directory<span class="token operator">=</span>cache
+</code></pre>
+<blockquote>
+<h4 id="&#x6CE8;&#x610F;"><em>&#x6CE8;&#x610F;:</em></h4>
+</blockquote>
+<ul>
+<li>&#x9700;&#x8981;&#x6CE8;&#x610F;<code>keystore</code>&#x7684;&#x8DEF;&#x5F84;&#x662F;&#x5426;&#x6B63;&#x786E;</li>
+</ul>
+<h3 id="2-&#x64CD;&#x4F5C;-web-&#x670D;&#x52A1;&#x5668;&#x7684;&#x7528;&#x6237;&#x914D;&#x7F6E;">2. &#x64CD;&#x4F5C; web &#x670D;&#x52A1;&#x5668;&#x7684;&#x7528;&#x6237;&#x914D;&#x7F6E;</h3>
+<p>&#x6253;&#x5F00;<code>server/conf/azkaban-users.xml</code>&#x6587;&#x4EF6;, &#x589E;&#x52A0;&#x7BA1;&#x7406;&#x5458;:</p>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>azkaban-users</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user</span> <span class="token attr-name">username</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>azkaban<span class="token punctuation">&quot;</span></span> <span class="token attr-name">password</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>azkaban<span class="token punctuation">&quot;</span></span> <span class="token attr-name">roles</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>admin<span class="token punctuation">&quot;</span></span> <span class="token attr-name">groups</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>azkaban<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user</span> <span class="token attr-name">username</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>metrics<span class="token punctuation">&quot;</span></span> <span class="token attr-name">password</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>metrics<span class="token punctuation">&quot;</span></span> <span class="token attr-name">roles</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>metrics<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token comment">&lt;!-- &#x65B0;&#x589E; admin &#x7528;&#x6237;, &#x5E76;&#x4E14;&#x62E5;&#x6709;&#x4E24;&#x79CD;&#x89D2;&#x8272; --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>user</span> <span class="token attr-name">username</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>admin<span class="token punctuation">&quot;</span></span> <span class="token attr-name">password</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>admin<span class="token punctuation">&quot;</span></span> <span class="token attr-name">roles</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>metrics,admin<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>role</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>admin<span class="token punctuation">&quot;</span></span> <span class="token attr-name">permissions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>ADMIN<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>role</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>metrics<span class="token punctuation">&quot;</span></span> <span class="token attr-name">permissions</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>METRICS<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>azkaban-users</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<hr>
+<h2 id="&#x6B65;&#x9AA4;7-&#x914D;&#x7F6E;-executor-&#x670D;&#x52A1;&#x5668;">&#x6B65;&#x9AA4;7: &#x914D;&#x7F6E; executor &#x670D;&#x52A1;&#x5668;</h2>
+<h3 id="1-executor-&#x670D;&#x52A1;&#x5668;&#x7684;&#x5C5E;&#x6027;&#x914D;&#x7F6E;">1. executor &#x670D;&#x52A1;&#x5668;&#x7684;&#x5C5E;&#x6027;&#x914D;&#x7F6E;</h3>
+<p>&#x6253;&#x5F00;<code>/opt/module/azkaban/executor/conf/azkaban.properties</code>&#x6587;&#x4EF6;, &#x505A;&#x5982;&#x4E0B;&#x914D;&#x7F6E;:</p>
+<pre class="language-"><code class="lang-java">#Azkaban
+<span class="token keyword">default</span><span class="token punctuation">.</span>timezone<span class="token punctuation">.</span>id<span class="token operator">=</span>Asia<span class="token operator">/</span>Shanghai
+
+# Azkaban JobTypes Plugins
+azkaban<span class="token punctuation">.</span>jobtype<span class="token punctuation">.</span>plugin<span class="token punctuation">.</span>dir<span class="token operator">=</span><span class="token operator">/</span>opt<span class="token operator">/</span>module<span class="token operator">/</span>azkaban<span class="token operator">/</span>executor<span class="token operator">/</span>plugins<span class="token operator">/</span>jobtypes
+
+#Loader <span class="token keyword">for</span> projects
+executor<span class="token punctuation">.</span>global<span class="token punctuation">.</span>properties<span class="token operator">=</span><span class="token operator">/</span>opt<span class="token operator">/</span>module<span class="token operator">/</span>azkaban<span class="token operator">/</span>executor<span class="token operator">/</span>conf<span class="token operator">/</span>global<span class="token punctuation">.</span>properties
+azkaban<span class="token punctuation">.</span>project<span class="token punctuation">.</span>dir<span class="token operator">=</span>projects
+
+database<span class="token punctuation">.</span>type<span class="token operator">=</span>mysql
+mysql<span class="token punctuation">.</span>port<span class="token operator">=</span><span class="token number">3306</span>
+mysql<span class="token punctuation">.</span>host<span class="token operator">=</span>hadoop201
+mysql<span class="token punctuation">.</span>database<span class="token operator">=</span>azkaban
+mysql<span class="token punctuation">.</span>user<span class="token operator">=</span>root
+mysql<span class="token punctuation">.</span>password<span class="token operator">=</span>aaa
+mysql<span class="token punctuation">.</span>numconnections<span class="token operator">=</span><span class="token number">100</span>
+
+# Azkaban Executor settings
+executor<span class="token punctuation">.</span>maxThreads<span class="token operator">=</span><span class="token number">50</span>
+executor<span class="token punctuation">.</span>port<span class="token operator">=</span><span class="token number">12321</span>
+executor<span class="token punctuation">.</span>flow<span class="token punctuation">.</span>threads<span class="token operator">=</span><span class="token number">30</span>
+</code></pre>
+<hr>
+<h2 id="&#x6B65;&#x9AA4;8-&#x542F;&#x52A8;-executor-&#x670D;&#x52A1;&#x5668;">&#x6B65;&#x9AA4;8: &#x542F;&#x52A8; executor &#x670D;&#x52A1;&#x5668;</h2>
+<p>&#x7531;&#x4E8E; web &#x670D;&#x52A1;&#x5668;&#x9700;&#x8981;&#x8FDE;&#x63A5; executor &#x670D;&#x52A1;&#x5668;, &#x6240;&#x4EE5;&#x9700;&#x8981;&#x5148;&#x542F;&#x52A8; executor &#x670D;&#x52A1;&#x5668;</p>
+<pre class="language-"><code class="lang-bash">/opt/module/azkaban/executor/bin &#xBB; ./azkaban-executor-start.sh
+</code></pre>
+<hr>
+<h2 id="&#x6B65;&#x9AA4;9-&#x542F;&#x52A8;-web-&#x670D;&#x52A1;&#x5668;">&#x6B65;&#x9AA4;9: &#x542F;&#x52A8; web &#x670D;&#x52A1;&#x5668;</h2>
+<pre class="language-"><code class="lang-bash">/opt/module/azkaban/server/bin &#xBB; ./azkaban-web-start.sh
+</code></pre>
+<hr>
+<h2 id="&#x6B65;&#x9AA4;10-&#x67E5;&#x770B;&#x670D;&#x52A1;&#x8FDB;&#x7A0B;&#x662F;&#x5426;&#x542F;&#x52A8;&#x6210;&#x529F;">&#x6B65;&#x9AA4;10: &#x67E5;&#x770B;&#x670D;&#x52A1;&#x8FDB;&#x7A0B;&#x662F;&#x5426;&#x542F;&#x52A8;&#x6210;&#x529F;</h2>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1552462503.png-atguiguText" alt=""></p>
+<hr>
+<h2 id="&#x6B65;&#x9AA4;11-&#x7528;&#x6D4F;&#x89C8;&#x5668;&#x767B;&#x5F55;-web-&#x9875;&#x9762;&#x67E5;&#x770B;">&#x6B65;&#x9AA4;11: &#x7528;&#x6D4F;&#x89C8;&#x5668;&#x767B;&#x5F55; web &#x9875;&#x9762;&#x67E5;&#x770B;</h2>
+<p>&#x8BBF;&#x95EE;&#x5730;&#x5740;: <a href="https://hadoop201:8443" target="_blank">https://hadoop201:8443</a></p>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1552462626.png-atguiguText" alt=""></p>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1552463134.png-atguiguText" alt=""></p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-04-02 13:09:01
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 第 1 章 Azkaban 概述">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="di-3-zhang-azkaban-shi-zhan.html" class="navigation navigation-next " aria-label="Next page: 第 3 章 Azkaban 实战">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第 2 章 Azkaban 安装部署","level":"1.2","depth":1,"next":{"title":"第 3 章 Azkaban 实战","level":"1.3","depth":1,"path":"di-3-zhang-azkaban-shi-zhan.md","ref":"di-3-zhang-azkaban-shi-zhan.md","articles":[{"title":"3.1 单一 job 案例","level":"1.3.1","depth":2,"path":"di-3-zhang-azkaban-shi-zhan/31-dan-yi-job-an-li.md","ref":"di-3-zhang-azkaban-shi-zhan/31-dan-yi-job-an-li.md","articles":[]},{"title":"3.2 java操作任务","level":"1.3.2","depth":2,"path":"di-3-zhang-azkaban-shi-zhan/32-javacao-zuo-ren-wu.md","ref":"di-3-zhang-azkaban-shi-zhan/32-javacao-zuo-ren-wu.md","articles":[]},{"title":"3.3 HDFS 操作","level":"1.3.3","depth":2,"path":"di-3-zhang-azkaban-shi-zhan/33-hdfs-cao-zuo.md","ref":"di-3-zhang-azkaban-shi-zhan/33-hdfs-cao-zuo.md","articles":[]},{"title":"3.4 MapReduce 任务","level":"1.3.4","depth":2,"path":"di-3-zhang-azkaban-shi-zhan/34-mapreduce-ren-wu.md","ref":"di-3-zhang-azkaban-shi-zhan/34-mapreduce-ren-wu.md","articles":[]},{"title":"3.5 hive 脚本","level":"1.3.5","depth":2,"path":"di-3-zhang-azkaban-shi-zhan/35-hive-jiao-ben.md","ref":"di-3-zhang-azkaban-shi-zhan/35-hive-jiao-ben.md","articles":[]},{"title":"3.6 多 job 工作流案例","level":"1.3.6","depth":2,"path":"di-3-zhang-azkaban-shi-zhan/36-duo-job-gong-zuo-liu-an-li.md","ref":"di-3-zhang-azkaban-shi-zhan/36-duo-job-gong-zuo-liu-an-li.md","articles":[]}]},"previous":{"title":"第 1 章 Azkaban 概述","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 Azkaban 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"chapter1.md","mtime":"2019-04-02T05:09:01.939Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-02T05:03:07.664Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

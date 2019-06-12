@@ -1,0 +1,672 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.3 Zookeeper应用场景 · 大数据 Zookeeper 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter1.html" />
+    
+    
+    <link rel="prev" href="2wei-shi-yao-xu-yao-zookeeper.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第 1 章 Zookeeper概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="1zookeepershi-shi-yao.html">
+            
+                <a href="1zookeepershi-shi-yao.html">
+            
+                    
+                    1.1 Zookeeper是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="2wei-shi-yao-xu-yao-zookeeper.html">
+            
+                <a href="2wei-shi-yao-xu-yao-zookeeper.html">
+            
+                    
+                    1.2 为什么需要Zookeeper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.3" data-path="3zookeeperying-yong-chang-jing.html">
+            
+                <a href="3zookeeperying-yong-chang-jing.html">
+            
+                    
+                    1.3 Zookeeper应用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    第 2 章 安装Zookeeper
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="chapter1/1xia-zai-he-an-zhuang-zookeeper.html">
+            
+                <a href="chapter1/1xia-zai-he-an-zhuang-zookeeper.html">
+            
+                    
+                    2.1 下载和安装Zookeeper
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="chapter1/2du-li-mo-shi-qi-dong-zookeeper.html">
+            
+                <a href="chapter1/2du-li-mo-shi-qi-dong-zookeeper.html">
+            
+                    
+                    2.2 独立模式操作Zookeeper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="di-3-zhang-zookeep-shi-xian-yuan-li.html">
+            
+                <a href="di-3-zhang-zookeep-shi-xian-yuan-li.html">
+            
+                    
+                    第 3 章 Zookeep内部原理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="di-3-zhang-zookeep-shi-xian-yuan-li/1shi-li-xu-qiu.html">
+            
+                <a href="di-3-zhang-zookeep-shi-xian-yuan-li/1shi-li-xu-qiu.html">
+            
+                    
+                    3.1 示例需求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="di-3-zhang-zookeep-shi-xian-yuan-li/2zookeeperzhong-de-zu-cheng-yuan-guan-xi.html">
+            
+                <a href="di-3-zhang-zookeep-shi-xian-yuan-li/2zookeeperzhong-de-zu-cheng-yuan-guan-xi.html">
+            
+                    
+                    3.2 Zookeeper中组成员之间的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="di-3-zhang-zookeep-shi-xian-yuan-li/3zookeepershu-ju-mo-xing.html">
+            
+                <a href="di-3-zhang-zookeep-shi-xian-yuan-li/3zookeepershu-ju-mo-xing.html">
+            
+                    
+                    3.3 Zookeeper数据模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="di-3-zhang-zookeep-shi-xian-yuan-li/4zookeeperji-ben-cao-zuo.html">
+            
+                <a href="di-3-zhang-zookeep-shi-xian-yuan-li/4zookeeperji-ben-cao-zuo.html">
+            
+                    
+                    3.4 Zookeeper服务基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="di-3-zhang-zookeep-shi-xian-yuan-li/5zookeepershi-xian-yuan-li.html">
+            
+                <a href="di-3-zhang-zookeep-shi-xian-yuan-li/5zookeepershi-xian-yuan-li.html">
+            
+                    
+                    3.5 Zookeeper实现原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="di-3-zhang-zookeep-shi-xian-yuan-li/36fen-bu-shi-an-zhuang-bu-7f7228-fu-zhi-mo-shi-yun-xing-zookeeper.html">
+            
+                <a href="di-3-zhang-zookeep-shi-xian-yuan-li/36fen-bu-shi-an-zhuang-bu-7f7228-fu-zhi-mo-shi-yun-xing-zookeeper.html">
+            
+                    
+                    3.6 分布式安装部署(复制模式运行Zookeeper)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="di-3-zhang-zookeep-shi-xian-yuan-li/37ke-hu-duan-ming-ling-xing-cao-zuo.html">
+            
+                <a href="di-3-zhang-zookeep-shi-xian-yuan-li/37ke-hu-duan-ming-ling-xing-cao-zuo.html">
+            
+                    
+                    3.7 客户端命令行操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="di-3-zhang-zookeep-shi-xian-yuan-li/38-pei-zhi-can-shu-jie-du.html">
+            
+                <a href="di-3-zhang-zookeep-shi-xian-yuan-li/38-pei-zhi-can-shu-jie-du.html">
+            
+                    
+                    3.8 配置参数解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="di-4-zhang-zookeeper-shi-zhan.html">
+            
+                <a href="di-4-zhang-zookeeper-shi-zhan.html">
+            
+                    
+                    第 4 章 Zookeeper API使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="di-4-zhang-zookeeper-shi-zhan/41kai-fa-huan-jing-da-jian.html">
+            
+                <a href="di-4-zhang-zookeeper-shi-zhan/41kai-fa-huan-jing-da-jian.html">
+            
+                    
+                    4.1 开发环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="di-4-zhang-zookeeper-shi-zhan/42-chuang-jian-ke-hu-duan.html">
+            
+                <a href="di-4-zhang-zookeeper-shi-zhan/42-chuang-jian-ke-hu-duan.html">
+            
+                    
+                    4.2  创建客户端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="di-4-zhang-zookeeper-shi-zhan/43chuang-jian-zi-jie-dian.html">
+            
+                <a href="di-4-zhang-zookeeper-shi-zhan/43chuang-jian-zi-jie-dian.html">
+            
+                    
+                    4.3 创建子节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="di-4-zhang-zookeeper-shi-zhan/44huo-qu-zi-jie-dian-bing-jian-ting.html">
+            
+                <a href="di-4-zhang-zookeeper-shi-zhan/44huo-qu-zi-jie-dian-bing-jian-ting.html">
+            
+                    
+                    4.4 获取子节点并监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="di-4-zhang-zookeeper-shi-zhan/45-pan-duan-jie-dian-shi-fou-cun-zai.html">
+            
+                <a href="di-4-zhang-zookeeper-shi-zhan/45-pan-duan-jie-dian-shi-fou-cun-zai.html">
+            
+                    
+                    4.5  判断节点是否存在
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="di-4-zhang-zookeeper-shi-zhan/46-jian-ting-qi-yuan-li.html">
+            
+                <a href="di-4-zhang-zookeeper-shi-zhan/46-jian-ting-qi-yuan-li.html">
+            
+                    
+                    4.6 监听器原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="di-5-zhang-an-li-shi-zhan.html">
+            
+                <a href="di-5-zhang-an-li-shi-zhan.html">
+            
+                    
+                    第 5 章 案例实战
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="di-5-zhang-an-li-shi-zhan/51-xu-qiu-fen-xi.html">
+            
+                <a href="di-5-zhang-an-li-shi-zhan/51-xu-qiu-fen-xi.html">
+            
+                    
+                    5.1 案例1:监听服务器动态上下线
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >1.3 Zookeeper应用场景</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="13-zookeeper&#x5178;&#x578B;&#x5E94;&#x7528;&#x573A;&#x666F;">1.3 Zookeeper&#x5178;&#x578B;&#x5E94;&#x7528;&#x573A;&#x666F;</h1>
+<ul>
+<li><p>&#x7EDF;&#x4E00;&#x547D;&#x540D;&#x670D;&#x52A1;</p>
+<p>&#x5206;&#x5E03;&#x5F0F;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x5BF9;&#x5E94;&#x7528;/&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x7EDF;&#x4E00;&#x547D;&#x540D;&#xFF0C;&#x4FBF;&#x4E8E;&#x8BC6;&#x522B;&#x4E0D;&#x540C;&#x670D;&#x52A1;&#x3002;&#x7C7B;&#x4F3C;&#x4E8E;&#x57DF;&#x540D;&#x4E0E;ip &#x4E4B;&#x95F4;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF0C;&#x57DF;&#x540D;&#x5BB9;&#x6613;&#x8BB0;&#x4F4F;&#x3002;</p>
+<p>&#x901A;&#x8FC7;&#x540D;&#x79F0;&#x6765;&#x83B7;&#x53D6;&#x8D44;&#x6E90;&#x6216;&#x670D;&#x52A1;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x63D0;&#x4F9B;&#x8005;&#x7B49;&#x4FE1;&#x606F;&#x6309;&#x7167;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x7EC4;&#x7EC7;&#x670D;&#x52A1;/&#x5E94;&#x7528;&#x540D;&#x79F0;&#x53EF;&#x5C06;&#x670D;&#x52A1;&#x540D;&#x79F0;&#x4EE5;&#x53CA;&#x5730;&#x5740;&#x4FE1;&#x606F;&#x5199;&#x5230;Zookeeper&#x4E0A;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x8FC7;Zookeeper&#x83B7;&#x53D6;&#x53EF;&#x7528;&#x670D;&#x52A1;&#x5217;&#x8868;&#x7C7B;&#x3002;</p>
+<hr>
+</li>
+<li><p>&#x914D;&#x7F6E;&#x7BA1;&#x7406;</p>
+<p>&#x5206;&#x5E03;&#x5F0F;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7BA1;&#x7406;&#x548C;&#x540C;&#x6B65;&#x662F;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x4E00;&#x4E2A;&#x96C6;&#x7FA4;&#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x8282;&#x70B9;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x662F;&#x4E00;&#x81F4;&#x7684;: </p>
+<p>&#x6BD4;&#x5982;Hadoop, &#x5BF9;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x540E;&#xFF0C;&#x5E0C;&#x671B;&#x80FD;&#x591F;&#x5FEB;&#x901F;&#x540C;&#x6B65;&#x5230;&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x4E0A;&#x914D;&#x7F6E;&#x7BA1;&#x7406;&#x53EF;&#x4EA4;&#x7531;Zookeeper&#x5B9E;&#x73B0;&#x3002;(&#x4EE5;&#x524D;&#x90FD;&#x662F;&#x6211;&#x4EEC;&#x624B;&#x52A8;&#x7BA1;&#x7406;, &#x6548;&#x7387;&#x6BD4;&#x8F83;&#x4F4E;&#x4E0B;)</p>
+<p>&#x53EF;&#x5C06;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x5199;&#x5165;Zookeeper&#x7684;&#x4E00;&#x4E2A;<code>znode</code>&#x4E0A;&#x3002;&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x76D1;&#x542C;&#x8FD9;&#x4E2A;<code>znode</code>&#x3002;&#x4E00;&#x65E6;<code>znode</code>&#x4E2D;&#x7684;&#x6570;&#x636E;&#x88AB;&#x4FEE;&#x6539;&#xFF0C;<code>zookeeper</code>&#x5C06;&#x901A;&#x77E5;&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x3002;</p>
+<p><img src="https://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1539517777.png" alt=""></p>
+<hr>
+</li>
+<li><p>&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x548C;<code>Master</code>&#x9009;&#x4E3E;</p>
+<p>Zookeeper &#x80FD;&#x591F;&#x5F88;&#x5BB9;&#x6613;&#x7684;&#x5B9E;&#x73B0;&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x7684;&#x529F;&#x80FD;</p>
+<p>&#x5982;&#x6709;&#x591A;&#x53F0; Server &#x7EC4;&#x6210;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#xFF0C;&#x90A3;&#x4E48;&#x5FC5;&#x987B;&#x8981;&#x4E00;&#x4E2A;&#x201C;&#x603B;&#x7BA1;&#x201D;&#x77E5;&#x9053;&#x5F53;&#x524D;&#x96C6;&#x7FA4;&#x4E2D;&#x6BCF;&#x53F0;&#x673A;&#x5668;&#x7684;&#x670D;&#x52A1;&#x72B6;&#x6001;&#xFF0C;&#x4E00;&#x65E6;&#x6709;&#x673A;&#x5668;&#x4E0D;&#x80FD;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#xFF0C;&#x96C6;&#x7FA4;&#x4E2D;&#x5176;&#x5B83;&#x96C6;&#x7FA4;&#x5FC5;&#x987B;&#x77E5;&#x9053;&#xFF0C;&#x4ECE;&#x800C;&#x505A;&#x51FA;&#x8C03;&#x6574;&#x91CD;&#x65B0;&#x5206;&#x914D;&#x670D;&#x52A1;&#x7B56;&#x7565;&#x3002;</p>
+<p>&#x540C;&#x6837;&#x5F53;&#x589E;&#x52A0;&#x96C6;&#x7FA4;&#x7684;&#x670D;&#x52A1;&#x80FD;&#x529B;&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x589E;&#x52A0;&#x4E00;&#x53F0;&#x6216;&#x591A;&#x53F0; Server&#xFF0C;&#x540C;&#x6837;&#x4E5F;&#x5FC5;&#x987B;&#x8BA9;&#x201C;&#x603B;&#x7BA1;&#x201D;&#x77E5;&#x9053;&#x3002;</p>
+<p><img src="https://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1539518101.png" alt=""></p>
+<hr>
+</li>
+<li><p>&#x5206;&#x5E03;&#x5F0F;&#x901A;&#x77E5;/&#x534F;&#x8C03;</p>
+<p>ZooKeeper&#x4E2D;&#x7279;&#x6709;<code>watcher</code>&#x6CE8;&#x518C;&#x4E0E;&#x5F02;&#x6B65;&#x901A;&#x77E5;&#x673A;&#x5236;&#xFF0C;&#x80FD;&#x591F;&#x5F88;&#x597D;&#x7684;&#x5B9E;&#x73B0;&#x5206;&#x5E03;&#x5F0F;&#x73AF;&#x5883;&#x4E0B;&#x4E0D;&#x540C;&#x7CFB;&#x7EDF;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x77E5;&#x4E0E;&#x534F;&#x8C03;&#xFF0C;&#x5B9E;&#x73B0;&#x5BF9;&#x6570;&#x636E;&#x53D8;&#x66F4;&#x7684;&#x5B9E;&#x65F6;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x901A;&#x5E38;&#x662F;&#x4E0D;&#x540C;&#x7CFB;&#x7EDF;&#x90FD;&#x5BF9;<code>ZK</code>&#x4E0A;&#x540C;&#x4E00;&#x4E2A;<code>znode</code>&#x8FDB;&#x884C;&#x6CE8;&#x518C;&#xFF0C;&#x76D1;&#x542C;<code>znode</code>&#x7684;&#x53D8;&#x5316;&#xFF08;&#x5305;&#x62EC;<code>znode</code>&#x672C;&#x8EAB;&#x5185;&#x5BB9;&#x53CA;&#x5B50;&#x8282;&#x70B9;&#x7684;&#xFF09;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;<code>update</code>&#x4E86;<code>znode</code>&#xFF0C;&#x90A3;&#x4E48;&#x53E6;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;&#x80FD;&#x591F;&#x6536;&#x5230;&#x901A;&#x77E5;&#xFF0C;&#x5E76;&#x4F5C;&#x51FA;&#x76F8;&#x5E94;&#x5904;&#x7406;</p>
+<hr>
+</li>
+<li><p>&#x5206;&#x5E03;&#x5F0F;&#x9501;</p>
+<p>&#x5206;&#x5E03;&#x5F0F;&#x9501;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E3B;&#x8981;&#x5F97;&#x76CA;&#x4E8E;ZooKeeper&#x4E3A;&#x6211;&#x4EEC;&#x4FDD;&#x8BC1;&#x4E86;&#x6570;&#x636E;&#x7684;&#x5F3A;&#x4E00;&#x81F4;&#x6027;.</p>
+<p>&#x5982;&#x679C;&#x4E0D;&#x540C;&#x7684;&#x7CFB;&#x7EDF;&#x6216;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;&#x7684;&#x4E0D;&#x540C;&#x4E3B;&#x673A;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x4E00;&#x4E2A;&#x6216;&#x4E00;&#x7EC4;&#x8D44;&#x6E90;&#xFF0C;&#x90A3;&#x4E48;&#x8BBF;&#x95EE;&#x8FD9;&#x4E9B;&#x8D44;&#x6E90;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5F80;&#x5F80;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x4E92;&#x65A5;&#x624B;&#x6BB5;&#x6765;&#x9632;&#x6B62;&#x5F7C;&#x6B64;&#x4E4B;&#x95F4;&#x7684;&#x5E72;&#x6270;&#xFF0C;&#x4EE5;&#x4FDD;&#x8BC1;&#x4E00;&#x81F4;&#x6027;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5206;&#x5E03;&#x5F0F;&#x9501;&#x3002;</p>
+<hr>
+</li>
+<li><p>&#x5206;&#x5E03;&#x5F0F;&#x961F;&#x5217;</p>
+<p>&#x961F;&#x5217;&#x65B9;&#x9762;&#xFF0C;&#x7B80;&#x5355;&#x5730;&#x8BB2;&#x6709;&#x4E24;&#x79CD;&#xFF0C;</p>
+<ul>
+<li>&#x4E00;&#x79CD;&#x662F;&#x5E38;&#x89C4;&#x7684;&#x5148;&#x8FDB;&#x5148;&#x51FA;&#x961F;&#x5217;&#xFF0C;</li>
+<li>&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x8981;&#x7B49;&#x5230;&#x961F;&#x5217;&#x6210;&#x5458;&#x805A;&#x9F50;&#x4E4B;&#x540E;&#x7684;&#x624D;&#x7EDF;&#x4E00;&#x6309;&#x5E8F;&#x6267;&#x884C;&#x3002;</li>
+</ul>
+<hr>
+</li>
+<li><p>&#x8D1F;&#x8F7D;&#x5747;&#x8861;</p>
+<p>&#x5728;&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x662F;&#x4E00;&#x79CD;&#x666E;&#x904D;&#x7684;&#x6280;&#x672F;&#x3002;</p>
+<p>ZooKeeper&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x96C6;&#x7FA4;&#xFF0C;&#x8D1F;&#x8D23;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#x4EE5;&#x53CA;&#x4E00;&#x7CFB;&#x5217;&#x5206;&#x5E03;&#x5F0F;&#x534F;&#x8C03;&#x3002;&#x6240;&#x6709;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x4F1A;&#x901A;&#x8FC7;ZooKeeper&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x8C03;&#x5EA6;&#x7B56;&#x7565;&#x53BB;&#x534F;&#x8C03;&#x8C03;&#x5EA6;&#x54EA;&#x4E00;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+</li>
+</ul>
+<hr>
+<h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1>
+<p>Zookeeper &#x4F5C;&#x4E3A; Hadoop &#x9879;&#x76EE;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x9879;&#x76EE;&#xFF0C;&#x662F; Hadoop &#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x7684;&#x4E00;&#x4E2A;&#x5FC5;&#x4E0D;&#x53EF;&#x5C11;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x5B83;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x63A7;&#x5236;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x5B83;&#x7BA1;&#x7406; Hadoop &#x96C6;&#x7FA4;&#x4E2D;&#x7684; NameNode&#xFF0C;&#x8FD8;&#x6709; Hbase &#x4E2D; Master Election&#x3001;Server &#x4E4B;&#x95F4;&#x72B6;&#x6001;&#x540C;&#x6B65;&#x7B49;&#x3002;</p>
+<p>&#x672C;&#x7AE0;&#x4ECB;&#x7ECD;&#x7684; Zookeeper &#x7684;&#x57FA;&#x672C;&#x77E5;&#x8BC6;&#xFF0C;&#x4EE5;&#x53CA;&#x4ECB;&#x7ECD;&#x4E86;&#x51E0;&#x4E2A;&#x5178;&#x578B;&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x3002;
+&#x8FD9;&#x4E9B;&#x90FD;&#x662F; Zookeeper &#x7684;&#x57FA;&#x672C;&#x529F;&#x80FD;&#xFF0C;&#x6700;&#x91CD;&#x8981;&#x7684;&#x662F; Zoopkeeper &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x5957;&#x5F88;&#x597D;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x5C31;&#x662F;&#x5B83;&#x8FD9;&#x79CD;<my>&#x57FA;&#x4E8E;&#x5C42;&#x6B21;&#x578B;&#x7684;&#x76EE;&#x5F55;&#x6811;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;</my>&#xFF0C;&#x5E76;&#x5BF9;&#x6811;&#x4E2D;&#x7684;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x6709;&#x6548;&#x7BA1;&#x7406;&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x8BBE;&#x8BA1;&#x51FA;&#x591A;&#x79CD;&#x591A;&#x6837;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x6A21;&#x578B;&#xFF0C;&#x800C;&#x4E0D;&#x4EC5;&#x4EC5;&#x5C40;&#x9650;&#x4E8E;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;&#x51E0;&#x4E2A;&#x5E38;&#x7528;&#x5E94;&#x7528;&#x573A;&#x666F;&#x3002;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; &amp; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-10-18 11:15:51
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2wei-shi-yao-xu-yao-zookeeper.html" class="navigation navigation-prev " aria-label="Previous page: 1.2 为什么需要Zookeeper">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter1.html" class="navigation navigation-next " aria-label="Next page: 第 2 章 安装Zookeeper">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.3 Zookeeper应用场景","level":"1.1.3","depth":2,"next":{"title":"第 2 章 安装Zookeeper","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[{"title":"2.1 下载和安装Zookeeper","level":"1.2.1","depth":2,"path":"chapter1/1xia-zai-he-an-zhuang-zookeeper.md","ref":"chapter1/1xia-zai-he-an-zhuang-zookeeper.md","articles":[]},{"title":"2.2 独立模式操作Zookeeper","level":"1.2.2","depth":2,"path":"chapter1/2du-li-mo-shi-qi-dong-zookeeper.md","ref":"chapter1/2du-li-mo-shi-qi-dong-zookeeper.md","articles":[]}]},"previous":{"title":"1.2 为什么需要Zookeeper","level":"1.1.2","depth":2,"path":"2wei-shi-yao-xu-yao-zookeeper.md","ref":"2wei-shi-yao-xu-yao-zookeeper.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 & 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://o7cqr8cfk.bkt.clouddn.com/18-3-4/62171757.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/83394736.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/15906185.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/15906185.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/3394270.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/65028582.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/20359261.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/37472401.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/3355397.jpg-atguiguImg","http://o7cqr8cfk.bkt.clouddn.com/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://www.gitbook.com/@zhenchao125"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 Zookeeper 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"3zookeeperying-yong-chang-jing.md","mtime":"2018-10-18T03:15:51.355Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-11T09:39:20.722Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

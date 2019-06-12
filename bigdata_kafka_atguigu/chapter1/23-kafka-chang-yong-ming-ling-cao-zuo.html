@@ -1,0 +1,817 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.3 Kafka 常用命令操作 · 大数据 Fulume 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi.html" />
+    
+    
+    <link rel="prev" href="22-bu-shu.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第 1 章 Kafka 概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../11-xiao-xi-dui-lie.html">
+            
+                <a href="../11-xiao-xi-dui-lie.html">
+            
+                    
+                    1.1 消息队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../12-wei-shi-yao-xu-yao-xiao-xi-dui-lie.html">
+            
+                <a href="../12-wei-shi-yao-xu-yao-xiao-xi-dui-lie.html">
+            
+                    
+                    1.2 为什么需要消息队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../13-shi-yao-shi-kafka.html">
+            
+                <a href="../13-shi-yao-shi-kafka.html">
+            
+                    
+                    1.3 什么是 Kafka
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../14-kafka-jia-gou.html">
+            
+                <a href="../14-kafka-jia-gou.html">
+            
+                    
+                    1.4 Kafka 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    第 2 章 Kafka 集群部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="21-xia-zai-kafka.html">
+            
+                <a href="21-xia-zai-kafka.html">
+            
+                    
+                    2.1 下载 Kafka
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="22-bu-shu.html">
+            
+                <a href="22-bu-shu.html">
+            
+                    
+                    2.2 部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="23-kafka-chang-yong-ming-ling-cao-zuo.html">
+            
+                <a href="23-kafka-chang-yong-ming-ling-cao-zuo.html">
+            
+                    
+                    2.3 Kafka 常用命令操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi.html">
+            
+                <a href="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi.html">
+            
+                    
+                    第 3 章 Kafka 工作流程分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/31-kafka-sheng-cheng-guo-cheng-fen-xi.html">
+            
+                <a href="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/31-kafka-sheng-cheng-guo-cheng-fen-xi.html">
+            
+                    
+                    3.1 Kafka 生产过程分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/32-broker-bao-cun-xiao-xi.html">
+            
+                <a href="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/32-broker-bao-cun-xiao-xi.html">
+            
+                    
+                    3.2 broker 保存消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/33-zookeeper-cun-chu-jie-gou.html">
+            
+                <a href="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/33-zookeeper-cun-chu-jie-gou.html">
+            
+                    
+                    3.3 Zookeeper 存储结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/34-kafka-xiao-fei-guo-cheng-fen-xi.html">
+            
+                <a href="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/34-kafka-xiao-fei-guo-cheng-fen-xi.html">
+            
+                    
+                    3.4 Kafka 消费过程分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/35-xiao-fei-zhe-zu-an-li.html">
+            
+                <a href="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/35-xiao-fei-zhe-zu-an-li.html">
+            
+                    
+                    3.5 消费者组案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../di-4-zhang-api-shi-zhan.html">
+            
+                <a href="../di-4-zhang-api-shi-zhan.html">
+            
+                    
+                    第 4 章 API 实战
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../di-4-zhang-api-shi-zhan/41-huan-jing-zhun-bei.html">
+            
+                <a href="../di-4-zhang-api-shi-zhan/41-huan-jing-zhun-bei.html">
+            
+                    
+                    4.1 环境准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../di-4-zhang-api-shi-zhan/42-kafka-sheng-chan-zhe-api.html">
+            
+                <a href="../di-4-zhang-api-shi-zhan/42-kafka-sheng-chan-zhe-api.html">
+            
+                    
+                    4.2 Kafka 生产者 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../di-4-zhang-api-shi-zhan/43-kafka-xiao-fei-zhe-api.html">
+            
+                <a href="../di-4-zhang-api-shi-zhan/43-kafka-xiao-fei-zhe-api.html">
+            
+                    
+                    4.3 Kafka 消费者 API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../di-4-zhang-api-shi-zhan/43-kafka-xiao-fei-zhe-api/431-kafka-xiao-fei-zhe-zhi-gao-ji-api.html">
+            
+                <a href="../di-4-zhang-api-shi-zhan/43-kafka-xiao-fei-zhe-api/431-kafka-xiao-fei-zhe-zhi-gao-ji-api.html">
+            
+                    
+                    4.3.1 Kafka 消费者之高级 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="../di-4-zhang-api-shi-zhan/43-kafka-xiao-fei-zhe-api/432-kafka-xiao-fei-zhe-zhi-di-ji-api.html">
+            
+                <a href="../di-4-zhang-api-shi-zhan/43-kafka-xiao-fei-zhe-api/432-kafka-xiao-fei-zhe-zhi-di-ji-api.html">
+            
+                    
+                    4.3.2 Kafka 消费者之低级 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../di-5-zhang-lan-jie-qi.html">
+            
+                <a href="../di-5-zhang-lan-jie-qi.html">
+            
+                    
+                    第 5 章 拦截器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../51-lan-jie-qi-yuan-li.html">
+            
+                <a href="../51-lan-jie-qi-yuan-li.html">
+            
+                    
+                    5.1 拦截器原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../52-lan-jie-qi-an-li.html">
+            
+                <a href="../52-lan-jie-qi-an-li.html">
+            
+                    
+                    5.2 拦截器案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../di-6-zhang-kafka-stream.html">
+            
+                <a href="../di-6-zhang-kafka-stream.html">
+            
+                    
+                    第 6 章 Kafka stream
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../di-6-zhang-kafka-stream/61-gai-shu.html">
+            
+                <a href="../di-6-zhang-kafka-stream/61-gai-shu.html">
+            
+                    
+                    6.1 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../di-6-zhang-kafka-stream/62-kafka-stream-shu-ju-qing-xi-an-li.html">
+            
+                <a href="../di-6-zhang-kafka-stream/62-kafka-stream-shu-ju-qing-xi-an-li.html">
+            
+                    
+                    6.2 Kafka Stream 数据清洗案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../di-7-zhang-kuo-zhan.html">
+            
+                <a href="../di-7-zhang-kuo-zhan.html">
+            
+                    
+                    第 7 章 扩展
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../di-7-zhang-kuo-zhan/71-kafka-he-flume-ji-cheng.html">
+            
+                <a href="../di-7-zhang-kuo-zhan/71-kafka-he-flume-ji-cheng.html">
+            
+                    
+                    7.1 Kafka 和 Flume 比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../di-7-zhang-kuo-zhan/72-kafka-he-flume-ji-cheng.html">
+            
+                <a href="../di-7-zhang-kuo-zhan/72-kafka-he-flume-ji-cheng.html">
+            
+                    
+                    7.2 Kafka 和 Flume 集成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi.html">
+            
+                <a href="../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi.html">
+            
+                    
+                    7.3 Kafka 配置信息
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.3.1" data-path="../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi/731-broker-pei-zhi-xin-xi.html">
+            
+                <a href="../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi/731-broker-pei-zhi-xin-xi.html">
+            
+                    
+                    7.3.1 broker 配置信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.2" data-path="../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi/732-producer-pei-zhi-xin-xi.html">
+            
+                <a href="../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi/732-producer-pei-zhi-xin-xi.html">
+            
+                    
+                    7.3.2 Producer 配置信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.3" data-path="../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi/733-consumer-pei-zhi-xin-xi.html">
+            
+                <a href="../di-7-zhang-kuo-zhan/73-kafka-pei-zhi-xin-xi/733-consumer-pei-zhi-xin-xi.html">
+            
+                    
+                    7.3.3 Consumer 配置信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.3 Kafka 常用命令操作</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="23-kafka-&#x5E38;&#x7528;&#x547D;&#x4EE4;&#x64CD;&#x4F5C;">2.3 Kafka &#x5E38;&#x7528;&#x547D;&#x4EE4;&#x64CD;&#x4F5C;</h1>
+<h2 id="231-&#x521B;&#x5EFA;-topic">2.3.1 &#x521B;&#x5EFA; topic</h2>
+<pre class="language-"><code>kafka-topics.sh --create --zookeeper hadoop201:2181 --replication-factor 3 --partitions 1 --topic first
+</code></pre><blockquote>
+<h4 id="&#x8BF4;&#x660E;"><em>&#x8BF4;&#x660E;:</em></h4>
+</blockquote>
+<ul>
+<li><code>kafka-topics.sh</code> &#x4EFB;&#x4F55;&#x548C; topic &#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;</li>
+<li><code>--create</code> &#x8868;&#x793A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; topic</li>
+<li><code>--zookeeper</code> &#x6307;&#x660E;&#x4EFB;&#x610F;&#x4E00;&#x4E2A; zookeeper &#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;</li>
+<li><code>--replication-factor</code> &#x8868;&#x793A;&#x6BCF;&#x4E2A; topic &#x7684;&#x526F;&#x672C;&#x6570;. &#x6CE8;&#x610F;: &#x526F;&#x672C;&#x6570;&#x5FC5;&#x987B;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E; kafka &#x96C6;&#x7FA4;&#x7684;&#x6570;&#x91CF;.</li>
+<li><code>--partitions</code> &#x8FD9;&#x4E2A; topic &#x7684;&#x5206;&#x533A;&#x7684;&#x6570;&#x91CF;</li>
+<li><code>--topic</code> &#x8FD9;&#x4E2A; topic &#x7684;&#x540D;&#x5B57;.</li>
+</ul>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1541675801.png-atguiguText" alt=""></p>
+<h2 id="232-&#x67E5;&#x770B;-topic-&#x5217;&#x8868;">2.3.2 &#x67E5;&#x770B; topic &#x5217;&#x8868;</h2>
+<pre class="language-"><code class="lang-bash">kafka-topics.sh --list --zookeeper hadoop201:2181
+</code></pre>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1541686416.png-atguiguText" alt=""></p>
+<h2 id="233-&#x67E5;&#x770B;&#x67D0;&#x4E2A;-topic-&#x7684;&#x5206;&#x533A;&#x60C5;&#x51B5;">2.3.3 &#x67E5;&#x770B;&#x67D0;&#x4E2A; topic &#x7684;&#x5206;&#x533A;&#x60C5;&#x51B5;</h2>
+<pre class="language-"><code class="lang-bash">kafka-topics.sh --describe --topic third --zookeeper hadoop201:2181
+</code></pre>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1541686519.png-atguiguText" alt=""></p>
+<blockquote>
+<h4 id="&#x8BF4;&#x660E;"><em>&#x8BF4;&#x660E;:</em></h4>
+</blockquote>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x884C;&#x662F;&#x5206;&#x533A;&#x7684;&#x6982;&#x8FF0;</li>
+<li>&#x5269;&#x4E0B;&#x7684;&#x6BCF;&#x4E00;&#x884C;&#x662F;&#x4E00;&#x4E2A;&#x5206;&#x533A;&#x4FE1;&#x606F;. &#x56E0;&#x4E3A; topic third &#x6709; 4 &#x4E2A;&#x5206;&#x533A;, &#x6240;&#x4EE5;&#x6709; 4 &#x884C;.</li>
+<li><code>Leader</code>: &#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x5206;&#x533A;&#x7684;<code>leader</code>&#x6240;&#x5728;&#x7684;&#x670D;&#x52A1;&#x5668;<code>id</code>. &#x968F;&#x673A;&#x5206;&#x914D;&#x7684;. <code>leader</code>&#x8D1F;&#x8D23;&#x8FD9;&#x4E2A;&#x5206;&#x533A;&#x7684;&#x6240;&#x6709;&#x8BFB;&#x548C;&#x5199;&#x7684;&#x5DE5;&#x4F5C;. &#x5176;&#x4ED6;&#x7684;&#x975E; leader &#x526F;&#x672C;, &#x4EC5;&#x4EC5;&#x662F; leader &#x7684;&#x5907;&#x4EFD;.</li>
+<li><code>Relicas</code>: &#x8868;&#x793A;&#x8FD9;&#x4E2A;&#x5206;&#x533A;&#x7684;&#x6240;&#x6709;&#x590D;&#x672C;&#x6240;&#x5728;&#x7684;&#x670D;&#x52A1;&#x5668; id.  &#x8FD9;&#x53EA;&#x8003;&#x8651; logs &#x4E2D;&#x7684;&#x6587;&#x4EF6;, &#x5373;&#x4F7F; broker &#x6302;&#x4E86;, &#x4E5F;&#x4F1A;&#x663E;&#x793A;</li>
+<li><code>Isr</code>: &#x8FD9;&#x4E2A;&#x8868;&#x793A;&#x6D3B;&#x7740;&#x7684; broker, &#x662F; Relicas &#x7684;&#x5B50;&#x96C6;.</li>
+</ul>
+<h2 id="234-&#x5220;&#x9664;-topic">2.3.4 &#x5220;&#x9664; topic</h2>
+<pre class="language-"><code class="lang-bash">kafka-topics.sh --delete --topic first --zookeeper hadoop201:2181
+</code></pre>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1541687829.png-atguiguText" alt=""></p>
+<h2 id="235-&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x884C;&#x751F;&#x4EA7;&#x8005;-&#x5E76;&#x53D1;&#x9001;&#x6D88;">2.3.5 &#x542F;&#x52A8;&#x547D;&#x4EE4;&#x884C;&#x751F;&#x4EA7;&#x8005;, &#x5E76;&#x53D1;&#x9001;&#x6D88;</h2>
+<pre class="language-"><code class="lang-bash">kafka-console-producer.sh --broker-list hadoop201:9092 --topic second
+</code></pre>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1541688965.png-atguiguText" alt=""></p>
+<h2 id="236-&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x884C;&#x6D88;&#x8D39;&#x8005;-&#x6D88;&#x8D39;&#x6D88;&#x606F;">2.3.6 &#x542F;&#x52A8;&#x547D;&#x4EE4;&#x884C;&#x6D88;&#x8D39;&#x8005;, &#x6D88;&#x8D39;&#x6D88;&#x606F;</h2>
+<pre class="language-"><code class="lang-bash">kafka-console-consumer.sh --zookeeper hadoop201:2181 --from-beginning --topic second
+</code></pre>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1541689034.png-atguiguText" alt=""></p>
+<blockquote>
+<h4 id="&#x8BF4;&#x660E;"><em>&#x8BF4;&#x660E;:</em></h4>
+</blockquote>
+<ul>
+<li><p><code>--from-beginning</code>&#xFF1A;&#x4F1A;&#x628A; second &#x4E3B;&#x9898;&#x4E2D;&#x4EE5;&#x5F80;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x90FD;&#x8BFB;&#x53D6;&#x51FA;&#x6765;&#x3002;&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x9009;&#x62E9;&#x662F;&#x5426;&#x8981;&#x6DFB;&#x52A0;.</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x4E0D;&#x6DFB;&#x52A0;<code>--from-beginning</code>&#x5219;&#x53EA;&#x4F1A;&#x8BFB;&#x53D6;&#x4EE5;&#x540E;&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;.</p>
+</li>
+</ul>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-11-20 18:14:17
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="22-bu-shu.html" class="navigation navigation-prev " aria-label="Previous page: 2.2 部署">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi.html" class="navigation navigation-next " aria-label="Next page: 第 3 章 Kafka 工作流程分析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.3 Kafka 常用命令操作","level":"1.2.3","depth":2,"next":{"title":"第 3 章 Kafka 工作流程分析","level":"1.3","depth":1,"path":"di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi.md","ref":"di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi.md","articles":[{"title":"3.1 Kafka 生产过程分析","level":"1.3.1","depth":2,"path":"di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/31-kafka-sheng-cheng-guo-cheng-fen-xi.md","ref":"di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/31-kafka-sheng-cheng-guo-cheng-fen-xi.md","articles":[]},{"title":"3.2 broker 保存消息","level":"1.3.2","depth":2,"path":"di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/32-broker-bao-cun-xiao-xi.md","ref":"di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/32-broker-bao-cun-xiao-xi.md","articles":[]},{"title":"3.3 Zookeeper 存储结构","level":"1.3.3","depth":2,"path":"di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/33-zookeeper-cun-chu-jie-gou.md","ref":"di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/33-zookeeper-cun-chu-jie-gou.md","articles":[]},{"title":"3.4 Kafka 消费过程分析","level":"1.3.4","depth":2,"path":"di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/34-kafka-xiao-fei-guo-cheng-fen-xi.md","ref":"di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/34-kafka-xiao-fei-guo-cheng-fen-xi.md","articles":[]},{"title":"3.5 消费者组案例","level":"1.3.5","depth":2,"path":"di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/35-xiao-fei-zhe-zu-an-li.md","ref":"di-3-zhang-kafka-gong-zuo-liu-cheng-fen-xi/35-xiao-fei-zhe-zu-an-li.md","articles":[]}]},"previous":{"title":"2.2 部署","level":"1.2.2","depth":2,"path":"chapter1/22-bu-shu.md","ref":"chapter1/22-bu-shu.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"https://www.gitbook.com/@zhenchao125"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 Fulume 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"chapter1/23-kafka-chang-yong-ming-ling-cao-zuo.md","mtime":"2018-11-20T10:14:17.969Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-25T01:42:15.294Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1240 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>9.3 RowKey 设计 · 大数据 bigdata_hbase_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="94-nei-cun-you-hua.html" />
+    
+    
+    <link rel="prev" href="92-yu-fen-qu.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第 1 章 Hbase 简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../11-shi-yao-shi-hbase.html">
+            
+                <a href="../11-shi-yao-shi-hbase.html">
+            
+                    
+                    1.1 Hbase 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../12-hbase-te-dian.html">
+            
+                <a href="../12-hbase-te-dian.html">
+            
+                    
+                    1.2 Hbase 特点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../13-hbase-jia-gou.html">
+            
+                <a href="../13-hbase-jia-gou.html">
+            
+                    
+                    1.3 Hbase 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../14-hbase-zhong-de-ge-ge-zu-jian.html">
+            
+                <a href="../14-hbase-zhong-de-ge-ge-zu-jian.html">
+            
+                    
+                    1.4 Hbase 中的各个组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.4.1" data-path="../14-hbase-zhong-de-ge-ge-zu-jian/141-regionserver.html">
+            
+                <a href="../14-hbase-zhong-de-ge-ge-zu-jian/141-regionserver.html">
+            
+                    
+                    1.4.1 RegionServer 是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.2" data-path="../14-hbase-zhong-de-ge-ge-zu-jian/142-region-shi-shi-yao.html">
+            
+                <a href="../14-hbase-zhong-de-ge-ge-zu-jian/142-region-shi-shi-yao.html">
+            
+                    
+                    1.4.2 Region 是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.3" data-path="../14-hbase-zhong-de-ge-ge-zu-jian/143-master-shi-shi-yao.html">
+            
+                <a href="../14-hbase-zhong-de-ge-ge-zu-jian/143-master-shi-shi-yao.html">
+            
+                    
+                    1.4.3 Master 是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../14-hbase-cun-chu-de-yi-xie-gai-nian.html">
+            
+                <a href="../14-hbase-cun-chu-de-yi-xie-gai-nian.html">
+            
+                    
+                    1.5 Hbase 存储的一些概念
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.5.1" data-path="../14-hbase-cun-chu-de-yi-xie-gai-nian/141-xing-952e28-row-key.html">
+            
+                <a href="../14-hbase-cun-chu-de-yi-xie-gai-nian/141-xing-952e28-row-key.html">
+            
+                    
+                    1.5.1 行键(row key)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.2" data-path="../14-hbase-cun-chu-de-yi-xie-gai-nian/142-lie-zu-he-lie.html">
+            
+                <a href="../14-hbase-cun-chu-de-yi-xie-gai-nian/142-lie-zu-he-lie.html">
+            
+                    
+                    1.5.2 列族和列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.3" data-path="../14-hbase-cun-chu-de-yi-xie-gai-nian/143-dan-yuan-683c28-cell.html">
+            
+                <a href="../14-hbase-cun-chu-de-yi-xie-gai-nian/143-dan-yuan-683c28-cell.html">
+            
+                    
+                    1.5.3 单元格(Cell)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.4" data-path="../14-hbase-cun-chu-de-yi-xie-gai-nian/144-region-he-xing-de-guan-xi.html">
+            
+                <a href="../14-hbase-cun-chu-de-yi-xie-gai-nian/144-region-he-xing-de-guan-xi.html">
+            
+                    
+                    1.5.4 Region 和 行的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../16-hbase-he-guan-xi-xing-shu-ju-ku-de-dui-bi.html">
+            
+                <a href="../16-hbase-he-guan-xi-xing-shu-ju-ku-de-dui-bi.html">
+            
+                    
+                    1.6 Hbase 和关系型数据库的对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    第 2 章 Hbase 部署和基本配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../chapter1/21-zhun-bei-gong-zuo.html">
+            
+                <a href="../chapter1/21-zhun-bei-gong-zuo.html">
+            
+                    
+                    2.1 准备工作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../chapter1/22-pei-zhi-hbase.html">
+            
+                <a href="../chapter1/22-pei-zhi-hbase.html">
+            
+                    
+                    2.2 配置 Hbase
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../chapter1/23-qi-dong-hbase.html">
+            
+                <a href="../chapter1/23-qi-dong-hbase.html">
+            
+                    
+                    2.3 启动 Hbase
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../di-3-zhang-hbase-shell-cao-zuo.html">
+            
+                <a href="../di-3-zhang-hbase-shell-cao-zuo.html">
+            
+                    
+                    第 3 章 Hbase Shell 操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../di-3-zhang-hbase-shell-cao-zuo/31-ji-ben-cao-zuo.html">
+            
+                <a href="../di-3-zhang-hbase-shell-cao-zuo/31-ji-ben-cao-zuo.html">
+            
+                    
+                    3.1 基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../di-3-zhang-hbase-shell-cao-zuo/32-biao-de-cao-zuo.html">
+            
+                <a href="../di-3-zhang-hbase-shell-cao-zuo/32-biao-de-cao-zuo.html">
+            
+                    
+                    3.2 表的操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../di-4-zhang-hbase-shu-ju-jie-gou.html">
+            
+                <a href="../di-4-zhang-hbase-shu-ju-jie-gou.html">
+            
+                    
+                    第 4 章 Hbase 数据模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../di-5-zhang-hbase-nei-bu-yuan-li.html">
+            
+                <a href="../di-5-zhang-hbase-nei-bu-yuan-li.html">
+            
+                    
+                    第 5 章 Hbase 内部原理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../di-5-zhang-hbase-nei-bu-yuan-li/51-hbase-shi-ru-he-cun-chu-shu-ju-de.html">
+            
+                <a href="../di-5-zhang-hbase-nei-bu-yuan-li/51-hbase-shi-ru-he-cun-chu-shu-ju-de.html">
+            
+                    
+                    5.1 Hbase 是如何存储数据的
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../di-5-zhang-hbase-nei-bu-yuan-li/51-hbase-shi-ru-he-cun-chu-shu-ju-de/511-walyu-xie-ri-5fd729.html">
+            
+                <a href="../di-5-zhang-hbase-nei-bu-yuan-li/51-hbase-shi-ru-he-cun-chu-shu-ju-de/511-walyu-xie-ri-5fd729.html">
+            
+                    
+                    5.1.1 WAL(预写日志)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../di-5-zhang-hbase-nei-bu-yuan-li/51-hbase-shi-ru-he-cun-chu-shu-ju-de/912-region-he-store.html">
+            
+                <a href="../di-5-zhang-hbase-nei-bu-yuan-li/51-hbase-shi-ru-he-cun-chu-shu-ju-de/912-region-he-store.html">
+            
+                    
+                    5.1.2 Region
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../di-5-zhang-hbase-nei-bu-yuan-li/51-hbase-shi-ru-he-cun-chu-shu-ju-de/913-store.html">
+            
+                <a href="../di-5-zhang-hbase-nei-bu-yuan-li/51-hbase-shi-ru-he-cun-chu-shu-ju-de/913-store.html">
+            
+                    
+                    5.1.3 Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../di-5-zhang-hbase-nei-bu-yuan-li/52-shu-ju-de-xie-ru-liu-cheng.html">
+            
+                <a href="../di-5-zhang-hbase-nei-bu-yuan-li/52-shu-ju-de-xie-ru-liu-cheng.html">
+            
+                    
+                    5.2 数据的写入流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../di-5-zhang-hbase-nei-bu-yuan-li/53-shu-ju-de-du-qu-liu-cheng.html">
+            
+                <a href="../di-5-zhang-hbase-nei-bu-yuan-li/53-shu-ju-de-du-qu-liu-cheng.html">
+            
+                    
+                    5.3 数据的读取流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../di-5-zhang-hbase-nei-bu-yuan-li/54-shu-ju-de-flush-guo-cheng.html">
+            
+                <a href="../di-5-zhang-hbase-nei-bu-yuan-li/54-shu-ju-de-flush-guo-cheng.html">
+            
+                    
+                    5.4 数据的 Flush 过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../di-5-zhang-hbase-nei-bu-yuan-li/55-shu-ju-de-he-bing-guo-cheng.html">
+            
+                <a href="../di-5-zhang-hbase-nei-bu-yuan-li/55-shu-ju-de-he-bing-guo-cheng.html">
+            
+                    
+                    5.5 数据的合并过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../di-5-zhang-hbase-nei-bu-yuan-li/56-region-chai-fen.html">
+            
+                <a href="../di-5-zhang-hbase-nei-bu-yuan-li/56-region-chai-fen.html">
+            
+                    
+                    5.6 Region 拆分
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../di-6-zhang-hbase-java-api-cao-zuo.html">
+            
+                <a href="../di-6-zhang-hbase-java-api-cao-zuo.html">
+            
+                    
+                    第 6 章 Hbase Java API 操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../di-6-zhang-hbase-java-api-cao-zuo/61-huo-qu-configuration-dui-xiang.html">
+            
+                <a href="../di-6-zhang-hbase-java-api-cao-zuo/61-huo-qu-configuration-dui-xiang.html">
+            
+                    
+                    6.1 获取 Configuration 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../di-6-zhang-hbase-java-api-cao-zuo/62-pan-duan-biao-shi-fou-cun-zai.html">
+            
+                <a href="../di-6-zhang-hbase-java-api-cao-zuo/62-pan-duan-biao-shi-fou-cun-zai.html">
+            
+                    
+                    6.2 判断表是否存在
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../di-6-zhang-hbase-java-api-cao-zuo/63-chuang-jian-biao.html">
+            
+                <a href="../di-6-zhang-hbase-java-api-cao-zuo/63-chuang-jian-biao.html">
+            
+                    
+                    6.3 创建表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../di-6-zhang-hbase-java-api-cao-zuo/64-shan-chu-biao.html">
+            
+                <a href="../di-6-zhang-hbase-java-api-cao-zuo/64-shan-chu-biao.html">
+            
+                    
+                    6.4 删除表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../di-6-zhang-hbase-java-api-cao-zuo/65-xiang-biao-zhong-cha-ru-shu-ju.html">
+            
+                <a href="../di-6-zhang-hbase-java-api-cao-zuo/65-xiang-biao-zhong-cha-ru-shu-ju.html">
+            
+                    
+                    6.5 向表中插入数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../di-6-zhang-hbase-java-api-cao-zuo/66-shan-chu-duo-xing-shu-ju.html">
+            
+                <a href="../di-6-zhang-hbase-java-api-cao-zuo/66-shan-chu-duo-xing-shu-ju.html">
+            
+                    
+                    6.6 删除多行数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../di-6-zhang-hbase-java-api-cao-zuo/67-huo-qu-biao-zhong-de-suo-you-shu-ju.html">
+            
+                <a href="../di-6-zhang-hbase-java-api-cao-zuo/67-huo-qu-biao-zhong-de-suo-you-shu-ju.html">
+            
+                    
+                    6.7 获取表中的所有数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../di-6-zhang-hbase-java-api-cao-zuo/68-huo-qu-mou-yi-xing-shu-ju.html">
+            
+                <a href="../di-6-zhang-hbase-java-api-cao-zuo/68-huo-qu-mou-yi-xing-shu-ju.html">
+            
+                    
+                    6.8 获取某一行数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../di-6-zhang-hbase-java-api-cao-zuo/69-huo-qu-mou-yi-xing-zhi-ding-lie-de-shu-ju.html">
+            
+                <a href="../di-6-zhang-hbase-java-api-cao-zuo/69-huo-qu-mou-yi-xing-zhi-ding-lie-de-shu-ju.html">
+            
+                    
+                    6.9 获取某一行指定列的数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../di-7-zhang-hbase-hemapreduce-jie-he.html">
+            
+                <a href="../di-7-zhang-hbase-hemapreduce-jie-he.html">
+            
+                    
+                    第 7 章 Hbase 和 MapReduce 结合
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../di-7-zhang-hbase-hemapreduce-jie-he/71-kuai-su-ru-men.html">
+            
+                <a href="../di-7-zhang-hbase-hemapreduce-jie-he/71-kuai-su-ru-men.html">
+            
+                    
+                    7.1 快速入门1:统计表中数据的行数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../di-7-zhang-hbase-hemapreduce-jie-he/72-kuai-su-ru-men-2-shi-yong-mapreduce-jiang-ben-di-shu-ju-dao-ru-de-hbase.html">
+            
+                <a href="../di-7-zhang-hbase-hemapreduce-jie-he/72-kuai-su-ru-men-2-shi-yong-mapreduce-jiang-ben-di-shu-ju-dao-ru-de-hbase.html">
+            
+                    
+                    7.2 快速入门2:使用 MapReduce 将本地数据导入的 HBase
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../di-7-zhang-hbase-hemapreduce-jie-he/72-zi-ding-yi-hbase-mapreduce.html">
+            
+                <a href="../di-7-zhang-hbase-hemapreduce-jie-he/72-zi-ding-yi-hbase-mapreduce.html">
+            
+                    
+                    7.3 自定义 HBase-MapReduce 之一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../di-7-zhang-hbase-hemapreduce-jie-he/74-zi-ding-yi-hbase-mapreduce-zhi-er.html">
+            
+                <a href="../di-7-zhang-hbase-hemapreduce-jie-he/74-zi-ding-yi-hbase-mapreduce-zhi-er.html">
+            
+                    
+                    7.4 自定义 HBase-MapReduce 之二
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../di-7-zhang-hbase-you-hua.html">
+            
+                <a href="../di-7-zhang-hbase-you-hua.html">
+            
+                    
+                    第 8 章 Hbase 和 Hive 结合
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../di-7-zhang-hbase-you-hua/81-hive-he-hbase-de-bi-jiao.html">
+            
+                <a href="../di-7-zhang-hbase-you-hua/81-hive-he-hbase-de-bi-jiao.html">
+            
+                    
+                    8.1 Hive 和 HBase 的比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../di-7-zhang-hbase-you-hua/82-hive-he-hbase-de-zheng-he.html">
+            
+                <a href="../di-7-zhang-hbase-you-hua/82-hive-he-hbase-de-zheng-he.html">
+            
+                    
+                    8.2 Hive 和 HBase 整合
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../di-7-zhang-hbase-you-hua/82-hive-he-hbase-de-zheng-he/821-pei-zhi.html">
+            
+                <a href="../di-7-zhang-hbase-you-hua/82-hive-he-hbase-de-zheng-he/821-pei-zhi.html">
+            
+                    
+                    8.2.1 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="../di-7-zhang-hbase-you-hua/82-hive-he-hbase-de-zheng-he/822-an-li-1.html">
+            
+                <a href="../di-7-zhang-hbase-you-hua/82-hive-he-hbase-de-zheng-he/822-an-li-1.html">
+            
+                    
+                    8.2.2 案例1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.3" data-path="../di-7-zhang-hbase-you-hua/82-hive-he-hbase-de-zheng-he/823-an-li-2.html">
+            
+                <a href="../di-7-zhang-hbase-you-hua/82-hive-he-hbase-de-zheng-he/823-an-li-2.html">
+            
+                    
+                    8.2.3 案例2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../di-9-zhang-hbase-you-hua.html">
+            
+                <a href="../di-9-zhang-hbase-you-hua.html">
+            
+                    
+                    第 9 章 HBase 优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="91-gao-ke-yong.html">
+            
+                <a href="91-gao-ke-yong.html">
+            
+                    
+                    9.1 高可用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="92-yu-fen-qu.html">
+            
+                <a href="92-yu-fen-qu.html">
+            
+                    
+                    9.2 预分区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.3" data-path="93-rowkey-she-ji.html">
+            
+                <a href="93-rowkey-she-ji.html">
+            
+                    
+                    9.3 RowKey 设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="94-nei-cun-you-hua.html">
+            
+                <a href="94-nei-cun-you-hua.html">
+            
+                    
+                    9.4 内存优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="95-ji-chu-you-hua.html">
+            
+                <a href="95-ji-chu-you-hua.html">
+            
+                    
+                    9.5 基础优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../di-10-zhang-hbase-shi-zhan-zhi-gu-li-wei-bo.html">
+            
+                <a href="../di-10-zhang-hbase-shi-zhan-zhi-gu-li-wei-bo.html">
+            
+                    
+                    第 10 章 HBase 实战之谷粒微博
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../di-10-zhang-hbase-shi-zhan-zhi-gu-li-wei-bo/101-biao-jie-gou.html">
+            
+                <a href="../di-10-zhang-hbase-shi-zhan-zhi-gu-li-wei-bo/101-biao-jie-gou.html">
+            
+                    
+                    10.1 表结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../di-10-zhang-hbase-shi-zhan-zhi-gu-li-wei-bo/102-weiboconstant-lei.html">
+            
+                <a href="../di-10-zhang-hbase-shi-zhan-zhi-gu-li-wei-bo/102-weiboconstant-lei.html">
+            
+                    
+                    10.2 WeiboConstant 类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../di-10-zhang-hbase-shi-zhan-zhi-gu-li-wei-bo/103-weiutil-lei.html">
+            
+                <a href="../di-10-zhang-hbase-shi-zhan-zhi-gu-li-wei-bo/103-weiutil-lei.html">
+            
+                    
+                    10.3 WeiUtil 类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../di-10-zhang-hbase-shi-zhan-zhi-gu-li-wei-bo/104-weibo-lei.html">
+            
+                <a href="../di-10-zhang-hbase-shi-zhan-zhi-gu-li-wei-bo/104-weibo-lei.html">
+            
+                    
+                    10.4 Weibo 类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >9.3 RowKey 设计</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="93-rowkey-&#x8BBE;&#x8BA1;">9.3 RowKey &#x8BBE;&#x8BA1;</h1>
+<p>&#x4E00;&#x6761;&#x6570;&#x636E;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x5C31;&#x662F; rowkey&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x6761;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x4E8E;&#x54EA;&#x4E2A;&#x5206;&#x533A;&#xFF0C;&#x53D6;&#x51B3;&#x4E8E; rowkey &#x5904;&#x4E8E;&#x54EA;&#x4E2A;&#x4E00;&#x4E2A;&#x9884;&#x5206;&#x533A;&#x7684;&#x533A;&#x95F4;&#x5185;</p>
+<p>&#x8BBE;&#x8BA1; rowkey &#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684; &#xFF0C;&#x5C31;&#x662F;&#x8BA9;&#x6570;&#x636E;&#x5747;&#x5300;&#x7684;&#x5206;&#x5E03;&#x4E8E;&#x6240;&#x6709;&#x7684; region &#x4E2D;&#xFF0C;&#x5728;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x9632;&#x6B62;&#x6570;&#x636E;&#x503E;&#x659C;&#x3002;</p>
+<h2 id="931-rowkey-&#x5E94;&#x8BE5;&#x9075;&#x5FAA;&#x7684;&#x7279;&#x70B9;">9.3.1 RowKey &#x5E94;&#x8BE5;&#x9075;&#x5FAA;&#x7684;&#x7279;&#x70B9;</h2>
+<ol>
+<li><p>&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;</p>
+<p>&#x867D;&#x7136;&#x884C;&#x952E;&#x5728; HBase &#x4E2D;&#x662F;&#x4EE5; <code>byte[]</code> &#x5B57;&#x8282;&#x6570;&#x7EC4;&#x7684;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5EFA;&#x8BAE;&#x5728;&#x7CFB;&#x7EDF;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x5C06;&#x5176;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8BBE;&#x7F6E;&#x4E3A;<code>String</code>&#x7C7B;&#x578B;&#xFF0C;&#x4FDD;&#x8BC1;&#x901A;&#x7528;&#x6027;&#xFF1B;</p>
+<p>&#x5982;&#x679C;&#x5728;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x5C06; RowKey &#x89C4;&#x5B9A;&#x4E3A;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#xFF0C;&#x8B6C;&#x5982;<code>Long</code>&#x578B;&#xFF0C;&#x90A3;&#x4E48;&#x6570;&#x636E;&#x7684;&#x957F;&#x5EA6;&#x5C06;&#x53EF;&#x80FD;&#x53D7;&#x9650;&#x4E8E;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#x7B49;&#x6240;&#x89C4;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x957F;&#x5EA6;</p>
+<p>&#x5E38;&#x7528;&#x7684;&#x884C;&#x952E;&#x5B57;&#x7B26;&#x4E32;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#xFF1A;</p>
+<pre class="language-"><code class="lang-java">&#x7EAF;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8B6C;&#x5982;<span class="token number">9559820140512</span>&#xFF1B;
+
+&#x6570;&#x5B57;<span class="token operator">+</span>&#x7279;&#x6B8A;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x8B6C;&#x5982;<span class="token number">95598</span><span class="token operator">-</span><span class="token number">20140512</span><span class="token punctuation">;</span>
+
+&#x6570;&#x5B57;<span class="token operator">+</span>&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#xFF0C;&#x8B6C;&#x5982;city20140512&#xFF1B;
+
+&#x6570;&#x5B57;<span class="token operator">+</span>&#x82F1;&#x6587;&#x5B57;&#x6BCD;<span class="token operator">+</span>&#x7279;&#x6B8A;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x8B6C;&#x5982;city_20140512&#x3002;
+</code></pre>
+</li>
+<li><p>&#x6709;&#x660E;&#x786E;&#x7684;&#x610F;&#x4E49;
+RowKey &#x7684;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x662F;&#x4E3A;&#x4E86;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x8BB0;&#x5F55;&#x7684;&#x552F;&#x4E00;&#x6027;&#x6807;&#x793A;&#xFF0C;&#x4F46;&#x662F;&#x552F;&#x4E00;&#x6027;&#x5E76;&#x4E0D;&#x662F;&#x5176;&#x5168;&#x90E8;&#xFF0C;&#x5177;&#x6709;&#x660E;&#x786E;&#x610F;&#x4E49;&#x7684;&#x884C;&#x952E;&#x5BF9;&#x4E8E;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x3001;&#x6570;&#x636E;&#x68C0;&#x7D22;&#x7B49;&#x90FD;&#x5177;&#x6709;&#x7279;&#x6B8A;&#x610F;&#x4E49;&#x3002;</p>
+<p>&#x8B6C;&#x5982;&#x4E0A;&#x9762;&#x7684;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x4E32;<code>9559820140512</code>&#xFF0C;&#x5176;&#x5B9E;&#x9645;&#x610F;&#x4E49;&#x662F;&#x8FD9;&#x6837;&#xFF1A;<code>95598</code>&#xFF08;&#x7535;&#x7F51;&#x5BA2;&#x670D;&#x7535;&#x8BDD;&#xFF09;+<code>20140512</code>&#xFF08;&#x65E5;&#x671F;&#xFF09;&#x3002;</p>
+<p>&#x884C;&#x952E;&#x5F80;&#x5F80;&#x7531;&#x591A;&#x4E2A;&#x503C;&#x7EC4;&#x5408;&#x800C;&#x6210;&#xFF0C;&#x800C;&#x5404;&#x4E2A;&#x503C;&#x7684;&#x4F4D;&#x7F6E;&#x987A;&#x5E8F;&#x5C06;&#x5F71;&#x54CD;&#x5230;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x548C;&#x68C0;&#x7D22;&#x6548;&#x7387;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x8BBE;&#x8BA1;&#x884C;&#x952E;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x65E5;&#x540E;&#x7684;&#x4E1A;&#x52A1;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x6709;&#x6BD4;&#x8F83;&#x6DF1;&#x5165;&#x7684;&#x4E86;&#x89E3;&#x548C;&#x524D;&#x77BB;&#x6027;&#x9884;&#x6D4B;&#xFF0C;&#x624D;&#x80FD;&#x8BBE;&#x8BA1;&#x51FA;&#x53EF;&#x5C3D;&#x91CF;&#x9AD8;&#x6548;&#x7387;&#x68C0;&#x7D22;&#x7684;&#x884C;&#x952E;&#x3002;</p>
+</li>
+<li><p>&#x5177;&#x6709;&#x6709;&#x5E8F;&#x6027;</p>
+<p>RowKey &#x662F;&#x6309;&#x7167;&#x5B57;&#x5178;&#x5E8F;&#x5B58;&#x50A8;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x8BBE;&#x8BA1; RowKey &#x65F6;&#xFF0C;&#x8981;&#x5145;&#x5206;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x6392;&#x5E8F;&#x7279;&#x70B9;&#xFF0C;&#x5C06;&#x7ECF;&#x5E38;&#x4E00;&#x8D77;&#x8BFB;&#x53D6;&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5230;&#x4E00;&#x5757;&#xFF0C;&#x5C06;&#x6700;&#x8FD1;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x8BBF;&#x95EE;&#x7684;&#x6570;&#x636E;&#x653E;&#x5728;&#x4E00;&#x5757;&#x3002;</p>
+<p>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;&#x5982;&#x679C;&#x6700;&#x8FD1;&#x5199;&#x5165; HBase &#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x662F;&#x6700;&#x53EF;&#x80FD;&#x88AB;&#x8BBF;&#x95EE;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x5C06;&#x65F6;&#x95F4;&#x6233;&#x4F5C;&#x4E3A;RowKey &#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x7531;&#x4E8E;&#x662F;&#x5B57;&#x5178;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>Long.MAX_VALUE&#x2013;timestamp</code>&#x4F5C;&#x4E3A; RowKey&#xFF0C;&#x8FD9;&#x6837;&#x80FD;&#x4FDD;&#x8BC1;&#x65B0;&#x5199;&#x5165;&#x7684;&#x6570;&#x636E;&#x5728;&#x8BFB;&#x53D6;&#x65F6;&#x53EF;&#x4EE5;&#x88AB;&#x5FEB;&#x901F;&#x547D;&#x4E2D;&#x3002;</p>
+</li>
+<li><p>&#x5177;&#x6709;&#x5B9A;&#x957F;&#x6027;</p>
+<p>&#x884C;&#x952E;&#x5177;&#x6709;&#x6709;&#x5E8F;&#x6027;&#x7684;&#x57FA;&#x7840;&#x4FBF;&#x662F;&#x5B9A;&#x957F;&#xFF0C;</p>
+<p>&#x8B6C;&#x5982;<code>20140512080500</code>&#x3001;<code>20140512083000</code>&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x5F62;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x9012;&#x589E;&#x7684;&#xFF0C;&#x4E0D;&#x7BA1;&#x540E;&#x9762;&#x7684;&#x79D2;&#x6570;&#x662F;&#x591A;&#x5C11;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A; 14 &#x4F4D;&#x6570;&#x5B57;&#x5F62;&#x5F0F;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x628A;&#x540E;&#x9762;&#x7684; 0 &#x53BB;&#x9664;&#x4E86;&#xFF0C;&#x90A3;&#x4E48; <code>201405120805</code> &#x5C06;&#x5927;&#x4E8E; <code>20140512083</code>&#xFF0C;&#x5176;&#x6709;&#x5E8F;&#x6027;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x66F4;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#xFF0C;&#x884C;&#x952E;&#x4E00;&#x5B9A;&#x8981;&#x8BBE;&#x8BA1;&#x6210;&#x5B9A;&#x957F;&#x7684;&#x3002;</p>
+</li>
+</ol>
+<hr>
+<h2 id="932-rowkey-&#x8BBE;&#x8BA1;&#x539F;&#x5219;">9.3.2 RowKey &#x8BBE;&#x8BA1;&#x539F;&#x5219;</h2>
+<h3 id="rowkey-&#x957F;&#x5EA6;&#x539F;&#x5219;">RowKey &#x957F;&#x5EA6;&#x539F;&#x5219;</h3>
+<p> Rowkey &#x662F;&#x4E00;&#x4E2A;&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#x6D41;&#xFF0C;Rowkey &#x7684;&#x957F;&#x5EA6;&#x88AB;&#x5F88;&#x591A;&#x5F00;&#x53D1;&#x8005;&#x5EFA;&#x8BAE;&#x8BF4;&#x8BBE;&#x8BA1;&#x5728;<code>10~100</code>&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x4E0D;&#x8FC7;&#x5EFA;&#x8BAE;&#x662F;&#x8D8A;&#x77ED;&#x8D8A;&#x597D;&#xFF0C;&#x63A7;&#x5236;&#x5728; 64 &#x4E2A;&#x5B57;&#x8282;&#x4EE5;&#x5185;&#x662F;&#x6BD4;&#x8F83;&#x597D;.</p>
+<p> &#x539F;&#x56E0;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#xFF08;1&#xFF09;&#x6570;&#x636E;&#x7684;&#x6301;&#x4E45;&#x5316;&#x6587;&#x4EF6; HFile &#x4E2D;&#x662F;&#x6309;&#x7167; KeyValue &#x5B58;&#x50A8;&#x7684;&#xFF0C;&#x5982;&#x679C; Rowkey &#x8FC7;&#x957F;&#x6BD4;&#x5982;100 &#x4E2A;&#x5B57;&#x8282;&#xFF0C;1&#x4EBF; &#x884C;&#x6570;&#x636E;&#x5149; Rowkey &#x5C31;&#x8981;&#x5360;&#x7528;<code>100*10000&#x4E07;=100&#x4EBF;</code>&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x5C06;&#x8FD1;10G&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x4F1A;&#x6781;&#x5927;&#x5F71;&#x54CD; HFile &#x7684;&#x5B58;&#x50A8;&#x6548;&#x7387;&#xFF1B;</p>
+<p>&#xFF08;2&#xFF09;MemStore &#x5C06;&#x7F13;&#x5B58;&#x90E8;&#x5206;&#x6570;&#x636E;&#x5230;&#x5185;&#x5B58;&#xFF0C;&#x5982;&#x679C; Rowkey &#x5B57;&#x6BB5;&#x8FC7;&#x957F;&#x5185;&#x5B58;&#x7684;&#x6709;&#x6548;&#x5229;&#x7528;&#x7387;&#x4F1A;&#x964D;&#x4F4E;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C06;&#x65E0;&#x6CD5;&#x7F13;&#x5B58;&#x66F4;&#x591A;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x4F1A;&#x964D;&#x4F4E;&#x68C0;&#x7D22;&#x6548;&#x7387;&#x3002;&#x56E0;&#x6B64; Rowkey &#x7684;&#x5B57;&#x8282;&#x957F;&#x5EA6;&#x8D8A;&#x77ED;&#x8D8A;&#x597D;&#x3002;</p>
+<p>&#xFF08;3&#xFF09;&#x76EE;&#x524D;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x662F;&#x90FD;&#x662F; 64 &#x4F4D;&#x7CFB;&#x7EDF;&#xFF0C;&#x5185;&#x5B58; 8 &#x5B57;&#x8282;&#x5BF9;&#x9F50;&#x3002;&#x63A7;&#x5236;&#x5728; 8 &#x4E2A;&#x5B57;&#x8282;&#x7684;&#x6B21;&#x5E42;&#x6BD4;&#x8F83;&#x597D;: &#x6BD4;&#x5982;, 16&#x5B57;&#x8282;,32&#x5B57;&#x8282;,64&#x5B57;&#x8282;&#x6BD4;&#x8F83;&#x597D;.</p>
+<h3 id="rowkey-&#x6563;&#x5217;&#x539F;&#x5219;">RowKey &#x6563;&#x5217;&#x539F;&#x5219;</h3>
+<p>&#x5982;&#x679C; Rowkey &#x662F;&#x6309;&#x65F6;&#x95F4;&#x6233;&#x7684;&#x65B9;&#x5F0F;&#x9012;&#x589E;&#xFF0C;&#x4E0D;&#x8981;&#x5C06;&#x65F6;&#x95F4;&#x653E;&#x5728;&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#x7684;&#x524D;&#x9762;&#xFF0C;</p>
+<p>&#x5EFA;&#x8BAE;&#x5C06;Rowkey&#x7684;&#x9AD8;&#x4F4D;&#x4F5C;&#x4E3A;&#x6563;&#x5217;&#x5B57;&#x6BB5;&#xFF0C;&#x7531;&#x7A0B;&#x5E8F;&#x5FAA;&#x73AF;&#x751F;&#x6210;&#xFF0C;&#x4F4E;&#x4F4D;&#x653E;&#x65F6;&#x95F4;&#x5B57;&#x6BB5;&#xFF0C;&#x8FD9;&#x6837;&#x5C06;&#x63D0;&#x9AD8;&#x6570;&#x636E;&#x5747;&#x8861;&#x5206;&#x5E03;&#x5728;&#x6BCF;&#x4E2A;Regionserver&#x5B9E;&#x73B0;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x7684;&#x51E0;&#x7387;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6563;&#x5217;&#x5B57;&#x6BB5;&#xFF0C;&#x9996;&#x5B57;&#x6BB5;&#x76F4;&#x63A5;&#x662F;&#x65F6;&#x95F4;&#x4FE1;&#x606F;&#x5C06;&#x4EA7;&#x751F;&#x6240;&#x6709;&#x65B0;&#x6570;&#x636E;&#x90FD;&#x5728;&#x4E00;&#x4E2A; RegionServer &#x4E0A;&#x5806;&#x79EF;&#x7684;&#x70ED;&#x70B9;&#x73B0;&#x8C61;&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x505A;&#x6570;&#x636E;&#x68C0;&#x7D22;&#x7684;&#x65F6;&#x5019;&#x8D1F;&#x8F7D;&#x5C06;&#x4F1A;&#x96C6;&#x4E2D;&#x5728;&#x4E2A;&#x522B; RegionServer&#xFF0C;&#x964D;&#x4F4E;&#x67E5;&#x8BE2;&#x6548;&#x7387;&#x3002;</p>
+<h3 id="rowkey-&#x552F;&#x4E00;&#x539F;&#x5219;">RowKey &#x552F;&#x4E00;&#x539F;&#x5219;</h3>
+<p>&#x5FC5;&#x987B;&#x5728;&#x8BBE;&#x8BA1;&#x4E0A;&#x4FDD;&#x8BC1;&#x5176;&#x552F;&#x4E00;&#x6027;&#x3002;</p>
+<hr>
+<h2 id="933-&#x8BBE;&#x8BA1;&#x6848;&#x4F8B;">9.3.3 &#x8BBE;&#x8BA1;&#x6848;&#x4F8B;</h2>
+<p>RowKey &#x7684;&#x8BBE;&#x8BA1;&#x548C;&#x4E1A;&#x52A1;&#x9700;&#x6C42;&#x662F;&#x5F3A;&#x76F8;&#x5173;&#x7684;. </p>
+<p>&#x76EE;&#x6807;: &#x73B0;&#x5728;&#x60F3;&#x53BB;&#x5B58;&#x50A8;&#x67D0;&#x4E00;&#x5E74;&#x7684;&#x67D0;&#x4E2A;&#x5730;&#x533A;&#x7684;&#x6240;&#x6709;&#x7528;&#x6237;&#x7684;&#x901A;&#x8BDD;&#x8BB0;&#x5F55;&#x65E5;&#x5FD7;.</p>
+<p>&#x5206;&#x6790;: </p>
+<p>&#x4E00;&#x5E74; 12 &#x4E2A;&#x6708;, &#x6211;&#x4EEC;&#x5047;&#x8BBE;&#x521B;&#x5EFA;&#x7684;&#x8868;&#x505A;&#x5230;&#x9884;&#x5206; 12 &#x4E2A;&#x533A;. (&#x65E0;&#x7A77;-&gt;02, 02-&gt;03,..., 11-&gt;&#x65E0;&#x7A77;)</p>
+<p>rowkey&#x552F;&#x4E00;&#x6027;:</p>
+<p> &#x8981;&#x4FDD;&#x8BC1;&#x6BCF;&#x6761;&#x8BB0;&#x5F55;&#x7684;rowkey&#x552F;&#x4E00;&#x6027;,  rowkey &#x5E94;&#x8BE5;&#x5305;&#x542B;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x7535;&#x8BDD;&#x53F7;&#x7801;&#x548C;&#x901A;&#x8BDD;&#x65F6;&#x95F4;&#x6233;</p>
+<p>rowkey&#x957F;&#x5EA6;:
+ &#x957F;&#x5EA6;&#x4E0D;&#x80FD;&#x592A;&#x957F;, &#x4E5F;&#x4E0D;&#x80FD;&#x592A;&#x77ED;, &#x5047;&#x8BBE;&#x8BBE;&#x8BA1;&#x4E3A; 32 &#x4E2A;&#x5B57;&#x8282;.</p>
+<p>RowKey &#x6563;&#x5217;:
+ &#x5C3D;&#x91CF;&#x5747;&#x5300;&#x5206;&#x4E0D;&#x5230;&#x4E0D;&#x540C;&#x7684; Region &#x4E2D;.</p>
+<p>&#x5047;&#x8BBE;&#x8FD9;&#x6837;&#x8BBE;&#x8BA1;:
+<code>2&#x4F4D;&#x7684;&#x6708;&#x4EFD;11&#x4F4D;&#x7684;&#x7535;&#x8BDD;&#x53F7;&#x7801;19&#x4F4D;&#x7684;&#x65F6;&#x95F4;&#x6233;</code></p>
+<p>&#x5C31;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x5B58;&#x50A8;&#x7684;&#x65F6;&#x5019;, &#x6BCF;&#x4E2A;&#x4EBA;&#x7684;&#x6BCF;&#x4E2A;&#x6708;&#x7684;&#x901A;&#x8BDD;&#x8BB0;&#x5F55;&#x4E00;&#x5B9A;&#x4F1A;&#x8FDB;&#x5165;&#x540C;&#x4E00;&#x4E2A; Region &#x4E2D;.</p>
+<p>&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#x4E5F;&#x4F1A;&#x901F;&#x5EA6;&#x6BD4;&#x8F83;&#x5FEB;.</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-11-20 18:14:19
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="92-yu-fen-qu.html" class="navigation navigation-prev " aria-label="Previous page: 9.2 预分区">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="94-nei-cun-you-hua.html" class="navigation navigation-next " aria-label="Next page: 9.4 内存优化">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"9.3 RowKey 设计","level":"1.9.3","depth":2,"next":{"title":"9.4 内存优化","level":"1.9.4","depth":2,"path":"di-9-zhang-hbase-you-hua/94-nei-cun-you-hua.md","ref":"di-9-zhang-hbase-you-hua/94-nei-cun-you-hua.md","articles":[]},"previous":{"title":"9.2 预分区","level":"1.9.2","depth":2,"path":"di-9-zhang-hbase-you-hua/92-yu-fen-qu.md","ref":"di-9-zhang-hbase-you-hua/92-yu-fen-qu.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_hbase_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-9-zhang-hbase-you-hua/93-rowkey-she-ji.md","mtime":"2018-11-20T10:14:19.822Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-29T00:33:25.667Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

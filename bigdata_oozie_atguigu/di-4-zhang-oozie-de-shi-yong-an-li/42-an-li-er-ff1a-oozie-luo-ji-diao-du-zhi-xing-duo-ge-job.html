@@ -1,0 +1,497 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4.2 案例二：Oozie 逻辑调度执行多个 Job · 大数据 bigdata_oozie_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="43-an-li-4e093a-oozie-diao-du-mapreduce-ren-wu.html" />
+    
+    
+    <link rel="prev" href="41-an-li-4e003a-oozie-diao-du-shell-jiao-ben.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第 1 章 Oozie 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    第 2 章 Oozie 的功能模块介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../di-3-zhang-oozie-bu-shu.html">
+            
+                <a href="../di-3-zhang-oozie-bu-shu.html">
+            
+                    
+                    第 3 章 Oozie 部署
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../di-3-zhang-oozie-bu-shu/31-bu-shu-cdh-ban-ben-de-hadoop.html">
+            
+                <a href="../di-3-zhang-oozie-bu-shu/31-bu-shu-cdh-ban-ben-de-hadoop.html">
+            
+                    
+                    3.1 部署 CDH 版本的 Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../di-3-zhang-oozie-bu-shu/32-bu-shu-cdh-ban-ben-de-oozie.html">
+            
+                <a href="../di-3-zhang-oozie-bu-shu/32-bu-shu-cdh-ban-ben-de-oozie.html">
+            
+                    
+                    3.2 部署 CDH 版本的 Oozie
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../di-4-zhang-oozie-de-shi-yong-an-li.html">
+            
+                <a href="../di-4-zhang-oozie-de-shi-yong-an-li.html">
+            
+                    
+                    第 4 章 Oozie 的使用案例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="41-an-li-4e003a-oozie-diao-du-shell-jiao-ben.html">
+            
+                <a href="41-an-li-4e003a-oozie-diao-du-shell-jiao-ben.html">
+            
+                    
+                    4.1 案例一: Oozie调度shell脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="42-an-li-er-ff1a-oozie-luo-ji-diao-du-zhi-xing-duo-ge-job.html">
+            
+                <a href="42-an-li-er-ff1a-oozie-luo-ji-diao-du-zhi-xing-duo-ge-job.html">
+            
+                    
+                    4.2 案例二：Oozie 逻辑调度执行多个 Job
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="43-an-li-4e093a-oozie-diao-du-mapreduce-ren-wu.html">
+            
+                <a href="43-an-li-4e093a-oozie-diao-du-mapreduce-ren-wu.html">
+            
+                    
+                    4.3 案例三: Oozie 调度 MapReduce 任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="44-an-li-56db3a-oozie-ding-shi-ren-52a1-xun-huan-ren-wu.html">
+            
+                <a href="44-an-li-56db3a-oozie-ding-shi-ren-52a1-xun-huan-ren-wu.html">
+            
+                    
+                    4.4 案例四: Oozie 定时任务/循环任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../di-5-zhang-chang-jian-wen-ti-zong-jie.html">
+            
+                <a href="../di-5-zhang-chang-jian-wen-ti-zong-jie.html">
+            
+                    
+                    第 5 章 常见问题总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4.2 案例二：Oozie 逻辑调度执行多个 Job</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="42-&#x6848;&#x4F8B;&#x4E8C;&#xFF1A;oozie-&#x903B;&#x8F91;&#x8C03;&#x5EA6;&#x6267;&#x884C;&#x591A;&#x4E2A;-job">4.2 &#x6848;&#x4F8B;&#x4E8C;&#xFF1A;Oozie &#x903B;&#x8F91;&#x8C03;&#x5EA6;&#x6267;&#x884C;&#x591A;&#x4E2A; Job</h1>
+<h2 id="&#x76EE;&#x6807;&#xFF1A;&#x4F7F;&#x7528;oozie&#x6267;&#x884C;&#x591A;&#x4E2A;job&#x8C03;&#x5EA6;">&#x76EE;&#x6807;&#xFF1A;&#x4F7F;&#x7528;Oozie&#x6267;&#x884C;&#x591A;&#x4E2A;Job&#x8C03;&#x5EA6;</h2>
+<h2 id="&#x6B65;&#x9AA4;1-&#x628A;&#x521A;&#x624D;&#x7684;-shell-&#x6587;&#x4EF6;&#x5939;&#x91CD;&#x65B0;&#x590D;&#x5236;&#x4E00;&#x4EFD;-&#x5E76;&#x66F4;&#x540D;&#x4E3A;-shell2">&#x6B65;&#x9AA4;1: &#x628A;&#x521A;&#x624D;&#x7684; <code>shell</code> &#x6587;&#x4EF6;&#x5939;&#x91CD;&#x65B0;&#x590D;&#x5236;&#x4E00;&#x4EFD;, &#x5E76;&#x66F4;&#x540D;&#x4E3A; <code>shell2</code></h2>
+<pre class="language-"><code>cp -r shell shell2
+</code></pre><h2 id="&#x6B65;&#x9AA4;2-&#x5728;-shell2-&#x5185;&#x521B;&#x5EFA;&#x6587;&#x4EF6;-p2sh">&#x6B65;&#x9AA4;2: &#x5728; shell2 &#x5185;&#x521B;&#x5EFA;&#x6587;&#x4EF6; <code>p2.sh</code></h2>
+<pre class="language-"><code>#!/bin/bash
+/sbin/ifconfig &gt; p2.log
+</code></pre><h2 id="&#x6B65;&#x9AA4;3-&#x4FEE;&#x6539;-jobproperties-&#x6587;&#x4EF6;">&#x6B65;&#x9AA4;3: &#x4FEE;&#x6539; <code>job.properties</code> &#x6587;&#x4EF6;</h2>
+<pre class="language-"><code class="lang-java"># namenode &#x5730;&#x5740;
+nameNode<span class="token operator">=</span>hdfs<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>hadoop201<span class="token operator">:</span><span class="token number">8000</span>
+# ResouceManager &#x5730;&#x5740;<span class="token punctuation">,</span> &#x7AEF;&#x53E3;&#x9ED8;&#x8BA4;&#x662F; <span class="token number">8032</span>
+jobTracker<span class="token operator">=</span>hadoop202<span class="token operator">:</span><span class="token number">8032</span>
+# &#x961F;&#x5217;&#x5730;&#x5740;
+queueName<span class="token operator">=</span><span class="token keyword">default</span>
+#&#x6848;&#x4F8B;&#x7684;&#x6839;&#x8DEF;&#x5F84;
+my1<span class="token operator">=</span>oozie<span class="token operator">-</span>apps
+# &#x524D;&#x9762;&#x7684;&#x51E0;&#x4E2A;&#x8DEF;&#x5F84;&#x7528;&#x6765;&#x7EC4;&#x6210; workflow &#x5E94;&#x7528;&#x5728;hdfs&#x4E0A;&#x7684;&#x8DEF;&#x5F84;
+oozie<span class="token punctuation">.</span>wf<span class="token punctuation">.</span>application<span class="token punctuation">.</span>path<span class="token operator">=</span>$<span class="token punctuation">{</span>nameNode<span class="token punctuation">}</span><span class="token operator">/</span>user<span class="token operator">/</span>$<span class="token punctuation">{</span>user<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token operator">/</span>$<span class="token punctuation">{</span>my1<span class="token punctuation">}</span><span class="token operator">/</span>shell2
+
+# &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;<span class="token punctuation">,</span> &#x5728;&#x5DE5;&#x4F5C;&#x6D41;&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;
+currentTime<span class="token operator">=</span>p1<span class="token punctuation">.</span>sh
+ip<span class="token operator">=</span>p2<span class="token punctuation">.</span>sh
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;4-&#x4FEE;&#x6539;-workflowxml-&#x6587;&#x4EF6;">&#x6B65;&#x9AA4;4: &#x4FEE;&#x6539; <code>workflow.xml</code> &#x6587;&#x4EF6;</h2>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>workflow-app</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>uri:oozie:workflow:0.4<span class="token punctuation">&quot;</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>shell-wf<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>start</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>shell-node<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>shell-node<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>shell</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>uri:oozie:shell-action:0.2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>job-tracker</span><span class="token punctuation">&gt;</span></span>${jobTracker}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>job-tracker</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name-node</span><span class="token punctuation">&gt;</span></span>${nameNode}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name-node</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapred.job.queue.name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>${queueName}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exec</span><span class="token punctuation">&gt;</span></span>${currentTime}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exec</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>file</span><span class="token punctuation">&gt;</span></span>/user/atguigu/oozie-apps/shell2/${currentTime}#${currentTime}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>file</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>capture-output</span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>shell</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ok</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>shell-node2<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>error</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>fail<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>action</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>shell-node2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>shell</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>uri:oozie:shell-action:0.2<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>job-tracker</span><span class="token punctuation">&gt;</span></span>${jobTracker}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>job-tracker</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name-node</span><span class="token punctuation">&gt;</span></span>${nameNode}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name-node</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">&gt;</span></span>mapred.job.queue.name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">&gt;</span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">&gt;</span></span>${queueName}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">&gt;</span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exec</span><span class="token punctuation">&gt;</span></span>${ip}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exec</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>file</span><span class="token punctuation">&gt;</span></span>/user/atguigu/oozie-apps/shell2/${ip}#${ip}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>file</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>capture-output</span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>shell</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ok</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>end<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>error</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>fail<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>action</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kill</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>fail<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>message</span><span class="token punctuation">&gt;</span></span>Shell action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>message</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kill</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>kill</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>fail-output<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>message</span><span class="token punctuation">&gt;</span></span>Incorrect output, expected [Hello Oozie] but was [${wf:actionData(&apos;shell-node&apos;)[&apos;my_output&apos;]}]<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>message</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>kill</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>end</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>end<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>workflow-app</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;5-&#x4E0A;&#x4F20;&#x4EFB;&#x52A1;">&#x6B65;&#x9AA4;5: &#x4E0A;&#x4F20;&#x4EFB;&#x52A1;</h2>
+<pre class="language-"><code class="lang-bash">/opt/module/cdh/hadoop-2.5.0-cdh5.3.6/bin/hadoop fs -put oozie-apps/shell2 /user/atguigu/oozie-apps
+</code></pre>
+<h2 id="&#x6B65;&#x9AA4;6-&#x6267;&#x884C;&#x4EFB;&#x52A1;">&#x6B65;&#x9AA4;6: &#x6267;&#x884C;&#x4EFB;&#x52A1;</h2>
+<pre class="language-"><code class="lang-bash">bin/oozie job -oozie http://hadoop201:11000/oozie -config oozie-apps/shell2/job.properties -run
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-11-20 18:13:59
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="41-an-li-4e003a-oozie-diao-du-shell-jiao-ben.html" class="navigation navigation-prev " aria-label="Previous page: 4.1 案例一: Oozie调度shell脚本">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="43-an-li-4e093a-oozie-diao-du-mapreduce-ren-wu.html" class="navigation navigation-next " aria-label="Next page: 4.3 案例三: Oozie 调度 MapReduce 任务">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4.2 案例二：Oozie 逻辑调度执行多个 Job","level":"1.4.2","depth":2,"next":{"title":"4.3 案例三: Oozie 调度 MapReduce 任务","level":"1.4.3","depth":2,"path":"di-4-zhang-oozie-de-shi-yong-an-li/43-an-li-4e093a-oozie-diao-du-mapreduce-ren-wu.md","ref":"di-4-zhang-oozie-de-shi-yong-an-li/43-an-li-4e093a-oozie-diao-du-mapreduce-ren-wu.md","articles":[]},"previous":{"title":"4.1 案例一: Oozie调度shell脚本","level":"1.4.1","depth":2,"path":"di-4-zhang-oozie-de-shi-yong-an-li/41-an-li-4e003a-oozie-diao-du-shell-jiao-ben.md","ref":"di-4-zhang-oozie-de-shi-yong-an-li/41-an-li-4e003a-oozie-diao-du-shell-jiao-ben.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_oozie_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-4-zhang-oozie-de-shi-yong-an-li/42-an-li-er-ff1a-oozie-luo-ji-diao-du-zhi-xing-duo-ge-job.md","mtime":"2018-11-20T10:13:59.565Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-02T04:57:56.681Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
