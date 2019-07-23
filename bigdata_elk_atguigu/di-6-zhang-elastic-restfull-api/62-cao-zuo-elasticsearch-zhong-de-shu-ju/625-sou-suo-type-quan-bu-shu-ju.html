@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>6.2.5 搜索 type 全部数据 · GitBook</title>
+        <title>6.2.5 搜索 type 全部数据 · 大数据 Azkaban 课堂笔记</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content=" 李振超">
         
         
     
@@ -17,7 +17,27 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-change_girls/girls.css">
                 
             
                 
@@ -34,7 +54,7 @@
 
     
         
-    
+        <link rel="stylesheet" href="../../styles/website.css">
         
     
         
@@ -71,7 +91,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +102,16 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -680,7 +709,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -719,85 +748,87 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="625-&#x641C;&#x7D22;-type-&#x5168;&#x90E8;&#x6570;&#x636E;">6.2.5 &#x641C;&#x7D22; type &#x5168;&#x90E8;&#x6570;&#x636E;</h1>
-<pre><code class="lang-json">GET /movie_index/movie/_search
+<pre class="language-"><code class="lang-json">GET /movie_index/movie/_search
 </code></pre>
-<pre><code class="lang-json">{
-  <span class="hljs-string">&quot;took&quot;</span>: <span class="hljs-number">129</span>,
-  <span class="hljs-string">&quot;timed_out&quot;</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-string">&quot;_shards&quot;</span>: {
-    <span class="hljs-string">&quot;total&quot;</span>: <span class="hljs-number">5</span>,
-    <span class="hljs-string">&quot;successful&quot;</span>: <span class="hljs-number">5</span>,
-    <span class="hljs-string">&quot;skipped&quot;</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">&quot;failed&quot;</span>: <span class="hljs-number">0</span>
-  },
-  <span class="hljs-string">&quot;hits&quot;</span>: {
-    <span class="hljs-string">&quot;total&quot;</span>: <span class="hljs-number">3</span>,
-    <span class="hljs-string">&quot;max_score&quot;</span>: <span class="hljs-number">1</span>,
-    <span class="hljs-string">&quot;hits&quot;</span>: [
-      {
-        <span class="hljs-string">&quot;_index&quot;</span>: <span class="hljs-string">&quot;movie_index&quot;</span>,
-        <span class="hljs-string">&quot;_type&quot;</span>: <span class="hljs-string">&quot;movie&quot;</span>,
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;2&quot;</span>,
-        <span class="hljs-string">&quot;_score&quot;</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-string">&quot;_source&quot;</span>: {
-          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">2</span>,
-          <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;operation meigong river&quot;</span>,
-          <span class="hljs-string">&quot;doubanScore&quot;</span>: <span class="hljs-number">8</span>,
-          <span class="hljs-string">&quot;actorList&quot;</span>: [
-            {
-              <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">3</span>,
-              <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;zhang han yu&quot;</span>
-            }
-          ]
-        }
-      },
-      {
-        <span class="hljs-string">&quot;_index&quot;</span>: <span class="hljs-string">&quot;movie_index&quot;</span>,
-        <span class="hljs-string">&quot;_type&quot;</span>: <span class="hljs-string">&quot;movie&quot;</span>,
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;1&quot;</span>,
-        <span class="hljs-string">&quot;_score&quot;</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-string">&quot;_source&quot;</span>: {
-          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">1</span>,
-          <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;operation red sea&quot;</span>,
-          <span class="hljs-string">&quot;doubanScore&quot;</span>: <span class="hljs-number">8.5</span>,
-          <span class="hljs-string">&quot;actorList&quot;</span>: [
-            {
-              <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">1</span>,
-              <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;zhang yi&quot;</span>
-            },
-            {
-              <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">2</span>,
-              <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;hai qing&quot;</span>
-            },
-            {
-              <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">3</span>,
-              <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;zhang han yu&quot;</span>
-            }
-          ]
-        }
-      },
-      {
-        <span class="hljs-string">&quot;_index&quot;</span>: <span class="hljs-string">&quot;movie_index&quot;</span>,
-        <span class="hljs-string">&quot;_type&quot;</span>: <span class="hljs-string">&quot;movie&quot;</span>,
-        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;3&quot;</span>,
-        <span class="hljs-string">&quot;_score&quot;</span>: <span class="hljs-number">1</span>,
-        <span class="hljs-string">&quot;_source&quot;</span>: {
-          <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">3</span>,
-          <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;incident red sea&quot;</span>,
-          <span class="hljs-string">&quot;doubanScore&quot;</span>: <span class="hljs-number">5</span>,
-          <span class="hljs-string">&quot;actorList&quot;</span>: [
-            {
-              <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-number">4</span>,
-              <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;zhang chen&quot;</span>
-            }
-          ]
-        }
-      }
-    ]
-  }
-}
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;took&quot;</span><span class="token operator">:</span> <span class="token number">129</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;timed_out&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;_shards&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;total&quot;</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;successful&quot;</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;skipped&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;failed&quot;</span><span class="token operator">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;hits&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;total&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;max_score&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;hits&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;_index&quot;</span><span class="token operator">:</span> <span class="token string">&quot;movie_index&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;movie&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;_score&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;_source&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;operation meigong river&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;doubanScore&quot;</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;actorList&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;zhang han yu&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;_index&quot;</span><span class="token operator">:</span> <span class="token string">&quot;movie_index&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;movie&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;_score&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;_source&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;operation red sea&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;doubanScore&quot;</span><span class="token operator">:</span> <span class="token number">8.5</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;actorList&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;zhang yi&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;hai qing&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;zhang han yu&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;_index&quot;</span><span class="token operator">:</span> <span class="token string">&quot;movie_index&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;movie&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;_score&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;_source&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;incident red sea&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;doubanScore&quot;</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;actorList&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;zhang chen&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-07-11 17:37:21
+</span></footer>
                                 
                                 </section>
                             
@@ -840,7 +871,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"6.2.5 搜索 type 全部数据","level":"1.6.2.5","depth":3,"next":{"title":"6.2.6 查找指定 id 的 document 数据","level":"1.6.2.6","depth":3,"path":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/622-cha-zhao-zhi-ding-id-de-document-shu-ju.md","ref":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/622-cha-zhao-zhi-ding-id-de-document-shu-ju.md","articles":[]},"previous":{"title":"6.2.4 新增文档","level":"1.6.2.4","depth":3,"path":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/624-xin-zeng-wen-dang.md","ref":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/624-xin-zeng-wen-dang.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/625-sou-suo-type-quan-bu-shu-ju.md","mtime":"2019-07-11T09:37:21.236Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T02:39:19.704Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"6.2.5 搜索 type 全部数据","level":"1.6.2.5","depth":3,"next":{"title":"6.2.6 查找指定 id 的 document 数据","level":"1.6.2.6","depth":3,"path":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/622-cha-zhao-zhi-ding-id-de-document-shu-ju.md","ref":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/622-cha-zhao-zhi-ding-id-de-document-shu-ju.md","articles":[]},"previous":{"title":"6.2.4 新增文档","level":"1.6.2.4","depth":3,"path":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/624-xin-zeng-wen-dang.md","ref":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/624-xin-zeng-wen-dang.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 Azkaban 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/625-sou-suo-type-quan-bu-shu-ju.md","mtime":"2019-07-11T09:37:21.236Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T02:43:40.554Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -848,6 +879,22 @@
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
