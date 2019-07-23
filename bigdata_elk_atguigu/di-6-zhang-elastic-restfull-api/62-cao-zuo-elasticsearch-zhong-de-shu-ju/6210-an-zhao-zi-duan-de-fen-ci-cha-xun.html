@@ -1,0 +1,814 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>6.2.10 按照字段的分词查询 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="6211-an-zhao-fen-ci-zi-shu-xing-cha-xun.html" />
+    
+    
+    <link rel="prev" href="629-an-tiao-jian-cha-8be228-quan-90e829.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">第 1 部分 ElasticSearch</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    第 1 章 ElasticSearch 简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../11-elasticsearch-shi-shi-yao.html">
+            
+                <a href="../../11-elasticsearch-shi-shi-yao.html">
+            
+                    
+                    1.1 Elasticsearch 是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../12-elasticsearch-shi-yong-an-li.html">
+            
+                <a href="../../12-elasticsearch-shi-yong-an-li.html">
+            
+                    
+                    1.2 ElasticSearch 使用案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../../13-yu-qi-ta-shu-ju-cun-chu-bi-jiao.html">
+            
+                <a href="../../13-yu-qi-ta-shu-ju-cun-chu-bi-jiao.html">
+            
+                    
+                    1.3 与其他数据存储比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../di-2-zhang-elasticsearch-ji-chu-zhi-shi.html">
+            
+                <a href="../../di-2-zhang-elasticsearch-ji-chu-zhi-shi.html">
+            
+                    
+                    第 2 章 ElasticSearch 基础知识
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../di-2-zhang-elasticsearch-ji-chu-zhi-shi/21-elasticsearch-shu-ju-cun-chu-fang-shi.html">
+            
+                <a href="../../di-2-zhang-elasticsearch-ji-chu-zhi-shi/21-elasticsearch-shu-ju-cun-chu-fang-shi.html">
+            
+                    
+                    2.1 ElasticSearch 数据存储方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../di-2-zhang-elasticsearch-ji-chu-zhi-shi/23-dao-pai-suo-yin.html">
+            
+                <a href="../../di-2-zhang-elasticsearch-ji-chu-zhi-shi/23-dao-pai-suo-yin.html">
+            
+                    
+                    2.3 倒排索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../di-2-zhang-elasticsearch-ji-chu-zhi-shi/22-elasticsearch-te-dian.html">
+            
+                <a href="../../di-2-zhang-elasticsearch-ji-chu-zhi-shi/22-elasticsearch-te-dian.html">
+            
+                    
+                    2.2 ElasticSearch 特点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../di-3-zhang-elasticsearch-an-zhuang.html">
+            
+                <a href="../../di-3-zhang-elasticsearch-an-zhuang.html">
+            
+                    
+                    第 3 章 ElasticSearch 安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../di-4-zhang-elasticsearch-jiao-hu-fang-shi.html">
+            
+                <a href="../../di-4-zhang-elasticsearch-jiao-hu-fang-shi.html">
+            
+                    
+                    第 4 章 Kibana 安装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../di-4-zhang-elasticsearch-jiao-hu-fang-shi/41-elasticsearch-jiao-hu-fang-shi.html">
+            
+                <a href="../../di-4-zhang-elasticsearch-jiao-hu-fang-shi/41-elasticsearch-jiao-hu-fang-shi.html">
+            
+                    
+                    4.1 ElasticSearch 交互方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../di-4-zhang-elasticsearch-jiao-hu-fang-shi/42-an-zhuang-kibana.html">
+            
+                <a href="../../di-4-zhang-elasticsearch-jiao-hu-fang-shi/42-an-zhuang-kibana.html">
+            
+                    
+                    4.2 安装 Kibana
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../di-4-zhang-elasticsearch-jiao-hu-fang-shi/43-kibana-gong-neng-jian-jie.html">
+            
+                <a href="../../di-4-zhang-elasticsearch-jiao-hu-fang-shi/43-kibana-gong-neng-jian-jie.html">
+            
+                    
+                    4.3 Kibana 功能简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../di-5-zhang-zhi-zuo-elastic-he-kibana-de-tong-yi-qi-dong-jiao-ben.html">
+            
+                <a href="../../di-5-zhang-zhi-zuo-elastic-he-kibana-de-tong-yi-qi-dong-jiao-ben.html">
+            
+                    
+                    第 5 章 制作 ElasticSearch 和 Kibana 的统一启停脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../di-6-zhang-elastic-restfull-api.html">
+            
+                <a href="../../di-6-zhang-elastic-restfull-api.html">
+            
+                    
+                    第 6 章 Elastic Restfull Api
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../61-elasticsearch-zhong-bao-cun-de-shu-ju-jie-gou.html">
+            
+                <a href="../61-elasticsearch-zhong-bao-cun-de-shu-ju-jie-gou.html">
+            
+                    
+                    6.1 ElasticSearch 中保存的数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../62-cao-zuo-elasticsearch-zhong-de-shu-ju.html">
+            
+                <a href="../62-cao-zuo-elasticsearch-zhong-de-shu-ju.html">
+            
+                    
+                    6.2 操作 ElasticSearch 中的数据
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="621-cha-kan-es-zhong-you-na-xie-suo-yin.html">
+            
+                <a href="621-cha-kan-es-zhong-you-na-xie-suo-yin.html">
+            
+                    
+                    6.2.1 查看 ES 中有哪些索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="622-zeng-jia-suo-yin.html">
+            
+                <a href="622-zeng-jia-suo-yin.html">
+            
+                    
+                    6.2.2 增加索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="623-shan-chu-suo-yin.html">
+            
+                <a href="623-shan-chu-suo-yin.html">
+            
+                    
+                    6.2.3 删除索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.4" data-path="624-xin-zeng-wen-dang.html">
+            
+                <a href="624-xin-zeng-wen-dang.html">
+            
+                    
+                    6.2.4 新增文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.5" data-path="625-sou-suo-type-quan-bu-shu-ju.html">
+            
+                <a href="625-sou-suo-type-quan-bu-shu-ju.html">
+            
+                    
+                    6.2.5 搜索 type 全部数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.6" data-path="622-cha-zhao-zhi-ding-id-de-document-shu-ju.html">
+            
+                <a href="622-cha-zhao-zhi-ding-id-de-document-shu-ju.html">
+            
+                    
+                    6.2.6 查找指定 id 的 document 数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.7" data-path="627-xiu-gai.html">
+            
+                <a href="627-xiu-gai.html">
+            
+                    
+                    6.2.7 修改 document
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.8" data-path="628-shan-chu-yi-ge-document.html">
+            
+                <a href="628-shan-chu-yi-ge-document.html">
+            
+                    
+                    6.2.8 删除一个 document
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.9" data-path="629-an-tiao-jian-cha-8be228-quan-90e829.html">
+            
+                <a href="629-an-tiao-jian-cha-8be228-quan-90e829.html">
+            
+                    
+                    6.2.9 按条件查询(全部)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2.10" data-path="6210-an-zhao-zi-duan-de-fen-ci-cha-xun.html">
+            
+                <a href="6210-an-zhao-zi-duan-de-fen-ci-cha-xun.html">
+            
+                    
+                    6.2.10 按照字段的分词查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.11" data-path="6211-an-zhao-fen-ci-zi-shu-xing-cha-xun.html">
+            
+                <a href="6211-an-zhao-fen-ci-zi-shu-xing-cha-xun.html">
+            
+                    
+                    6.2.11 按照分词子属性查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.12" data-path="6212-an-zhao-duan-yu-cha-xun.html">
+            
+                <a href="6212-an-zhao-duan-yu-cha-xun.html">
+            
+                    
+                    6.2.12 按照短语查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.13" data-path="6213-mo-hu-cha-xun.html">
+            
+                <a href="6213-mo-hu-cha-xun.html">
+            
+                    
+                    6.2.13 模糊查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14" data-path="6214-guo-lv.html">
+            
+                <a href="6214-guo-lv.html">
+            
+                    
+                    6.2.14 过滤(查询后过滤)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.15" data-path="6115-cha-xun-qian-guo-6ee428-tui-jian-shi-752829.html">
+            
+                <a href="6115-cha-xun-qian-guo-6ee428-tui-jian-shi-752829.html">
+            
+                    
+                    6.1.15 查询前过滤(推荐使用)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.16" data-path="6116-an-fan-wei-guo-lv.html">
+            
+                <a href="6116-an-fan-wei-guo-lv.html">
+            
+                    
+                    6.1.16 按范围过滤
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.17" data-path="6117-pai-xu.html">
+            
+                <a href="6117-pai-xu.html">
+            
+                    
+                    6.1.17 排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.18" data-path="6118-fen-ye-cha-xun.html">
+            
+                <a href="6118-fen-ye-cha-xun.html">
+            
+                    
+                    6.1.18 分页查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.19" data-path="6219-zhi-ding-cha-xun-de-zi-duan.html">
+            
+                <a href="6219-zhi-ding-cha-xun-de-zi-duan.html">
+            
+                    
+                    6.2.19 指定查询的字段
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.20" data-path="6220-ju-he.html">
+            
+                <a href="6220-ju-he.html">
+            
+                    
+                    6.2.20 聚合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../di-7-zhang-zhong-wen-fen-ci.html">
+            
+                <a href="../../di-7-zhang-zhong-wen-fen-ci.html">
+            
+                    
+                    第 7 章 中文分词
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../di-7-zhang-zhong-wen-fen-ci/71-fen-ci-qi.html">
+            
+                <a href="../../di-7-zhang-zhong-wen-fen-ci/71-fen-ci-qi.html">
+            
+                    
+                    7.1 分词器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../di-7-zhang-zhong-wen-fen-ci/71-an-zhuang-ik-fen-ci-qi.html">
+            
+                <a href="../../di-7-zhang-zhong-wen-fen-ci/71-an-zhuang-ik-fen-ci-qi.html">
+            
+                    
+                    7.2 安装 IK 分词器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../../di-7-zhang-zhong-wen-fen-ci/72-ce-shi-shi-yong.html">
+            
+                <a href="../../di-7-zhang-zhong-wen-fen-ci/72-ce-shi-shi-yong.html">
+            
+                    
+                    7.3 测试使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../di-8-zhang-guanyu-mapping.html">
+            
+                <a href="../../di-8-zhang-guanyu-mapping.html">
+            
+                    
+                    第 8 章 关于 Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >6.2.10 按照字段的分词查询</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="6210-&#x6309;&#x7167;&#x5B57;&#x6BB5;&#x7684;&#x5206;&#x8BCD;&#x67E5;&#x8BE2;">6.2.10 &#x6309;&#x7167;&#x5B57;&#x6BB5;&#x7684;&#x5206;&#x8BCD;&#x67E5;&#x8BE2;</h1>
+<pre><code class="lang-json">GET /movie_index/movie/_search
+{
+  <span class="hljs-string">&quot;query&quot;</span>: {
+    <span class="hljs-string">&quot;match&quot;</span>: {
+      <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;sea&quot;</span>
+    }
+  }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="629-an-tiao-jian-cha-8be228-quan-90e829.html" class="navigation navigation-prev " aria-label="Previous page: 6.2.9 按条件查询(全部)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="6211-an-zhao-fen-ci-zi-shu-xing-cha-xun.html" class="navigation navigation-next " aria-label="Next page: 6.2.11 按照分词子属性查询">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"6.2.10 按照字段的分词查询","level":"1.6.2.10","depth":3,"next":{"title":"6.2.11 按照分词子属性查询","level":"1.6.2.11","depth":3,"path":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/6211-an-zhao-fen-ci-zi-shu-xing-cha-xun.md","ref":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/6211-an-zhao-fen-ci-zi-shu-xing-cha-xun.md","articles":[]},"previous":{"title":"6.2.9 按条件查询(全部)","level":"1.6.2.9","depth":3,"path":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/629-an-tiao-jian-cha-8be228-quan-90e829.md","ref":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/629-an-tiao-jian-cha-8be228-quan-90e829.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"di-6-zhang-elastic-restfull-api/62-cao-zuo-elasticsearch-zhong-de-shu-ju/6210-an-zhao-zi-duan-de-fen-ci-cha-xun.md","mtime":"2019-07-11T10:02:36.561Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-23T02:39:19.704Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
