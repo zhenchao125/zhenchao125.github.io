@@ -1,0 +1,1758 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.3 Spark 内置模块介绍 · 大数据 bigdata_spark_atguigu 课堂笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content=" 李振超">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter1.html" />
+    
+    
+    <link rel="prev" href="13-spark-te-dian.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://www.atguigu.com/" target="_blank" class="custom-link">联系我们</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">第 1 部分 Spark 基础</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第 1 章 Spark 概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="11-shi-yao-shi-spark.html">
+            
+                <a href="11-shi-yao-shi-spark.html">
+            
+                    
+                    1.1 什么是 Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="13-spark-te-dian.html">
+            
+                <a href="13-spark-te-dian.html">
+            
+                    
+                    1.2 Spark 特点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.3" data-path="13-spark-nei-zhi-mo-kuai-jie-shao.html">
+            
+                <a href="13-spark-nei-zhi-mo-kuai-jie-shao.html">
+            
+                    
+                    1.3 Spark 内置模块介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    第 2 章 Spark 运行模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="chapter1/21-local-mo-shi.html">
+            
+                <a href="chapter1/21-local-mo-shi.html">
+            
+                    
+                    2.1 Local 模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="chapter1/22-spark-he-xin-gai-nian-jie-shao.html">
+            
+                <a href="chapter1/22-spark-he-xin-gai-nian-jie-shao.html">
+            
+                    
+                    2.2 Spark 核心概念介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="chapter1/22-standalone-mo-shi.html">
+            
+                <a href="chapter1/22-standalone-mo-shi.html">
+            
+                    
+                    2.3 Standalone 模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="chapter1/231-pei-zhi-standalone-mo-shi.html">
+            
+                <a href="chapter1/231-pei-zhi-standalone-mo-shi.html">
+            
+                    
+                    2.3.1 配置 Standalone 模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="chapter1/232-shi-yong-standalone-mo-shi-yun-xing-ji-suan-pi-de-cheng-xu.html">
+            
+                <a href="chapter1/232-shi-yong-standalone-mo-shi-yun-xing-ji-suan-pi-de-cheng-xu.html">
+            
+                    
+                    2.3.2 使用 Standalone 模式运行计算 PI 的程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" data-path="chapter1/233-zai-standalone-mo-shi-xia-qi-dong-spark-shell.html">
+            
+                <a href="chapter1/233-zai-standalone-mo-shi-xia-qi-dong-spark-shell.html">
+            
+                    
+                    2.3.3 在 Standalone 模式下启动 Spark-shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.4" data-path="chapter1/24-pei-zhi-spark-ren-wu-li-shi-fu-wu-qi.html">
+            
+                <a href="chapter1/24-pei-zhi-spark-ren-wu-li-shi-fu-wu-qi.html">
+            
+                    
+                    2.3.4 配置 Spark 任务历史服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.5" data-path="chapter1/25-ha-pei-7f6e28-wei-mater-pei-7f6e29.html">
+            
+                <a href="chapter1/25-ha-pei-7f6e28-wei-mater-pei-7f6e29.html">
+            
+                    
+                    2.3.5 HA 配置(为 Mater 配置)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.6" data-path="chapter1/233-standalone-gong-zuo-mo-shi-tu-jie.html">
+            
+                <a href="chapter1/233-standalone-gong-zuo-mo-shi-tu-jie.html">
+            
+                    
+                    2.3.6 Standalone 工作模式图解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="chapter1/24-yarn-mo-shi.html">
+            
+                <a href="chapter1/24-yarn-mo-shi.html">
+            
+                    
+                    2.4 Yarn 模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="chapter1/25-mesos-mo-shi.html">
+            
+                <a href="chapter1/25-mesos-mo-shi.html">
+            
+                    
+                    2.5 Mesos 模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="chapter1/26-ji-zhong-yun-xing-mo-shi-de-dui-bi.html">
+            
+                <a href="chapter1/26-ji-zhong-yun-xing-mo-shi-de-dui-bi.html">
+            
+                    
+                    2.6 几种运行模式的对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="di-3-zhang-an-li-shi-cao.html">
+            
+                <a href="di-3-zhang-an-li-shi-cao.html">
+            
+                    
+                    第 3 章 案例实操
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="di-3-zhang-an-li-shi-cao/31-bian-xie-wordcount-cheng-xu.html">
+            
+                <a href="di-3-zhang-an-li-shi-cao/31-bian-xie-wordcount-cheng-xu.html">
+            
+                    
+                    3.1 编写 WordCount 程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="di-3-zhang-an-li-shi-cao/32-ce-shi.html">
+            
+                <a href="di-3-zhang-an-li-shi-cao/32-ce-shi.html">
+            
+                    
+                    3.2 测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 2 部分 Spark Core</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="di-2-bu-fen-spark-core/di-4-zhang-rdd-gai-shu.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-4-zhang-rdd-gai-shu.html">
+            
+                    
+                    第 4 章 RDD 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng.html">
+            
+                    
+                    第 5 章 RDD 编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/51-rdd-bian-cheng-mo-xing.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/51-rdd-bian-cheng-mo-xing.html">
+            
+                    
+                    5.1 RDD 编程模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/52-rdd-de-chuang-jian.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/52-rdd-de-chuang-jian.html">
+            
+                    
+                    5.2 RDD 的创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan.html">
+            
+                    
+                    5.3 RDD 的转换(transformation)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.3.1" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan/531-value-lei-xing.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan/531-value-lei-xing.html">
+            
+                    
+                    5.3.1 Value 类型---1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.2" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan/531-value-lei-xing-2.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan/531-value-lei-xing-2.html">
+            
+                    
+                    5.3.1 Value 类型---2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.3" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan/532-shuang-value-lei-xing.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan/532-shuang-value-lei-xing.html">
+            
+                    
+                    5.3.2 双 Value 类型交互
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.4" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan/533-key-value-lei-xing.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan/533-key-value-lei-xing.html">
+            
+                    
+                    5.3.3 Key-Value 类型--1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.5" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan/533-key-value-lei-578b-2.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan/533-key-value-lei-578b-2.html">
+            
+                    
+                    5.3.3 Key-Value 类型---2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.6" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan/534-an-li-shi-cao.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/53-rdd-de-zhuan-huan/534-an-li-shi-cao.html">
+            
+                    
+                    5.3.4 案例实操
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/54-rddde-action-cao-zuo.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/54-rddde-action-cao-zuo.html">
+            
+                    
+                    5.4 RDD的 Action 操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/55-rdd-zhong-han-shu-de-chuan-di.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/55-rdd-zhong-han-shu-de-chuan-di.html">
+            
+                    
+                    5.5 RDD 中函数的传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/56-rdd-de-yi-lai-guan-xi.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/56-rdd-de-yi-lai-guan-xi.html">
+            
+                    
+                    5.6 RDD 的依赖关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/57-spark-zhong-de-job-diao-du.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/57-spark-zhong-de-job-diao-du.html">
+            
+                    
+                    5.7 Spark 中的 Job 调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.8" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/58-spark-job-de-hua-fen.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/58-spark-job-de-hua-fen.html">
+            
+                    
+                    5.8 Spark Job 的划分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.9" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/50-rdd-de-chi-jiu-hua.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/50-rdd-de-chi-jiu-hua.html">
+            
+                    
+                    5.9 RDD 的持久化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.10" data-path="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/510-she-zhi-jian-cha-dian.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-5-zhang-rdd-bian-cheng/510-she-zhi-jian-cha-dian.html">
+            
+                    
+                    5.10 设置检查点
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="di-2-bu-fen-spark-core/di-6-zhang-key-value-lei-xing-rdd-de-shu-ju-fen-qu.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-6-zhang-key-value-lei-xing-rdd-de-shu-ju-fen-qu.html">
+            
+                    
+                    第 6 章 Key-Value 类型 RDD 的数据分区器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="di-2-bu-fen-spark-core/di-7-zhang.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-7-zhang.html">
+            
+                    
+                    第 7 章 文件中数据的读取和保存
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="di-2-bu-fen-spark-core/di-7-zhang/71-du-xie-text-wen-jian.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-7-zhang/71-du-xie-text-wen-jian.html">
+            
+                    
+                    7.1 读写 Text 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="di-2-bu-fen-spark-core/di-7-zhang/72-du-xie-json-wen-jian.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-7-zhang/72-du-xie-json-wen-jian.html">
+            
+                    
+                    7.2 读写 Json 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="di-2-bu-fen-spark-core/di-7-zhang/73-du-xie-sequence-wen-jian.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-7-zhang/73-du-xie-sequence-wen-jian.html">
+            
+                    
+                    7.3 读写 Sequence 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="di-2-bu-fen-spark-core/di-7-zhang/74-du-xie-object-wen-jian.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-7-zhang/74-du-xie-object-wen-jian.html">
+            
+                    
+                    7.4 读写 Object 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" data-path="di-2-bu-fen-spark-core/di-7-zhang/75-cong-hdfs-du-xie-wen-jian.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-7-zhang/75-cong-hdfs-du-xie-wen-jian.html">
+            
+                    
+                    7.5 从 HDFS 读写文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" data-path="di-2-bu-fen-spark-core/di-7-zhang/76-cong-mysql-shu-ju-du-xie-wen-jian.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-7-zhang/76-cong-mysql-shu-ju-du-xie-wen-jian.html">
+            
+                    
+                    7.6 从 Mysql 数据读写文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" data-path="di-2-bu-fen-spark-core/di-7-zhang/77-cong-hbase-du-xie-wen-jian.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-7-zhang/77-cong-hbase-du-xie-wen-jian.html">
+            
+                    
+                    7.7 从 Hbase 读写文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="di-2-bu-fen-spark-core/di-8-zhang-rdd-bian-cheng-jin-jie.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-8-zhang-rdd-bian-cheng-jin-jie.html">
+            
+                    
+                    第 8 章 RDD 编程进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="di-2-bu-fen-spark-core/di-8-zhang-rdd-bian-cheng-jin-jie/81-lei-jia-qi.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-8-zhang-rdd-bian-cheng-jin-jie/81-lei-jia-qi.html">
+            
+                    
+                    8.1 累加器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="di-2-bu-fen-spark-core/di-8-zhang-rdd-bian-cheng-jin-jie/82-guang-bo-bian-liang.html">
+            
+                <a href="di-2-bu-fen-spark-core/di-8-zhang-rdd-bian-cheng-jin-jie/82-guang-bo-bian-liang.html">
+            
+                    
+                    8.2 广播变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 3 部分 Spark Core 项目实战</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="di-3-bu-fen-spark-core-xiang-mu-shi-zhan/di-1-zhang-zhun-bei-shu-ju.html">
+            
+                <a href="di-3-bu-fen-spark-core-xiang-mu-shi-zhan/di-1-zhang-zhun-bei-shu-ju.html">
+            
+                    
+                    第 1 章 准备数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="di-3-bu-fen-spark-core-xiang-mu-shi-zhan/di-2-zhang-xu-qiu-1-top10-re-men-pin-lei.html">
+            
+                <a href="di-3-bu-fen-spark-core-xiang-mu-shi-zhan/di-2-zhang-xu-qiu-1-top10-re-men-pin-lei.html">
+            
+                    
+                    第 2 章 需求 1: Top10 热门品类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="di-3-bu-fen-spark-core-xiang-mu-shi-zhan/di-3-zhang-xu-qiu-2-top10-re-men-pin-leizhong-mei-ge-pin-lei-de-top10-huo-yue-session-tong-ji.html">
+            
+                <a href="di-3-bu-fen-spark-core-xiang-mu-shi-zhan/di-3-zhang-xu-qiu-2-top10-re-men-pin-leizhong-mei-ge-pin-lei-de-top10-huo-yue-session-tong-ji.html">
+            
+                    
+                    第 3 章 需求 2: Top10热门品类中每个品类的 Top10 活跃 Session 统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="di-3-bu-fen-spark-core-xiang-mu-shi-zhan/di-4-zhang-xu-qiu-3-ye-mian-dan-tiao-zhuan-hua-lv-tong-ji.html">
+            
+                <a href="di-3-bu-fen-spark-core-xiang-mu-shi-zhan/di-4-zhang-xu-qiu-3-ye-mian-dan-tiao-zhuan-hua-lv-tong-ji.html">
+            
+                    
+                    第 4 章 需求 3: 页面单跳转化率统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 4 部分 Spark Sql</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="di-3-bu-fen-spark-sql/di-9-zhang-spark-sql-gai-shu.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-9-zhang-spark-sql-gai-shu.html">
+            
+                    
+                    第 9 章 Spark SQL 概述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="di-3-bu-fen-spark-sql/di-9-zhang-spark-sql-gai-shu/91-11-shi-yao-shi-spark-sql.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-9-zhang-spark-sql-gai-shu/91-11-shi-yao-shi-spark-sql.html">
+            
+                    
+                    9.1  什么是 Spark SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="di-3-bu-fen-spark-sql/di-9-zhang-spark-sql-gai-shu/92-spark-sql-de-te-dian.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-9-zhang-spark-sql-gai-shu/92-spark-sql-de-te-dian.html">
+            
+                    
+                    9.2 Spark SQL 的特点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="di-3-bu-fen-spark-sql/di-9-zhang-spark-sql-gai-shu/93-shi-yao-shi-dataframe.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-9-zhang-spark-sql-gai-shu/93-shi-yao-shi-dataframe.html">
+            
+                    
+                    9.3 什么是 DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="di-3-bu-fen-spark-sql/di-9-zhang-spark-sql-gai-shu/94-shi-yao-shi-dataset.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-9-zhang-spark-sql-gai-shu/94-shi-yao-shi-dataset.html">
+            
+                    
+                    9.4 什么是 DataSet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng.html">
+            
+                    
+                    第 10 章 Spark SQL 编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/101-sparksession.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/101-sparksession.html">
+            
+                    
+                    10.1 SparkSession
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/102-shi-yong-dataframe-jin-xing-bian-cheng.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/102-shi-yong-dataframe-jin-xing-bian-cheng.html">
+            
+                    
+                    10.2 使用 DataFrame 进行编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.2.1" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/102-shi-yong-dataframe-jin-xing-bian-cheng/1021-chuang-jian-dataframe.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/102-shi-yong-dataframe-jin-xing-bian-cheng/1021-chuang-jian-dataframe.html">
+            
+                    
+                    10.2.1 创建 DataFrame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2.2" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/102-shi-yong-dataframe-jin-xing-bian-cheng/1022-dataframe-yu-fa-feng-ge.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/102-shi-yong-dataframe-jin-xing-bian-cheng/1022-dataframe-yu-fa-feng-ge.html">
+            
+                    
+                    10.2.2 DataFrame 语法风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2.3" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/102-shi-yong-dataframe-jin-xing-bian-cheng/1023-rdd-zhuan-huan-wei-dataframe.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/102-shi-yong-dataframe-jin-xing-bian-cheng/1023-rdd-zhuan-huan-wei-dataframe.html">
+            
+                    
+                    10.2.3 RDD 和 DataFrame 的交互
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/103-shi-yong-dataset-jin-xing-bian-cheng.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/103-shi-yong-dataset-jin-xing-bian-cheng.html">
+            
+                    
+                    10.3 使用 DataSet 进行编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.3.1" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/103-shi-yong-dataset-jin-xing-bian-cheng/1031-chuang-jian-dataset.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/103-shi-yong-dataset-jin-xing-bian-cheng/1031-chuang-jian-dataset.html">
+            
+                    
+                    10.3.1 创建 DataSet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3.2" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/103-shi-yong-dataset-jin-xing-bian-cheng/1032-rdd-he-dataset-de-jiao-hu.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/103-shi-yong-dataset-jin-xing-bian-cheng/1032-rdd-he-dataset-de-jiao-hu.html">
+            
+                    
+                    10.3.2 RDD 和 DataSet 的交互
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/104-dataframe-he-dataset-zhi-jian-de-jiao-hu.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/104-dataframe-he-dataset-zhi-jian-de-jiao-hu.html">
+            
+                    
+                    10.4 DataFrame 和 DataSet 之间的交互
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/105-rdd-dataframehe-dataset-zhi-jian-de-guan-xi.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/105-rdd-dataframehe-dataset-zhi-jian-de-guan-xi.html">
+            
+                    
+                    10.5 RDD, DataFrame和 DataSet 之间的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/106-shi-yong-ideachuang-jian-sparksql-cheng-xu.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/106-shi-yong-ideachuang-jian-sparksql-cheng-xu.html">
+            
+                    
+                    10.6 使用 IDEA 创建SparkSQL 程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/107-zi-ding-yi-sparksql-han-shu.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/107-zi-ding-yi-sparksql-han-shu.html">
+            
+                    
+                    10.7 自定义 SparkSQL 函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.7.1" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/107-zi-ding-yi-sparksql-han-shu/1071-zi-ding-yi-udf-han-shu.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/107-zi-ding-yi-sparksql-han-shu/1071-zi-ding-yi-udf-han-shu.html">
+            
+                    
+                    10.7.1 自定义 UDF 函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.7.2" data-path="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/107-zi-ding-yi-sparksql-han-shu/1072-yong-hu-zi-ding-hui-ju-he-han-shu.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-10-zhang-spark-sql-bian-cheng/107-zi-ding-yi-sparksql-han-shu/1072-yong-hu-zi-ding-hui-ju-he-han-shu.html">
+            
+                    
+                    10.7.2 用户自定会聚合函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="di-3-bu-fen-spark-sql/di-11-zhang-spark-sql-shu-ju-yuan.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-11-zhang-spark-sql-shu-ju-yuan.html">
+            
+                    
+                    第 11 章 Spark SQL 数据源
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="di-3-bu-fen-spark-sql/di-11-zhang-spark-sql-shu-ju-yuan/111-tong-yong-jia-zai-he-bao-cun-han-shu.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-11-zhang-spark-sql-shu-ju-yuan/111-tong-yong-jia-zai-he-bao-cun-han-shu.html">
+            
+                    
+                    11.1 通用加载和保存函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="di-3-bu-fen-spark-sql/di-11-zhang-spark-sql-shu-ju-yuan/112-jia-zai-json-wen-jian.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-11-zhang-spark-sql-shu-ju-yuan/112-jia-zai-json-wen-jian.html">
+            
+                    
+                    11.2 加载 JSON 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="di-3-bu-fen-spark-sql/di-11-zhang-spark-sql-shu-ju-yuan/113-du-qu-parquet-wen-jian.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-11-zhang-spark-sql-shu-ju-yuan/113-du-qu-parquet-wen-jian.html">
+            
+                    
+                    11.3 读取 Parquet 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="di-3-bu-fen-spark-sql/di-11-zhang-spark-sql-shu-ju-yuan/113-jdbc.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-11-zhang-spark-sql-shu-ju-yuan/113-jdbc.html">
+            
+                    
+                    11.3 JDBC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.5" data-path="di-3-bu-fen-spark-sql/di-11-zhang-spark-sql-shu-ju-yuan/114-hive-shu-ju-ku.html">
+            
+                <a href="di-3-bu-fen-spark-sql/di-11-zhang-spark-sql-shu-ju-yuan/114-hive-shu-ju-ku.html">
+            
+                    
+                    11.4 Hive 数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 5 部分 SparkSql 项目实战</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="di-4-bu-fen-sparksql-xiang-mu-shi-zhan/di-1-zhang-zhun-bei-shu-ju.html">
+            
+                <a href="di-4-bu-fen-sparksql-xiang-mu-shi-zhan/di-1-zhang-zhun-bei-shu-ju.html">
+            
+                    
+                    第 1 章 准备数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="di-4-bu-fen-sparksql-xiang-mu-shi-zhan/di-2-zhang-xu-qiu-1-ge-qu-yu-re-men-shang-pin-top3.html">
+            
+                <a href="di-4-bu-fen-sparksql-xiang-mu-shi-zhan/di-2-zhang-xu-qiu-1-ge-qu-yu-re-men-shang-pin-top3.html">
+            
+                    
+                    第 2 章 需求 1: 各区域热门商品 Top3
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">第 6 部分 Spark Streaming</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="di-4-bu-fen-spark-streaming/di-13-zhang-spark-streaming-gai-shu.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-13-zhang-spark-streaming-gai-shu.html">
+            
+                    
+                    第 13 章 Spark Streaming 概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="di-4-bu-fen-spark-streaming/di-14-zhang-dstream-ru-men.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-14-zhang-dstream-ru-men.html">
+            
+                    
+                    第 14 章 DStream 入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="di-4-bu-fen-spark-streaming/di-14-zhang-dstream-ru-men/141-wordcount-an-li.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-14-zhang-dstream-ru-men/141-wordcount-an-li.html">
+            
+                    
+                    14.1 wordcount 案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="di-4-bu-fen-spark-streaming/di-14-zhang-dstream-ru-men/142-wordcount-an-li-jie-xi.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-14-zhang-dstream-ru-men/142-wordcount-an-li-jie-xi.html">
+            
+                    
+                    14.2 wordcount 案例解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="di-4-bu-fen-spark-streaming/di-15-zhang-dstream-chuang-jian.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-15-zhang-dstream-chuang-jian.html">
+            
+                    
+                    第 15 章 DStream 创建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="di-4-bu-fen-spark-streaming/di-15-zhang-dstream-chuang-jian/152-rdd-dui-lie.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-15-zhang-dstream-chuang-jian/152-rdd-dui-lie.html">
+            
+                    
+                    15.1 RDD 队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.2" data-path="di-4-bu-fen-spark-streaming/di-15-zhang-dstream-chuang-jian/153-zi-ding-yi-shu-ju-yuan.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-15-zhang-dstream-chuang-jian/153-zi-ding-yi-shu-ju-yuan.html">
+            
+                    
+                    15.2 自定义数据源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.3" data-path="di-4-bu-fen-spark-streaming/di-15-zhang-dstream-chuang-jian/154-kafkashu-ju-yuan.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-15-zhang-dstream-chuang-jian/154-kafkashu-ju-yuan.html">
+            
+                    
+                    15.3 Kafka数据源
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.3.1" data-path="di-4-bu-fen-spark-streaming/di-15-zhang-dstream-chuang-jian/154-kafkashu-ju-yuan/gao-jiapi.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-15-zhang-dstream-chuang-jian/154-kafkashu-ju-yuan/gao-jiapi.html">
+            
+                    
+                    高级 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3.3.2" data-path="di-4-bu-fen-spark-streaming/di-15-zhang-dstream-chuang-jian/154-kafkashu-ju-yuan/di-ji-api.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-15-zhang-dstream-chuang-jian/154-kafkashu-ju-yuan/di-ji-api.html">
+            
+                    
+                    低级 API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="di-4-bu-fen-spark-streaming/di-16-zhang-dstream-zhuan-huan.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-16-zhang-dstream-zhuan-huan.html">
+            
+                    
+                    第 16 章 DStream 转换
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.4.1" data-path="di-4-bu-fen-spark-streaming/di-16-zhang-dstream-zhuan-huan/161-wu-zhuang-tai-zhuan-huan-cao-zuo.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-16-zhang-dstream-zhuan-huan/161-wu-zhuang-tai-zhuan-huan-cao-zuo.html">
+            
+                    
+                    16.1 无状态转换操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.4.1.1" data-path="di-4-bu-fen-spark-streaming/di-16-zhang-dstream-zhuan-huan/161-wu-zhuang-tai-zhuan-huan-cao-zuo/1611-transform-cao-zuo.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-16-zhang-dstream-zhuan-huan/161-wu-zhuang-tai-zhuan-huan-cao-zuo/1611-transform-cao-zuo.html">
+            
+                    
+                    16.1.1 transform 操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.2" data-path="di-4-bu-fen-spark-streaming/di-16-zhang-dstream-zhuan-huan/162-you-zhuang-tai-zhuan-huan-cao-zuo.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-16-zhang-dstream-zhuan-huan/162-you-zhuang-tai-zhuan-huan-cao-zuo.html">
+            
+                    
+                    16.2 有状态转换操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.4.2.1" data-path="di-4-bu-fen-spark-streaming/di-16-zhang-dstream-zhuan-huan/162-you-zhuang-tai-zhuan-huan-cao-zuo/1621-updatestatebykey.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-16-zhang-dstream-zhuan-huan/162-you-zhuang-tai-zhuan-huan-cao-zuo/1621-updatestatebykey.html">
+            
+                    
+                    16.2.1 updateStateByKey
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4.2.2" data-path="di-4-bu-fen-spark-streaming/di-16-zhang-dstream-zhuan-huan/162-you-zhuang-tai-zhuan-huan-cao-zuo/1622-window-cao-zuo.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-16-zhang-dstream-zhuan-huan/162-you-zhuang-tai-zhuan-huan-cao-zuo/1622-window-cao-zuo.html">
+            
+                    
+                    16.2.2 window 操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="di-4-bu-fen-spark-streaming/di-17-zhang-dstream-shu-chu.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-17-zhang-dstream-shu-chu.html">
+            
+                    
+                    第 17 章 DStream 输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="di-4-bu-fen-spark-streaming/di-18-zhang-dstream-bian-cheng-jin-jie.html">
+            
+                <a href="di-4-bu-fen-spark-streaming/di-18-zhang-dstream-bian-cheng-jin-jie.html">
+            
+                    
+                    第 18 章 DStream 编程进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >1.3 Spark 内置模块介绍</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="13-spark-&#x5185;&#x7F6E;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;">1.3 Spark &#x5185;&#x7F6E;&#x6A21;&#x5757;&#x4ECB;&#x7ECD;</h1>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1548935994.png-atguiguText" alt=""></p>
+<hr>
+<h2 id="&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x5668;cluster-manager">&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x5668;(Cluster Manager)</h2>
+<p>Spark &#x8BBE;&#x8BA1;&#x4E3A;&#x53EF;&#x4EE5;&#x9AD8;&#x6548;&#x5730;&#x5728;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x5230;&#x6570;&#x5343;&#x4E2A;&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x4F38;&#x7F29;&#x8BA1;&#x7B97;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x8FD9;&#x6837;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x540C;&#x65F6;&#x83B7;&#x5F97;&#x6700;&#x5927;&#x7075;&#x6D3B;&#x6027;&#xFF0C;Spark &#x652F;&#x6301;&#x5728;&#x5404;&#x79CD;&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x5668;(Cluster Manager)&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x76EE;&#x524D; Spark &#x652F;&#x6301; 3 &#x79CD;&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x5668;: </p>
+<ol>
+<li><my>Hadoop YARN(&#x5728;&#x56FD;&#x5185;&#x4F7F;&#x7528;&#x6700;&#x5E7F;&#x6CDB;)</my>
+</li>
+<li><p>Apache Mesos(&#x56FD;&#x5185;&#x4F7F;&#x7528;&#x8F83;&#x5C11;, &#x56FD;&#x5916;&#x4F7F;&#x7528;&#x8F83;&#x591A;)</p>
+</li>
+<li><p>Standalone(Spark &#x81EA;&#x5E26;&#x7684;&#x8D44;&#x6E90;&#x8C03;&#x5EA6;&#x5668;, &#x9700;&#x8981;&#x5728;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x6BCF;&#x53F0;&#x8282;&#x70B9;&#x4E0A;&#x914D;&#x7F6E; Spark)</p>
+</li>
+</ol>
+<h2 id="sparkcore">SparkCore</h2>
+<p>&#x5B9E;&#x73B0;&#x4E86; Spark &#x7684;&#x57FA;&#x672C;&#x529F;&#x80FD;&#xFF0C;&#x5305;&#x542B;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x3001;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x3001;&#x9519;&#x8BEF;&#x6062;&#x590D;&#x3001;&#x4E0E;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x4EA4;&#x4E92;&#x7B49;&#x6A21;&#x5757;&#x3002;SparkCore &#x4E2D;&#x8FD8;&#x5305;&#x542B;&#x4E86;&#x5BF9;&#x5F39;&#x6027;&#x5206;&#x5E03;&#x5F0F;&#x6570;&#x636E;&#x96C6;(Resilient Distributed DataSet&#xFF0C;&#x7B80;&#x79F0;<code>RDD</code>)&#x7684;API&#x5B9A;&#x4E49;&#x3002;</p>
+<h2 id="spark-sql">Spark SQL</h2>
+<p>&#x662F; Spark &#x7528;&#x6765;&#x64CD;&#x4F5C;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x7684;&#x7A0B;&#x5E8F;&#x5305;&#x3002;&#x901A;&#x8FC7;SparkSql&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; SQL&#x6216;&#x8005;Apache Hive &#x7248;&#x672C;&#x7684; SQL &#x65B9;&#x8A00;(HQL)&#x6765;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x3002;Spark SQL &#x652F;&#x6301;&#x591A;&#x79CD;&#x6570;&#x636E;&#x6E90;&#xFF0C;&#x6BD4;&#x5982; Hive &#x8868;&#x3001;Parquet &#x4EE5;&#x53CA; JSON &#x7B49;&#x3002;</p>
+<h2 id="spark-streaming">Spark Streaming</h2>
+<p>&#x662F; Spark &#x63D0;&#x4F9B;&#x7684;&#x5BF9;&#x5B9E;&#x65F6;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6D41;&#x5F0F;&#x8BA1;&#x7B97;&#x7684;&#x7EC4;&#x4EF6;&#x3002;&#x63D0;&#x4F9B;&#x4E86;&#x7528;&#x6765;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x6D41;&#x7684; API&#xFF0C;&#x5E76;&#x4E14;&#x4E0E; Spark Core &#x4E2D;&#x7684; RDD API &#x9AD8;&#x5EA6;&#x5BF9;&#x5E94;&#x3002;</p>
+<h2 id="spark-mllib">Spark MLlib</h2>
+<p>&#x63D0;&#x4F9B;&#x5E38;&#x89C1;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60; (ML) &#x529F;&#x80FD;&#x7684;&#x7A0B;&#x5E8F;&#x5E93;&#x3002;&#x5305;&#x62EC;&#x5206;&#x7C7B;&#x3001;&#x56DE;&#x5F52;&#x3001;&#x805A;&#x7C7B;&#x3001;&#x534F;&#x540C;&#x8FC7;&#x6EE4;&#x7B49;&#xFF0C;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x6A21;&#x578B;&#x8BC4;&#x4F30;&#x3001;&#x6570;&#x636E;&#x5BFC;&#x5165;&#x7B49;&#x989D;&#x5916;&#x7684;&#x652F;&#x6301;&#x529F;&#x80FD;&#x3002;</p>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1548936365.png" alt=""></p>
+<hr>
+<p>Spark &#x5F97;&#x5230;&#x4E86;&#x4F17;&#x591A;&#x5927;&#x6570;&#x636E;&#x516C;&#x53F8;&#x7684;&#x652F;&#x6301;&#xFF0C;&#x8FD9;&#x4E9B;&#x516C;&#x53F8;&#x5305;&#x62EC; Hortonworks&#x3001;IBM&#x3001;Intel&#x3001;Cloudera&#x3001;MapR&#x3001;Pivotal&#x3001;&#x767E;&#x5EA6;&#x3001;&#x963F;&#x91CC;&#x3001;&#x817E;&#x8BAF;&#x3001;&#x4EAC;&#x4E1C;&#x3001;&#x643A;&#x7A0B;&#x3001;&#x4F18;&#x9177;&#x571F;&#x8C46;&#x3002;</p>
+<p>&#x5F53;&#x524D;&#x767E;&#x5EA6;&#x7684; Spark &#x5DF2;&#x5E94;&#x7528;&#x4E8E;&#x5927;&#x641C;&#x7D22;&#x3001;&#x76F4;&#x8FBE;&#x53F7;&#x3001;&#x767E;&#x5EA6;&#x5927;&#x6570;&#x636E;&#x7B49;&#x4E1A;&#x52A1;&#xFF1B;</p>
+<p>&#x963F;&#x91CC;&#x5229;&#x7528; GraphX &#x6784;&#x5EFA;&#x4E86;&#x5927;&#x89C4;&#x6A21;&#x7684;&#x56FE;&#x8BA1;&#x7B97;&#x548C;&#x56FE;&#x6316;&#x6398;&#x7CFB;&#x7EDF;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x5F88;&#x591A;&#x751F;&#x4EA7;&#x7CFB;&#x7EDF;&#x7684;&#x63A8;&#x8350;&#x7B97;&#x6CD5;&#xFF1B;</p>
+<my>&#x817E;&#x8BAF;Spark&#x96C6;&#x7FA4;&#x8FBE;&#x5230; 8000 &#x53F0;&#x7684;&#x89C4;&#x6A21;&#xFF0C;&#x662F;&#x5F53;&#x524D;&#x5DF2;&#x77E5;&#x7684;&#x4E16;&#x754C;&#x4E0A;&#x6700;&#x5927;&#x7684; Spark &#x96C6;&#x7FA4;&#x3002;</my>
+
+
+
+
+
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-05-28 18:20:27
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="13-spark-te-dian.html" class="navigation navigation-prev " aria-label="Previous page: 1.2 Spark 特点">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter1.html" class="navigation navigation-next " aria-label="Next page: 第 2 章 Spark 运行模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.3 Spark 内置模块介绍","level":"1.1.3","depth":2,"next":{"title":"第 2 章 Spark 运行模式","level":"1.2","depth":1,"path":"chapter1.md","ref":"chapter1.md","articles":[{"title":"2.1 Local 模式","level":"1.2.1","depth":2,"path":"chapter1/21-local-mo-shi.md","ref":"chapter1/21-local-mo-shi.md","articles":[]},{"title":"2.2 Spark 核心概念介绍","level":"1.2.2","depth":2,"path":"chapter1/22-spark-he-xin-gai-nian-jie-shao.md","ref":"chapter1/22-spark-he-xin-gai-nian-jie-shao.md","articles":[]},{"title":"2.3 Standalone 模式","level":"1.2.3","depth":2,"path":"chapter1/22-standalone-mo-shi.md","ref":"chapter1/22-standalone-mo-shi.md","articles":[{"title":"2.3.1 配置 Standalone 模式","level":"1.2.3.1","depth":3,"path":"chapter1/231-pei-zhi-standalone-mo-shi.md","ref":"chapter1/231-pei-zhi-standalone-mo-shi.md","articles":[]},{"title":"2.3.2 使用 Standalone 模式运行计算 PI 的程序","level":"1.2.3.2","depth":3,"path":"chapter1/232-shi-yong-standalone-mo-shi-yun-xing-ji-suan-pi-de-cheng-xu.md","ref":"chapter1/232-shi-yong-standalone-mo-shi-yun-xing-ji-suan-pi-de-cheng-xu.md","articles":[]},{"title":"2.3.3 在 Standalone 模式下启动 Spark-shell","level":"1.2.3.3","depth":3,"path":"chapter1/233-zai-standalone-mo-shi-xia-qi-dong-spark-shell.md","ref":"chapter1/233-zai-standalone-mo-shi-xia-qi-dong-spark-shell.md","articles":[]},{"title":"2.3.4 配置 Spark 任务历史服务器","level":"1.2.3.4","depth":3,"path":"chapter1/24-pei-zhi-spark-ren-wu-li-shi-fu-wu-qi.md","ref":"chapter1/24-pei-zhi-spark-ren-wu-li-shi-fu-wu-qi.md","articles":[]},{"title":"2.3.5 HA 配置(为 Mater 配置)","level":"1.2.3.5","depth":3,"path":"chapter1/25-ha-pei-7f6e28-wei-mater-pei-7f6e29.md","ref":"chapter1/25-ha-pei-7f6e28-wei-mater-pei-7f6e29.md","articles":[]},{"title":"2.3.6 Standalone 工作模式图解","level":"1.2.3.6","depth":3,"path":"chapter1/233-standalone-gong-zuo-mo-shi-tu-jie.md","ref":"chapter1/233-standalone-gong-zuo-mo-shi-tu-jie.md","articles":[]}]},{"title":"2.4 Yarn 模式","level":"1.2.4","depth":2,"path":"chapter1/24-yarn-mo-shi.md","ref":"chapter1/24-yarn-mo-shi.md","articles":[]},{"title":"2.5 Mesos 模式","level":"1.2.5","depth":2,"path":"chapter1/25-mesos-mo-shi.md","ref":"chapter1/25-mesos-mo-shi.md","articles":[]},{"title":"2.6 几种运行模式的对比","level":"1.2.6","depth":2,"path":"chapter1/26-ji-zhong-yun-xing-mo-shi-de-dui-bi.md","ref":"chapter1/26-ji-zhong-yun-xing-mo-shi-de-dui-bi.md","articles":[]}]},"previous":{"title":"1.2 Spark 特点","level":"1.1.2","depth":2,"path":"13-spark-te-dian.md","ref":"13-spark-te-dian.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_spark_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"13-spark-nei-zhi-mo-kuai-jie-shao.md","mtime":"2019-05-28T10:20:27.019Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-10T01:18:24.088Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
