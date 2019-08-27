@@ -1,0 +1,411 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.2 Phoenix 表操作 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="23-phoenix-biao-ying-she.html" />
+    
+    
+    <link rel="prev" href="21-an-zhuang-bu-shu.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第 1 章 Phoenix 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter1.html">
+            
+                <a href="../chapter1.html">
+            
+                    
+                    第 2 章 Phoenix 快速入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="21-an-zhuang-bu-shu.html">
+            
+                <a href="21-an-zhuang-bu-shu.html">
+            
+                    
+                    2.1 安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="22-phoenix-biao-cao-zuo.html">
+            
+                <a href="22-phoenix-biao-cao-zuo.html">
+            
+                    
+                    2.2 Phoenix 表操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="23-phoenix-biao-ying-she.html">
+            
+                <a href="23-phoenix-biao-ying-she.html">
+            
+                    
+                    2.3 Phoenix 表映射
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../di-3-zhang-phoenix-tu-xing-hua-gong-51773a-squirrel.html">
+            
+                <a href="../di-3-zhang-phoenix-tu-xing-hua-gong-51773a-squirrel.html">
+            
+                    
+                    第 3 章 Phoenix 图形化工具: Squirrel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../di-4-zhang-phoenix-chuang-jian-hbase-er-ji-suo-yin.html">
+            
+                <a href="../di-4-zhang-phoenix-chuang-jian-hbase-er-ji-suo-yin.html">
+            
+                    
+                    第 4 章 Phoenix 创建 HBase 二级索引
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../di-4-zhang-phoenix-chuang-jian-hbase-er-ji-suo-yin/41-hbase-de-er-ji-suo-yin.html">
+            
+                <a href="../di-4-zhang-phoenix-chuang-jian-hbase-er-ji-suo-yin/41-hbase-de-er-ji-suo-yin.html">
+            
+                    
+                    4.1 HBase 的二级索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../di-4-zhang-phoenix-chuang-jian-hbase-er-ji-suo-yin/42-pei-zhi-hbase-zhi-chi-phoenix-chuang-jian-er-ji-suo-yin.html">
+            
+                <a href="../di-4-zhang-phoenix-chuang-jian-hbase-er-ji-suo-yin/42-pei-zhi-hbase-zhi-chi-phoenix-chuang-jian-er-ji-suo-yin.html">
+            
+                    
+                    4.2 配置 HBase 支持 Phoenix 创建二级索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../di-4-zhang-phoenix-chuang-jian-hbase-er-ji-suo-yin/43-chuang-jian-suo-yin.html">
+            
+                <a href="../di-4-zhang-phoenix-chuang-jian-hbase-er-ji-suo-yin/43-chuang-jian-suo-yin.html">
+            
+                    
+                    4.3 Phoenix 创建索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.2 Phoenix 表操作</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="22-phoenix-&#x8868;&#x64CD;&#x4F5C;">2.2 Phoenix &#x8868;&#x64CD;&#x4F5C;</h1>
+<h2 id="221-&#x663E;&#x793A;&#x6240;&#x6709;&#x8868;">2.2.1 &#x663E;&#x793A;&#x6240;&#x6709;&#x8868;</h2>
+<pre><code class="lang-bash">!tables
+
+<span class="hljs-comment"># &#x6216;&#x8005;</span>
+!table
+</code></pre>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1566788347.png" alt=""></p>
+<h2 id="222-&#x521B;&#x5EFA;&#x8868;">2.2.2 &#x521B;&#x5EFA;&#x8868;</h2>
+<pre><code class="lang-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> us_population (
+      state <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">2</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+      city <span class="hljs-built_in">VARCHAR</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+      population <span class="hljs-built_in">BIGINT</span>
+      <span class="hljs-keyword">CONSTRAINT</span> my_pk PRIMARY <span class="hljs-keyword">KEY</span> (state, city));
+</code></pre>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1566790569.png" alt=""></p>
+<blockquote>
+<p>&#x8BF4;&#x660E;: </p>
+</blockquote>
+<ol>
+<li><code>char</code>&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x6DFB;&#x52A0;&#x957F;&#x5EA6;&#x9650;&#x5236;</li>
+<li><code>varchar</code> &#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x957F;&#x5EA6;&#x9650;&#x5236;</li>
+<li>&#x4E3B;&#x952E;&#x6620;&#x5C04;&#x5230; HBase &#x4E2D;&#x4F1A;&#x6210;&#x4E3A; Rowkey. &#x5982;&#x679C;&#x6709;&#x591A;&#x4E2A;&#x4E3B;&#x952E;(&#x8054;&#x5408;&#x4E3B;&#x952E;), &#x4F1A;&#x628A;&#x591A;&#x4E2A;&#x4E3B;&#x952E;&#x7684;&#x503C;&#x62FC;&#x6210; rowkey</li>
+<li>&#x5728; Phoenix &#x4E2D;, &#x9ED8;&#x8BA4;&#x4F1A;&#x628A;&#x8868;&#x540D;,&#x5B57;&#x6BB5;&#x540D;&#x7B49;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x5927;&#x5199;. &#x5982;&#x679C;&#x8981;&#x4F7F;&#x7528;&#x6D88;&#x606F;, &#x9700;&#x8981;&#x628A;&#x4ED6;&#x4EEC;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x62EC;&#x8D77;&#x6765;.</li>
+</ol>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1566790797.png" alt=""></p>
+<h2 id="223-&#x63D2;&#x5165;&#x8BB0;&#x5F55;">2.2.3 &#x63D2;&#x5165;&#x8BB0;&#x5F55;</h2>
+<pre><code class="lang-sql">upsert into us_population values(&apos;NY&apos;,&apos;NewYork&apos;,8143197);
+upsert into us_population values(&apos;CA&apos;,&apos;Los Angeles&apos;,3844829);
+upsert into us_population values(&apos;IL&apos;,&apos;Chicago&apos;,2842518);
+</code></pre>
+<p>&#x8BF4;&#x660E;: <code>upset</code>&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x662F;<code>update</code>&#x548C;<code>insert</code>&#x7684;&#x7ED3;&#x5408;&#x4F53;.</p>
+<h2 id="224-&#x67E5;&#x8BE2;&#x8BB0;&#x5F55;">2.2.4 &#x67E5;&#x8BE2;&#x8BB0;&#x5F55;</h2>
+<pre><code class="lang-bash">select * from US_POPULATION;
+</code></pre>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1566793966.png" alt=""></p>
+<pre><code class="lang-bash">select * from us_population <span class="hljs-built_in">where</span> state=<span class="hljs-string">&apos;NY&apos;</span>;
+</code></pre>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1566794034.png" alt=""></p>
+<h2 id="225-&#x5220;&#x9664;&#x8BB0;&#x5F55;">2.2.5 &#x5220;&#x9664;&#x8BB0;&#x5F55;</h2>
+<pre><code class="lang-bash">delete from us_population <span class="hljs-built_in">where</span> state=<span class="hljs-string">&apos;NY&apos;</span>;
+</code></pre>
+<p><img src="http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/1566794343.png" alt=""></p>
+<h2 id="225-&#x5220;&#x9664;&#x8868;">2.2.5 &#x5220;&#x9664;&#x8868;</h2>
+<pre><code class="lang-bash">drop table us_population;
+</code></pre>
+<h2 id="226-&#x9000;&#x51FA;&#x547D;&#x4EE4;&#x884C;">2.2.6 &#x9000;&#x51FA;&#x547D;&#x4EE4;&#x884C;</h2>
+<pre><code class="lang-bash">! quit
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="21-an-zhuang-bu-shu.html" class="navigation navigation-prev " aria-label="Previous page: 2.1 安装部署">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="23-phoenix-biao-ying-she.html" class="navigation navigation-next " aria-label="Next page: 2.3 Phoenix 表映射">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.2 Phoenix 表操作","level":"1.2.2","depth":2,"next":{"title":"2.3 Phoenix 表映射","level":"1.2.3","depth":2,"path":"chapter1/23-phoenix-biao-ying-she.md","ref":"chapter1/23-phoenix-biao-ying-she.md","articles":[]},"previous":{"title":"2.1 安装部署","level":"1.2.1","depth":2,"path":"chapter1/21-an-zhuang-bu-shu.md","ref":"chapter1/21-an-zhuang-bu-shu.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/22-phoenix-biao-cao-zuo.md","mtime":"2019-08-26T04:57:44.530Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-27T02:14:08.566Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
