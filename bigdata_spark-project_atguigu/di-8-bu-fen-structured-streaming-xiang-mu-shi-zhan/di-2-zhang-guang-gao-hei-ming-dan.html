@@ -1893,6 +1893,19 @@
             
         </li>
     
+        <li class="chapter " data-level="7.5.6" data-path="../di-7-bu-fen-structured-streaming/di-5-zhang-cao-zuo-streaming-dataframe-streaming-dataset/56-streaming-dfds-bu-zhi-chi-de-cao-zuo.html">
+            
+                <a href="../di-7-bu-fen-structured-streaming/di-5-zhang-cao-zuo-streaming-dataframe-streaming-dataset/56-streaming-dfds-bu-zhi-chi-de-cao-zuo.html">
+            
+                    
+                    5.6 Streaming DF/DS 不支持的操作
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2261,13 +2274,10 @@
 <h3 id="232-blacklistapp-&#x7C7B;&#x5177;&#x4F53;&#x5B9E;&#x73B0;">2.3.2 <code>BlackListApp</code> &#x7C7B;&#x5177;&#x4F53;&#x5B9E;&#x73B0;:</h3>
 <pre class="language-"><code class="lang-scala"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>realtime<span class="token punctuation">.</span>app
 
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Timestamp
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>text<span class="token punctuation">.</span>SimpleDateFormat
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Date
-
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>realtime<span class="token punctuation">.</span>bean<span class="token punctuation">.</span>AdsInfo
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>realtime<span class="token punctuation">.</span>util<span class="token punctuation">.</span>RedisUtil
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>spark<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>_
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>spark<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>streaming<span class="token punctuation">.</span>Trigger
 <span class="token keyword">import</span> redis<span class="token punctuation">.</span>clients<span class="token punctuation">.</span>jedis<span class="token punctuation">.</span>Jedis
 
 <span class="token comment">/**
@@ -2279,37 +2289,29 @@
   * &#x5176;&#x4ED6;&#x9700;&#x6C42;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x8FC7;&#x6EE4;&#x540E;&#x7684;&#x6570;&#x636E;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;
   */</span>
 <span class="token keyword">object</span> BlackListApp <span class="token punctuation">{</span>
-    <span class="token keyword">def</span> statBlackList<span class="token punctuation">(</span>spark<span class="token operator">:</span> SparkSession<span class="token punctuation">)</span><span class="token operator">:</span> Dataset<span class="token punctuation">[</span>AdsInfo<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">def</span> statBlackList<span class="token punctuation">(</span>spark<span class="token operator">:</span> SparkSession<span class="token punctuation">,</span> adsInfoDS<span class="token operator">:</span> Dataset<span class="token punctuation">[</span>AdsInfo<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> Dataset<span class="token punctuation">[</span>AdsInfo<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
         <span class="token keyword">import</span> spark<span class="token punctuation">.</span>implicits<span class="token punctuation">.</span>_
-        <span class="token keyword">val</span> dayStringFormatter<span class="token operator">:</span> SimpleDateFormat <span class="token operator">=</span> <span class="token keyword">new</span> SimpleDateFormat<span class="token punctuation">(</span><span class="token string">&quot;yyyy-MM-dd&quot;</span><span class="token punctuation">)</span>
-        <span class="token keyword">val</span> hmStringFormatter<span class="token operator">:</span> SimpleDateFormat <span class="token operator">=</span> <span class="token keyword">new</span> SimpleDateFormat<span class="token punctuation">(</span><span class="token string">&quot;HH:mm&quot;</span><span class="token punctuation">)</span>
-        <span class="token comment">// 1. &#x4ECE; kafka &#x8BFB;&#x53D6;&#x6570;&#x636E;, &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x540E;&#x7EED;&#x5904;&#x7406;, &#x5C01;&#x88C5;&#x6570;&#x636E;&#x5230; AdsInfo &#x6837;&#x4F8B;&#x7C7B;&#x4E2D;</span>
-        <span class="token keyword">val</span> adsInfoDS<span class="token operator">:</span> Dataset<span class="token punctuation">[</span>AdsInfo<span class="token punctuation">]</span> <span class="token operator">=</span> spark<span class="token punctuation">.</span>readStream
-            <span class="token punctuation">.</span>format<span class="token punctuation">(</span><span class="token string">&quot;kafka&quot;</span><span class="token punctuation">)</span>
-            <span class="token punctuation">.</span>option<span class="token punctuation">(</span><span class="token string">&quot;kafka.bootstrap.servers&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;hadoop201:9092,hadoop202:9092,hadoop203:9092&quot;</span><span class="token punctuation">)</span>
-            <span class="token punctuation">.</span>option<span class="token punctuation">(</span><span class="token string">&quot;subscribe&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;ads_log&quot;</span><span class="token punctuation">)</span>
-            <span class="token punctuation">.</span>load
-            <span class="token punctuation">.</span>select<span class="token punctuation">(</span><span class="token string">&quot;value&quot;</span><span class="token punctuation">)</span>
-            <span class="token punctuation">.</span>as<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span>
-            <span class="token punctuation">.</span>map<span class="token punctuation">(</span>v <span class="token keyword">=&gt;</span> <span class="token punctuation">{</span>
-                <span class="token keyword">val</span> split<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span> <span class="token operator">=</span> v<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&quot;,&quot;</span><span class="token punctuation">)</span>
-                <span class="token keyword">val</span> date<span class="token operator">:</span> Date <span class="token operator">=</span> <span class="token keyword">new</span> Date<span class="token punctuation">(</span>split<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toLong<span class="token punctuation">)</span>
-                AdsInfo<span class="token punctuation">(</span>split<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toLong<span class="token punctuation">,</span> <span class="token keyword">new</span> Timestamp<span class="token punctuation">(</span>split<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toLong<span class="token punctuation">)</span><span class="token punctuation">,</span> dayStringFormatter<span class="token punctuation">.</span>format<span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">,</span> hmStringFormatter<span class="token punctuation">.</span>format<span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">,</span> split<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> split<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> split<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> split<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span>
-            <span class="token punctuation">.</span>mapPartitions<span class="token punctuation">(</span>adsInfoIt <span class="token keyword">=&gt;</span> <span class="token punctuation">{</span>  <span class="token comment">// &#x6BCF;&#x4E2A;&#x5206;&#x533A;&#x8FDE;&#x63A5;&#x4E00;&#x6B21;&#x5230;redis&#x8BFB;&#x53D6;&#x9ED1;&#x540D;&#x5355;, &#x7136;&#x540E;&#x628A;&#x8FDB;&#x5165;&#x9ED1;&#x540D;&#x5355;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x8BB0;&#x5F55;&#x8FC7;&#x6EE4;&#x6389;</span>
-                <span class="token keyword">val</span> adsInfoList<span class="token operator">:</span> List<span class="token punctuation">[</span>AdsInfo<span class="token punctuation">]</span> <span class="token operator">=</span> adsInfoIt<span class="token punctuation">.</span>toList
+
+        <span class="token comment">// 1. &#x8FC7;&#x6EE4;&#x9ED1;&#x540D;&#x5355;&#x7684;&#x6570;&#x636E;: &#x5982;&#x679C;&#x6709;&#x7528;&#x6237;&#x5DF2;&#x7ECF;&#x8FDB;&#x5165;&#x9ED1;&#x540D;&#x5355;, &#x5219;&#x4E0D;&#x518D;&#x7EDF;&#x8BA1;&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x5E7F;&#x544A;&#x70B9;&#x51FB;&#x8BB0;&#x5F55;</span>
+        <span class="token keyword">val</span> filteredAdsInfoDS<span class="token operator">:</span> Dataset<span class="token punctuation">[</span>AdsInfo<span class="token punctuation">]</span> <span class="token operator">=</span> adsInfoDS<span class="token punctuation">.</span>mapPartitions<span class="token punctuation">(</span>adsInfoIt <span class="token keyword">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">// &#x6BCF;&#x4E2A;&#x5206;&#x533A;&#x8FDE;&#x63A5;&#x4E00;&#x6B21;&#x5230;redis&#x8BFB;&#x53D6;&#x9ED1;&#x540D;&#x5355;, &#x7136;&#x540E;&#x628A;&#x8FDB;&#x5165;&#x9ED1;&#x540D;&#x5355;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x8BB0;&#x5F55;&#x8FC7;&#x6EE4;&#x6389;</span>
+            <span class="token keyword">val</span> adsInfoList<span class="token operator">:</span> List<span class="token punctuation">[</span>AdsInfo<span class="token punctuation">]</span> <span class="token operator">=</span> adsInfoIt<span class="token punctuation">.</span>toList
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>adsInfoList<span class="token punctuation">.</span>isEmpty<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                adsInfoList<span class="token punctuation">.</span>toIterator
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
                 <span class="token comment">// 1. &#x5148;&#x8BFB;&#x53D6;&#x5230;&#x9ED1;&#x540D;&#x5355;</span>
                 <span class="token keyword">val</span> client<span class="token operator">:</span> Jedis <span class="token operator">=</span> RedisUtil<span class="token punctuation">.</span>getJedisClient
+
                 <span class="token keyword">val</span> blackList<span class="token operator">:</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Set<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span> <span class="token operator">=</span> client<span class="token punctuation">.</span>smembers<span class="token punctuation">(</span>s<span class="token string">&quot;day:blcklist:${adsInfoList(0).dayString}&quot;</span><span class="token punctuation">)</span>
                 <span class="token comment">// 2. &#x8FC7;&#x6EE4;</span>
                 adsInfoList<span class="token punctuation">.</span>filter<span class="token punctuation">(</span>adsInfo <span class="token keyword">=&gt;</span> <span class="token punctuation">{</span>
                     <span class="token operator">!</span>blackList<span class="token punctuation">.</span>contains<span class="token punctuation">(</span>adsInfo<span class="token punctuation">.</span>userId<span class="token punctuation">)</span>
                 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toIterator
-            <span class="token punctuation">}</span><span class="token punctuation">)</span>
-            <span class="token punctuation">.</span>withWatermark<span class="token punctuation">(</span><span class="token string">&quot;timestamp&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;24 hours&quot;</span><span class="token punctuation">)</span> <span class="token comment">// &#x9ED1;&#x540D;&#x5355;&#x6570;&#x636E;&#x5E94;&#x8BE5;&#x6BCF;&#x5929;&#x91CD;&#x65B0;&#x7EDF;&#x8BA1;, &#x6240;&#x4EE5;&#x628A;&#x6C34;&#x5370;&#x8BBE;&#x8BA1;&#x6210;24&#x5C0F;&#x65F6;</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
         <span class="token comment">// &#x521B;&#x5EFA;&#x4E34;&#x65F6;&#x8868;: tb_ads_info</span>
-        adsInfoDS<span class="token punctuation">.</span>createOrReplaceTempView<span class="token punctuation">(</span><span class="token string">&quot;tb_ads_info&quot;</span><span class="token punctuation">)</span>
+        filteredAdsInfoDS<span class="token punctuation">.</span>createOrReplaceTempView<span class="token punctuation">(</span><span class="token string">&quot;tb_ads_info&quot;</span><span class="token punctuation">)</span>
 
         <span class="token comment">// &#x9700;&#x6C42;1: &#x9ED1;&#x540D;&#x5355; &#x6BCF;&#x5929;&#x6BCF;&#x7528;&#x6237;&#x6BCF;&#x5E7F;&#x544A;&#x7684;&#x70B9;&#x51FB;&#x91CF;</span>
         <span class="token comment">// 2.  &#x6309;&#x7167;&#x6BCF;&#x5929;&#x6BCF;&#x7528;&#x6237;&#x6BCF;id&#x5206;&#x7EC4;, &#x7136;&#x540E;&#x8BA1;&#x6570;, &#x8BA1;&#x6570;&#x8D85;&#x8FC7;&#x9608;&#x503C;(100)&#x7684;&#x67E5;&#x8BE2;&#x51FA;&#x6765;</span>
@@ -2318,13 +2320,15 @@
               |select
               | dayString,
               | userId
-              |from  tb_ads_info
+              |from tb_ads_info
               |group by dayString, userId, adsId
-              |having count(1) &gt;= 100
+              |having count(1) &gt;= 100000
             &quot;&quot;&quot;</span><span class="token punctuation">.</span>stripMargin<span class="token punctuation">)</span>
+
         <span class="token comment">// 3. &#x628A;&#x70B9;&#x51FB;&#x91CF;&#x8D85;&#x8FC7; 100 &#x7684;&#x5199;&#x5165;&#x5230;redis&#x4E2D;.</span>
         result<span class="token punctuation">.</span>writeStream
             <span class="token punctuation">.</span>outputMode<span class="token punctuation">(</span><span class="token string">&quot;update&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>trigger<span class="token punctuation">(</span>Trigger<span class="token punctuation">.</span>ProcessingTime<span class="token punctuation">(</span><span class="token string">&quot;2 seconds&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
             <span class="token punctuation">.</span>foreach<span class="token punctuation">(</span><span class="token keyword">new</span> ForeachWriter<span class="token punctuation">[</span>Row<span class="token punctuation">]</span> <span class="token punctuation">{</span>
                 <span class="token keyword">var</span> client<span class="token operator">:</span> Jedis <span class="token operator">=</span> _
 
@@ -2346,17 +2350,20 @@
                     <span class="token keyword">if</span> <span class="token punctuation">(</span>client <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> client<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
                 <span class="token punctuation">}</span>
             <span class="token punctuation">}</span><span class="token punctuation">)</span>
-            <span class="token punctuation">.</span>option<span class="token punctuation">(</span><span class="token string">&quot;ckeckpointLocation&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;c:/blacklist&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>option<span class="token punctuation">(</span><span class="token string">&quot;checkpointLocation&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;C:/blacklist&quot;</span><span class="token punctuation">)</span>
             <span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-
-        <span class="token comment">// 4. &#x628A;&#x8FC7;&#x6EE4;&#x540E;&#x7684;&#x6570;&#x636E;&#x8FD4;&#x56DE;   &#x5728;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E34;&#x65F6;&#x8868;: tb_ads_info</span>
-        adsInfoDS
+        <span class="token comment">// 4. &#x628A;&#x8FC7;&#x6EE4;&#x540E;&#x7684;&#x6570;&#x636E;&#x8FD4;&#x56DE;   (&#x5728;&#x5176;&#x4ED6;&#x5730;&#x65B9;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E34;&#x65F6;&#x8868;: tb_ads_info)</span>
+        filteredAdsInfoDS
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <h3 id="233-realtimeapp">2.3.3 <code>RealtimeApp</code></h3>
 <pre class="language-"><code class="lang-scala"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>realtime<span class="token punctuation">.</span>app
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>Timestamp
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>text<span class="token punctuation">.</span>SimpleDateFormat
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Date
 
 <span class="token keyword">import</span> com<span class="token punctuation">.</span>atguigu<span class="token punctuation">.</span>realtime<span class="token punctuation">.</span>bean<span class="token punctuation">.</span>AdsInfo
 <span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>spark<span class="token punctuation">.</span>sql<span class="token punctuation">.</span>_
@@ -2370,27 +2377,40 @@
     <span class="token keyword">def</span> main<span class="token punctuation">(</span>args<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Unit</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
         <span class="token keyword">val</span> spark<span class="token operator">:</span> SparkSession <span class="token operator">=</span> SparkSession
             <span class="token punctuation">.</span>builder<span class="token punctuation">(</span><span class="token punctuation">)</span>
-            <span class="token punctuation">.</span>master<span class="token punctuation">(</span><span class="token string">&quot;local[2]&quot;</span><span class="token punctuation">)</span>
             <span class="token punctuation">.</span>appName<span class="token punctuation">(</span><span class="token string">&quot;RealtimeApp&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>master<span class="token punctuation">(</span><span class="token string">&quot;local[*]&quot;</span><span class="token punctuation">)</span>
             <span class="token punctuation">.</span>getOrCreate<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        spark<span class="token punctuation">.</span>sparkContext<span class="token punctuation">.</span>setLogLevel<span class="token punctuation">(</span><span class="token string">&quot;WARN&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">import</span> spark<span class="token punctuation">.</span>implicits<span class="token punctuation">.</span>_
+        spark<span class="token punctuation">.</span>sparkContext<span class="token punctuation">.</span>setLogLevel<span class="token punctuation">(</span><span class="token string">&quot;warn&quot;</span><span class="token punctuation">)</span>
+        <span class="token comment">// &#x4ECE; kafka &#x8BFB;&#x53D6;&#x6570;&#x636E;, &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x540E;&#x7EED;&#x5904;&#x7406;, &#x5C01;&#x88C5;&#x6570;&#x636E;&#x5230; AdsInfo &#x6837;&#x4F8B;&#x7C7B;&#x4E2D;</span>
+        <span class="token keyword">val</span> dayStringFormatter<span class="token operator">:</span> SimpleDateFormat <span class="token operator">=</span> <span class="token keyword">new</span> SimpleDateFormat<span class="token punctuation">(</span><span class="token string">&quot;yyyy-MM-dd&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> hmStringFormatter<span class="token operator">:</span> SimpleDateFormat <span class="token operator">=</span> <span class="token keyword">new</span> SimpleDateFormat<span class="token punctuation">(</span><span class="token string">&quot;HH:mm&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">val</span> adsInfoDS<span class="token operator">:</span> Dataset<span class="token punctuation">[</span>AdsInfo<span class="token punctuation">]</span> <span class="token operator">=</span> spark<span class="token punctuation">.</span>readStream
+            <span class="token punctuation">.</span>format<span class="token punctuation">(</span><span class="token string">&quot;kafka&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>option<span class="token punctuation">(</span><span class="token string">&quot;kafka.bootstrap.servers&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;hadoop201:9092,hadoop202:9092,hadoop203:9092&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>option<span class="token punctuation">(</span><span class="token string">&quot;subscribe&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;ads_log&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>load
+            <span class="token punctuation">.</span>select<span class="token punctuation">(</span><span class="token string">&quot;value&quot;</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>as<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span>
+            <span class="token punctuation">.</span>map<span class="token punctuation">(</span>v <span class="token keyword">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token keyword">val</span> split<span class="token operator">:</span> Array<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span> <span class="token operator">=</span> v<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">&quot;,&quot;</span><span class="token punctuation">)</span>
+                <span class="token keyword">val</span> date<span class="token operator">:</span> Date <span class="token operator">=</span> <span class="token keyword">new</span> Date<span class="token punctuation">(</span>split<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toLong<span class="token punctuation">)</span>
+                AdsInfo<span class="token punctuation">(</span>split<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toLong<span class="token punctuation">,</span> <span class="token keyword">new</span> Timestamp<span class="token punctuation">(</span>split<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toLong<span class="token punctuation">)</span><span class="token punctuation">,</span> dayStringFormatter<span class="token punctuation">.</span>format<span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">,</span> hmStringFormatter<span class="token punctuation">.</span>format<span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">,</span> split<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> split<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> split<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> split<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span>withWatermark<span class="token punctuation">(</span><span class="token string">&quot;timestamp&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;24 hours&quot;</span><span class="token punctuation">)</span> <span class="token comment">// &#x90FD;&#x662F;&#x7EDF;&#x8BA1;&#x6BCF;&#x5929;&#x7684;&#x6570;&#x636E;, &#x5BF9;&#x8FDF;&#x5230;24&#x5C0F;&#x65F6;&#x7684;&#x6570;&#x636E;&#x5E9F;&#x5F03;&#x4E0D;&#x7528;</span>
+
+
         <span class="token comment">// &#x9700;&#x6C42;1: &#x9ED1;&#x540D;&#x5355;</span>
-        <span class="token keyword">val</span> filteredAdsInfoDS<span class="token operator">:</span> Dataset<span class="token punctuation">[</span>AdsInfo<span class="token punctuation">]</span> <span class="token operator">=</span> BlackListApp<span class="token punctuation">.</span>statBlackList<span class="token punctuation">(</span>spark<span class="token punctuation">)</span>
-
+        <span class="token keyword">val</span> filteredAdsInfoDS<span class="token operator">:</span> Dataset<span class="token punctuation">[</span>AdsInfo<span class="token punctuation">]</span> <span class="token operator">=</span> BlackListApp<span class="token punctuation">.</span>statBlackList<span class="token punctuation">(</span>spark<span class="token punctuation">,</span> adsInfoDS<span class="token punctuation">)</span>
         <span class="token comment">// &#x9700;&#x6C42;2:</span>
-
-
-        <span class="token comment">// &#x9700;&#x6C42;3:</span>
-
-
-        <span class="token comment">// &#x9700;&#x6C42;4:</span>
+        AdsClickCountApp<span class="token punctuation">.</span>statAdsClickCount<span class="token punctuation">(</span>spark<span class="token punctuation">,</span> filteredAdsInfoDS<span class="token punctuation">)</span>
 
 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x5C1A;&#x7845;&#x8C37;&#x5927;&#x6570;&#x636E; 2019 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification"><br>&#x8BE5;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2019-08-19 10:39:23
+2019-09-09 19:01:18
 </span></footer>
                                 
                                 </section>
@@ -2434,7 +2454,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第 2 章 广告黑名单实时统计","level":"8.2","depth":1,"next":{"title":"第 3 章 广告点击量实时统计","level":"8.3","depth":1,"path":"di-8-bu-fen-structured-streaming-xiang-mu-shi-zhan/di-3-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji.md","ref":"di-8-bu-fen-structured-streaming-xiang-mu-shi-zhan/di-3-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji.md","articles":[]},"previous":{"title":"1.3 从 Kafka 读取数据","level":"8.1.3","depth":2,"path":"di-8-bu-fen-structured-streaming-xiang-mu-shi-zhan/di-1-zhang-zhun-bei-shu-ju/13-cong-kafka-du-qu-shu-ju.md","ref":"di-8-bu-fen-structured-streaming-xiang-mu-shi-zhan/di-1-zhang-zhun-bei-shu-ju/13-cong-kafka-du-qu-shu-ju.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_spark_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-8-bu-fen-structured-streaming-xiang-mu-shi-zhan/di-2-zhang-guang-gao-hei-ming-dan.md","mtime":"2019-08-19T02:39:23.015Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-20T09:36:29.114Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第 2 章 广告黑名单实时统计","level":"8.2","depth":1,"next":{"title":"第 3 章 广告点击量实时统计","level":"8.3","depth":1,"path":"di-8-bu-fen-structured-streaming-xiang-mu-shi-zhan/di-3-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji.md","ref":"di-8-bu-fen-structured-streaming-xiang-mu-shi-zhan/di-3-zhang-guang-gao-dian-ji-liang-shi-shi-tong-ji.md","articles":[]},"previous":{"title":"1.3 从 Kafka 读取数据","level":"8.1.3","depth":2,"path":"di-8-bu-fen-structured-streaming-xiang-mu-shi-zhan/di-1-zhang-zhun-bei-shu-ju/13-cong-kafka-du-qu-shu-ju.md","ref":"di-8-bu-fen-structured-streaming-xiang-mu-shi-zhan/di-1-zhang-zhun-bei-shu-ju/13-cong-kafka-du-qu-shu-ju.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","expandable-chapters-small","page-toc-button","-highlight","prism","prism-themes","tbfed-pagefooter","sitemap","change_girls","livereload"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy 尚硅谷大数据 2019","modify_label":"<br>该文件最后修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"shortName":"zhenchao125"},"livereload":{},"splitter":{},"change_girls":{"time":30,"urls":["http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/62171757.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/83394736.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/15906185.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3394270.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/65028582.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/20359261.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/37472401.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/3355397.jpg-atguiguImg","http://lizhenchao.oss-cn-shenzhen.aliyuncs.com/imgs/18-3-4/11075549.jpg-atguiguImg"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sitemap":{"hostname":"http://bigdataatguigu.applinzi.com/"},"page-toc-button":{"maxTocDepth":3,"minTocSize":2},"prism-themes":{},"expandable-chapters-small":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":" 李振超","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"大数据 bigdata_spark_atguigu 课堂笔记","language":"zh-hans","links":{"sidebar":{"联系我们":"http://www.atguigu.com/"}},"gitbook":"*","description":"课堂笔记,学生提前预习"},"file":{"path":"di-8-bu-fen-structured-streaming-xiang-mu-shi-zhan/di-2-zhang-guang-gao-hei-ming-dan.md","mtime":"2019-09-09T11:01:18.714Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-11T00:09:05.689Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
