@@ -33,7 +33,7 @@ h1:hover, h2:hover, h3:hover{
 }
 .markdown-section p:hover, .markdown-section li:hover{
     /*background-color : rgba(100, 100, 255, .2);*/
-    color : red; 
+    /*color : red; */
 }
 li:hover{
    /* background-color : rgba(255, 100, 100, .2);*/
@@ -57,7 +57,7 @@ pre[class^=language-]:hover *{
 
 li[class*=chapter] > a:hover{
     background-color:rgba(0,0,0,0.1) !important;
-    font-size : 1.3em;
+    /*font-size : 1.3em;*/
     color : blue !important;
 }
 
