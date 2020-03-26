@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>尚硅谷随机点名系统</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    -webkit-user-select: none;
+}
+
+body {
+    background: url("2.jpeg");
+    background-size: cover;
+    overflow: hidden;
+}
+
+div {
+    width: 800px;
+    margin: 30px auto;
+    position: relative;
+}
+
+div h1 {
+    color: red;
+    font-size: 80px;
+    font-family: "Kaiti SC";
+    font-weight: 900;
+    
+}
+
+div h2 {
+    font-family: "Kaiti SC";
+    color: blue;
+    font-size: 140px;
+    cursor: pointer;
+    margin: 50px 0;
+    line-height: 150px;
+    height: 150px;
+    
+}
+
+h2 span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    
+}
+
+p {
+    font-family: "Kaiti SC";
+    line-height: 100px;
+    background-color: rgba(178, 204, 255, 0.4);
+    font-size: 80px;
+    border-radius: 100px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+p:hover {
+    background-color: rgba(255, 233, 58, 0.4);
+}
+
+</style>
+</head>
+<body>
+<div>
+    <img src="http://sys.atguigu.com/resources/images/logo1.png" alt="">
+    <h1>尚硅谷随机点名系统</h1>
+    <h2 id="next1"></h2>
+    <p id="next2">下一位</p>
+</div>
+<script src="names.js"></script>
+<script>
+var indexs = []
+
+changeName();
+
+function changeName(){
+    
+    var spans = Array.from(document.getElementsByTagName("span"));
+    for(var span of spans){
+        span.className = "old";
+    }
+    var index;
+    while(true){
+        index = randomInt(0, names.length - 1);
+        if(indexs.indexOf(index) != -1) continue;
+        indexs.push(index);
+        break;
+    }
+    console.log(indexs.length, names.length);
+    if(indexs.length == names.length){
+        alert("开始新的一轮点名");
+        indexs.splice(0, indexs.length);
+    }
+
+
+    var newSpan = document.createElement("span");
+    newSpan.innerHTML = names[index];
+    newSpan.style.top = "-200px";
+    next1.appendChild(newSpan);
+    
+    setTimeout(function step(){
+        newSpan.style.top = newSpan.offsetTop + 10 + "px";
+        if(newSpan.offsetTop == 220) return;
+        setTimeout(step, 10);
+    },0)
+    
+    setTimeout(function step(){
+        var spans = document.getElementsByClassName("old");
+        if(spans.length == 0) return;
+        for(var i = 0; i < spans.length; i++){
+            spans[i].style.top = spans[i].offsetTop + 10 + "px";
+            if(spans[i].offsetTop >= 1200){
+                spans[i].parentElement.removeChild(spans[i]);
+            }
+        }
+        setTimeout(step, 10);
+    })
+    
+
+}
+
+next1.onclick = changeName;
+next2.onclick = changeName;
+
+/**
+ 作者:李振超      2018年03月29 19:19:41
+ 返回随机的 [from, to] 之间的整数(包括from，也包括to)
+ */
+function randomInt(from, to){
+    return parseInt(Math.random() * (to - from + 1) + from);
+}
+</script>
+</body>
+</html>
